@@ -14,4 +14,4 @@ Programs for Information Topology Data Analysis Information Topology is a progra
 [7] Tapia M., Baudot P., Dufour M., Formizano-Treziny C., Temporal S., Lasserre M., Kobayashi K., Goaillard J.M.. Neurotransmitter identity and electrophysiological phenotype are genetically coupled in midbrain dopaminergic neurons. Scientific Reports. 2018. PDF. BioArXiv168740. PDF
 [8] Baudot P., Elements of qualitative cognition: an Information Topology Perspective. Physics of Life Reviews. 2019 LINK. extended version on Arxiv. PDF
 [9] Baudot P., Bennequin D., The homological nature of entropy. Entropy, 2015, 17, 1-66; doi:10.3390. PDF
-[10]    Baudot P., Bennequin D., Topological forms of information. AIP conf. Proc., 2015. 1641, 213. PDF
+[10] Baudot P., Bennequin D., Topological forms of information. AIP conf. Proc., 2015. 1641, 213. PDF
