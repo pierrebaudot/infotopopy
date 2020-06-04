@@ -1,4 +1,5 @@
 README.md
+setup.cfg
 setup.py
 infotopo.egg-info/PKG-INFO
 infotopo.egg-info/SOURCES.txt
