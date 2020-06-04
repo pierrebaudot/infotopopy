@@ -3,13 +3,14 @@
 
 from setuptools import setup, find_packages
  
- 
+with open("README.md", "r") as fh:
+    long_description = fh.read() 
  
 setup(name='infotopo',
  
       version='0.1',
  
-      url='https://github.com/pierrebaudot/infotopopy/',
+      url='https://github.com/pierrebaudot/infotopopy/archive/0.1.tar.gz',
  
       license='BSD 3-Clause "New" or "Revised" License',
  
