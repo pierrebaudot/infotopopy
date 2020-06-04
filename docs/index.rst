@@ -51,7 +51,7 @@ The details for the underlying mathematics and methods can be found in the paper
 
 You can find the software `on github <https://github.com/pierrebaudot/infotopopy>`_.
 
-Previous software for Information Topology Data Analysis INFOTOPO : the 2017 scripts are available at `Github infotopo <https://github.com/pierrebaudot/INFOTOPO/>`_
+The previous version of the software  INFOTOPO : the 2013-2017 scripts are available at `Github infotopo <https://github.com/pierrebaudot/INFOTOPO/>`_
 
 **Installation**
 

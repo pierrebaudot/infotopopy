@@ -49,7 +49,7 @@ The details for the underlying mathematics and methods can be found in the paper
  
 
 
-Programs for Information Topology Data Analysis INFOTOPO : new rewrited version of the 2017 scripts available at `Github infotopo <https://github.com/pierrebaudot/INFOTOPO/>`_
+The previous version of the software  INFOTOPO : the 2013-2017 scripts are available at `Github infotopo <https://github.com/pierrebaudot/INFOTOPO/>`_
  
 
 
