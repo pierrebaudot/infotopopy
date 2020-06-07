@@ -6,10 +6,8 @@
 #import 
 import math
 import numpy as np
-import os
 import itertools
 import timeit
-import sys
 from itertools import combinations, chain
 import logging
 from decimal import Decimal
@@ -394,7 +392,6 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
 # ##################################################################################
 
     def _compute_entropy(self, probability):
-        sys.getrecursionlimit()
         ntuple=[]
         ntuple1_input=[]
         Nentropie={}

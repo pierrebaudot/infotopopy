@@ -26,4 +26,4 @@ setup(name='infotopo',
  
       zip_safe=False,
  
-      setup_requires=['mpmath>=1.1.0', 'numpy>=1.1.0','networkx>=2.3'])
+      setup_requires=['numpy>=1.1.0','networkx>=2.3'])

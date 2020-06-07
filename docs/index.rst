@@ -63,10 +63,12 @@ PyPI install, presuming you have numpy and networkx installed:
 
 .. toctree::
    :maxdepth: 2
-   :caption: User Guide / Tutorial:
-   basic_usage
+   :caption: User Guide - Tutorial:
+   basic_methods
    parameters
    supervised
+   how_infotopo_works
+   performances
    faq
 
 
