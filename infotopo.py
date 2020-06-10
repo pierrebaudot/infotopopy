@@ -803,18 +803,25 @@ if __name__ == "__main__":
     from sklearn.datasets import load_iris, load_digits
     import pandas as pd
     import seaborn as sns
-
-    forward_computation_mode = False
-    work_on_transpose = False
-    supervised_mode = False
-    sampling_mode = 1
-    deformed_probability_mode = False
+    
     iris = load_iris()
     iris_df = pd.DataFrame(iris.data, columns = iris.feature_names)
     dimension_max = iris.data.shape[1]
     dimension_tot = iris.data.shape[1]
     sample_size = iris.data.shape[0]
     nb_of_values =9
+    forward_computation_mode = False
+    work_on_transpose = False
+    supervised_mode = False
+    sampling_mode = 1
+    deformed_probability_mode = False
+
+    iris_df = pd.DataFrame(iris.data, columns=iris.feature_names)
+    iris_df['species'] = pd.Series(iris.target).map(dict(zip(range(3),iris.target_names)))
+    sns.pairplot(iris_df, hue='species')
+    plt.show()
+
+    
     print("sample_size : ",iris.data.shape[0])
     print('number of variables:',iris.data.shape[1])
     print('number of tot variables dimensions:', iris.data.shape[1])
@@ -845,10 +852,7 @@ if __name__ == "__main__":
     information_topo.mutual_info_simplicial_lanscape(Ninfomut)
 
 
-    iris_df = pd.DataFrame(iris.data, columns=iris.feature_names)
-    iris_df['species'] = pd.Series(iris.target).map(dict(zip(range(3),iris.target_names)))
-    sns.pairplot(iris_df, hue='species')
-    plt.show()
+
     information_topo.mutual_info_pairwise_network(Ninfomut)
 
  #  key for key in Ninfomut if len(key)==2

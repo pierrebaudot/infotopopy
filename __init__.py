@@ -1,1 +1,1 @@
-from infotopo.InfoTopo_0.1 import infotopo
+from infotopo.infotopo import infotopo

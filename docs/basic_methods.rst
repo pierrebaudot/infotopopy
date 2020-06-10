@@ -25,25 +25,20 @@ complex (in development).
 _ compute on GPU (in development).
 As a result, for this 0.1 version of the software, and for computation with 
 commercial average PC, we recommand to analyse up to 20 variables (or dimensions)
-at a time in the raw brut-force approach ()
+at a time in the raw brut-force approach (see performance section).
 
 
 
-First we'll need to import a bunch of useful tools. We will need numpy
-obviously, but we'll use some of the datasets available in sklearn, as
-well as the ``train_test_split`` function to divide up data. Finally
-we'll need some plotting tools (matplotlib and seaborn) to help us
-visualise the results of UMAP, and pandas to make that a little easier.
+We now present some basic example of use, inspiring our presentation from 
+the remarkable presentation of `UMAP by McInnes. <https://umap-learn.readthedocs.io/en/latest/>`_
+We first import some few tools: some of the datasets available in sklearn, seaborn to
+visualise the results, and pandas to handle the data.
 
 .. code:: python3
 
-    import numpy as np
     from sklearn.datasets import load_iris, load_digits
-    from sklearn.model_selection import train_test_split
-    import matplotlib.pyplot as plt
-    import seaborn as sns
     import pandas as pd
-    %matplotlib inline
+    import seaborn as sns
 
 .. code:: python3
 
@@ -52,18 +47,35 @@ visualise the results of UMAP, and pandas to make that a little easier.
 Iris data
 ---------
 
-The next step is to get some data to work with. To ease us into things
-we'll start with the `iris
-dataset <https://en.wikipedia.org/wiki/Iris_flower_data_set>`__. It
-isn't very representative of what real data would look like, but it is
-small both in number of points and number of features, and will let us
-get an idea of what the dimension reduction is doing. We can load the
-iris dataset from sklearn.
+The first example of dataset application we will present is the `iris
+dataset <https://en.wikipedia.org/wiki/Iris_flower_data_set>`__. It is
+a very small dataset composed of 4 Random-Variables or dimensions that 
+quantify various petals and sepals observable of 3 different species of 
+Iris flowers, like petal length, for 150 flowers or points (50 for each 
+species). In the context of Infotopo it means that dimension_tot = 4  
+and sample_size = 150 (we consider all the points), and as the dimension
+of the data set is small we will make the complete analysis of the 
+simplicial structure of dependencies by setting the maximum dimension 
+of analysis to dimension_max = dimension_tot. We also set the other 
+parameters of infotopo to approriate, as further explained.   
+We can load the iris dataset from sklearn.
 
 .. code:: python3
 
     iris = load_iris()
+    iris_df = pd.DataFrame(iris.data, columns = iris.feature_names)
     print(iris.DESCR)
+
+    dimension_max = iris.data.shape[1]
+    dimension_tot = iris.data.shape[1]
+    sample_size = iris.data.shape[0]
+    nb_of_values =9
+    forward_computation_mode = False
+    work_on_transpose = False
+    supervised_mode = False
+    sampling_mode = 1
+    deformed_probability_mode = False
+    
 
 
 .. parsed-literal::
@@ -132,15 +144,9 @@ iris dataset from sklearn.
        - Many, many more ...
     
 
-
-The description tells us a fair amount about the dataset -- it consists
-of measurements of petals and sepals of iris flowers. There are 3
-species of flower represented, each with 50 sets of measurements.
-Visualizing this data is a little bit tricky since we can't plot in 4
-dimensions easily. Fortunately four is not that large a number, so we
-can just to a pairwise feature scatterplot matrix to get an ideas of
-what is going on. Seaborn makes this easy (once we get the data into a
-pandas dataframe).
+As visualizing data in 4 dimensions or more is hard or not possible, we can first 
+plot all the pairwise scatterplot matrix to present the pairwise correlations and 
+dependencies between the variables, using Seaborn and pandas dataframe.
 
 .. code:: python3
 
