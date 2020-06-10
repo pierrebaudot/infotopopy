@@ -24,6 +24,4 @@ setup(name='infotopo',
  
       long_description=open('README.md').read(),
  
-      zip_safe=False,
- 
-      setup_requires=['numpy>=1.1.0','networkx>=2.3'])
+      zip_safe=False)
