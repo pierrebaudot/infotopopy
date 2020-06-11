@@ -208,7 +208,7 @@ class infotopo:
         if self.dimension_max > self.dimension_tot :
             raise ValueError("dimension_tot must be greater or equal than dimension_max") 
         if not self.forward_computation_mode :  
-            if dimension_max != dimension_tot:
+            if self.dimension_max != self.dimension_tot:
                 raise ValueError("if forward_computation_mode then dimension_max must be equal to dimension_tot")
         if self.nb_bins_histo < 2 :
             raise ValueError("nb_bins_histo must be greater than 1") 
