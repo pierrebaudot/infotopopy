@@ -39,6 +39,8 @@ visualise the results, and pandas to handle the data.
     from sklearn.datasets import load_iris, load_digits
     import pandas as pd
     import seaborn as sns
+    import matplotlib.pyplot as plt
+    import timeit
 
 .. code:: python3
 
@@ -50,7 +52,7 @@ Iris data
 The first example of dataset application we will present is the `iris
 dataset <https://en.wikipedia.org/wiki/Iris_flower_data_set>`__. It is
 a very small dataset composed of 4 Random-Variables or dimensions that 
-quantify various petals and sepals observable of 3 different species of 
+quantify various petals and sepals observables of 3 different species of 
 Iris flowers, like petal length, for 150 flowers or points (50 for each 
 species). In the context of Infotopo it means that dimension_tot = 4  
 and sample_size = 150 (we consider all the points), and as the dimension
@@ -152,21 +154,27 @@ dependencies between the variables, using Seaborn and pandas dataframe.
 
     iris_df = pd.DataFrame(iris.data, columns=iris.feature_names)
     iris_df['species'] = pd.Series(iris.target).map(dict(zip(range(3),iris.target_names)))
-    sns.pairplot(iris_df, hue='species');
+    sns.pairplot(iris_df, hue='species')
+    plt.show()
 
 
-.. image:: images/BasicUsage_6_1.png
+.. image:: images/iris_pairwise_scatter.png
 
 
-This gives us some idea of what the data looks like by giving as all the
-2D views of the data. Four dimensions is low enough that we can (sort
-of) reconstruct what the full dimensional data looks like in our heads.
-Now that we sort of know what we are looking at, the question is what
-can a dimension reduction technique like UMAP do for us? By reducing the
-dimension in a way that preserves as much of the structure of the data
-as possible we can get a visualisable representation of the data
-allowing us to "see" the data and its structure and begin to get some
-intuition about the data itself.
+All those 2D views gives a rought but misleading idea of what the data looks 
+like in high dimension since, as we will see, some fully emergent  
+statistical dependences (synergic) can appear in higher dimension which are 
+totally unobservable in those 2D views. However such 2D views gives a fair
+visual estimation of how much each pairs of variale covary, the correlation 
+coefficient and its generalization to non-linear relations, the pairwise 
+Mutual Information (I2). In topological Data Analysis terms, it gives rought 
+idea of what the skeleton of a Vietoris-Rips (information or correlation) complex
+of the data could be.
+We will see how to go beyond this pairwise statistical interaction case, and how
+we can unravel some purely emergent higher dimensional interations. Along this 
+way, we will see how to compute and estimate all classical information functions,
+multivariate Entropies, Mutual Informations and Conditional Entropies and 
+Mutual Informations. 
 
 To use UMAP for this task we need to first construct a UMAP object that
 will do the job for us. That is as simple as instantiating the class. So
@@ -174,7 +182,7 @@ let's import the umap library and do that.
 
 .. code:: python3
 
-    import umap
+    import infotopo
 
 .. code:: python3
 
