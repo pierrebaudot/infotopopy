@@ -15,8 +15,7 @@ It allows to estimate higher order statistical structures, dependences and (refi
 It provides estimations of the basic information functions, entropy, joint and condtional, multivariate Mutual-Informations (MI) and conditional MI, Total Correlations...
 
 InfoTopo is at the cross-road of Topological Data Analysis, Deep Neural Network learning, statistical physics and complex systems:
- 1. With respect to Topological Data Analysis (TDA), it provides intrinsically probabilistic methods that does not assume metric (Random Variable's alphabets are not necessarilly ordinal) [2,3,6].
-
+ 1. With respect to Topological Data Analysis (TDA), it provides intrinsically probabilistic methods that does not assume metric (Random Variable's alphabets are not necessarilly ordinal) [2,3,6]. It also provide a quantification of higher order statistical interactions that cannot be detected by pairwise relations or methods based on Vietoris-Rips complexes.
  2. With respect to Deep Neural Networks (DNN), it provides a simplical complex constrained DNN structure with topologically derived unsupervised and supervised learning rules (forward propagation, differential statistical operators). The neurons are random Variables, the depth of the layers corresponds to the dimensions of the complex [3,4,5].
 
  3. With respect to statistical physics, it provides generalized correlation functions, free and internal energy functions, estimations of the n-body interactions contributions to energy functional, that holds in non-homogeous and finite-discrete case, without mean-field assumptions. Cohomological Complex implements the minimum free-energy principle. Information Topology is rooted in cognitive sciences and computational neurosciences, and generalizes-unifies some consciousness theories [5].
