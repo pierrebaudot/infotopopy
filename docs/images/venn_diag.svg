@@ -1,0 +1,1869 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 744.09448819 1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="venn_diag.svg">
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.64141414"
+     inkscape:cx="372.04724"
+     inkscape:cy="526.1811"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="1535"
+     inkscape:window-height="876"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <defs
+     id="defs4">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient11057">
+      <stop
+         style="stop-color:#7dd1f1;stop-opacity:1;"
+         offset="0"
+         id="stop11059" />
+      <stop
+         style="stop-color:#7dd1f1;stop-opacity:0;"
+         offset="1"
+         id="stop11061" />
+    </linearGradient>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker8129"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend">
+      <path
+         transform="scale(0.6) rotate(180) translate(0,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         id="path8131" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Mend"
+       style="overflow:visible;"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path4521"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.6) rotate(180) translate(0,0)" />
+    </marker>
+    <clipPath
+       id="clipPath4194"
+       clipPathUnits="userSpaceOnUse">
+      <circle
+         clip-path="none"
+         r="49.198128"
+         cy="106.85522"
+         cx="179.14375"
+         id="circle4196"
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:1.60374093;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    </clipPath>
+    <clipPath
+       id="clipPath4235"
+       clipPathUnits="userSpaceOnUse">
+      <circle
+         clip-path="none"
+         r="49.198128"
+         cy="106.85522"
+         cx="141.14375"
+         id="circle4237"
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:1.60374093;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath4580">
+      <path
+         id="path4582"
+         d="m 263.84766,357.96094 a 49.198128,49.198128 0 0 0 -29.22657,44.89453 49.198128,49.198128 0 0 0 29.16993,44.89453 49.198128,49.198128 0 0 0 29.22656,-44.89453 49.198128,49.198128 0 0 0 -29.16992,-44.89453 z"
+         clip-path="none"
+         style="opacity:1;fill:#800080;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         inkscape:connector-curvature="0" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath4580-5">
+      <path
+         id="path4582-3"
+         d="m 263.84766,357.96094 a 49.198128,49.198128 0 0 0 -29.22657,44.89453 49.198128,49.198128 0 0 0 29.16993,44.89453 49.198128,49.198128 0 0 0 29.22656,-44.89453 49.198128,49.198128 0 0 0 -29.16992,-44.89453 z"
+         clip-path="none"
+         style="opacity:1;fill:#800080;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         inkscape:connector-curvature="0" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath4580-6">
+      <path
+         id="path4582-2"
+         d="m 263.84766,357.96094 a 49.198128,49.198128 0 0 0 -29.22657,44.89453 49.198128,49.198128 0 0 0 29.16993,44.89453 49.198128,49.198128 0 0 0 29.22656,-44.89453 49.198128,49.198128 0 0 0 -29.16992,-44.89453 z"
+         clip-path="none"
+         style="opacity:1;fill:#800080;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         inkscape:connector-curvature="0" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath4664">
+      <circle
+         r="49.198128"
+         cy="442.85522"
+         cx="263.81934"
+         id="circle4666"
+         style="opacity:1;fill:#ffff00;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath4704">
+      <circle
+         r="49.198128"
+         cy="442.85522"
+         cx="263.81934"
+         id="circle4706"
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath4736">
+      <circle
+         clip-path="none"
+         r="49.198128"
+         cy="402.85522"
+         cx="283.81973"
+         id="circle4738"
+         style="opacity:1;fill:#0000ff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    </clipPath>
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Mend-6"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4521-1"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(-0.6,-0.6)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker8129-3"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend">
+      <path
+         inkscape:connector-curvature="0"
+         transform="scale(-0.6,-0.6)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path8131-1" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker8129-3-1"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend">
+      <path
+         inkscape:connector-curvature="0"
+         transform="scale(-0.6,-0.6)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path8131-1-7" />
+    </marker>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient11057"
+       id="radialGradient11063"
+       cx="944.16357"
+       cy="361.92871"
+       fx="944.16357"
+       fy="361.92871"
+       r="127.23029"
+       gradientTransform="matrix(1,0,0,0.98247042,0,6.3444574)"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Calque 1">
+    <path
+       style="opacity:1;fill:#808080;fill-opacity:1;stroke:#000000;stroke-width:2.10202003;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       clip-path="none"
+       d="m 144.80016,330.12645 a 51.707727,51.707727 0 0 0 -51.70887,51.70887 51.707727,51.707727 0 0 0 21.02842,41.54979 51.707727,51.707727 0 0 0 -0.008,0.49061 51.707727,51.707727 0 0 0 51.70887,51.70681 51.707727,51.707727 0 0 0 51.70682,-51.70681 51.707727,51.707727 0 0 0 -0.0166,-0.48446 51.707727,51.707727 0 0 0 21.03662,-41.55594 51.707727,51.707727 0 0 0 -51.70682,-51.70887 51.707727,51.707727 0 0 0 -21.02225,4.5099 51.707727,51.707727 0 0 0 -21.01815,-4.5099 z"
+       id="path4136-35-6-0-9-0"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <circle
+       r="49.198128"
+       cy="422.85522"
+       cx="165.81934"
+       id="path4136-35-6-0"
+       style="opacity:1;fill:#ffff00;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <circle
+       clip-path="none"
+       r="49.198128"
+       cy="382.85522"
+       cx="185.81973"
+       id="path4136-5"
+       style="opacity:1;fill:#0000ff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <circle
+       clip-path="none"
+       r="49.198128"
+       cy="382.85522"
+       cx="145.81973"
+       id="path4136-6-12-7"
+       style="opacity:1;fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <circle
+       r="49.198128"
+       cy="442.85522"
+       cx="263.81934"
+       id="path4136-35-6"
+       style="opacity:1;fill:#00ffff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       clip-path="url(#clipPath4736)"
+       transform="translate(-98,-20)"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:linespacing="125%"
+       id="text7995-7-4"
+       y="365.22015"
+       x="111.80194"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:135px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-size:22.5px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         y="365.22015"
+         x="111.80194"
+         id="tspan7997-0-2"
+         sodipodi:role="line">X<tspan
+   id="tspan7460"
+   style="font-size:64.99999762%;baseline-shift:sub">1</tspan></tspan></text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:linespacing="125%"
+       id="text7995-7-4-3-0"
+       y="450.92377"
+       x="154.30649"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:135px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-size:22.5px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         y="450.92377"
+         x="154.30649"
+         id="tspan7997-0-2-6-6"
+         sodipodi:role="line">X<tspan
+   id="tspan7460-1-3"
+   style="font-size:64.99999762%;baseline-shift:sub">3</tspan></tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text7713"
+       y="261.54913"
+       x="576.86023"
+       style="font-style:normal;font-weight:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="261.54913"
+         x="576.86023"
+         id="tspan7715"
+         sodipodi:role="line" /></text>
+    <flowRoot
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:17.5px;line-height:125%;letter-spacing:0px;word-spacing:0px"
+       id="flowRoot7721"
+       xml:space="preserve"><flowRegion
+         id="flowRegion7723"><rect
+           y="-19.43327"
+           x="-60.93594"
+           height="48.071686"
+           width="87.341515"
+           id="rect7725" /></flowRegion><flowPara
+         id="flowPara7727" /></flowRoot>    <text
+       transform="matrix(0.99991489,-0.01304635,0.01304635,0.99991489,0,0)"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:linespacing="100%"
+       id="text7995-7-4-1-4-4-9-1-3-3"
+       y="270.08707"
+       x="-7.7020431"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:135px;line-height:100%;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1;"
+       xml:space="preserve"
+       inkscape:export-filename="/home/baudot/CANDIDATURES/CANDIDATURE INSERM INTERN 2017/figure_venn_diag(francais).png"><tspan
+         style="font-size:22.5px;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;-inkscape-font-specification:'Arial Bold';font-family:Arial;font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;"
+         y="270.08707"
+         x="-7.7020431"
+         id="tspan7997-0-2-55-3-9-4-5-6-6"
+         sodipodi:role="line" /><tspan
+         style="font-size:22.5px;line-height:100%;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;-inkscape-font-specification:'Arial Bold';font-family:Arial;font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;"
+         y="292.58707"
+         x="-7.7020431"
+         sodipodi:role="line"
+         id="tspan4436-3-5">a</tspan></text>
+    <text
+       transform="matrix(0.99995885,-0.00907198,0.00907198,0.99995885,0,0)"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:linespacing="100%"
+       id="text7995-7-4-1-4-4-3"
+       y="276.23956"
+       x="160.55551"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:135px;line-height:100%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#800080;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/baudot/CANDIDATURES/CANDIDATURE INSERM INTERN 2017/figure_venn_diag(francais).png"><tspan
+         id="tspan7917-5"
+         style="font-size:22.5px;line-height:100%;text-align:center;text-anchor:middle;fill:#800080;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         y="276.23956"
+         x="160.55551"
+         sodipodi:role="line" /><tspan
+         id="tspan7913-6"
+         style="font-size:22.5px;line-height:100%;text-align:center;text-anchor:middle;fill:#800080;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         y="298.73956"
+         x="160.55551"
+         sodipodi:role="line"><tspan
+   style="fill:#ffff00"
+   id="tspan10888">X</tspan><tspan
+   style="font-size:65%;baseline-shift:sub;fill:#ffff00"
+   id="tspan10886">3</tspan>.I<tspan
+   style="font-size:64.99999762%;baseline-shift:sub;fill:#800080;fill-opacity:1"
+   id="tspan8385">2</tspan>(<tspan
+   style="fill:#ff0000;fill-opacity:1"
+   id="tspan4484">X</tspan><tspan
+   id="tspan7803-29"
+   style="font-size:64.99999762%;line-height:100%;text-align:center;baseline-shift:sub;text-anchor:middle;fill:#ff0000;fill-opacity:1">1</tspan>;<tspan
+   style="fill:#0000ff"
+   id="tspan8389">X</tspan><tspan
+   id="tspan7807-1"
+   style="font-size:64.99999762%;line-height:100%;text-align:center;baseline-shift:sub;text-anchor:middle;fill:#0000ff;fill-opacity:1">2</tspan>)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5625px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+       x="-919.75671"
+       y="791.21997"
+       id="text30519-7-6-4-3-1"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><tspan
+         sodipodi:role="line"
+         x="-919.75671"
+         y="791.21997"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12.10000038px;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         id="tspan61419">Illustration simple des principes de la topologie d'information et de la généralisation homologique de la théorie de la </tspan><tspan
+         sodipodi:role="line"
+         x="-919.75671"
+         y="806.34497"
+         style="font-size:12.10000038px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         id="tspan4674"><tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+   id="tspan4497">communication: (A)</tspan> La théorie de l'information proposée par Shannon se fonde sur la fonction d'entropie H(X) d'une Variable aléatoire </tspan><tspan
+         sodipodi:role="line"
+         x="-919.75671"
+         y="821.46997"
+         style="font-size:12.10000038px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         id="tspan4684">(VA) X qui quantifie le désordre ou l'incertitude, l'information jointe H(X<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan4676">1</tspan>,X<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan4678">2</tspan>) de 2 VA, l'entropie conditionelle H(X<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan4680">1</tspan>/X<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan4682">2</tspan>) de X<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan4688">1</tspan>sachant X<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan4692">2</tspan>, et </tspan><tspan
+         sodipodi:role="line"
+         x="-919.75671"
+         y="836.59497"
+         style="font-size:12.10000038px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         id="tspan4700">l'information mutuelle I<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan4696">2</tspan>(X<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan4694">1</tspan>,X<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan4690">2</tspan>) qui quantifie la dépendence entre les 2 VAs (I<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan4698">2</tspan>=0 &lt;=&gt; indépendence). Ces trois derniéres fonctions </tspan><tspan
+         sodipodi:role="line"
+         x="-919.75671"
+         y="851.71997"
+         style="font-size:12.10000038px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         id="tspan4702">peuvent être représentées par l'union, le complémentaire et l'intersection d'ensembles respectivement en utilisant un diagramme de Venn.</tspan><tspan
+         sodipodi:role="line"
+         x="-919.75671"
+         y="866.84497"
+         style="font-size:12.10000038px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         id="tspan4747">Un canal de communication est un graph entre 1 recepteur-vertex et un emmeteur-vertex, sa capacité de codage est max(I<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan4749">2</tspan>).</tspan><tspan
+         sodipodi:role="line"
+         x="-919.75671"
+         y="881.96997"
+         style="font-size:12.10000038px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         id="tspan4753"><tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold'"
+   id="tspan4791">(B)</tspan> Dans le cas special mais simple de combinatoire binomiale-simpliciale des ensemebles de sous-ensembles, on définit similairement </tspan><tspan
+         sodipodi:role="line"
+         x="-919.75671"
+         y="897.09497"
+         style="font-size:12.10000038px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         id="tspan4765">par les intersections, les informatutions mutuelles à 3 I<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan4757">3</tspan>(X1,X2,X3), à 4 I<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan4763">4</tspan>, etc. à n  I<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan4767">n</tspan>, entre n VA. L'ensemble de ses fonctions sont en </tspan><tspan
+         sodipodi:role="line"
+         x="-919.75671"
+         y="912.21997"
+         style="font-size:12.10000038px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         id="tspan4777">correspondence avec les faces d'un n-simplex à n dimensions. Une structure topologique particulière se manifeste par l'absence de </tspan><tspan
+         sodipodi:role="line"
+         x="-919.75671"
+         y="927.34497"
+         style="font-size:12.10000038px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         id="tspan4779">certaine face, c'est à dire la nullité de certaine Information mutuelles entre k VA, qui forme ainsi un complexe particulier d'information. </tspan><tspan
+         sodipodi:role="line"
+         x="-919.75671"
+         y="942.46997"
+         style="font-size:12.10000038px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         id="tspan4789">Ces complexes simpliciaux généralisent les cannaux aux systémes à n emetteurs recepteurs.  </tspan><tspan
+         sodipodi:role="line"
+         x="-919.75671"
+         y="957.59497"
+         style="font-size:12.10000038px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         id="tspan4751" /></text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:linespacing="125%"
+       id="text7995-7-4-3-2"
+       y="365.22015"
+       x="195.50244"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:135px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-size:22.5px;fill:#000000;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         y="365.22015"
+         x="195.50244"
+         id="tspan7997-0-2-6-0"
+         sodipodi:role="line">X<tspan
+   id="tspan7460-1-6"
+   style="font-size:64.99999762%;baseline-shift:sub;fill:#000000">2</tspan></tspan></text>
+    <path
+       id="path4136-5-2-2-7"
+       d="m 165.84766,337.96069 a 49.198128,49.198128 0 0 0 -29.22657,44.89453 49.198128,49.198128 0 0 0 29.16993,44.89453 49.198128,49.198128 0 0 0 29.22656,-44.89453 49.198128,49.198128 0 0 0 -29.16992,-44.89453 z"
+       clip-path="none"
+       style="opacity:1;fill:#800080;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       inkscape:export-filename="/home/baudot/CANDIDATURES/CANDIDATURE INSERM INTERN 2017/figure_venn_diag(francais).png" />
+    <circle
+       clip-path="url(#clipPath4704)"
+       r="49.198128"
+       cy="402.85522"
+       cx="243.81973"
+       id="path4136-6-12"
+       style="opacity:1;fill:#ff6600;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       transform="translate(-98,-20)"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <circle
+       r="49.198128"
+       cy="442.85522"
+       cx="263.81934"
+       id="path4136-35"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       clip-path="url(#clipPath4580)"
+       transform="translate(-98,-20)"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <circle
+       r="49.198128"
+       cy="422.85522"
+       cx="165.81934"
+       id="path4136-35-6-0-9"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <circle
+       clip-path="none"
+       r="49.198128"
+       cy="382.85522"
+       cx="185.81973"
+       id="path4136-5-3"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <circle
+       clip-path="none"
+       r="49.198128"
+       cy="382.85522"
+       cx="145.81973"
+       id="path4136-6-12-7-6"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.78186238;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
+       d="m 164.60408,304.84977 0.90445,63.24774"
+       id="path4488"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       inkscape:export-filename="/home/baudot/CANDIDATURES/CANDIDATURE INSERM INTERN 2017/figure_venn_diag(francais).png" />
+    <text
+       transform="matrix(0.99995885,-0.00907198,0.00907198,0.99995885,0,0)"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:linespacing="100%"
+       id="text7995-7-4-1-4-4-3-8"
+       y="494.10706"
+       x="162.25136"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:135px;line-height:100%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#800000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/baudot/CANDIDATURES/CANDIDATURE INSERM INTERN 2017/figure_venn_diag(francais).png"><tspan
+         id="tspan7917-5-7"
+         style="font-size:22.5px;line-height:100%;text-align:center;text-anchor:middle;fill:#800000;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         y="494.10706"
+         x="162.25136"
+         sodipodi:role="line" /><tspan
+         id="tspan7913-6-9"
+         style="font-size:22.5px;line-height:100%;text-align:center;text-anchor:middle;fill:#800000;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         y="516.60712"
+         x="162.25136"
+         sodipodi:role="line">I<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan4472-2">3</tspan>(<tspan
+   style="fill:#ff0000"
+   id="tspan4484-0">X</tspan><tspan
+   id="tspan7803-29-2"
+   style="font-size:64.99999762%;line-height:100%;text-align:center;baseline-shift:sub;text-anchor:middle;fill:#ff0000;fill-opacity:1">1</tspan>;<tspan
+   style="fill:#0000ff"
+   id="tspan4480-3">X</tspan><tspan
+   id="tspan7807-1-7"
+   style="font-size:64.99999762%;line-height:100%;text-align:center;baseline-shift:sub;text-anchor:middle;fill:#0000ff;fill-opacity:1">2</tspan>;<tspan
+   style="fill:#ffff00"
+   id="tspan4476-5">X</tspan><tspan
+   style="font-size:64.99999762%;baseline-shift:sub;fill:#ffff00"
+   id="tspan4474-9">3</tspan>)</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.93561244;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker8129)"
+       d="m 166.28878,495.80835 -0.79114,-95.56063"
+       id="path4488-2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       inkscape:export-filename="/home/baudot/CANDIDATURES/CANDIDATURE INSERM INTERN 2017/figure_venn_diag(francais).png" />
+    <text
+       transform="matrix(0.99995885,-0.00907198,0.00907198,0.99995885,0,0)"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:linespacing="100%"
+       id="text7995-7-4-1-4-4-3-2"
+       y="413.37946"
+       x="42.032822"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:135px;line-height:100%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#ff6600;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/baudot/CANDIDATURES/CANDIDATURE INSERM INTERN 2017/figure_venn_diag(francais).png"><tspan
+         id="tspan7917-5-8"
+         style="font-size:22.5px;line-height:100%;text-align:center;text-anchor:middle;fill:#ff6600;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         y="413.37946"
+         x="42.032822"
+         sodipodi:role="line" /><tspan
+         id="tspan7913-6-97"
+         style="font-size:22.5px;line-height:100%;text-align:center;text-anchor:middle;fill:#ff6600;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         y="435.87946"
+         x="42.032822"
+         sodipodi:role="line"><tspan
+   style="fill:#0000ff"
+   id="tspan8433">X</tspan><tspan
+   style="font-size:64.99999762%;baseline-shift:sub;fill:#0000ff;fill-opacity:1"
+   id="tspan8429">2</tspan>.I<tspan
+   style="font-size:64.99999762%;baseline-shift:sub;fill:#ff6600;fill-opacity:1"
+   id="tspan8385-3">2</tspan>(<tspan
+   style="fill:#ff0000"
+   id="tspan8437">X</tspan><tspan
+   id="tspan7803-29-1"
+   style="font-size:64.99999762%;line-height:100%;text-align:center;baseline-shift:sub;text-anchor:middle;fill:#ff0000;fill-opacity:1">1</tspan>;<tspan
+   style="fill:#ffff00"
+   id="tspan8441">X</tspan><tspan
+   id="tspan7807-1-9"
+   style="font-size:64.99999762%;line-height:100%;text-align:center;baseline-shift:sub;text-anchor:middle;fill:#ffff00;fill-opacity:1">3</tspan>)</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.93561244;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker8129-3)"
+       d="m 102.28719,431.28216 31.73426,-19.49317"
+       id="path4488-2-9"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       inkscape:export-filename="/home/baudot/CANDIDATURES/CANDIDATURE INSERM INTERN 2017/figure_venn_diag(francais).png" />
+    <text
+       transform="matrix(0.99995885,-0.00907198,0.00907198,0.99995885,0,0)"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:linespacing="100%"
+       id="text7995-7-4-1-4-4-3-2-4"
+       y="302.32498"
+       x="72.57872"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:135px;line-height:100%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/baudot/CANDIDATURES/CANDIDATURE INSERM INTERN 2017/figure_venn_diag(francais).png"><tspan
+         id="tspan7917-5-8-7"
+         style="font-size:22.5px;line-height:100%;text-align:center;text-anchor:middle;fill:#ff0000;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         y="302.32498"
+         x="72.57872"
+         sodipodi:role="line" /><tspan
+         id="tspan7913-6-97-8"
+         style="font-size:22.5px;line-height:100%;text-align:center;text-anchor:middle;fill:#ff0000;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         y="324.82498"
+         x="72.57872"
+         sodipodi:role="line">(X<tspan
+   style="font-size:64.99999762%;baseline-shift:sub;fill:#ff0000;fill-opacity:1"
+   id="tspan8429-5">2</tspan>,X<tspan
+   style="font-size:64.99999762%;baseline-shift:sub;fill:#ff0000"
+   id="tspan10397">3</tspan>).H(X<tspan
+   id="tspan7803-29-1-6"
+   style="font-size:64.99999762%;line-height:100%;text-align:center;baseline-shift:sub;text-anchor:middle;fill:#ff0000;fill-opacity:1">1</tspan>)</tspan></text>
+    <text
+       transform="matrix(0.99995885,-0.00907198,0.00907198,0.99995885,0,0)"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:linespacing="100%"
+       id="text7995-7-4-1-4-4-3-2-4-6"
+       y="326.50308"
+       x="224.20651"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:135px;line-height:100%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#ff6600;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/baudot/CANDIDATURES/CANDIDATURE INSERM INTERN 2017/figure_venn_diag(francais).png"><tspan
+         id="tspan7913-6-97-8-2"
+         style="font-size:22.5px;line-height:100%;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         y="326.50308"
+         x="224.20651"
+         sodipodi:role="line">H(X<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan9465">1</tspan>,X<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan9463">2</tspan>,X<tspan
+   id="tspan7803-29-1-6-6"
+   style="font-size:64.99999762%;line-height:100%;text-align:center;baseline-shift:sub;text-anchor:middle;fill:#000000;fill-opacity:1">3</tspan>)</tspan></text>
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:connector-curvature="0"
+       id="path24249"
+       style="fill:#e30016;fill-rule:evenodd;stroke:#e30016;stroke-width:2.530267;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       d="m 332.4943,317.76066 a 16.888536,16.888536 0 0 1 16.88853,16.88885 16.888536,16.888536 0 1 1 -16.88853,-16.88885 z" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:connector-curvature="0"
+       id="path24251"
+       style="fill:#e30016;fill-rule:evenodd;stroke:#e30016;stroke-width:2.530267;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       d="M 386.95745,317.76066 A 16.888536,16.888536 0 0 1 403.846,334.64951 16.888536,16.888536 0 1 1 386.95745,317.76066 Z" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:connector-curvature="0"
+       id="path24253"
+       style="fill:#e30016;fill-rule:evenodd;stroke:#e30016;stroke-width:2.530267;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       d="m 441.42058,317.76066 a 16.888536,16.888536 0 0 1 16.88888,16.88885 16.888536,16.888536 0 1 1 -16.88888,-16.88885 z" />
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24267"
+       y="338.21957"
+       x="315.13699"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;font-family:Arial;-inkscape-font-specification:Arial">
+      <tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;font-family:Arial;-inkscape-font-specification:Arial;fill:#1b1918"
+         id="tspan24269"
+         font-size="12.0000">H(12)</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24271"
+       y="338.21957"
+       x="369.60016"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;font-family:Arial;-inkscape-font-specification:Arial">
+      <tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;font-family:Arial;-inkscape-font-specification:Arial;fill:#1b1918"
+         id="tspan24273"
+         font-size="12.0000">H(13)</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24279"
+       y="338.21957"
+       x="424.06363"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;font-family:Arial;-inkscape-font-specification:Arial">
+      <tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;font-family:Arial;-inkscape-font-specification:Arial;fill:#1b1918"
+         id="tspan24281"
+         font-size="12.0000">H(23)</tspan>
+    </text>
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:connector-curvature="0"
+       id="path24296"
+       style="fill:#7dd1f1;fill-rule:evenodd;stroke:#7dd1f1;stroke-width:2.69065213;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       d="m 386.95745,257.44115 a 18.577685,16.888536 0 0 1 18.57768,16.88849 18.577685,16.888536 0 1 1 -18.57768,-16.88849 z" />
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24304"
+       y="278.48889"
+       x="365.7767"
+       style="font-size:13.75px">
+      <tspan
+         style="font-size:13.75px;font-family:Arial;fill:#1b1918"
+         id="tspan24306"
+         font-size="12.0000">H(123)</tspan>
+    </text>
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       d="m 386.9566,353.4202 -54.25044,29.81018"
+       style="fill:none;stroke:#1b1918;stroke-width:3.94620299;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       id="path24322"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       d="m 441.207,353.4202 0,29.81112"
+       style="fill:none;stroke:#1b1918;stroke-width:3.94620299;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       id="path24334"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       d="m 386.9492,317.51323 0,-25.59787"
+       style="fill:none;stroke:#1b1918;stroke-width:3.66043782;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       id="path24342"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       d="m 332.59965,317.51323 54.3581,-25.59787"
+       style="fill:none;stroke:#1b1918;stroke-width:3.66043782;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       id="path24346"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       d="M 386.95748,444.25648 A 16.888536,16.888536 0 0 1 403.846,461.14503 16.888536,16.888536 0 1 1 386.95748,444.25648 Z"
+       style="fill:#ffffff;fill-rule:evenodd;stroke:#1b1918;stroke-width:6.25403786;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       id="path24372"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       d="M 385.79324,441.44392 332.53261,417.85285"
+       style="fill:none;stroke:#1b1918;stroke-width:3.47945762;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       id="path24386"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       d="m 386.90086,443.43152 0.0568,-25.57867"
+       style="fill:none;stroke:#1b1918;stroke-width:3.47945762;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       id="path24388"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       d="M 388.56347,440.95409 441.3823,417.85285"
+       style="fill:none;stroke:#1b1918;stroke-width:3.47945762;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       id="path24390"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:connector-curvature="0"
+       id="path24403"
+       style="fill:#9c9e9f;fill-rule:evenodd;stroke:#1b1918;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 332.49397,383.93694 a 16.888536,16.888536 0 0 1 16.88886,16.88855 16.888536,16.888536 0 1 1 -16.88886,-16.88855 z" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:connector-curvature="0"
+       id="path24405"
+       style="fill:#9c9e9f;fill-rule:evenodd;stroke:#1b1918;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 386.95711,383.93761 A 16.888536,16.888536 0 0 1 403.846,400.82615 16.888536,16.888536 0 1 1 386.95711,383.93761 Z" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:connector-curvature="0"
+       id="path24407"
+       style="fill:#9c9e9f;fill-rule:evenodd;stroke:#1b1918;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 441.42026,383.93761 a 16.888536,16.888536 0 0 1 16.88887,16.88854 16.888536,16.888536 0 1 1 -16.88887,-16.88854 z" />
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24411"
+       y="404.38904"
+       x="318.9707"
+       style="font-size:13.75px">
+      <tspan
+         style="font-size:13.75px;font-family:Arial;fill:#1b1918"
+         id="tspan24413"
+         font-size="12.0000">H(1)</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24419"
+       y="404.39383"
+       x="427.89288"
+       style="font-size:13.75px">
+      <tspan
+         style="font-size:13.75px;font-family:Arial;fill:#1b1918"
+         id="tspan24421"
+         font-size="12.0000">H(3)</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24423"
+       y="404.39383"
+       x="373.42975"
+       style="font-size:13.75px">
+      <tspan
+         style="font-size:13.75px;font-family:Arial;fill:#1b1918"
+         id="tspan24425"
+         font-size="12.0000">H(2)</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:linespacing="125%"
+       id="text7995-7-4-9"
+       y="500.30609"
+       x="477.19788"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:53.24000168px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-size:19.96500015px;text-align:center;text-anchor:middle"
+         y="500.30609"
+         x="479.96646"
+         sodipodi:role="line"
+         id="tspan10074"> (semi) lattice and simplex of </tspan><tspan
+         style="font-size:19.96500015px;text-align:center;text-anchor:middle"
+         y="525.26233"
+         x="479.96646"
+         sodipodi:role="line"
+         id="tspan10082">joint-entropy functions </tspan></text>
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       d="m 332.26659,351.82171 0.43957,31.40867"
+       style="fill:none;stroke:#1b1918;stroke-width:3.94620299;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       id="path24322-4"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       d="m 331.71415,354.2194 55.1296,26.61328"
+       style="fill:none;stroke:#1b1918;stroke-width:3.94620299;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       id="path24322-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       d="m 387.52367,291.20324 54.13199,24.22568"
+       style="fill:none;stroke:#1b1918;stroke-width:3.66043782;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       id="path24322-7-4"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       d="m 386.41653,353.22684 54.02475,27.41249"
+       style="fill:none;stroke:#1b1918;stroke-width:3.94620299;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       id="path24322-7-43"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       d="m 441.64659,353.4202 -54.80284,27.41248"
+       style="fill:none;stroke:#1b1918;stroke-width:3.94620299;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       id="path24322-7-0"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24304-7"
+       y="302.0126"
+       x="415.81088"
+       style="font-size:13.75px;fill:#ff0000;">
+      <tspan
+         style="font-size:13.75px;font-family:Arial;fill:#ff0000;"
+         id="tspan24306-8"
+         font-size="12.0000">23.H(1)</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24304-7-6"
+       y="301.47369"
+       x="321.10938"
+       style="font-size:13.75px;fill:#0000ff;">
+      <tspan
+         style="font-size:13.75px;font-family:Arial;fill:#0000ff;"
+         id="tspan24306-8-8"
+         font-size="12.0000">12.H(3)</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24304-7-8"
+       y="317.55679"
+       x="388.21478"
+       style="font-size:13.75px;fill:#ffff00;">
+      <tspan
+         style="font-size:13.75px;font-family:Arial;fill:#ffff00;"
+         id="tspan24306-8-4"
+         font-size="12.0000">13.H(2)</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24304-7-3"
+       y="370.45203"
+       x="291.14355"
+       style="font-size:13.75px">
+      <tspan
+         style="font-size:13.75px;font-family:Arial;fill:#1b1918"
+         id="tspan24306-8-1"
+         font-size="12.0000">1.H(2)</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24304-7-4"
+       y="370.02472"
+       x="444.86487"
+       style="font-size:13.75px">
+      <tspan
+         style="font-size:13.75px;font-family:Arial;fill:#1b1918"
+         id="tspan24306-8-9"
+         font-size="12.0000">3.H(2)</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24304-7-4-2"
+       y="442.91275"
+       x="415.76596"
+       style="font-size:13.75px">
+      <tspan
+         style="font-size:13.75px;font-family:Arial;fill:#1b1918"
+         id="tspan24306-8-9-0"
+         font-size="12.0000">0.H(3)</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24304-7-4-2-6"
+       y="465.87122"
+       x="409.19458"
+       style="font-size:13.75px">
+      <tspan
+         style="font-size:13.75px;font-family:Arial;fill:#1b1918"
+         id="tspan24306-8-9-0-8"
+         font-size="12.0000">H(0)=0</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24304-7-4-2-6-9"
+       y="464.70859"
+       x="373.43387"
+       style="font-size:13.75px">
+      <tspan
+         style="font-size:13.75px;font-family:Arial;fill:#1b1918"
+         id="tspan24306-8-9-0-8-2"
+         font-size="12.0000">H(0)</tspan>
+    </text>
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:connector-curvature="0"
+       id="path24249-6"
+       style="fill:#e30016;fill-rule:evenodd;stroke:#e30016;stroke-width:2.530267;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       d="m 710.4943,317.76066 a 16.888536,16.888536 0 0 1 16.8885,16.88885 16.888536,16.888536 0 1 1 -16.8885,-16.88885 z" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:connector-curvature="0"
+       id="path24251-6"
+       style="fill:#e30016;fill-rule:evenodd;stroke:#e30016;stroke-width:2.530267;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       d="m 764.9574,317.76066 a 16.888536,16.888536 0 0 1 16.8886,16.88885 16.888536,16.888536 0 1 1 -16.8886,-16.88885 z" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:connector-curvature="0"
+       id="path24253-4"
+       style="fill:#e30016;fill-rule:evenodd;stroke:#e30016;stroke-width:2.530267;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       d="m 819.4206,317.76066 a 16.888536,16.888536 0 0 1 16.8889,16.88885 16.888536,16.888536 0 1 1 -16.8889,-16.88885 z" />
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24267-9"
+       y="338.21957"
+       x="696.13068"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;font-family:Arial;-inkscape-font-specification:Arial">
+      <tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;font-family:Arial;-inkscape-font-specification:Arial;fill:#1b1918"
+         id="tspan24269-5"
+         font-size="12.0000">I(12)</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24271-0"
+       y="338.21957"
+       x="750.59387"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;font-family:Arial;-inkscape-font-specification:Arial">
+      <tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;font-family:Arial;-inkscape-font-specification:Arial;fill:#1b1918"
+         id="tspan24273-4"
+         font-size="12.0000">I(13)</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24279-8"
+       y="338.21957"
+       x="805.05701"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;font-family:Arial;-inkscape-font-specification:Arial">
+      <tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;font-family:Arial;-inkscape-font-specification:Arial;fill:#1b1918"
+         id="tspan24281-7"
+         font-size="12.0000">I(23)</tspan>
+    </text>
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:connector-curvature="0"
+       id="path24296-1"
+       style="fill:#7dd1f1;fill-rule:evenodd;stroke:#7dd1f1;stroke-width:2.69065213;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       d="m 764.9574,257.44115 a 18.577685,16.888536 0 0 1 18.5777,16.88849 18.577685,16.888536 0 1 1 -18.5777,-16.88849 z" />
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24304-72"
+       y="278.48889"
+       x="746.06982"
+       style="font-size:13.75px;fill:#ffffff;">
+      <tspan
+         style="font-size:13.75px;font-family:Arial;fill:#ffffff;"
+         id="tspan24306-7"
+         font-size="12.0000">I(123)</tspan>
+    </text>
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       d="m 764.9566,353.4202 -54.25044,29.81018"
+       style="fill:none;stroke:#1b1918;stroke-width:3.94620299;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       id="path24322-2"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       d="m 819.207,353.4202 0,29.81112"
+       style="fill:none;stroke:#1b1918;stroke-width:3.94620299;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       id="path24334-2"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       d="m 764.9492,317.51323 0,-25.59787"
+       style="fill:none;stroke:#1b1918;stroke-width:3.66043782;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       id="path24342-6"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       d="M 710.59965,317.51323 764.9578,291.91536"
+       style="fill:none;stroke:#1b1918;stroke-width:3.66043782;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       id="path24346-1"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       d="m 764.9575,444.25648 a 16.888536,16.888536 0 0 1 16.8885,16.88855 16.888536,16.888536 0 1 1 -16.8885,-16.88855 z"
+       style="fill:#ffffff;fill-rule:evenodd;stroke:#1b1918;stroke-width:6.25403786;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       id="path24372-0"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       d="M 763.7932,441.44392 710.53261,417.85285"
+       style="fill:none;stroke:#1b1918;stroke-width:3.47945762;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       id="path24386-6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       d="m 764.9009,443.43152 0.057,-25.57867"
+       style="fill:none;stroke:#1b1918;stroke-width:3.47945762;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       id="path24388-1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       d="m 766.5635,440.95409 52.8188,-23.10124"
+       style="fill:none;stroke:#1b1918;stroke-width:3.47945762;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       id="path24390-5"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:connector-curvature="0"
+       id="path24403-9"
+       style="fill:#9c9e9f;fill-rule:evenodd;stroke:#1b1918;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 710.49397,383.93694 a 16.888536,16.888536 0 0 1 16.88883,16.88855 16.888536,16.888536 0 1 1 -16.88883,-16.88855 z" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:connector-curvature="0"
+       id="path24405-4"
+       style="fill:#9c9e9f;fill-rule:evenodd;stroke:#1b1918;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 764.9571,383.93761 a 16.888536,16.888536 0 0 1 16.8889,16.88854 16.888536,16.888536 0 1 1 -16.8889,-16.88854 z" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:connector-curvature="0"
+       id="path24407-9"
+       style="fill:#9c9e9f;fill-rule:evenodd;stroke:#1b1918;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 819.4203,383.93761 a 16.888536,16.888536 0 0 1 16.8888,16.88854 16.888536,16.888536 0 1 1 -16.8888,-16.88854 z" />
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24411-0"
+       y="404.38904"
+       x="699.95758"
+       style="font-size:13.75px">
+      <tspan
+         style="font-size:13.75px;font-family:Arial;fill:#1b1918"
+         id="tspan24413-9"
+         font-size="12.0000">I(1)</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24419-1"
+       y="404.39383"
+       x="808.88391"
+       style="font-size:13.75px">
+      <tspan
+         style="font-size:13.75px;font-family:Arial;fill:#1b1918"
+         id="tspan24421-7"
+         font-size="12.0000">I(3)</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24423-7"
+       y="404.39383"
+       x="754.42078"
+       style="font-size:13.75px">
+      <tspan
+         style="font-size:13.75px;font-family:Arial;fill:#1b1918"
+         id="tspan24425-1"
+         font-size="12.0000">I(2)</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:linespacing="125%"
+       id="text7995-7-4-9-1"
+       y="500.30609"
+       x="855.19788"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:53.24000168px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-size:19.96500015px;text-align:center;text-anchor:middle"
+         y="500.30609"
+         x="857.96649"
+         sodipodi:role="line"
+         id="tspan10074-5"> (semi) lattice of </tspan><tspan
+         style="font-size:19.96500015px;text-align:center;text-anchor:middle"
+         y="525.26233"
+         x="857.96643"
+         sodipodi:role="line"
+         id="tspan10082-9">Mutual-Info functions </tspan></text>
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       d="m 710.26659,351.82171 0.43957,31.40867"
+       style="fill:none;stroke:#1b1918;stroke-width:3.94620299;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       id="path24322-4-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       d="m 709.71415,354.2194 55.12955,26.61328"
+       style="fill:none;stroke:#1b1918;stroke-width:3.94620299;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       id="path24322-7-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       d="m 765.5237,291.20324 54.132,24.22568"
+       style="fill:none;stroke:#1b1918;stroke-width:3.66043782;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       id="path24322-7-4-6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       d="m 764.4165,353.22684 54.0248,27.41249"
+       style="fill:none;stroke:#1b1918;stroke-width:3.94620299;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       id="path24322-7-43-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       d="m 819.6466,353.4202 -54.8029,27.41248"
+       style="fill:none;stroke:#1b1918;stroke-width:3.94620299;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       id="path24322-7-0-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24304-7-65"
+       y="302.0126"
+       x="793.81091"
+       style="font-size:13.75px;fill:#00ffff;">
+      <tspan
+         style="font-size:13.75px;font-family:Arial;fill:#00ffff;"
+         id="tspan24306-8-6"
+         font-size="12.0000">-1.I(23)</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24304-7-6-3"
+       y="301.47369"
+       x="699.10938"
+       style="font-size:13.75px;fill:#ff00ff;">
+      <tspan
+         style="font-size:13.75px;font-family:Arial;fill:#ff00ff;"
+         id="tspan24306-8-8-9"
+         font-size="12.0000">-3.I(12)</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24304-7-8-4"
+       y="317.55679"
+       x="766.21478"
+       style="font-size:13.75px;fill:#ff6600;fill-opacity:1;">
+      <tspan
+         style="font-size:13.75px;font-family:Arial;fill:#ff6600;fill-opacity:1;"
+         id="tspan24306-8-4-8"
+         font-size="12.0000">-2.I(13)</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24304-7-3-1"
+       y="370.45203"
+       x="669.14355"
+       style="font-size:13.75px">
+      <tspan
+         style="font-size:13.75px;font-family:Arial;fill:#1b1918"
+         id="tspan24306-8-1-2"
+         font-size="12.0000">-2.I(1)</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24304-7-4-9"
+       y="370.02472"
+       x="822.86499"
+       style="font-size:13.75px">
+      <tspan
+         style="font-size:13.75px;font-family:Arial;fill:#1b1918"
+         id="tspan24306-8-9-3"
+         font-size="12.0000">-2.I(3)</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24304-7-4-2-6-8"
+       y="465.87122"
+       x="787.19458"
+       style="font-size:13.75px">
+      <tspan
+         style="font-size:13.75px;font-family:Arial;fill:#1b1918"
+         id="tspan24306-8-9-0-8-8"
+         font-size="12.0000">I(0)=0</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24304-7-4-2-6-9-5"
+       y="464.70859"
+       x="754.42493"
+       style="font-size:13.75px">
+      <tspan
+         style="font-size:13.75px;font-family:Arial;fill:#1b1918"
+         id="tspan24306-8-9-0-8-2-0"
+         font-size="12.0000">I(0)</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24304-9"
+       y="277.91248"
+       x="292.06985"
+       style="font-size:13.75px">
+      <tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#1b1918"
+         id="tspan24306-6"
+         font-size="12.0000">H<tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15px;font-family:Arial;-inkscape-font-specification:'Arial Bold';baseline-shift:sub"
+   id="tspan10273">3</tspan>
+</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24304-9-3"
+       y="338.32114"
+       x="292.06985"
+       style="font-size:13.75px">
+      <tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#1b1918"
+         id="tspan24306-6-8"
+         font-size="12.0000">H<tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15px;font-family:Arial;-inkscape-font-specification:'Arial Bold';baseline-shift:sub"
+   id="tspan10273-5">2</tspan>
+</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24304-9-6"
+       y="404.4906"
+       x="292.06985"
+       style="font-size:13.75px">
+      <tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#1b1918"
+         id="tspan24306-6-1"
+         font-size="12.0000">H<tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15px;font-family:Arial;-inkscape-font-specification:'Arial Bold';baseline-shift:sub"
+   id="tspan10273-1">1</tspan>
+</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24304-9-6-5"
+       y="464.73691"
+       x="292.06985"
+       style="font-size:13.75px">
+      <tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#1b1918"
+         id="tspan24306-6-1-9"
+         font-size="12.0000">H<tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15px;font-family:Arial;-inkscape-font-specification:'Arial Bold';baseline-shift:sub"
+   id="tspan10273-1-8">0</tspan>
+</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24304-9-4"
+       y="277.91248"
+       x="674.06982"
+       style="font-size:13.75px">
+      <tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#1b1918"
+         id="tspan24306-6-81"
+         font-size="12.0000">I<tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15px;font-family:Arial;-inkscape-font-specification:'Arial Bold';baseline-shift:sub"
+   id="tspan10273-0">3</tspan>
+</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24304-9-3-3"
+       y="338.32114"
+       x="674.06982"
+       style="font-size:13.75px">
+      <tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#1b1918"
+         id="tspan24306-6-8-0"
+         font-size="12.0000">I<tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15px;font-family:Arial;-inkscape-font-specification:'Arial Bold';baseline-shift:sub"
+   id="tspan10273-5-4">2</tspan>
+</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24304-9-6-4"
+       y="404.4906"
+       x="674.06982"
+       style="font-size:13.75px">
+      <tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#1b1918"
+         id="tspan24306-6-1-4"
+         font-size="12.0000">I<tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15px;font-family:Arial;-inkscape-font-specification:'Arial Bold';baseline-shift:sub"
+   id="tspan10273-1-4">1</tspan>
+</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24304-9-6-5-7"
+       y="464.73691"
+       x="674.06982"
+       style="font-size:13.75px">
+      <tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#1b1918"
+         id="tspan24306-6-1-9-6"
+         font-size="12.0000">I<tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15px;font-family:Arial;-inkscape-font-specification:'Arial Bold';baseline-shift:sub"
+   id="tspan10273-1-8-3">0</tspan>
+</tspan>
+    </text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.93561244;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker8129-3-1)"
+       d="m 86.30609,329.87009 23.253,44.58746"
+       id="path4488-2-9-5"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       inkscape:export-filename="/home/baudot/CANDIDATURES/CANDIDATURE INSERM INTERN 2017/figure_venn_diag(francais).png" />
+    <g
+       id="g11065"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
+      <ellipse
+         ry="122.89344"
+         rx="125.12373"
+         cy="361.92871"
+         cx="944.16357"
+         id="path11055"
+         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:url(#radialGradient11063);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4.21311712;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+      <path
+         sodipodi:nodetypes="cc"
+         inkscape:export-filename="/home/baudot/CANDIDATURES/CANDIDATURE INSERM INTERN 2017/figure_venn_diag(francais).png"
+         d="m 873.62673,397.05551 127.86727,0.89801"
+         style="fill:#000000;fill-opacity:1;stroke:#e30016;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:1"
+         id="path3281"
+         inkscape:connector-curvature="0"
+         inkscape:export-xdpi="400"
+         inkscape:export-ydpi="400" />
+      <path
+         sodipodi:nodetypes="cc"
+         inkscape:export-filename="/home/baudot/CANDIDATURES/CANDIDATURE INSERM INTERN 2017/figure_venn_diag(francais).png"
+         d="m 872.52444,398.76697 65.2113,-103.05596"
+         style="fill:#000000;fill-opacity:1;stroke:#e30016;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:1"
+         id="path3283"
+         inkscape:connector-curvature="0"
+         inkscape:export-xdpi="400"
+         inkscape:export-ydpi="400" />
+      <path
+         sodipodi:nodetypes="cc"
+         inkscape:export-filename="/home/baudot/CANDIDATURES/CANDIDATURE INSERM INTERN 2017/figure_venn_diag(francais).png"
+         d="m 939.20547,295.71101 62.65563,101.50776"
+         style="fill:#000000;fill-opacity:1;stroke:#e30016;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:1"
+         id="path3285"
+         inkscape:connector-curvature="0"
+         inkscape:export-xdpi="400"
+         inkscape:export-ydpi="400" />
+      <path
+         inkscape:export-filename="/home/baudot/CANDIDATURES/CANDIDATURE INSERM INTERN 2017/figure_venn_diag(francais).png"
+         d="m 938.34253,282.76867 a 13.429926,13.429926 0 0 1 13.43028,13.42998 13.429926,13.429926 0 1 1 -13.43028,-13.42998 z"
+         style="fill:#9c9e9f;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100;stroke-dasharray:none"
+         id="path3291"
+         inkscape:connector-curvature="0"
+         inkscape:export-xdpi="400"
+         inkscape:export-ydpi="400" />
+      <path
+         inkscape:export-filename="/home/baudot/CANDIDATURES/CANDIDATURE INSERM INTERN 2017/figure_venn_diag(francais).png"
+         d="m 874.38681,383.9284 a 13.429926,13.429926 0 0 1 13.4298,13.42998 13.429926,13.429926 0 1 1 -13.4298,-13.42998 z"
+         style="fill:#9c9e9f;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100;stroke-dasharray:none"
+         id="path3293"
+         inkscape:connector-curvature="0"
+         inkscape:export-xdpi="400"
+         inkscape:export-ydpi="400" />
+      <path
+         inkscape:export-filename="/home/baudot/CANDIDATURES/CANDIDATURE INSERM INTERN 2017/figure_venn_diag(francais).png"
+         d="m 1002.2987,383.9284 a 13.429926,13.429926 0 0 1 13.4303,13.42986 13.429926,13.429926 0 1 1 -13.4303,-13.42986 z"
+         style="fill:#9c9e9f;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100;stroke-dasharray:none"
+         id="path3297"
+         inkscape:connector-curvature="0"
+         inkscape:export-xdpi="400"
+         inkscape:export-ydpi="400" />
+      <text
+         style="font-size:13.75px"
+         x="863.84973"
+         y="400.92627"
+         id="text24411-9"
+         inkscape:export-xdpi="352"
+         inkscape:export-ydpi="352">
+        <tspan
+           font-size="12.0000"
+           id="tspan24413-6"
+           style="font-size:13.75px;font-family:Arial;fill:#1b1918">I(1)</tspan>
+      </text>
+      <text
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;font-family:Arial;-inkscape-font-specification:Arial;fill:#ff0000"
+         x="920.21509"
+         y="412.5174"
+         id="text24267-2"
+         inkscape:export-xdpi="352"
+         inkscape:export-ydpi="352">
+        <tspan
+           font-size="12.0000"
+           id="tspan24269-1"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;font-family:Arial;-inkscape-font-specification:Arial;fill:#ff0000">I(12)</tspan>
+      </text>
+      <text
+         transform="matrix(0.5,-0.8660254,0.8660254,0.5,0,0)"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;font-family:Arial;-inkscape-font-specification:Arial;fill:#ff0000"
+         x="128.90799"
+         y="951.2298"
+         id="text24271-7"
+         inkscape:export-xdpi="352"
+         inkscape:export-ydpi="352">
+        <tspan
+           font-size="12.0000"
+           id="tspan24273-8"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;font-family:Arial;-inkscape-font-specification:Arial;fill:#ff0000">I(13)</tspan>
+      </text>
+      <text
+         transform="matrix(0.5,0.8660254,-0.8660254,0.5,0,0)"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;font-family:Arial;-inkscape-font-specification:Arial;fill:#ff0000"
+         x="773.88953"
+         y="-674.22284"
+         id="text24279-5"
+         inkscape:export-xdpi="352"
+         inkscape:export-ydpi="352">
+        <tspan
+           font-size="12.0000"
+           id="tspan24281-74"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;font-family:Arial;-inkscape-font-specification:Arial;fill:#ff0000">I(23)</tspan>
+      </text>
+      <text
+         style="font-size:13.75px;fill:#0000ff"
+         x="916.75562"
+         y="364.13071"
+         id="text24304-1"
+         inkscape:export-xdpi="352"
+         inkscape:export-ydpi="352">
+        <tspan
+           font-size="12.0000"
+           id="tspan24306-85"
+           style="font-size:13.75px;font-family:Arial;fill:#0000ff">H(123)</tspan>
+      </text>
+      <text
+         style="font-size:13.75px"
+         x="927.80597"
+         y="299.76654"
+         id="text24419-9"
+         inkscape:export-xdpi="352"
+         inkscape:export-ydpi="352">
+        <tspan
+           font-size="12.0000"
+           id="tspan24421-75"
+           style="font-size:13.75px;font-family:Arial;fill:#1b1918">I(3)</tspan>
+      </text>
+      <text
+         style="font-size:13.75px"
+         x="991.76215"
+         y="400.92627"
+         id="text24423-3"
+         inkscape:export-xdpi="352"
+         inkscape:export-ydpi="352">
+        <tspan
+           font-size="12.0000"
+           id="tspan24425-8"
+           style="font-size:13.75px;font-family:Arial;fill:#1b1918">I(2)</tspan>
+      </text>
+    </g>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot10964"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:12.5px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion10966"><rect
+           id="rect10968"
+           width="366.85718"
+           height="384.52454"
+           x="810.61926"
+           y="216.80081" /></flowRegion><flowPara
+         id="flowPara10970"></flowPara></flowRoot>    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:connector-curvature="0"
+       id="path3279-8"
+       style="opacity:0.8;fill:#7dd1f1;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;stroke-dasharray:none"
+       d="m 627.86142,397.95392 -127.86725,-0.89841 64.5342,-101.86474 z"
+       inkscape:export-filename="/home/baudot/CANDIDATURES/CANDIDATURE INSERM INTERN 2017/figure_venn_diag(francais).png"
+       sodipodi:nodetypes="cccc" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:connector-curvature="0"
+       id="path3281-3"
+       style="fill:#000000;fill-opacity:1;stroke:#e30016;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:1"
+       d="m 499.62673,397.05551 127.86726,0.89801"
+       inkscape:export-filename="/home/baudot/CANDIDATURES/CANDIDATURE INSERM INTERN 2017/figure_venn_diag(francais).png"
+       sodipodi:nodetypes="cc" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:connector-curvature="0"
+       id="path3283-1"
+       style="fill:#000000;fill-opacity:1;stroke:#e30016;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:1"
+       d="m 498.52444,398.76697 65.2113,-103.05596"
+       inkscape:export-filename="/home/baudot/CANDIDATURES/CANDIDATURE INSERM INTERN 2017/figure_venn_diag(francais).png"
+       sodipodi:nodetypes="cc" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:connector-curvature="0"
+       id="path3285-8"
+       style="fill:#000000;fill-opacity:1;stroke:#e30016;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:1"
+       d="m 565.20547,295.71101 62.65559,101.50776"
+       inkscape:export-filename="/home/baudot/CANDIDATURES/CANDIDATURE INSERM INTERN 2017/figure_venn_diag(francais).png"
+       sodipodi:nodetypes="cc" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:connector-curvature="0"
+       id="path3291-9"
+       style="fill:#9c9e9f;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100;stroke-dasharray:none"
+       d="m 564.34253,282.76867 a 13.429926,13.429926 0 0 1 13.43028,13.42998 13.429926,13.429926 0 1 1 -13.43028,-13.42998 z"
+       inkscape:export-filename="/home/baudot/CANDIDATURES/CANDIDATURE INSERM INTERN 2017/figure_venn_diag(francais).png" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:connector-curvature="0"
+       id="path3293-6"
+       style="fill:#9c9e9f;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100;stroke-dasharray:none"
+       d="m 500.38681,383.9284 a 13.429926,13.429926 0 0 1 13.4298,13.42998 13.429926,13.429926 0 1 1 -13.4298,-13.42998 z"
+       inkscape:export-filename="/home/baudot/CANDIDATURES/CANDIDATURE INSERM INTERN 2017/figure_venn_diag(francais).png" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:connector-curvature="0"
+       id="path3297-4"
+       style="fill:#9c9e9f;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100;stroke-dasharray:none"
+       d="m 628.29873,383.9284 a 13.429926,13.429926 0 0 1 13.43028,13.42986 13.429926,13.429926 0 1 1 -13.43028,-13.42986 z"
+       inkscape:export-filename="/home/baudot/CANDIDATURES/CANDIDATURE INSERM INTERN 2017/figure_venn_diag(francais).png" />
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24411-9-3"
+       y="400.92627"
+       x="486.8587"
+       style="font-size:13.75px">
+      <tspan
+         style="font-size:13.75px;font-family:Arial;fill:#1b1918"
+         id="tspan24413-6-3"
+         font-size="12.0000">H(1)</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24267-2-3"
+       y="412.5174"
+       x="546.21509"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;font-family:Arial;-inkscape-font-specification:Arial;fill:#ff0000">
+      <tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;font-family:Arial;-inkscape-font-specification:Arial;fill:#ff0000"
+         id="tspan24269-1-8"
+         font-size="12.0000">H(12)</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24271-7-6"
+       y="627.33539"
+       x="-58.092018"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;font-family:Arial;-inkscape-font-specification:Arial;fill:#ff0000"
+       transform="matrix(0.5,-0.8660254,0.8660254,0.5,0,0)">
+      <tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;font-family:Arial;-inkscape-font-specification:Arial;fill:#ff0000"
+         id="tspan24273-8-0"
+         font-size="12.0000">H(13)</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24279-5-4"
+       y="-350.32843"
+       x="586.88953"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;font-family:Arial;-inkscape-font-specification:Arial;fill:#ff0000"
+       transform="matrix(0.5,0.8660254,-0.8660254,0.5,0,0)">
+      <tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;font-family:Arial;-inkscape-font-specification:Arial;fill:#ff0000"
+         id="tspan24281-74-8"
+         font-size="12.0000">H(23)</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24304-1-8"
+       y="364.13071"
+       x="542.75562"
+       style="font-size:13.75px;fill:#0000ff">
+      <tspan
+         style="font-size:13.75px;font-family:Arial;fill:#0000ff"
+         id="tspan24306-85-8"
+         font-size="12.0000">H(123)</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24419-9-9"
+       y="299.76654"
+       x="550.81494"
+       style="font-size:13.75px">
+      <tspan
+         style="font-size:13.75px;font-family:Arial;fill:#1b1918"
+         id="tspan24421-75-7"
+         font-size="12.0000">H(3)</tspan>
+    </text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text24423-3-7"
+       y="400.92627"
+       x="614.77112"
+       style="font-size:13.75px">
+      <tspan
+         style="font-size:13.75px;font-family:Arial;fill:#1b1918"
+         id="tspan24425-8-6"
+         font-size="12.0000">H(2)</tspan>
+    </text>
+    <text
+       transform="matrix(0.99991489,-0.01304635,0.01304635,0.99991489,0,0)"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:linespacing="100%"
+       id="text7995-7-4-1-4-4-9-1-3-3-4"
+       y="273.74002"
+       x="272.27423"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:135px;line-height:100%;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1;"
+       xml:space="preserve"
+       inkscape:export-filename="/home/baudot/CANDIDATURES/CANDIDATURE INSERM INTERN 2017/figure_venn_diag(francais).png"><tspan
+         style="font-size:22.5px;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;-inkscape-font-specification:'Arial Bold';font-family:Arial;font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;"
+         y="273.74002"
+         x="272.27423"
+         id="tspan7997-0-2-55-3-9-4-5-6-6-3"
+         sodipodi:role="line" /><tspan
+         style="font-size:22.5px;line-height:100%;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;-inkscape-font-specification:'Arial Bold';font-family:Arial;font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;"
+         y="296.24002"
+         x="272.27423"
+         sodipodi:role="line"
+         id="tspan4436-3-5-0">b</tspan></text>
+    <text
+       transform="matrix(0.99991489,-0.01304635,0.01304635,0.99991489,0,0)"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:linespacing="100%"
+       id="text7995-7-4-1-4-4-9-1-3-3-4-3"
+       y="278.67151"
+       x="650.23962"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:135px;line-height:100%;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/baudot/CANDIDATURES/CANDIDATURE INSERM INTERN 2017/figure_venn_diag(francais).png"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:22.5px;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         y="278.67151"
+         x="650.23962"
+         id="tspan7997-0-2-55-3-9-4-5-6-6-3-0"
+         sodipodi:role="line" /><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:22.5px;line-height:100%;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         y="301.17151"
+         x="650.23962"
+         sodipodi:role="line"
+         id="tspan4436-3-5-0-9">c</tspan></text>
+  </g>
+</svg>
