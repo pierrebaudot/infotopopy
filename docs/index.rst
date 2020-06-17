@@ -62,7 +62,8 @@ PyPI install, presuming you have numpy and networkx installed:
 
 .. toctree::
    :maxdepth: 2
-   :caption: User Guide - Tutorial:
+   :caption: User Guide / Tutorial:
+   
    basic_methods
    parameters
    supervised
