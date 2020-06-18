@@ -226,10 +226,9 @@ the joint variables (ex: (1,3,4)) and  with values the joint or marginal entropy
 
 
 
-The result is an array with 150 samples, but only two feature columns
-(instead of the four we started with). This is because, by default, UMAP
-reduces down to 2D. Each row of the array is a 2-dimensional
-representation of the corresponding flower. Thus we can plot the
+Such dictionary is hard to read; to allow a relevant visualization of the
+the simplicial entropy structure, the function simplicial_entropies_decomposition
+also plots the Entropy landscapes  
 ``embedding`` as a standard scatterplot and color by the target array
 (since it applies to the transformed data which is in the same order as
 the original).
