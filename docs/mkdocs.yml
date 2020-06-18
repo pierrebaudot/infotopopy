@@ -1,1 +1,6 @@
-site_name: My Docs
+site_name: infotopo
+
+nav:
+    - Home: index.rst
+    - About: about.md
+theme: readthedocs
