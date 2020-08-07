@@ -162,12 +162,12 @@ dependencies between the variables, using Seaborn and pandas dataframe.
 
 
 All those 2D views gives a rought but misleading idea of what the data looks 
-like in high dimension since, as we will see, some fully emergent  
-statistical dependences (synergic) can appear in higher dimension which are 
+like in high dimensions since, as we will see, some fully emergent  
+statistical dependences (called synergy in the original work of Bialek's team) can appear in higher dimension which are 
 totally unobservable in those 2D views. However such 2D views gives a fair
 visual estimation of how much each pairs of variale covary, the correlation 
 coefficient and its generalization to non-linear relations, the pairwise 
-Mutual Information (I2). In topological Data Analysis terms, it gives rought 
+Mutual Information (I2). In Topological Data Analysis (TDA) terms, it gives rought 
 idea of what the skeleton of a Vietoris-Rips (information or correlation) complex
 of the data could be.
 We will see how to go beyond this pairwise statistical interaction case, and how
@@ -228,11 +228,54 @@ the joint variables (ex: (1,3,4)) and  with values the joint or marginal entropy
 
 Such dictionary is hard to read; to allow a relevant visualization of the
 the simplicial entropy structure, the function simplicial_entropies_decomposition
-also plots the Entropy landscapes  
-``embedding`` as a standard scatterplot and color by the target array
-(since it applies to the transformed data which is in the same order as
-the original).
+also plots the Entropy landscapes. Entropy landscapes provides a representation of the lattice 
+of joint and conditional entropies that ranks the joint variables as a function of their entropy 
+value and of the rank-dimensions as illustrated in the figure below:
+.. image:: images/Principles_TIDA.png
 
+An Entropy of Information Path is a sequence of inclusive tuples of increasing dimensions and follows 
+the edges of the semi-lattice, and the slope of such a path is exactly minus the conditional-entropy, 
+as a basic representation of the fundamental chain rule of Entropy.
+
+While the total dimension n (dimension_tot) of the analysis increases, the number of subsets of k 
+variables (or k-tuples) increases combinatorially, following the binomial coefficient C(n,k). 
+It hence becomes rapidly fully impractical to vizualize, plot and to differentiate the C(n,k) values of 
+entropy obtained in dimension k. The Entropy landscapes hence plot the histograms of entropy values as a 
+function of the dimension-rank k, and the number of bins of the histograms is imposed by the parameter 
+nb_bins_histo. The count of the number of subsets having entropy values in the bin range of the histograms
+is represented by a color code in the entropy landscapes. Hence, Entropy Landscapes shall be understood as
+(unormalised..but it could be normalised) entropy measure densities histograms (there is interesting further
+theoretical and applied development upon this point, since entropy functions obey axioms of measure: one 
+could legitamely investigate entropies of entropies, a kind of complexity of information landscapes, see
+Hsu et al. Entropy of Entropy: Measurement of Dynamical Complexity for Biological Systems, 
+Entropy 2017, 19(10), 550). 
+
+To plot the Entropy Landscapes and the distribution of entropy values for eack dimension-rank k, we use 
+the "entropy_simplicial_lanscape" command as following:   
+
+.. code:: python3 
+
+    information_topo.entropy_simplicial_lanscape(Nentropie)
+
+On the example of Iris dataset, the Entropy Landscape we obtain look like this: 
+
+.. image:: figure_entropy_simplicial_lattice.png
+
+In this low dimensional case (dimension_tot = 4), the landscapes are very low informative (poor information 
+structure) and the histrograms have low meaning, since there is only one subset-k-tuple per bin value, and hence only 
+one color (here the green value of 1). The Entropy Landscape themselfs are quite poor in information, joint-entropy is
+monotonically increasing along entropy path, a direct consequence of conditional-entropy positivity (concavity argument) 
+which is moreover the basic fact at the origin of the basic topological expression of the 2nd law of thermodynamic [3].
+As a consequence, we usually do not uncover a lot of usefull information on the datas structure from those Entropy Landscape,
+at the exception of curse of dimensionality quantification and in some cases, (assymptotic) entropy rates (to do).
+Basically, joint-entropy quantifies "randomness" (in a non formal definition of the word), uncertainty, or how much the 
+data points spreads in the dimensions of the variables. Hence low entropies shall be intrepreted as "localised" densities
+of data points or sparsness of the probability density histograms (also not in the usual kurtosis sens).  
+
+In any entropy or information function estimation, it is necessary to check that the number of sample is sufficient to 
+provide a faithfull estimate, to avoid the sampling problem also called "curse of dimension". The command 
+"entropy_simplicial_lanscape" also computes the maximal dimension above which the estimation becomes too inacurate and
+shall not be interpreted. This is explained in more details in the section "curse_of_dimension_and_statistical_dependencies_test". 
 
 
 This concludes our introduction to basic infotopo usage -- hopefully this

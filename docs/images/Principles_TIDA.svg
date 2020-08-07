@@ -1,0 +1,2160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="Principles_TIDA.svg"
+   inkscape:version="1.0 (6e3e5246a0, 2020-05-07)"
+   version="1.1"
+   id="svg18500"
+   viewBox="0 0 744.09448819 1052.3622047"
+   height="297mm"
+   width="210mm">
+  <defs
+     id="defs18502">
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="Arrow1Mend-9-6"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 Z"
+         id="path38676-4-7"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="Arrow1Mend-9-1-8"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 Z"
+         id="path38676-4-1-5"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="Arrow1Mend-9-1"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 Z"
+         id="path38676-4-1"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="Arrow1Mend-9"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 Z"
+         id="path38676-4"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="Arrow1Mend"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 Z"
+         id="path38676"
+         inkscape:connector-curvature="0" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     inkscape:document-rotation="0"
+     inkscape:window-maximized="1"
+     inkscape:window-y="24"
+     inkscape:window-x="65"
+     inkscape:window-height="1056"
+     inkscape:window-width="1855"
+     showgrid="false"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="px"
+     inkscape:cy="557.95031"
+     inkscape:cx="171.42857"
+     inkscape:zoom="1.0466981"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base" />
+  <metadata
+     id="metadata18505">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Calque 1">
+    <g
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       transform="matrix(0.31240586,0,0,0.62527275,-92.02573,207.67443)"
+       style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+       id="line2d_10">
+      <g
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         id="g29256">
+        <use
+           height="100%"
+           width="100%"
+           style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+           x="810.81"
+           xlink:href="#mfbf89c9a44"
+           y="58.32"
+           id="use29258" />
+      </g>
+    </g>
+    <g
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       transform="matrix(0.31240586,0,0,0.62527275,-92.02573,207.67443)"
+       id="g29284"
+       style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+      <use
+         id="use29286"
+         y="66.690002"
+         xlink:href="#mc81bf91397"
+         x="819.17999"
+         style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         width="100%"
+         height="100%" />
+    </g>
+    <g
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       transform="matrix(0.31240586,0,0,0.62527275,-92.02573,207.67443)"
+       id="g29300"
+       style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+      <use
+         id="use29302"
+         y="150.39"
+         xlink:href="#mc81bf91397"
+         x="819.17999"
+         style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         width="100%"
+         height="100%" />
+    </g>
+    <g
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       transform="matrix(0.31240586,0,0,0.62527275,-92.02573,207.67443)"
+       id="g29319"
+       style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+      <use
+         id="use29321"
+         y="234.09"
+         xlink:href="#mc81bf91397"
+         x="819.17999"
+         style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         width="100%"
+         height="100%" />
+    </g>
+    <g
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       transform="matrix(0.31240586,0,0,0.62527275,-92.02573,207.67443)"
+       id="g29337"
+       style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+      <use
+         id="use29339"
+         y="317.79001"
+         xlink:href="#mc81bf91397"
+         x="819.17999"
+         style="stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         width="100%"
+         height="100%" />
+    </g>
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="ccccc"
+       inkscape:connector-curvature="0"
+       d="m 202.24554,361.49486 37.06672,-35.98282 76.74412,31.03379 76.59046,35.99815 77.14819,-24.50035"
+       id="path91-0"
+       style="fill:none;stroke:#ff0000;stroke-width:2.25;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="ccccc"
+       inkscape:connector-curvature="0"
+       d="m 201.82231,361.02277 37.78261,-59.59637 76.54484,44.33457 76.55812,16.04805 77.02611,7.2027"
+       id="path99-5"
+       style="fill:none;stroke:#867768;stroke-width:1.32607174px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;stroke-opacity:1" />
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="ccccc"
+       inkscape:connector-curvature="0"
+       d="m 202.13764,361.67947 36.78811,-78.41526 76.76572,38.52923 77.46973,29.14824 76.05843,17.55501"
+       id="path103-9"
+       style="fill:none;stroke:#867768;stroke-width:1.32607174px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;stroke-opacity:1" />
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="path3847-4"
+       stroke-miterlimit="10"
+       d="m 196.24981,282.44126 5.26299,0"
+       style="stroke:#000000;stroke-width:0.9945454;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="path3857-6"
+       d="m 201.65832,361.51553 284.3502,0"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:0.87668067;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;stroke-dasharray:0.87667545, 1.75335089" />
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:connector-curvature="0"
+       d="m 239.57807,411.83903 0,-3.50919"
+       id="path3863-9"
+       style="stroke:#000000;stroke-width:0.9945454;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10" />
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:connector-curvature="0"
+       d="m 316.32912,411.83903 0,-3.50919"
+       id="path3865-2"
+       style="stroke:#000000;stroke-width:0.9945454;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10" />
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:connector-curvature="0"
+       d="m 201.82036,411.83903 0,-3.50919"
+       id="path3867-2"
+       style="stroke:#000000;stroke-width:0.9945454;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10" />
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:connector-curvature="0"
+       d="m 393.08017,411.83903 0,-3.50919"
+       id="path3869-4"
+       style="stroke:#000000;stroke-width:0.9945454;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10" />
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:connector-curvature="0"
+       d="m 196.24988,401.38688 5.26299,0"
+       id="path3871-7"
+       style="stroke:#000000;stroke-width:0.9945454;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10" />
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:connector-curvature="0"
+       d="m 196.24988,361.51553 5.26299,0"
+       id="path3873-7"
+       style="stroke:#000000;stroke-width:0.9945454;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10" />
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       style="fill:none;stroke:#000000;stroke-width:0.9945454;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       inkscape:connector-curvature="0"
+       d="m 201.82036,408.77453 0,-163.998"
+       id="path3875-5" />
+    <text
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       style="font-size:7.57736px;line-height:0%;font-family:ArialMT;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+       font-size="8.4195px"
+       transform="matrix(0,-0.999975,1.000025,0,0,0)"
+       y="184.53777"
+       x="-347.14749"
+       id="text3879-4"><tspan
+         id="tspan16254-8"
+         style="font-size:12.375px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">I<tspan
+   id="tspan16258-1"
+   style="font-size:8.04375px;baseline-shift:sub;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">k</tspan>(bits)</tspan></text>
+    <text
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text3885-2"
+       x="235.5386"
+       y="422.07803"
+       transform="scale(0.999975,1.000025)"
+       style="font-size:12.375px;line-height:0%;font-family:ArialMT;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">1</text>
+    <text
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text3887-8"
+       x="312.5665"
+       y="422.15961"
+       transform="scale(0.999975,1.000025)"
+       style="font-size:12.375px;line-height:0%;font-family:ArialMT;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">2</text>
+    <text
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text3889-9"
+       x="389.17749"
+       y="422.07199"
+       transform="scale(0.999975,1.000025)"
+       style="font-size:12.375px;line-height:0%;font-family:ArialMT;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">3</text>
+    <text
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text3891-3"
+       x="187.41895"
+       y="366.01074"
+       transform="scale(0.999975,1.000025)"
+       style="font-size:12.375px;line-height:0%;font-family:ArialMT;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">0</text>
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       style="fill:none;stroke:#000000;stroke-width:0.87780607;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:10"
+       inkscape:connector-curvature="0"
+       d="m 201.77854,408.12625 285.49965,0"
+       id="path3903-6" />
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       style="stroke:#000000;stroke-width:0.9945454;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       inkscape:connector-curvature="0"
+       d="m 196.24989,325.68182 5.26299,0"
+       id="path3905-8" />
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       style="stroke:#000000;stroke-width:0.9945454;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       inkscape:connector-curvature="0"
+       d="m 196.24989,401.38688 5.26299,0"
+       id="path3907-0" />
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="path3945-2"
+       stroke-miterlimit="10"
+       d="m 196.24981,301.37776 5.26299,0"
+       style="stroke:#000000;stroke-width:0.9945454;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="path3951-1"
+       stroke-miterlimit="10"
+       d="m 196.24981,314.9038 5.26299,0"
+       style="stroke:#000000;stroke-width:0.9945454;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="path3963-0"
+       stroke-miterlimit="10"
+       d="m 470.05396,411.83903 0,-3.50919"
+       style="stroke:#000000;stroke-width:0.9945454;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       inkscape:connector-curvature="0" />
+    <text
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text3965-5"
+       x="466.17438"
+       y="422.07803"
+       transform="scale(0.99997491,1.0000251)"
+       font-size="7.2167px"
+       style="font-size:12.375px;line-height:0%;font-family:ArialMT;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">4</text>
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="m 239.08295,325.72177 77.08824,3.16728"
+       id="path109-6"
+       style="fill:none;stroke:#867768;stroke-width:1.32607174px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;stroke-opacity:1" />
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cccc"
+       inkscape:connector-curvature="0"
+       d="m 201.40423,361.64666 38.20069,-46.84693 76.53987,41.39965 76.57304,19.36408"
+       id="path99-6-4"
+       style="fill:none;stroke:#867768;stroke-width:1.32607174px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;stroke-opacity:1" />
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="m 239.08295,325.72177 76.6399,19.77094"
+       id="path109-9-6"
+       style="fill:none;stroke:#867768;stroke-width:1.32607174px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;stroke-opacity:1" />
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="m 239.08295,282.22052 76.63492,46.13854"
+       id="path109-4-2"
+       style="fill:none;stroke:#867768;stroke-width:1.32607174px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;stroke-opacity:1" />
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="m 239.08295,314.1794 77.08824,7.44649"
+       id="path109-4-8-5"
+       style="fill:none;stroke:#867768;stroke-width:1.32607174px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;stroke-opacity:1" />
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="m 239.53628,282.48449 76.63491,29.36052"
+       id="path109-4-1-2-6"
+       style="fill:none;stroke:#867768;stroke-width:1.32607174px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;stroke-opacity:1" />
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="m 239.08295,301.29695 76.63492,10.56993"
+       id="path109-4-1-2-9-2"
+       style="fill:none;stroke:#867768;stroke-width:1.32607174px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;stroke-opacity:1" />
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="m 239.08793,301.17241 77.08824,37.63494"
+       id="path109-4-1-2-9-3-8"
+       style="fill:none;stroke:#867768;stroke-width:1.32607174px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;stroke-opacity:1" />
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="m 239.54125,315.22549 76.62994,22.96913"
+       id="path109-4-1-2-9-3-9-4"
+       style="fill:none;stroke:#867768;stroke-width:1.32607174px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;stroke-opacity:1" />
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="M 393.32313,350.72933 316.17119,311.62278"
+       id="path109-5-2"
+       style="fill:none;stroke:#867768;stroke-width:1.32607174px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;stroke-opacity:1" />
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="M 392.86483,350.88875 315.71787,338.36897"
+       id="path109-5-6-4"
+       style="fill:none;stroke:#867768;stroke-width:1.32607174px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;stroke-opacity:1" />
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="M 392.86483,375.82164 315.71787,328.67977"
+       id="path109-5-6-1-0"
+       style="fill:none;stroke:#867768;stroke-width:1.32607174px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;stroke-opacity:1" />
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="M 393.31815,361.93792 316.17119,328.22645"
+       id="path109-5-6-1-1-6"
+       style="fill:none;stroke:#867768;stroke-width:1.32607174px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;stroke-opacity:1" />
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="M 393.33309,361.60914 315.25957,311.77721"
+       id="path109-5-6-1-5-2"
+       style="fill:none;stroke:#867768;stroke-width:1.32607174px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;stroke-opacity:1" />
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="M 392.86483,375.98603 315.71787,322.03931"
+       id="path109-5-6-1-5-9-9"
+       style="fill:none;stroke:#867768;stroke-width:1.32607174px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;stroke-opacity:1" />
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="M 392.41648,391.51366 315.71787,345.61222"
+       id="path109-5-6-1-5-9-8-9"
+       style="fill:none;stroke:#867768;stroke-width:1.32607174px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;stroke-opacity:1" />
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="M 392.41648,392.14632 316.17119,338.15974"
+       id="path109-5-6-1-5-9-8-4-0"
+       style="fill:none;stroke:#867768;stroke-width:1.32607174px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;stroke-opacity:1" />
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="m 392.86981,376.29433 77.08824,-7.90182"
+       id="path109-5-6-1-5-9-8-4-8-8"
+       style="fill:none;stroke:#867768;stroke-width:1.32607174px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;stroke-opacity:1" />
+    <text
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       transform="scale(0.999975,1.000025)"
+       y="372.85632"
+       x="414.85651"
+       id="text4003-90-8-1-1"
+       style="font-size:12.375px;line-height:0%;font-family:ArialMT;stroke:#eeff09;stroke-width:0.0899978;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">I(1234)</text>
+    <ellipse
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       style="color:#000000;isolation:auto;mix-blend-mode:normal;solid-color:#000000;fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:1.14783978;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;color-rendering:auto;image-rendering:auto;shape-rendering:auto"
+       rx="4.8722439"
+       ry="4.8529325"
+       cy="368.98694"
+       cx="470.05408"
+       stroke-miterlimit="100"
+       id="ellipse3971-9" />
+    <text
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       transform="scale(0.999975,1.000025)"
+       y="286.78336"
+       x="207.16351"
+       id="text4003-7"
+       style="font-size:12.375px;line-height:0%;font-family:ArialMT;fill:#f89c21;fill-opacity:1;stroke:#eeff09;stroke-width:0.0899978;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">I(1)</text>
+    <ellipse
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       style="color:#000000;isolation:auto;mix-blend-mode:normal;solid-color:#000000;fill:#f89c21;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.13900292;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;color-rendering:auto;image-rendering:auto;shape-rendering:auto"
+       rx="4.8766632"
+       ry="4.774168"
+       cy="282.44125"
+       cx="239.57805"
+       id="ellipse3939-6" />
+    <ellipse
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="ellipse3955-8"
+       stroke-miterlimit="100"
+       cx="239.57799"
+       cy="314.90381"
+       ry="4.774168"
+       rx="4.8766632"
+       style="color:#000000;isolation:auto;mix-blend-mode:normal;solid-color:#000000;fill:#8a3ea4;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.13900292;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;color-rendering:auto;image-rendering:auto;shape-rendering:auto" />
+    <ellipse
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="ellipse3961-7"
+       stroke-miterlimit="100"
+       cx="239.57799"
+       cy="325.72464"
+       ry="4.774168"
+       rx="4.8766632"
+       style="color:#000000;isolation:auto;mix-blend-mode:normal;solid-color:#000000;fill:#4b83cc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.13900292;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;color-rendering:auto;image-rendering:auto;shape-rendering:auto" />
+    <text
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       transform="scale(0.999975,1.000025)"
+       y="329.55365"
+       x="207.16351"
+       id="text4003-0-2"
+       style="font-size:12.375px;line-height:0%;font-family:ArialMT;fill:#4b83cc;fill-opacity:1;stroke:#eeff09;stroke-width:0.0899978;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">I(4)</text>
+    <text
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       transform="scale(0.999975,1.000025)"
+       y="318.75397"
+       x="207.16351"
+       id="text4003-1-8"
+       style="font-size:12.375px;line-height:0%;font-family:ArialMT;fill:#8a3ea4;fill-opacity:1;stroke:#eeff09;stroke-width:0.0899978;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">I(3)</text>
+    <text
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text3891-4-9"
+       x="197.89172"
+       y="422.07199"
+       transform="scale(0.999975,1.000025)"
+       style="font-size:12.375px;line-height:0%;font-family:ArialMT;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">0</text>
+    <path
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       style="stroke:#000000;stroke-width:0.9945454;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       inkscape:connector-curvature="0"
+       d="m 196.24989,408.12625 5.26299,0"
+       id="path3907-0-4" />
+    <g
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+       transform="matrix(0.9,0,0,0.9,19.95815,-458.57649)"
+       id="g19197">
+      <g
+         id="g19113"
+         transform="translate(281.24633,122.36042)"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+        <circle
+           inkscape:export-ydpi="699"
+           inkscape:export-xdpi="699"
+           style="opacity:1;fill:#d5665d;fill-opacity:1;stroke:#ffffff;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="path4136-5"
+           cx="109.38746"
+           cy="700.01068"
+           r="25.189442"
+           clip-path="none" />
+        <circle
+           inkscape:export-ydpi="699"
+           inkscape:export-xdpi="699"
+           style="opacity:1;fill:#f9b25f;fill-opacity:1;stroke:#ffffff;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="path4136-6"
+           cx="88.907463"
+           cy="700.01068"
+           r="25.189442"
+           clip-path="none" />
+        <circle
+           inkscape:export-ydpi="699"
+           inkscape:export-xdpi="699"
+           style="opacity:1;fill:#b365b9;fill-opacity:1;stroke:#ffffff;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="path4136-7"
+           cx="109.38746"
+           cy="720.49066"
+           r="25.189442" />
+        <circle
+           inkscape:export-ydpi="699"
+           inkscape:export-xdpi="699"
+           style="opacity:1;fill:#819cd8;fill-opacity:1;stroke:#ffffff;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="path4136-35"
+           cx="88.907463"
+           cy="720.49066"
+           r="25.189442" />
+        <path
+           inkscape:export-ydpi="699"
+           inkscape:export-xdpi="699"
+           inkscape:connector-curvature="0"
+           style="opacity:1;fill:#867768;fill-opacity:1;stroke:#ffffff;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           clip-path="none"
+           d="m 88.907758,695.3008 a 25.189442,25.189442 0 0 0 -22.985999,14.93599 25.189442,25.189442 0 0 0 22.985999,14.963 25.189442,25.189442 0 0 0 22.986002,-14.93499 25.189442,25.189442 0 0 0 -22.986002,-14.964 z"
+           id="path4136-6-9" />
+        <path
+           inkscape:export-ydpi="699"
+           inkscape:export-xdpi="699"
+           inkscape:connector-curvature="0"
+           style="opacity:1;fill:#d45034;fill-opacity:1;stroke:#ffffff;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           clip-path="none"
+           d="m 99.161761,677.0248 a 25.189442,25.189442 0 0 0 -14.964003,22.986 25.189442,25.189442 0 0 0 14.935003,22.986 25.189442,25.189442 0 0 0 14.963999,-22.986 25.189442,25.189442 0 0 0 -14.934999,-22.986 z"
+           id="path4136-5-2" />
+        <path
+           inkscape:export-ydpi="699"
+           inkscape:export-xdpi="699"
+           inkscape:connector-curvature="0"
+           style="opacity:1;fill:#9f385a;fill-opacity:1;stroke:#ffffff;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           clip-path="none"
+           d="m 109.38776,695.3008 a 25.189442,25.189442 0 0 0 -22.986001,14.93599 25.189442,25.189442 0 0 0 22.986001,14.963 25.189442,25.189442 0 0 0 22.986,-14.93499 25.189442,25.189442 0 0 0 -22.986,-14.964 z"
+           id="path4136-5-0" />
+        <path
+           inkscape:export-ydpi="699"
+           inkscape:export-xdpi="699"
+           inkscape:connector-curvature="0"
+           style="opacity:1;fill:#684fac;fill-opacity:1;stroke:#ffffff;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           d="m 99.161761,697.5048 a 25.189442,25.189442 0 0 0 -14.964003,22.986 25.189442,25.189442 0 0 0 14.935003,22.98601 25.189442,25.189442 0 0 0 14.963999,-22.98601 25.189442,25.189442 0 0 0 -14.934999,-22.986 z"
+           id="path4136-7-2" />
+        <path
+           inkscape:export-ydpi="699"
+           inkscape:export-xdpi="699"
+           inkscape:connector-curvature="0"
+           style="opacity:1;fill:#7b4340;fill-opacity:1;stroke:#ffffff;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           clip-path="none"
+           d="m 88.907758,695.3008 a 25.189442,25.189442 0 0 0 -4.308997,0.37299 25.189442,25.189442 0 0 0 -0.401003,4.33701 25.189442,25.189442 0 0 0 14.935003,22.986 25.189442,25.189442 0 0 0 12.760999,-12.732 25.189442,25.189442 0 0 0 -22.986002,-14.964 z"
+           id="path4136-5-7" />
+        <path
+           inkscape:export-ydpi="699"
+           inkscape:export-xdpi="699"
+           inkscape:connector-curvature="0"
+           style="opacity:1;fill:#a0333b;fill-opacity:1;stroke:#ffffff;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           clip-path="none"
+           d="m 109.38776,695.3008 a 25.189442,25.189442 0 0 0 -22.986001,14.93599 25.189442,25.189442 0 0 0 12.731002,12.76001 25.189442,25.189442 0 0 0 14.963999,-22.986 25.189442,25.189442 0 0 0 -0.372,-4.30801 25.189442,25.189442 0 0 0 -4.337,-0.40199 z"
+           id="path4136-5-5" />
+        <path
+           inkscape:export-ydpi="699"
+           inkscape:export-xdpi="699"
+           inkscape:connector-curvature="0"
+           style="opacity:1;fill:#64365d;fill-opacity:1;stroke:#ffffff;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           clip-path="none"
+           d="m 99.161761,697.5048 a 25.189442,25.189442 0 0 0 -12.760002,12.73199 25.189442,25.189442 0 0 0 22.986001,14.963 25.189442,25.189442 0 0 0 4.308,-0.37199 25.189442,25.189442 0 0 0 0.401,-4.337 25.189442,25.189442 0 0 0 -14.934999,-22.986 z"
+           id="path4136-5-9" />
+        <path
+           inkscape:export-ydpi="699"
+           inkscape:export-xdpi="699"
+           inkscape:connector-curvature="0"
+           style="opacity:1;fill:#6d4660;fill-opacity:1;stroke:#ffffff;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           clip-path="none"
+           d="m 99.161761,697.50479 a 25.189442,25.189442 0 0 0 -14.964003,22.98601 25.189442,25.189442 0 0 0 0.373002,4.308 25.189442,25.189442 0 0 0 4.336998,0.40099 25.189442,25.189442 0 0 0 22.986002,-14.93499 25.189442,25.189442 0 0 0 -12.731999,-12.76001 z"
+           id="path4136-6-2" />
+        <path
+           inkscape:export-ydpi="699"
+           inkscape:export-xdpi="699"
+           inkscape:connector-curvature="0"
+           style="opacity:1;fill:#5f5453;fill-opacity:1;stroke:#ffffff;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           clip-path="none"
+           d="m 99.161761,697.5048 a 25.189442,25.189442 0 0 0 -12.760002,12.73199 25.189442,25.189442 0 0 0 12.731002,12.76001 25.189442,25.189442 0 0 0 12.760999,-12.732 25.189442,25.189442 0 0 0 -12.731999,-12.76 z"
+           id="path4136-5-3" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+           x="71.490349"
+           y="690.98151"
+           id="text7995-7-4"
+           inkscape:export-xdpi="699"
+           inkscape:export-ydpi="699"><tspan
+             sodipodi:role="line"
+             id="tspan7997-0-2"
+             x="71.490349"
+             y="690.98151"
+             style="font-size:11.52px;line-height:1.25;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">X<tspan
+   style="font-size:7.488px;baseline-shift:sub;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+   id="tspan7460">1</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+           x="74.188522"
+           y="737.32489"
+           id="text7995-7-4-4"
+           inkscape:export-xdpi="699"
+           inkscape:export-ydpi="699"><tspan
+             sodipodi:role="line"
+             id="tspan7997-0-2-5"
+             x="74.188522"
+             y="737.32489"
+             style="font-size:11.52px;line-height:1.25;stroke:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">X<tspan
+   style="font-size:7.488px;baseline-shift:sub;stroke:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+   id="tspan7460-0">4</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+           x="115.41521"
+           y="734.86176"
+           id="text7995-7-4-3-0"
+           inkscape:export-xdpi="699"
+           inkscape:export-ydpi="699"><tspan
+             sodipodi:role="line"
+             id="tspan7997-0-2-6-6"
+             x="115.41521"
+             y="734.86176"
+             style="font-size:11.52px;line-height:1.25;stroke:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">X<tspan
+   style="font-size:7.488px;baseline-shift:sub;stroke:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+   id="tspan7460-1-3">3</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+           x="115.43898"
+           y="690.83057"
+           id="text7995-7-4-3-2"
+           inkscape:export-xdpi="699"
+           inkscape:export-ydpi="699"><tspan
+             sodipodi:role="line"
+             id="tspan7997-0-2-6-0"
+             x="115.43898"
+             y="690.83057"
+             style="font-size:11.52px;line-height:1.25;fill:#000000;stroke:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">X<tspan
+   style="font-size:7.488px;baseline-shift:sub;fill:#000000;stroke:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+   id="tspan7460-1-6">2</tspan></tspan></text>
+      </g>
+      <g
+         id="g19140"
+         transform="translate(380.77831,35.414539)"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+        <path
+           d="m 49.937522,803.89579 81.450308,0"
+           style="fill:#ff0000;stroke:#008080;stroke-width:3.07200003;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100;stroke-dasharray:3.07200027, 3.07200027, 3.07200027, 3.07200027;stroke-dashoffset:0;stroke-opacity:1"
+           id="path3172"
+           inkscape:connector-curvature="0"
+           inkscape:export-xdpi="699"
+           inkscape:export-ydpi="699" />
+        <path
+           d="m 103.55366,840.72834 27.81241,-36.61546 -40.862019,-35.56432 13.049609,72.17978 z"
+           style="opacity:0.8;fill:#64365d;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;stroke-dasharray:none"
+           id="path3174"
+           inkscape:connector-curvature="0"
+           inkscape:export-xdpi="699"
+           inkscape:export-ydpi="699" />
+        <path
+           d="M 103.55366,840.72834 49.937522,803.96015 90.504051,768.54856 103.55366,840.72834 Z"
+           style="opacity:0.8;fill:#7b4340;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;stroke-dasharray:none"
+           id="path3279"
+           inkscape:connector-curvature="0"
+           inkscape:export-xdpi="699"
+           inkscape:export-ydpi="699" />
+        <path
+           d="m 49.937522,803.96015 53.616138,36.76798"
+           style="fill:none;stroke:#867768;stroke-width:3.07200003;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:1"
+           id="path3281"
+           inkscape:connector-curvature="0"
+           inkscape:export-xdpi="699"
+           inkscape:export-ydpi="699" />
+        <path
+           d="m 49.937522,803.89579 40.725075,-35.269"
+           style="fill:#ff0000;stroke:#d45034;stroke-width:3.07200003;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:1"
+           id="path3283"
+           inkscape:connector-curvature="0"
+           inkscape:export-xdpi="699"
+           inkscape:export-ydpi="699" />
+        <path
+           d="m 90.662597,768.62679 12.890883,72.10139"
+           style="fill:#5f5453;fill-opacity:1;stroke:#5f5453;stroke-width:3.07200003;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:1"
+           id="path3285"
+           inkscape:connector-curvature="0"
+           inkscape:export-xdpi="699"
+           inkscape:export-ydpi="699" />
+        <path
+           d="m 90.662597,768.62679 40.725233,35.269"
+           style="fill:none;stroke:#9f385a;stroke-width:3.07200003;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:1"
+           id="path3287"
+           inkscape:connector-curvature="0"
+           inkscape:export-xdpi="699"
+           inkscape:export-ydpi="699" />
+        <path
+           d="m 103.55366,840.72813 27.83417,-36.76798"
+           style="fill:none;stroke:#684fac;stroke-width:3.07200003;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:1"
+           id="path3289"
+           inkscape:connector-curvature="0"
+           inkscape:export-xdpi="699"
+           inkscape:export-ydpi="699" />
+        <path
+           d="m 90.578076,761.62407 a 6.8761221,6.8761221 0 0 1 6.876303,6.87615 6.8761221,6.8761221 0 1 1 -6.876303,-6.87615 z"
+           style="fill:#d5665d;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.02400005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100;stroke-dasharray:none"
+           id="path3291"
+           inkscape:connector-curvature="0"
+           inkscape:export-xdpi="699"
+           inkscape:export-ydpi="699" />
+        <path
+           d="m 50.138553,797.05094 a 6.8761221,6.8761221 0 0 1 6.876059,6.87615 6.8761221,6.8761221 0 1 1 -6.876059,-6.87615 z"
+           style="fill:#f9b25f;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.02400005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100;stroke-dasharray:none"
+           id="path3293"
+           inkscape:connector-curvature="0"
+           inkscape:export-xdpi="699"
+           inkscape:export-ydpi="699" />
+        <path
+           d="m 131.56578,796.92653 a 6.8761221,6.8761221 0 0 1 6.87606,6.87615 6.8761221,6.8761221 0 1 1 -6.87606,-6.87615 z"
+           style="fill:#b365b9;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.02400005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100;stroke-dasharray:none"
+           id="path3295"
+           inkscape:connector-curvature="0"
+           inkscape:export-xdpi="699"
+           inkscape:export-ydpi="699" />
+        <path
+           d="m 103.40131,834.14806 a 6.8761221,6.8761221 0 0 1 6.8763,6.87611 6.8761221,6.8761221 0 1 1 -6.8763,-6.87611 z"
+           style="fill:#819cd8;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.02400005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100;stroke-dasharray:none"
+           id="path3297"
+           inkscape:connector-curvature="0"
+           inkscape:export-xdpi="699"
+           inkscape:export-ydpi="699" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+           x="46.216022"
+           y="805.80585"
+           id="text7995-7-4-1"
+           inkscape:export-xdpi="699"
+           inkscape:export-ydpi="699"><tspan
+             sodipodi:role="line"
+             id="tspan7997-0-2-55"
+             x="46.216022"
+             y="805.80585"
+             style="font-size:7.68px;line-height:1.25;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">X<tspan
+   style="font-size:4.992px;baseline-shift:sub;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+   id="tspan7571">1</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+           x="86.659431"
+           y="770.37897"
+           id="text7995-7-4-1-6"
+           inkscape:export-xdpi="699"
+           inkscape:export-ydpi="699"><tspan
+             sodipodi:role="line"
+             id="tspan7997-0-2-55-5"
+             x="86.659431"
+             y="770.37897"
+             style="font-size:7.68px;line-height:1.25;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">X<tspan
+   style="font-size:4.992px;baseline-shift:sub;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+   id="tspan7571-6">2</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+           x="127.63106"
+           y="805.65704"
+           id="text7995-7-4-1-6-3"
+           inkscape:export-xdpi="699"
+           inkscape:export-ydpi="699"><tspan
+             sodipodi:role="line"
+             id="tspan7997-0-2-55-5-7"
+             x="127.63106"
+             y="805.65704"
+             style="font-size:7.68px;line-height:1.25;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">X<tspan
+   style="font-size:4.992px;baseline-shift:sub;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+   id="tspan7571-6-4">3</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+           x="99.430275"
+           y="842.90302"
+           id="text7995-7-4-1-6-5"
+           inkscape:export-xdpi="699"
+           inkscape:export-ydpi="699"><tspan
+             sodipodi:role="line"
+             id="tspan7997-0-2-55-5-2"
+             x="99.430275"
+             y="842.90302"
+             style="font-size:7.68px;line-height:1.25;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">X<tspan
+   style="font-size:4.992px;baseline-shift:sub;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+   id="tspan7571-6-5">4</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#9f385a;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+           x="578.46777"
+           y="510.79633"
+           id="text7995-7-4-1-4-6"
+           inkscape:export-xdpi="699"
+           inkscape:export-ydpi="699"
+           transform="rotate(39.997477)"><tspan
+             sodipodi:role="line"
+             id="tspan7997-0-2-55-3-8"
+             x="578.46777"
+             y="510.79633"
+             style="font-size:7.68px;line-height:1;fill:#9f385a;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"> </tspan><tspan
+             sodipodi:role="line"
+             x="578.46777"
+             y="518.47632"
+             style="font-size:7.68px;line-height:100%;fill:#9f385a;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+             id="tspan8032">H(23)</tspan><tspan
+             sodipodi:role="line"
+             x="578.46777"
+             y="526.15631"
+             style="font-size:7.68px;line-height:100%;fill:#9f385a;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+             id="tspan8036">I(23)</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#867768;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+           x="515.9245"
+           y="654.06915"
+           id="text7995-7-4-1-4-66"
+           inkscape:export-xdpi="699"
+           inkscape:export-ydpi="699"
+           transform="rotate(33.282193)"><tspan
+             sodipodi:role="line"
+             id="tspan7997-0-2-55-3-4"
+             x="515.9245"
+             y="654.06915"
+             style="font-size:7.68px;line-height:100%;text-align:center;text-anchor:middle;fill:#867768;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">I(14)</tspan><tspan
+             sodipodi:role="line"
+             x="515.9245"
+             y="661.74915"
+             style="font-size:7.68px;line-height:100%;text-align:center;text-anchor:middle;fill:#867768;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+             id="tspan8018">H(14)</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#684fac;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+           x="-597.1524"
+           y="586.95428"
+           id="text7995-7-4-1-4-8"
+           inkscape:export-xdpi="699"
+           inkscape:export-ydpi="699"
+           transform="rotate(-54.037272)"><tspan
+             sodipodi:role="line"
+             id="tspan7997-0-2-55-3-7"
+             x="-597.1524"
+             y="586.95428"
+             style="font-size:7.68px;line-height:100%;text-align:center;text-anchor:middle;fill:#684fac;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">I(34)</tspan><tspan
+             sodipodi:role="line"
+             x="-597.1524"
+             y="594.63428"
+             style="font-size:7.68px;line-height:100%;text-align:center;text-anchor:middle;fill:#684fac;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+             id="tspan8026">H(34)</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#d45034;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+           x="-465.89896"
+           y="625.25104"
+           id="text7995-7-4-1-4-9"
+           inkscape:export-xdpi="699"
+           inkscape:export-ydpi="699"
+           transform="rotate(-41.336642)"><tspan
+             sodipodi:role="line"
+             id="tspan7997-0-2-55-3-1"
+             x="-465.89896"
+             y="625.25104"
+             style="font-size:7.68px;line-height:100%;text-align:center;text-anchor:middle;fill:#d45034;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">H(12)</tspan><tspan
+             sodipodi:role="line"
+             x="-465.89896"
+             y="632.93103"
+             style="font-size:7.68px;line-height:100%;text-align:center;text-anchor:middle;fill:#d45034;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+             id="tspan8016">I(12)</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#7b4340;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+           x="508.31958"
+           y="630.68719"
+           id="text7995-7-4-1-4-66-1"
+           inkscape:export-xdpi="699"
+           inkscape:export-ydpi="699"
+           transform="rotate(33.282193)"><tspan
+             sodipodi:role="line"
+             id="tspan7997-0-2-55-3-4-5"
+             x="508.31958"
+             y="630.68719"
+             style="font-size:7.68px;line-height:100%;text-align:center;text-anchor:middle;fill:#7b4340;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">I(124)</tspan><tspan
+             sodipodi:role="line"
+             x="508.31958"
+             y="638.36719"
+             style="font-size:7.68px;line-height:100%;text-align:center;text-anchor:middle;fill:#7b4340;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+             id="tspan8018-7">H(124)</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#64365d;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+           x="-570.97235"
+           y="550.11487"
+           id="text7995-7-4-1-4-66-1-3"
+           inkscape:export-xdpi="699"
+           inkscape:export-ydpi="699"
+           transform="matrix(0.56984845,-0.83266199,0.78983393,0.60074798,0,0)"><tspan
+             sodipodi:role="line"
+             id="tspan7997-0-2-55-3-4-5-6"
+             x="-570.97235"
+             y="550.11487"
+             style="font-size:8.05943px;line-height:100%;text-align:center;text-anchor:middle;fill:#64365d;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">I(234)</tspan><tspan
+             sodipodi:role="line"
+             x="-570.97235"
+             y="558.17432"
+             style="font-size:8.05943px;line-height:100%;text-align:center;text-anchor:middle;fill:#64365d;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+             id="tspan8018-7-9">H(234)</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#d5665d;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+           x="90.024033"
+           y="751.86041"
+           id="text7995-7-4-1-4-9-9-7-6"
+           inkscape:export-xdpi="699"
+           inkscape:export-ydpi="699"
+           transform="rotate(-0.12102425)"><tspan
+             sodipodi:role="line"
+             id="tspan7997-0-2-55-3-1-6-6-2"
+             x="90.024033"
+             y="751.86041"
+             style="font-size:7.68px;line-height:100%;text-align:center;text-anchor:middle;fill:#d5665d;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">H(2)</tspan><tspan
+             sodipodi:role="line"
+             x="90.024033"
+             y="759.54041"
+             style="font-size:7.68px;line-height:100%;text-align:center;text-anchor:middle;fill:#d5665d;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+             id="tspan8016-5-7-7">=I(2)</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#f9b25f;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+           x="49.154259"
+           y="817.28778"
+           id="text7995-7-4-1-4-9-9-7-5"
+           inkscape:export-xdpi="699"
+           inkscape:export-ydpi="699"
+           transform="rotate(-0.12102425)"><tspan
+             sodipodi:role="line"
+             id="tspan7997-0-2-55-3-1-6-6-7"
+             x="49.154259"
+             y="817.28778"
+             style="font-size:7.68px;line-height:100%;text-align:center;text-anchor:middle;fill:#f9b25f;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">H(1)</tspan><tspan
+             sodipodi:role="line"
+             x="49.154259"
+             y="824.96777"
+             style="font-size:7.68px;line-height:100%;text-align:center;text-anchor:middle;fill:#f9b25f;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+             id="tspan8016-5-7-1">=I(1)</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#819cd8;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+           x="102.37193"
+           y="855.41638"
+           id="text7995-7-4-1-4-9-9-7-5-6"
+           inkscape:export-xdpi="699"
+           inkscape:export-ydpi="699"
+           transform="rotate(-0.12102425)"><tspan
+             sodipodi:role="line"
+             id="tspan7997-0-2-55-3-1-6-6-7-4"
+             x="102.37193"
+             y="855.41638"
+             style="font-size:7.68px;line-height:100%;text-align:center;text-anchor:middle;fill:#819cd8;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">H(4)</tspan><tspan
+             sodipodi:role="line"
+             x="102.37193"
+             y="863.09637"
+             style="font-size:7.68px;line-height:100%;text-align:center;text-anchor:middle;fill:#819cd8;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+             id="tspan8016-5-7-1-8">=I(4)</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#b365b9;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+           x="129.71133"
+           y="784.43414"
+           id="text7995-7-4-1-4-9-9-7-6-0"
+           inkscape:export-xdpi="699"
+           inkscape:export-ydpi="699"
+           transform="rotate(-0.12102425)"><tspan
+             sodipodi:role="line"
+             id="tspan7997-0-2-55-3-1-6-6-2-8"
+             x="129.71133"
+             y="784.43414"
+             style="font-size:7.68px;line-height:100%;text-align:center;text-anchor:middle;fill:#b365b9;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">H(3)</tspan><tspan
+             sodipodi:role="line"
+             x="129.71133"
+             y="792.11414"
+             style="font-size:7.68px;line-height:100%;text-align:center;text-anchor:middle;fill:#b365b9;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+             id="tspan8016-5-7-7-1">=I(3)</tspan></text>
+      </g>
+    </g>
+    <ellipse
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       style="color:#000000;isolation:auto;mix-blend-mode:normal;solid-color:#000000;fill:#807160;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.13835609;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;color-rendering:auto;image-rendering:auto;shape-rendering:auto"
+       rx="4.8769855"
+       ry="4.7684317"
+       cy="328.47336"
+       cx="316.32913"
+       id="ellipse3941-3" />
+    <ellipse
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       style="color:#000000;isolation:auto;mix-blend-mode:normal;solid-color:#000000;fill:#6244a5;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.13835609;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;color-rendering:auto;image-rendering:auto;shape-rendering:auto"
+       rx="4.8769855"
+       ry="4.7684317"
+       cy="356.44827"
+       cx="316.32913"
+       stroke-miterlimit="100"
+       id="ellipse3975-3" />
+    <ellipse
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       style="color:#000000;isolation:auto;mix-blend-mode:normal;solid-color:#000000;fill:#d3d3d3;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.13835609;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;color-rendering:auto;image-rendering:auto;shape-rendering:auto"
+       rx="4.8769855"
+       ry="4.7684317"
+       cy="345.62231"
+       cx="316.32913"
+       stroke-miterlimit="100"
+       id="ellipse3987-8" />
+    <ellipse
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="ellipse4061-66"
+       stroke-miterlimit="100"
+       cx="316.32913"
+       cy="312.25259"
+       ry="4.7684317"
+       rx="4.8769855"
+       style="color:#000000;isolation:auto;mix-blend-mode:normal;solid-color:#000000;fill:#d63f2d;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.13835609;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;color-rendering:auto;image-rendering:auto;shape-rendering:auto" />
+    <text
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       transform="scale(0.999975,1.000025)"
+       y="313.05142"
+       x="281.95911"
+       id="text4003-90-4"
+       style="font-size:12.375px;line-height:0%;font-family:ArialMT;fill:#d63f2d;fill-opacity:1;stroke:#eeff09;stroke-width:0.0899978;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">I(12)</text>
+    <text
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       transform="scale(0.999975,1.000025)"
+       y="362.07703"
+       x="281.95911"
+       id="text4003-90-1-0"
+       style="font-size:12.375px;line-height:0%;font-family:ArialMT;fill:#6244a5;fill-opacity:1;stroke:#eeff09;stroke-width:0.0899978;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">I(34)</text>
+    <text
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       transform="scale(0.999975,1.000025)"
+       y="351.29318"
+       x="281.95911"
+       id="text4003-90-7-4"
+       style="font-size:12.375px;line-height:0%;font-family:ArialMT;fill:#d3d3d3;fill-opacity:1;stroke:#eeff09;stroke-width:0.0899978;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">I(24)</text>
+    <text
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       transform="scale(0.999975,1.000025)"
+       y="342.26852"
+       x="281.95911"
+       id="text4003-90-15-6"
+       style="font-size:12.375px;line-height:0%;font-family:ArialMT;fill:#942753;fill-opacity:1;stroke:#eeff09;stroke-width:0.0899978;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">I(23)</text>
+    <text
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       transform="scale(0.999975,1.000025)"
+       y="332.36868"
+       x="281.95911"
+       id="text4003-90-77-2"
+       style="font-size:12.375px;line-height:0%;font-family:ArialMT;fill:#807160;fill-opacity:1;stroke:#eeff09;stroke-width:0.0899978;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">I(14)</text>
+    <text
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       transform="scale(0.999975,1.000025)"
+       y="324.26752"
+       x="281.95911"
+       id="text4003-90-73-6"
+       style="font-size:12.375px;line-height:0%;font-family:ArialMT;fill:#231f20;fill-opacity:1;stroke:#eeff09;stroke-width:0.0899978;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">I(13)</text>
+    <ellipse
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="ellipse3949-9"
+       stroke-miterlimit="100"
+       cx="239.57799"
+       cy="301.37778"
+       ry="4.774168"
+       rx="4.8766632"
+       style="color:#000000;isolation:auto;mix-blend-mode:normal;solid-color:#000000;fill:#c13f2a;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.13900292;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;color-rendering:auto;image-rendering:auto;shape-rendering:auto" />
+    <text
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       transform="scale(0.999975,1.000025)"
+       y="305.25427"
+       x="207.16351"
+       id="text4003-9-2"
+       style="font-size:12.375px;line-height:0%;font-family:ArialMT;fill:#c13f2a;fill-opacity:1;stroke:#eeff09;stroke-width:0.0899978;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">I(2)</text>
+    <text
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       transform="scale(0.999975,1.000025)"
+       y="354.82138"
+       x="349.78931"
+       id="text4003-90-8-11"
+       style="font-size:12.375px;line-height:0%;font-family:ArialMT;stroke:#eeff09;stroke-width:0.0899978;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">I(123)</text>
+    <text
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       transform="scale(0.999975,1.000025)"
+       y="365.67725"
+       x="349.78931"
+       id="text4003-90-8-5-4"
+       style="font-size:12.375px;line-height:0%;font-family:ArialMT;stroke:#eeff09;stroke-width:0.0899978;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">I(124)</text>
+    <text
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       transform="scale(0.999975,1.000025)"
+       y="380.07693"
+       x="349.78931"
+       id="text4003-90-8-9-0"
+       style="font-size:12.375px;line-height:0%;font-family:ArialMT;stroke:#eeff09;stroke-width:0.0899978;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">I(134)</text>
+    <text
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       transform="scale(0.999975,1.000025)"
+       y="396.31586"
+       x="349.78931"
+       id="text4003-90-8-3-3"
+       style="font-size:12.375px;line-height:0%;font-family:ArialMT;stroke:#eeff09;stroke-width:0.0899978;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">I(234)</text>
+    <ellipse
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       style="color:#000000;isolation:auto;mix-blend-mode:normal;solid-color:#000000;fill:#ff0000;fill-rule:evenodd;stroke:#000000;stroke-width:1.13892603;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;color-rendering:auto;image-rendering:auto;shape-rendering:auto"
+       rx="4.8790817"
+       ry="4.7711563"
+       cy="392.44669"
+       cx="393.10925"
+       id="ellipse3943-9" />
+    <ellipse
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       style="color:#000000;isolation:auto;mix-blend-mode:normal;solid-color:#000000;fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:1.13892603;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;color-rendering:auto;image-rendering:auto;shape-rendering:auto"
+       rx="4.8790817"
+       ry="4.7711563"
+       cy="350.95132"
+       cx="393.27402"
+       stroke-miterlimit="100"
+       id="ellipse3991-1" />
+    <ellipse
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       style="color:#000000;isolation:auto;mix-blend-mode:normal;solid-color:#000000;fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:1.13892603;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;color-rendering:auto;image-rendering:auto;shape-rendering:auto"
+       rx="4.8790817"
+       ry="4.7711563"
+       cy="376.20743"
+       cx="393.27402"
+       stroke-miterlimit="100"
+       id="ellipse3995-9" />
+    <ellipse
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       style="color:#000000;isolation:auto;mix-blend-mode:normal;solid-color:#000000;fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:1.13892603;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;color-rendering:auto;image-rendering:auto;shape-rendering:auto"
+       rx="4.8790817"
+       ry="4.7711563"
+       cy="361.8074"
+       cx="393.27402"
+       stroke-miterlimit="100"
+       id="ellipse3995-8-6" />
+    <ellipse
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       style="color:#000000;isolation:auto;mix-blend-mode:normal;solid-color:#000000;fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:1.13900292;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;color-rendering:auto;image-rendering:auto;shape-rendering:auto"
+       rx="4.8766632"
+       ry="4.774168"
+       cy="361.83231"
+       cx="202.94545"
+       id="ellipse3939-6-5" />
+    <ellipse
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       style="color:#000000;isolation:auto;mix-blend-mode:normal;solid-color:#000000;fill:#231f20;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.13835609;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;color-rendering:auto;image-rendering:auto;shape-rendering:auto"
+       rx="4.8769855"
+       ry="4.7684317"
+       cy="322.16626"
+       cx="316.32913"
+       stroke-miterlimit="100"
+       id="ellipse4053-5" />
+    <ellipse
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="ellipse4029-0"
+       stroke-miterlimit="100"
+       cx="316.32913"
+       cy="338.39487"
+       ry="4.7684317"
+       rx="4.8769855"
+       style="color:#000000;isolation:auto;mix-blend-mode:normal;solid-color:#000000;fill:#942753;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.13835609;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;color-rendering:auto;image-rendering:auto;shape-rendering:auto" />
+    <text
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:transform-center-x="98.618843"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text4173-6-4-3"
+       x="217.31998"
+       y="377.39169"
+       stroke-miterlimit="10"
+       font-size="13.5px"
+       style="font-size:12.15px;line-height:0%;font-family:Arial-BoldMT;fill:#000000;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"><tspan
+         id="tspan19296"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial-BoldMT;-inkscape-font-specification:'Arial-BoldMT Bold';fill:#ff0000;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">Information Path</tspan></text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text4173"
+       x="-144.71559"
+       y="214.10347"
+       stroke-miterlimit="10"
+       font-size="13.5px"
+       style="font-size:13.5px;line-height:0%;font-family:Arial-BoldMT;fill:#000000;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"><tspan
+         id="tspan20829"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial-BoldMT;-inkscape-font-specification:'Arial-BoldMT Bold'">Entropy and Mutual Information landscapes- simplicial Information structure dim=4</tspan></text>
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="ccccc"
+       inkscape:connector-curvature="0"
+       d="m -119.57774,408.60618 37.201796,-31.5195 76.24759,-17.9386 75.32077,-56.2185 76.769454,-42.4119"
+       id="path91-3"
+       style="fill:none;stroke:#867768;stroke-width:1.36000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:0.99607843" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="ccccc"
+       inkscape:connector-curvature="0"
+       d="m -119.79604,408.93378 37.343266,-54.2753 75.51988,-58.3964 76.63416,-21.2373 75.751764,-14.0397"
+       id="path99"
+       style="fill:none;stroke:#867768;stroke-width:1.36000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:0.99607843" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="ccccc"
+       inkscape:connector-curvature="0"
+       d="m -119.89289,408.96358 37.745166,-71.3553 75.65837,-42.116 76.19062,-29.9226 75.242914,-5.0522"
+       id="path103"
+       style="fill:none;stroke:#867768;stroke-width:1.36000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:0.99607843" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="path3847"
+       stroke-miterlimit="10"
+       d="m -125.09878,337.63738 5.20656,0"
+       style="stroke:#000000;stroke-width:0.9425568;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:connector-curvature="0"
+       d="m -82.235104,412.62958 0,-3.1861"
+       id="path3863"
+       style="stroke:#000000;stroke-width:0.9425568;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:connector-curvature="0"
+       d="m -6.307004,412.62958 0,-3.1861"
+       id="path3865"
+       style="stroke:#000000;stroke-width:0.9425568;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:connector-curvature="0"
+       d="m -119.58796,412.62958 0,-3.1861"
+       id="path3867"
+       style="stroke:#000000;stroke-width:0.9425568;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:connector-curvature="0"
+       d="m 69.621106,412.62958 0,-3.1861"
+       id="path3869"
+       style="stroke:#000000;stroke-width:0.9425568;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:connector-curvature="0"
+       d="m -125.09871,249.51978 5.20655,0"
+       id="path3871"
+       style="stroke:#000000;stroke-width:0.9425568;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       inkscape:connector-curvature="0"
+       d="m -125.09871,409.43048 5.20655,0"
+       id="path3873"
+       style="stroke:#000000;stroke-width:0.9425568;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       style="fill:none;stroke:#000000;stroke-width:0.9972204;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       inkscape:connector-curvature="0"
+       d="m -119.58796,411.27598 0,-166.6684"
+       id="path3875" />
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       style="font-size:7.18126px;line-height:0%;font-family:ArialMT;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+       font-size="8.4195px"
+       transform="matrix(0,-0.95797424,1.0438694,0,0,0)"
+       y="-130.9366"
+       x="-357.90448"
+       id="text3879"><tspan
+         id="tspan16254"
+         style="font-size:11.7281px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">H<tspan
+   id="tspan16258"
+   style="font-size:7.62327px;baseline-shift:sub;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">k</tspan>(bits)</tspan></text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text3885"
+       x="-82.617256"
+       y="440.423"
+       transform="scale(1.0438172,0.95802215)"
+       style="font-size:11.7281px;line-height:0%;font-family:ArialMT;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">1</text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text3887"
+       x="-9.6158657"
+       y="440.50027"
+       transform="scale(1.0438172,0.95802215)"
+       style="font-size:11.7281px;line-height:0%;font-family:ArialMT;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">2</text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text3889"
+       x="62.990349"
+       y="440.41727"
+       transform="scale(1.0438172,0.95802215)"
+       style="font-size:11.7281px;line-height:0%;font-family:ArialMT;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">3</text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text3891"
+       x="-128.22148"
+       y="430.36563"
+       transform="scale(1.0438172,0.95802215)"
+       style="font-size:11.7281px;line-height:0%;font-family:ArialMT;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">0</text>
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       style="fill:none;stroke:#000000;stroke-width:0.83685261;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:10"
+       inkscape:connector-curvature="0"
+       d="m -119.62382,409.25858 285.79769,0"
+       id="path3903" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       style="stroke:#000000;stroke-width:0.9425568;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       inkscape:connector-curvature="0"
+       d="m -125.0987,376.89628 5.20655,0"
+       id="path3905" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       style="stroke:#000000;stroke-width:0.9425568;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       inkscape:connector-curvature="0"
+       d="m -125.0987,249.51978 5.20655,0"
+       id="path3907" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="path3945"
+       stroke-miterlimit="10"
+       d="m -125.09878,354.83018 5.20656,0"
+       style="stroke:#000000;stroke-width:0.9425568;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="path3951"
+       stroke-miterlimit="10"
+       d="m -125.09878,367.11078 5.20656,0"
+       style="stroke:#000000;stroke-width:0.9425568;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="path3963"
+       stroke-miterlimit="10"
+       d="m 145.76956,412.62958 0,-3.1861"
+       style="stroke:#000000;stroke-width:0.9425568;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+       inkscape:connector-curvature="0" />
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text3965"
+       x="135.96233"
+       y="440.42297"
+       transform="scale(1.0438171,0.95802224)"
+       font-size="7.2167px"
+       style="font-size:11.7281px;line-height:0%;font-family:ArialMT;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">4</text>
+    <text
+       transform="matrix(0,-1.0438433,0.95799819,0,0,0)"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       style="font-size:10.6619px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+       xml:space="preserve"
+       font-size="12.5px"
+       y="-131.83612"
+       x="-254.73843"
+       line-height="125%"
+       id="text4037"><tspan
+         style="font-size:11.25px;font-family:Arial;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         font-size="5px"
+         y="-131.83612"
+         x="-254.73843"
+         id="tspan4039">maxH</tspan></text>
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="m -82.276454,337.35778 75.81322,-32.7253"
+       id="path109"
+       style="fill:none;stroke:#867768;stroke-width:1.36000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:0.99607843" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cccc"
+       inkscape:connector-curvature="0"
+       d="m -119.79604,409.69008 37.587496,-42.3293 75.71919,-37.7496 75.30354,-25.6352"
+       id="path99-6"
+       style="fill:none;stroke:#867768;stroke-width:1.36000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:0.99607843" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="m -82.154334,337.46988 75.24756,-18.9974"
+       id="path109-9"
+       style="fill:none;stroke:#867768;stroke-width:1.36000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:0.99607843" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="m -82.398574,354.67848 75.93534,-25.2153"
+       id="path109-4"
+       style="fill:none;stroke:#867768;stroke-width:1.36000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:0.99607843" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="m -82.032214,354.79058 75.56898,-12.3015"
+       id="path109-4-8"
+       style="fill:none;stroke:#867768;stroke-width:1.36000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:0.99607843" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="m -82.032214,367.11448 75.56898,-37.6513"
+       id="path109-4-1"
+       style="fill:none;stroke:#867768;stroke-width:1.36000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:0.99607843" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="m -82.276454,367.22648 75.81322,-62.187"
+       id="path109-4-1-2"
+       style="fill:none;stroke:#867768;stroke-width:1.36000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:0.99607843" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="m -82.032214,367.22648 75.56898,-8.455"
+       id="path109-4-1-2-9"
+       style="fill:none;stroke:#867768;stroke-width:1.36000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:0.99607843" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="m -82.475754,376.84268 75.56898,-33.9466"
+       id="path109-4-1-2-9-3"
+       style="fill:none;stroke:#867768;stroke-width:1.36000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:0.99607843" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="m -82.475754,377.40308 76.01252,-58.5235"
+       id="path109-4-1-2-9-3-9"
+       style="fill:none;stroke:#867768;stroke-width:1.36000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:0.99607843" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="m -82.231524,377.06678 75.76829,-58.1872"
+       id="path109-4-1-2-9-3-9-0"
+       style="fill:none;stroke:#867768;stroke-width:1.36000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:0.99607843" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="m 69.412996,265.22998 -75.87623,39.4025"
+       id="path109-5"
+       style="fill:none;stroke:#867768;stroke-width:1.36000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:0.99607843" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="m 69.856536,289.24648 -76.31977,15.386"
+       id="path109-5-6"
+       style="fill:none;stroke:#867768;stroke-width:1.36000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:0.99607843" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="m 69.856536,289.24648 -76.31977,29.226"
+       id="path109-5-6-1"
+       style="fill:none;stroke:#867768;stroke-width:1.36000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:0.99607843" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="m 69.856536,275.40648 -76.31977,43.066"
+       id="path109-5-6-1-1"
+       style="fill:none;stroke:#867768;stroke-width:1.36000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:0.99607843" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="m 68.525926,265.22998 -74.54562,63.8261"
+       id="path109-5-6-1-5"
+       style="fill:none;stroke:#867768;stroke-width:1.36000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:0.99607843" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="m 69.856536,275.81348 -76.31977,66.6756"
+       id="path109-5-6-1-5-9"
+       style="fill:none;stroke:#867768;stroke-width:1.36000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:0.99607843" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="m 69.412996,303.49358 -75.87623,38.9955"
+       id="path109-5-6-1-5-9-8"
+       style="fill:none;stroke:#867768;stroke-width:1.36000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:0.99607843" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="m 69.412996,288.83948 -75.87623,69.932"
+       id="path109-5-6-1-5-9-8-4"
+       style="fill:none;stroke:#867768;stroke-width:1.36000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:0.99607843" />
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       d="m 69.412996,288.83948 75.813224,-28.5766"
+       id="path109-5-6-1-5-9-8-4-8"
+       style="fill:none;stroke:#867768;stroke-width:1.36000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:0.99607843" />
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       transform="scale(1.0438172,0.95802215)"
+       y="276.07047"
+       x="87.32708"
+       id="text4003-90-8-1"
+       style="font-size:11.7281px;line-height:0%;font-family:ArialMT;stroke:#eeff09;stroke-width:0.0852932;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">H(1234)<tspan
+   style="font-size:11.7281px;baseline-shift:sub;stroke:#eeff09;stroke-width:0.0852932;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+   font-size="65%"
+   id="tspan4005-9-8-0" /></text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       transform="scale(1.0438172,0.95802215)"
+       y="281.15445"
+       x="20.543316"
+       id="text4003-90-8"
+       style="font-size:11.7281px;line-height:0%;font-family:ArialMT;stroke:#eeff09;stroke-width:0.0852932;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">H(123)<tspan
+   style="font-size:11.7281px;baseline-shift:sub;stroke:#eeff09;stroke-width:0.0852932;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+   font-size="65%"
+   id="tspan4005-9-8" /></text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       transform="scale(1.0438172,0.95802215)"
+       y="291.44278"
+       x="20.543316"
+       id="text4003-90-8-5"
+       style="font-size:11.7281px;line-height:0%;font-family:ArialMT;stroke:#eeff09;stroke-width:0.0852932;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">H(124)</text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       transform="scale(1.0438172,0.95802215)"
+       y="305.08963"
+       x="20.543316"
+       id="text4003-90-8-9"
+       style="font-size:11.7281px;line-height:0%;font-family:ArialMT;stroke:#eeff09;stroke-width:0.0852932;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">H(134)</text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       transform="scale(1.0438172,0.95802215)"
+       y="320.47964"
+       x="20.543316"
+       id="text4003-90-8-3"
+       style="font-size:11.7281px;line-height:0%;font-family:ArialMT;stroke:#eeff09;stroke-width:0.0852932;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">H(234)</text>
+    <circle
+       r="4.779398"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       style="color:#000000;isolation:auto;mix-blend-mode:normal;solid-color:#000000;fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:1.12820446;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;color-rendering:auto;image-rendering:auto;shape-rendering:auto"
+       cy="303.50443"
+       cx="69.649895"
+       id="ellipse3943" />
+    <circle
+       r="4.779398"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       style="color:#000000;isolation:auto;mix-blend-mode:normal;solid-color:#000000;fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:1.12820446;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;color-rendering:auto;image-rendering:auto;shape-rendering:auto"
+       cy="265.82999"
+       cx="69.812859"
+       stroke-miterlimit="100"
+       id="ellipse3991" />
+    <circle
+       r="4.779398"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       style="color:#000000;isolation:auto;mix-blend-mode:normal;solid-color:#000000;fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:1.12820446;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;color-rendering:auto;image-rendering:auto;shape-rendering:auto"
+       cy="288.76053"
+       cx="69.812859"
+       stroke-miterlimit="100"
+       id="ellipse3995" />
+    <circle
+       r="4.779398"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       style="color:#000000;isolation:auto;mix-blend-mode:normal;solid-color:#000000;fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:1.12820446;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;color-rendering:auto;image-rendering:auto;shape-rendering:auto"
+       cy="275.68643"
+       cx="69.812859"
+       stroke-miterlimit="100"
+       id="ellipse3995-8" />
+    <circle
+       r="4.779398"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       style="color:#000000;isolation:auto;mix-blend-mode:normal;solid-color:#000000;fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:1.12820446;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;color-rendering:auto;image-rendering:auto;shape-rendering:auto"
+       cy="260.9595"
+       cx="145.76976"
+       stroke-miterlimit="100"
+       id="ellipse3971" />
+    <circle
+       r="4.779398"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       style="color:#000000;isolation:auto;mix-blend-mode:normal;solid-color:#000000;fill:#807160;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.12820435;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;color-rendering:auto;image-rendering:auto;shape-rendering:auto"
+       cy="318.96329"
+       cx="-6.3069553"
+       id="ellipse3941" />
+    <circle
+       r="4.779398"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       style="color:#000000;isolation:auto;mix-blend-mode:normal;solid-color:#000000;fill:#6244a5;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.12820435;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;color-rendering:auto;image-rendering:auto;shape-rendering:auto"
+       cy="359.07059"
+       cx="-6.3069553"
+       stroke-miterlimit="100"
+       id="ellipse3975" />
+    <circle
+       r="4.779398"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       style="color:#000000;isolation:auto;mix-blend-mode:normal;solid-color:#000000;fill:#d3d3d3;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.12820435;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;color-rendering:auto;image-rendering:auto;shape-rendering:auto"
+       cy="342.70438"
+       cx="-6.3069553"
+       stroke-miterlimit="100"
+       id="ellipse3987" />
+    <circle
+       r="4.779398"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="ellipse4029"
+       stroke-miterlimit="100"
+       cx="-6.3070164"
+       cy="329.6055"
+       style="color:#000000;isolation:auto;mix-blend-mode:normal;solid-color:#000000;fill:#942753;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.12820435;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;color-rendering:auto;image-rendering:auto;shape-rendering:auto" />
+    <circle
+       r="4.779398"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       style="color:#000000;isolation:auto;mix-blend-mode:normal;solid-color:#000000;fill:#231f20;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.12820435;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;color-rendering:auto;image-rendering:auto;shape-rendering:auto"
+       cy="305.0657"
+       cx="-6.3070164"
+       stroke-miterlimit="100"
+       id="ellipse4053" />
+    <circle
+       r="4.779398"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="ellipse4061"
+       stroke-miterlimit="100"
+       cx="-6.3070164"
+       cy="296.06485"
+       style="color:#000000;isolation:auto;mix-blend-mode:normal;solid-color:#000000;fill:#d63f2d;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.12820435;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;color-rendering:auto;image-rendering:auto;shape-rendering:auto" />
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       transform="scale(1.0438172,0.95802215)"
+       y="311.50784"
+       x="-43.741158"
+       id="text4003-90"
+       style="font-size:11.7281px;line-height:0%;font-family:ArialMT;fill:#d63f2d;fill-opacity:1;stroke:#eeff09;stroke-width:0.0852932;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">H(12)<tspan
+   style="font-size:11.7281px;baseline-shift:sub;fill:#d63f2d;fill-opacity:1;stroke:#eeff09;stroke-width:0.0852932;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+   font-size="65%"
+   id="tspan4005-9" /></text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       transform="scale(1.0438172,0.95802215)"
+       y="378.44095"
+       x="-43.741158"
+       id="text4003-90-1"
+       style="font-size:11.7281px;line-height:0%;font-family:ArialMT;fill:#6244a5;fill-opacity:1;stroke:#eeff09;stroke-width:0.0852932;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">H(34)</text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       transform="scale(1.0438172,0.95802215)"
+       y="361.39737"
+       x="-43.741158"
+       id="text4003-90-7"
+       style="font-size:11.7281px;line-height:0%;font-family:ArialMT;fill:#d3d3d3;fill-opacity:1;stroke:#eeff09;stroke-width:0.0852932;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">H(24)</text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       transform="scale(1.0438172,0.95802215)"
+       y="347.72684"
+       x="-43.741158"
+       id="text4003-90-15"
+       style="font-size:11.7281px;line-height:0%;font-family:ArialMT;fill:#942753;fill-opacity:1;stroke:#eeff09;stroke-width:0.0852932;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">H(23)</text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       transform="scale(1.0438172,0.95802215)"
+       y="336.6387"
+       x="-43.741158"
+       id="text4003-90-77"
+       style="font-size:11.7281px;line-height:0%;font-family:ArialMT;fill:#807160;fill-opacity:1;stroke:#eeff09;stroke-width:0.0852932;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">H(14)</text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       transform="scale(1.0438172,0.95802215)"
+       y="322.1376"
+       x="-43.741158"
+       id="text4003-90-73"
+       style="font-size:11.7281px;line-height:0%;font-family:ArialMT;fill:#231f20;fill-opacity:1;stroke:#eeff09;stroke-width:0.0852932;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">H(13)</text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       transform="scale(1.0438172,0.95802215)"
+       y="356.55289"
+       x="-109.50903"
+       id="text4003"
+       style="font-size:11.7281px;line-height:0%;font-family:ArialMT;fill:#f89c21;fill-opacity:1;stroke:#eeff09;stroke-width:0.0852932;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">H(1)<tspan
+   style="font-size:11.7281px;baseline-shift:sub;fill:#f89c21;fill-opacity:1;stroke:#eeff09;stroke-width:0.0852932;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+   font-size="65%"
+   id="tspan4005" /></text>
+    <circle
+       r="4.779398"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       style="color:#000000;isolation:auto;mix-blend-mode:normal;solid-color:#000000;fill:#f89c21;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.12820446;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;color-rendering:auto;image-rendering:auto;shape-rendering:auto"
+       cy="337.63736"
+       cx="-82.235115"
+       id="ellipse3939" />
+    <circle
+       r="4.779398"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="ellipse3949"
+       stroke-miterlimit="100"
+       cx="-82.235176"
+       cy="354.83023"
+       style="color:#000000;isolation:auto;mix-blend-mode:normal;solid-color:#000000;fill:#c13f2a;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.12820446;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;color-rendering:auto;image-rendering:auto;shape-rendering:auto" />
+    <circle
+       r="4.779398"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="ellipse3955"
+       stroke-miterlimit="100"
+       cx="-82.235176"
+       cy="367.11075"
+       style="color:#000000;isolation:auto;mix-blend-mode:normal;solid-color:#000000;fill:#8a3ea4;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.12820446;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;color-rendering:auto;image-rendering:auto;shape-rendering:auto" />
+    <circle
+       r="4.779398"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="ellipse3961"
+       stroke-miterlimit="100"
+       cx="-82.235176"
+       cy="376.93521"
+       style="color:#000000;isolation:auto;mix-blend-mode:normal;solid-color:#000000;fill:#4b83cc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.12820446;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;color-rendering:auto;image-rendering:auto;shape-rendering:auto" />
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       transform="scale(1.0438172,0.95802215)"
+       y="397.08743"
+       x="-109.50903"
+       id="text4003-0"
+       style="font-size:11.7281px;line-height:0%;font-family:ArialMT;fill:#4b83cc;fill-opacity:1;stroke:#eeff09;stroke-width:0.0852932;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">H(4)</text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       transform="scale(1.0438172,0.95802215)"
+       y="386.8522"
+       x="-109.50903"
+       id="text4003-1"
+       style="font-size:11.7281px;line-height:0%;font-family:ArialMT;fill:#8a3ea4;fill-opacity:1;stroke:#eeff09;stroke-width:0.0852932;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">H(3)</text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       transform="scale(1.0438172,0.95802215)"
+       y="374.05826"
+       x="-109.50903"
+       id="text4003-9"
+       style="font-size:11.7281px;line-height:0%;font-family:ArialMT;fill:#c13f2a;fill-opacity:1;stroke:#eeff09;stroke-width:0.0852932;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">H(2)</text>
+    <path
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="path3857-3"
+       d="m -119.74827,249.51978 275.01499,0"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:0.82151711;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;stroke-dasharray:0.82151227, 1.64302453" />
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text3891-4"
+       x="-118.29609"
+       y="440.41727"
+       transform="scale(1.0438172,0.95802215)"
+       style="font-size:11.7281px;line-height:0%;font-family:ArialMT;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">0</text>
+    <text
+       inkscape:transform-center-y="-238.53543"
+       inkscape:transform-center-x="-241.65354"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text4173-6"
+       x="-50.528023"
+       y="236.23717"
+       stroke-miterlimit="10"
+       font-size="13.5px"
+       style="font-size:13.5px;line-height:0%;font-family:Arial-BoldMT;fill:#000000;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10">H<tspan
+   id="tspan20885"
+   style="font-size:65%;baseline-shift:sub;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">k</tspan> Entropy landscape</text>
+    <text
+       inkscape:transform-center-y="-238.53543"
+       inkscape:transform-center-x="-241.65354"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text4173-6-3"
+       x="256.26355"
+       y="236.23717"
+       stroke-miterlimit="10"
+       font-size="13.5px"
+       style="font-size:13.5px;line-height:0%;font-family:Arial-BoldMT;fill:#000000;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10">I<tspan
+   id="tspan20885-6"
+   style="font-size:65%;baseline-shift:sub;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">k</tspan> Free-Energy landscape</text>
+    <text
+       inkscape:export-filename="/home/baudot/CANDIDATURES/Candidature EPR Inserm 2018/Figure_geneexpression.png"
+       inkscape:transform-center-x="98.618843"
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text4173-6-4-3-7"
+       x="422.37762"
+       y="397.67587"
+       stroke-miterlimit="10"
+       font-size="13.5px"
+       style="font-size:12.15px;line-height:0%;font-family:Arial-BoldMT;fill:#000000;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"><tspan
+         id="tspan19296-5"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial-BoldMT;-inkscape-font-specification:'Arial-BoldMT Bold';fill:#ff0000;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000" /></text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text19804"
+       y="394.28018"
+       x="434.69244"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:0%;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-size:10px;line-height:1.25"
+         y="394.28018"
+         x="434.69244"
+         id="tspan19806"
+         sodipodi:role="line">Min </tspan><tspan
+         style="font-size:10px;line-height:1.25"
+         id="tspan19808"
+         y="406.78018"
+         x="434.69244"
+         sodipodi:role="line">Free-Energy</tspan></text>
+    <text
+       inkscape:export-ydpi="300"
+       inkscape:export-xdpi="300"
+       id="text4173-0"
+       x="90.096054"
+       y="458.01538"
+       stroke-miterlimit="10"
+       font-size="13.5px"
+       style="font-size:13.5px;font-family:Arial-BoldMT;fill:#000000;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10" />
+  </g>
+</svg>

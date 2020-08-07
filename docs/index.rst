@@ -10,7 +10,7 @@ InfoTopo: Topological Information Data Analysis. Deep statistical unsupervised a
 **InfoTopo: Topological Information Data Analysis. Deep statistical unsupervised and supervised learning.**
 
 
-InfoTopo is a Machine Learning method based on Information Cohomology, a cohomology of statistical systems [1,8,9]. 
+InfoTopo is a Machine Learning method based on Information Cohomology, a cohomology of statistical systems [0,1,8,9]. 
 It allows to estimate higher order statistical structures, dependences and (refined) independences or generalised (possibly non-linear) correlations and to uncover their structure as simplicial complex.
 It provides estimations of the basic information functions, entropy, joint and condtional, multivariate Mutual-Informations (MI) and conditional MI, Total Correlations...
 
@@ -28,6 +28,8 @@ It assumes basically:
  3. a quite generic coboundary operator (Hochschild, Homological algebra with a (left) action of conditional expectation)
 
 The details for the underlying mathematics and methods can be found in the papers:
+
+[0] Manin, Y., Marcolli, M., Homotopy Theoretic and Categorical Models of Neural Information Networks, 2020, arXiv:2006.15136, `PDF-0 <https://arxiv.org/abs/2006.15136>`_
 
 [1] Vigneaux J., Topology of Statistical Systems. A Cohomological Approach to Information Theory. Ph.D. Thesis, Paris 7 Diderot University, Paris, France, June 2019. `PDF-1 <https://webusers.imj-prg.fr/~juan-pablo.vigneaux/these.pdf>`_
  
@@ -66,6 +68,7 @@ PyPI install, presuming you have numpy and networkx installed:
    
    basic_methods
    parameters
+   curse_of_dimension_and_statistical_dependencies_test
    supervised
    how_infotopo_works
    performances

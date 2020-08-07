@@ -236,7 +236,7 @@ sampling_mode : (integer: 1,2,3)
 
     def _resample_matrix(self, data_matrix):
         if self.work_on_transpose: 
-            data_matrix.transpose()
+            data_matrix = data_matrix.transpose()
     # find the Min and the Max of the matrix:
         if self.sampling_mode == 1:
             min_matrix = np.min(data_matrix, axis=0)
@@ -800,31 +800,48 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
 # #########################################################################
 
 if __name__ == "__main__":
-    from sklearn.datasets import load_iris, load_digits
+    from sklearn.datasets import load_iris, load_digits, load_boston
     import pandas as pd
     import seaborn as sns
     
-    iris = load_iris()
-    iris_df = pd.DataFrame(iris.data, columns = iris.feature_names)
-    dimension_max = iris.data.shape[1]
-    dimension_tot = iris.data.shape[1]
-    sample_size = iris.data.shape[0]
-    nb_of_values =9
-    forward_computation_mode = False
-    work_on_transpose = False
-    supervised_mode = False
-    sampling_mode = 1
-    deformed_probability_mode = False
-
-    iris_df = pd.DataFrame(iris.data, columns=iris.feature_names)
-    iris_df['species'] = pd.Series(iris.target).map(dict(zip(range(3),iris.target_names)))
-    sns.pairplot(iris_df, hue='species')
-    plt.show()
+    dataset = 2  # if dataset = 1 load IRIS DATASET # if dataset = 2 load Boston house prices dataset
+    if dataset == 1: 
+        dataset = load_iris()
+        dataset_df = pd.DataFrame(dataset.data, columns = dataset.feature_names)
+        dimension_max = dataset.data.shape[1]
+        dimension_tot = dataset.data.shape[1]
+        sample_size = dataset.data.shape[0]
+        nb_of_values =9
+        forward_computation_mode = False
+        work_on_transpose = False
+        supervised_mode = False
+        sampling_mode = 1
+        deformed_probability_mode = False
+        dataset_df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
+        dataset_df['species'] = pd.Series(dataset.target).map(dict(zip(range(3),dataset.target_names)))
+        sns.pairplot(dataset_df, hue='species')
+        plt.show()
+    if dataset == 2: 
+        dataset = load_boston()
+        dataset_df = pd.DataFrame(dataset.data, columns = dataset.feature_names)
+        dimension_max = dataset.data.shape[1]
+        dimension_tot = dataset.data.shape[1]
+        sample_size = dataset.data.shape[0]
+        nb_of_values =9
+        forward_computation_mode = False
+        work_on_transpose = False
+        supervised_mode = False
+        sampling_mode = 1
+        deformed_probability_mode = False
+        dataset_df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
+        dataset_df['MEDV'] = pd.Series(dataset.target).map(dict(zip(range(3),dataset.data[:,12])))
+        sns.pairplot(dataset_df, hue='MEDV')
+        plt.show()    
 
     
-    print("sample_size : ",iris.data.shape[0])
-    print('number of variables:',iris.data.shape[1])
-    print('number of tot variables dimensions:', iris.data.shape[1])
+    print("sample_size : ",dataset.data.shape[0])
+    print('number of variables:',dataset.data.shape[1])
+    print('number of tot variables dimensions:', dataset.data.shape[1])
     print('number of values:', nb_of_values)
     information_topo = infotopo(dimension_max = dimension_max, 
                                 dimension_tot = dimension_tot, 
@@ -837,7 +854,7 @@ if __name__ == "__main__":
                                 forward_computation_mode = forward_computation_mode)
 # Nentropy is dictionary (x,y) with x a list of kind (1,2,5) and y a value in bit    
     start = timeit.default_timer()
-    Nentropie = information_topo.simplicial_entropies_decomposition(iris.data)
+    Nentropie = information_topo.simplicial_entropies_decomposition(dataset.data)
     stop = timeit.default_timer()
     print('Time for CPU(seconds) entropies: ', stop - start)
     print(Nentropie)
