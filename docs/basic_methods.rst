@@ -11,7 +11,7 @@ and propose anuspervised or supervised learning mode (as a special case of the f
 The raw methods are computationnally consuming due to the intrinsic combinatorial 
 nature of the topological tools, even in the simplest case of a simplicial case 
 (the general case is based on the much broader partition combinatorics) the 
-computational complexity is of the order of 2 at the power n. 
+computational complexity is of the order of :math:`2^n` .
 As a consequence, an important part of the tools and methods are dedicated 
 to overcome this extensive computation. Among the possible strategies and 
 heuristics used or currently developped, are:
@@ -201,7 +201,7 @@ previously to the size of the data input matrix).
                                 forward_computation_mode = forward_computation_mode)
 
 Now we will compute all the simplicial semi-lattice of marginal and joint-entropy, 
-that contains 2 power n elements including the unit 0 reference measure element
+that contains :math:`2_n` elements including the unit 0 reference measure element
 The figure below give the usual Venn diagrams representation of set theoretic unions 
 and the corresponding semi-lattice of joint Random Variables and Joint Entropies, together 
 with its correponding simplicial representation, for 3 (top) and 4 variables-dimension 
@@ -229,8 +229,9 @@ the joint variables (ex: (1,3,4)) and  with values the joint or marginal entropy
 Such dictionary is hard to read; to allow a relevant visualization of the
 the simplicial entropy structure, the function simplicial_entropies_decomposition
 also plots the Entropy landscapes. Entropy landscapes provides a representation of the lattice 
-of joint and conditional entropies that ranks the joint variables as a function of their entropy 
-value and of the rank-dimensions as illustrated in the figure below:
+of joint (:math:`H_k`) and conditional entropies (noted as the action of Y :math:`Y.H_k`, 
+for :math:`H(X_1,...,X_k|Y)`) that ranks the joint variables as a function of their entropy value 
+and of the rank-dimensions as illustrated in the figure below:
 .. image:: images/Principles_TIDA.png
 
 An Entropy of Information Path is a sequence of inclusive tuples of increasing dimensions and follows 
@@ -276,6 +277,10 @@ In any entropy or information function estimation, it is necessary to check that
 provide a faithfull estimate, to avoid the sampling problem also called "curse of dimension". The command 
 "entropy_simplicial_lanscape" also computes the maximal dimension above which the estimation becomes too inacurate and
 shall not be interpreted. This is explained in more details in the section "curse_of_dimension_and_statistical_dependencies_test". 
+
+Now, let's have a look at the statistical dependencies structures in the dataset by computing the Mutual-Information lanscapes 
+which principle is depicted in the preceding and that basically plots k-dimensional multivariate Mutual Informations (:math:`I_k`) in the same 
+way as Entropy Landscapes. :math:`I_k` are alternated functions 
 
 
 This concludes our introduction to basic infotopo usage -- hopefully this
