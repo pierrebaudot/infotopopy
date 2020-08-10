@@ -835,8 +835,7 @@ if __name__ == "__main__":
         deformed_probability_mode = False
         dataset_df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
         dataset_df['MEDV'] = pd.Series(dataset.target).map(dict(zip(range(3),dataset.data[:,12])))
-        sns.pairplot(dataset_df, hue='MEDV')
-        plt.show()    
+         
 
     
     print("sample_size : ",dataset.data.shape[0])
