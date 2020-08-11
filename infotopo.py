@@ -804,7 +804,7 @@ if __name__ == "__main__":
     import pandas as pd
     import seaborn as sns
     
-    dataset = 2  # if dataset = 1 load IRIS DATASET # if dataset = 2 load Boston house prices dataset
+    dataset = 1  # if dataset = 1 load IRIS DATASET # if dataset = 2 load Boston house prices dataset
     if dataset == 1: 
         dataset = load_iris()
         dataset_df = pd.DataFrame(dataset.data, columns = dataset.feature_names)

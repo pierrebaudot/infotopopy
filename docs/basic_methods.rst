@@ -280,7 +280,12 @@ shall not be interpreted. This is explained in more details in the section "curs
 
 Now, let's have a look at the statistical dependencies structures in the dataset by computing the Mutual-Information lanscapes 
 which principle is depicted in the preceding and that basically plots k-dimensional multivariate Mutual Informations (:math:`I_k`) in the same 
-way as Entropy Landscapes. :math:`I_k` are alternated functions 
+way as Entropy Landscapes. :math:`I_k` are alternated functions of entropies, for example, 
+:math:`I_3=H(X_1)+H(X_2)+H(X_3)-H(X_1,X_2)-H(X1,X_3)-H(X_2,X_3)+H(X_1,X_2,X_3)`. They differ from Total Correlations (G_k) which are the 
+Kullback-Leibler Divergence between the full joint-entropy and its marginals , for example, :math:`G_3=H(X_1)+H(X_2)+H(X_3)-H(X_1,X_2,X_3)`,  
+
+
+.. image:: iris_info_landscapes.png
 
 
 This concludes our introduction to basic infotopo usage -- hopefully this
