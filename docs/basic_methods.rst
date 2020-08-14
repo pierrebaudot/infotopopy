@@ -251,7 +251,7 @@ could legitamely investigate entropies of entropies, a kind of complexity of inf
 Hsu et al. Entropy of Entropy: Measurement of Dynamical Complexity for Biological Systems, 
 Entropy 2017, 19(10), 550). 
 
-To plot the Entropy Landscapes and the distribution of entropy values for eack dimension-rank k, we use 
+To plot the Entropy Landscapes and the distribution of entropy values for each dimension-rank k, we use 
 the "entropy_simplicial_lanscape" command as following:   
 
 .. code:: python3 
@@ -279,11 +279,23 @@ provide a faithfull estimate, to avoid the sampling problem also called "curse o
 shall not be interpreted. This is explained in more details in the section "curse_of_dimension_and_statistical_dependencies_test". 
 
 Now, let's have a look at the statistical dependencies structures in the dataset by computing the Mutual-Information lanscapes 
-which principle is depicted in the preceding and that basically plots k-dimensional multivariate Mutual Informations (:math:`I_k`) in the same 
+which principle is depicted in the preceding figure and that basically plots k-dimensional multivariate Mutual Informations (:math:`I_k`) in the same 
 way as Entropy Landscapes. :math:`I_k` are alternated functions of entropies, for example, 
-:math:`I_3=H(X_1)+H(X_2)+H(X_3)-H(X_1,X_2)-H(X1,X_3)-H(X_2,X_3)+H(X_1,X_2,X_3)`. They differ from Total Correlations (G_k) which are the 
-Kullback-Leibler Divergence between the full joint-entropy and its marginals , for example, :math:`G_3=H(X_1)+H(X_2)+H(X_3)-H(X_1,X_2,X_3)`,  
+:math:`I_3=H(X_1)+H(X_2)+H(X_3)-H(X_1,X_2)-H(X1,X_3)-H(X_2,X_3)+H(X_1,X_2,X_3)`. They differ from Total Correlations (:math:`G_k`) which are the 
+Kullback-Leibler Divergence between the full joint-entropy and its marginals , for example, :math:`G_3=H(X_1)+H(X_2)+H(X_3)-H(X_1,X_2,X_3)`. In 
+contrast with :math:`G_k`, :math:`I_k` can be negative for :math:`k \geq 3`, a phenomenon called synergy in the original study of Brenner et al.
+Considering the old goal of expressing all of physics in terms of information, following Brillouin, Jaynes, Wheeller (...), for `k \geq 2`, 
+:math:`G_k` corresponds to a Free-Energy functional of a k interacting body system, while the  :math:`I_k` quantifies the contribution of the 
+k-bodies interaction to this total free energy. The :math:`I_1` component is the internal energy. 
 
+To plot the Information Landscapes and the distribution of :math:`I_k` values for each dimension-rank k, we use 
+the "entropy_simplicial_lanscape" command as following:   
+
+.. code:: python3 
+
+    information_topo.mutual_info_simplicial_lanscape(Ninfomut)
+
+On the example of Iris dataset, the Entropy Landscape we obtain look like this: 
 
 .. image:: iris_info_landscapes.png
 

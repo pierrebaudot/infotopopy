@@ -14,6 +14,8 @@ from decimal import Decimal
 import matplotlib.pyplot as plt
 from matplotlib.colors import LogNorm
 import networkx as nx
+import heapq
+from operator import itemgetter
 
 
 ###################################################################################
@@ -180,7 +182,9 @@ class infotopo:
         nb_bins_histo = 200,
         compute_shuffle = False,
         p_value = 0.05, 
-        nb_of_shuffle = 20):
+        nb_of_shuffle = 20,
+        dim_to_rank = 2,
+        number_of_max_val = 2):
 
         self.dimension_max = dimension_max  
         self.dimension_tot = dimension_tot
@@ -195,6 +199,8 @@ class infotopo:
         self.compute_shuffle = compute_shuffle
         self.p_value = p_value
         self.nb_of_shuffle = nb_of_shuffle
+        self.dim_to_rank = dim_to_rank
+        self.number_of_max_val = number_of_max_val
 
     def _validate_parameters(self):
         if self.dimension_max < 2 :
@@ -218,6 +224,8 @@ class infotopo:
             raise ValueError("p_value must be in between 0 and 1")      
         if not self.compute_shuffle:
             self.nb_of_shuffle = 0
+        if self.dim_to_rank >= self.dimension_max :
+            raise ValueError("dim_to_rank must be smaller than dimension_max")      
                 
 
 
@@ -792,6 +800,32 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         nx.draw_circular(netring, with_labels= True, nodelist = list_of_node,edgelist = list_of_edge, width= list_of_width, node_size = list_of_size)
         plt.show()
 
+# ########################################################################################
+# ############### RANKING and DISPLAY of the n first higher Mutual information ###########
+# ########################################################################################   
+
+    ''' 
+    regular unsorted dictionary
+    dictionary sorted by value
+    Ninfo_per_order_ordered[x]  is ordered firstby each order x of information
+    and second ordered by value of information
+    ''' 
+    def display_higher_lower_mutual_information(self, Ninfo_input): 
+        info_at_order = {}
+        for x,y in Ninfo_input.items():
+            if len(x) == self.dim_to_rank :
+                info_at_order[x]=Ninfo_input[x]
+        topitems = heapq.nlargest(self.number_of_max_val, info_at_order.items(), key=itemgetter(1))
+        topitemsasdict = dict(topitems)      
+        aaaa=0  
+        for key,val in topitemsasdict :
+            aaaa=aaaa+1
+            print(aaaa, "max value for", key,  "   Value Ik :", val)
+
+        
+        
+        
+        return (Ninfo_per_order_ordered,info_per_order)
 
 # #########################################################################
 # #########################################################################
@@ -866,7 +900,7 @@ if __name__ == "__main__":
     print('Time for CPU(seconds) Mutual Information: ', stop - start)
     print(Ninfomut)
     information_topo.mutual_info_simplicial_lanscape(Ninfomut)
-
+    information_topo.display_higher_lower_mutual_information(Ninfomut)
 
 
     information_topo.mutual_info_pairwise_network(Ninfomut)
