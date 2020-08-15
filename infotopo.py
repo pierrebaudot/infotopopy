@@ -811,7 +811,7 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
     Ninfo_per_order_ordered[x]  is ordered firstby each order x of information
     and second ordered by value of information
     ''' 
-    def display_higher_lower_mutual_information(self, Ninfo_input): 
+    def display_higher_lower_mutual_information(self, Ninfo_input, dataset): 
         info_at_order = {}
         for x,y in Ninfo_input.items():
             if len(x) == self.dim_to_rank :
@@ -819,22 +819,22 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         topitems = heapq.nlargest(self.number_of_max_val, info_at_order.items(), key=itemgetter(1))      
         topitemsasdict = dict(topitems)      
         aaaa=0
-        fig1 = plt.figure(1)  
+        fig1, ax1 = plt.subplots(1, self.dim_to_rank, sharex='col', sharey='row')
         nb_plot = 0
 
         for key in topitemsasdict :
             aaaa=aaaa+1
             print(aaaa, "max value in dimension", self.dim_to_rank ," is for the tuple", key,  "   with Ik value  :", topitemsasdict[key])  
-            '''      
+     
             if self.dim_to_rank == 2:                               
-                ax[nb_plot] = fig1.add_subplot(1,self.dim_to_rank,nb_plot)
-                pts[nb_plot]=ax[nb_plot].scatter(VarX, VarY,  c=VarZ, marker='8')
-                ax[nb_plot].legend()
-                ax[nb_plot].grid(True)
+                ax1[nb_plot] = fig1.add_subplot(1, self.number_of_max_val, nb_plot+1)
+                ax1[nb_plot].scatter(dataset.data[:,0], dataset.data[:,1],  c= 'red', marker='8')
+                ax1[nb_plot].legend(str(aaaa)+"max : I"+str(self.dim_to_rank)+"("+ str(key)+")="+ str(topitemsasdict[key]))
+                ax1[nb_plot].grid(True)
 #               cbar2 = fig2.colorbar(pts2, ax=ax2)
                 nb_plot =nb_plot +1 
         plt.show()   
-            '''
+
         topitems = heapq.nsmallest(self.number_of_max_val, info_at_order.items(), key=itemgetter(1))
         topitemsasdict = dict(topitems)      
         aaaa=0  
@@ -861,7 +861,7 @@ if __name__ == "__main__":
         dimension_max = dataset.data.shape[1]
         dimension_tot = dataset.data.shape[1]
         sample_size = dataset.data.shape[0]
-        nb_of_values =9
+        nb_of_values = 9
         forward_computation_mode = False
         work_on_transpose = False
         supervised_mode = False
@@ -916,8 +916,8 @@ if __name__ == "__main__":
     print('Time for CPU(seconds) Mutual Information: ', stop - start)
     print(Ninfomut)
     information_topo.mutual_info_simplicial_lanscape(Ninfomut)
-    information_topo = infotopo(dim_to_rank = 3, number_of_max_val = 2)
-    information_topo.display_higher_lower_mutual_information(Ninfomut)
+    information_topo = infotopo(dim_to_rank = 2, number_of_max_val = 2)
+    information_topo.display_higher_lower_mutual_information(Ninfomut, dataset)
 
 
     information_topo.mutual_info_pairwise_network(Ninfomut)
