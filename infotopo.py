@@ -801,7 +801,8 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         plt.show()
 
 # ########################################################################################
-# ############### RANKING and DISPLAY of the n first higher Mutual information ###########
+# ###############              RANKING and DISPLAY of the           ######################
+# ###############   n first higher and lower Mutual information     ######################
 # ########################################################################################   
 
     ''' 
@@ -815,17 +816,32 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         for x,y in Ninfo_input.items():
             if len(x) == self.dim_to_rank :
                 info_at_order[x]=Ninfo_input[x]
-        topitems = heapq.nlargest(self.number_of_max_val, info_at_order.items(), key=itemgetter(1))
+        topitems = heapq.nlargest(self.number_of_max_val, info_at_order.items(), key=itemgetter(1))      
+        topitemsasdict = dict(topitems)      
+        aaaa=0
+        fig1 = plt.figure(1)  
+        nb_plot = 0
+
+        for key in topitemsasdict :
+            aaaa=aaaa+1
+            print(aaaa, "max value in dimension", self.dim_to_rank ," is for the tuple", key,  "   with Ik value  :", topitemsasdict[key])  
+            '''      
+            if self.dim_to_rank == 2:                               
+                ax[nb_plot] = fig1.add_subplot(1,self.dim_to_rank,nb_plot)
+                pts[nb_plot]=ax[nb_plot].scatter(VarX, VarY,  c=VarZ, marker='8')
+                ax[nb_plot].legend()
+                ax[nb_plot].grid(True)
+#               cbar2 = fig2.colorbar(pts2, ax=ax2)
+                nb_plot =nb_plot +1 
+        plt.show()   
+            '''
+        topitems = heapq.nsmallest(self.number_of_max_val, info_at_order.items(), key=itemgetter(1))
         topitemsasdict = dict(topitems)      
         aaaa=0  
-        for key,val in topitemsasdict :
+        for key in topitemsasdict :
             aaaa=aaaa+1
-            print(aaaa, "max value for", key,  "   Value Ik :", val)
+            print(aaaa, "min value in dimension", self.dim_to_rank ," is for the tuple", key,  "   with Ik value  :", topitemsasdict[key])    
 
-        
-        
-        
-        return (Ninfo_per_order_ordered,info_per_order)
 
 # #########################################################################
 # #########################################################################
@@ -900,6 +916,7 @@ if __name__ == "__main__":
     print('Time for CPU(seconds) Mutual Information: ', stop - start)
     print(Ninfomut)
     information_topo.mutual_info_simplicial_lanscape(Ninfomut)
+    information_topo = infotopo(dim_to_rank = 3, number_of_max_val = 2)
     information_topo.display_higher_lower_mutual_information(Ninfomut)
 
 
