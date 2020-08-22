@@ -299,7 +299,13 @@ On the example of Iris dataset, the Entropy Landscape we obtain look like this:
 
 .. image:: iris_info_landscapes.png
 
+.. image:: iris_max_I2.png
 
+.. image:: iris_min_I2.png
+
+Beware that these tools will not detect whatever possible statistical dependencies (see James and Crutchfield `PDF <https://www.mdpi.com/1099-4300/19/10/531>`_), 
+this is just a simplicial heuristic subsets, computationnally tractable. The complete structure of dependencies are spanned by general information structures and 
+lattice of patition (see section how_infotopo_works)
 This concludes our introduction to basic infotopo usage -- hopefully this
 has given you the tools to get started for yourself. Further tutorials,
 covering infotopo parameters and more advanced usage are also available when

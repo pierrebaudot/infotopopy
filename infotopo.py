@@ -16,6 +16,8 @@ from matplotlib.colors import LogNorm
 import networkx as nx
 import heapq
 from operator import itemgetter
+from mpl_toolkits.mplot3d import Axes3D
+import matplotlib.pyplot as plt
 
 
 ###################################################################################
@@ -800,48 +802,123 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         nx.draw_circular(netring, with_labels= True, nodelist = list_of_node,edgelist = list_of_edge, width= list_of_width, node_size = list_of_size)
         plt.show()
 
+
+
 # ########################################################################################
 # ###############              RANKING and DISPLAY of the           ######################
 # ###############   n first higher and lower Mutual information     ######################
 # ########################################################################################   
 
     ''' 
-    regular unsorted dictionary
-    dictionary sorted by value
-    Ninfo_per_order_ordered[x]  is ordered firstby each order x of information
-    and second ordered by value of information
+    This function ranks the tuples in dimension k=dim_to_rank as a funtion  entropy or information 
+    and print and plot de data points k subsapce of  the n first maximum and minimum values (n=number_of_max_val)
+    if the dimension is 2,3 or 4 (when ploting is possible). For 4D plot the 4th dimension is given by the colorscale
+    of the points 
     ''' 
-    def display_higher_lower_mutual_information(self, Ninfo_input, dataset): 
-        info_at_order = {}
-        for x,y in Ninfo_input.items():
+    def display_higher_lower_mutual_information(self, dico_input, dataset): 
+        dico_at_order = {}
+        for x,y in dico_input.items():
             if len(x) == self.dim_to_rank :
-                info_at_order[x]=Ninfo_input[x]
-        topitems = heapq.nlargest(self.number_of_max_val, info_at_order.items(), key=itemgetter(1))      
+                dico_at_order[x]=dico_input[x]
+        topitems = heapq.nlargest(self.number_of_max_val, dico_at_order.items(), key=itemgetter(1))      
         topitemsasdict = dict(topitems)      
         aaaa=0
-        fig1, ax1 = plt.subplots(1, self.dim_to_rank, sharex='col', sharey='row')
+#        fig1, ax1 = plt.subplots(1, self.number_of_max_val, sharex='col', sharey='row')
+#       ax1 = ax1.flatten()
+        fig1 = plt.figure() 
+        ax1=np.empty((1,self.number_of_max_val))
         nb_plot = 0
 
         for key in topitemsasdict :
             aaaa=aaaa+1
-            print(aaaa, "max value in dimension", self.dim_to_rank ," is for the tuple", key,  "   with Ik value  :", topitemsasdict[key])  
+            print(aaaa, "max value in dimension", self.dim_to_rank ," is for the tuple", key,  "   with Fk value  :", topitemsasdict[key])  
      
             if self.dim_to_rank == 2:                               
-                ax1[nb_plot] = fig1.add_subplot(1, self.number_of_max_val, nb_plot+1)
-                ax1[nb_plot].scatter(dataset.data[:,0], dataset.data[:,1],  c= 'red', marker='8')
-                ax1[nb_plot].legend(str(aaaa)+"max : I"+str(self.dim_to_rank)+"("+ str(key)+")="+ str(topitemsasdict[key]))
-                ax1[nb_plot].grid(True)
+                ax1 = fig1.add_subplot(1, self.number_of_max_val, nb_plot+1)
+                ax1.scatter(dataset.data[:,key[0]-1], dataset.data[:,key[1]-1],  c= 'red', marker='8')
+                string_title = str(str(aaaa)+"max : F"+str(self.dim_to_rank)+"("+ str(key)+")="+ str(round(topitemsasdict[key],2)))
+                print(string_title)
+                ax1.set_title(string_title)
+                ax1.set_xlabel('variable'+str(key[0]))
+                ax1.set_ylabel('variable'+str(key[1]))
+#                ax1.grid(True)
 #               cbar2 = fig2.colorbar(pts2, ax=ax2)
                 nb_plot =nb_plot +1 
-        plt.show()   
+            elif self.dim_to_rank == 3:     
+                ax1 = fig1.add_subplot(1, self.number_of_max_val, nb_plot+1, projection='3d')
+                ax1.scatter(dataset.data[:,key[0]-1], dataset.data[:,key[1]-1], dataset.data[:,key[2]-1],  c= 'red', marker='8')
+                ax1.set_xlabel('variable'+str(key[0]))
+                ax1.set_ylabel('variable'+str(key[1]))
+                ax1.set_zlabel('variable'+str(key[2]))                          
+                string_title = str(str(aaaa)+"max : F"+str(self.dim_to_rank)+"("+ str(key)+")="+ str(round(topitemsasdict[key],2)))
+                print(string_title)
+                ax1.set_title(string_title)
+                ax1.grid(True)
+#               cbar2 = fig2.colorbar(pts2, ax=ax2)
+                nb_plot =nb_plot +1 
+            elif self.dim_to_rank == 4:     
+                ax1 = fig1.add_subplot(1, self.number_of_max_val, nb_plot+1, projection='3d')                
+                pts = ax1.scatter(dataset.data[:,key[0]-1], dataset.data[:,key[1]-1], dataset.data[:,key[2]-1], c=dataset.data[:,key[3]-1], cmap='jet', alpha=1, marker='8')
+                ax1.set_xlabel('variable'+str(key[0]))
+                ax1.set_ylabel('variable'+str(key[1]))
+                ax1.set_zlabel('variable'+str(key[2]))     
+                cbar = fig1.colorbar(pts, ax=ax1)                     
+                string_title = str(str(aaaa)+"max : F"+str(self.dim_to_rank)+"("+ str(key)+")="+ str(round(topitemsasdict[key],2)))
+                print(string_title)
+                ax1.set_title(string_title)
+                ax1.grid(True)
+#               cbar2 = fig2.colorbar(pts2, ax=ax2)
+                nb_plot =nb_plot +1         
 
-        topitems = heapq.nsmallest(self.number_of_max_val, info_at_order.items(), key=itemgetter(1))
-        topitemsasdict = dict(topitems)      
+        topitems = heapq.nsmallest(self.number_of_max_val, dico_at_order.items(), key=itemgetter(1))
+        topitemsasdict = dict(topitems)    
+#        fig2, ax2 = plt.subplots(1, self.number_of_max_val, sharex='col', sharey='row')
+ #       ax2 = ax2.flatten()
+        fig2 = plt.figure()
+        ax2=np.empty((1,self.number_of_max_val))
         aaaa=0  
+        nb_plot = 0
+
         for key in topitemsasdict :
             aaaa=aaaa+1
-            print(aaaa, "min value in dimension", self.dim_to_rank ," is for the tuple", key,  "   with Ik value  :", topitemsasdict[key])    
-
+            print(aaaa, "min value in dimension", self.dim_to_rank ," is for the tuple", key,  "   with Fk value  :", topitemsasdict[key])    
+            if self.dim_to_rank == 2:                               
+                ax2 = fig2.add_subplot(1, self.number_of_max_val, nb_plot+1)
+                ax2.scatter(dataset.data[:,key[0]-1], dataset.data[:,key[1]-1],  c= 'red', marker='8')
+                string_title = str(str(aaaa)+"min : F"+str(self.dim_to_rank)+"("+ str(key)+")="+ str(round(topitemsasdict[key],2)))
+                print(string_title)
+                ax2.set_title(string_title)
+                ax2.set_xlabel('variable'+str(key[0]))
+                ax2.set_ylabel('variable'+str(key[1]))
+                ax2.grid(True)
+#               cbar2 = fig2.colorbar(pts2, ax=ax2)
+                nb_plot =nb_plot +1 
+            elif self.dim_to_rank == 3:     
+                ax2 = fig2.add_subplot(1, self.number_of_max_val, nb_plot+1, projection='3d')
+                ax2.scatter(dataset.data[:,key[0]-1], dataset.data[:,key[1]-1], dataset.data[:,key[2]-1],  c= 'red', marker='8')
+                ax2.set_xlabel('variable'+str(key[0]))
+                ax2.set_ylabel('variable'+str(key[1]))
+                ax2.set_zlabel('variable'+str(key[2]))                          
+                string_title = str(str(aaaa)+"min : F"+str(self.dim_to_rank)+"("+ str(key)+")="+ str(round(topitemsasdict[key],2)))
+                print(string_title)
+                ax2.set_title(string_title)
+                ax2.grid(True)
+#               cbar2 = fig2.colorbar(pts2, ax=ax2)
+                nb_plot =nb_plot +1 
+            elif self.dim_to_rank == 4:     
+                ax2 = fig2.add_subplot(1, self.number_of_max_val, nb_plot+1, projection='3d')                
+                pts = ax2.scatter(dataset.data[:,key[0]-1], dataset.data[:,key[1]-1], dataset.data[:,key[2]-1], c=dataset.data[:,key[3]-1], cmap='jet', alpha=1, marker='8')
+                ax2.set_xlabel('variable'+str(key[0]))
+                ax2.set_ylabel('variable'+str(key[1]))
+                ax2.set_zlabel('variable'+str(key[2]))     
+                cbar = fig2.colorbar(pts, ax=ax2)                     
+                string_title = str(str(aaaa)+"min : F"+str(self.dim_to_rank)+"("+ str(key)+")="+ str(round(topitemsasdict[key],2)))
+                print(string_title)
+                ax2.set_title(string_title)
+                ax2.grid(True)
+#               cbar2 = fig2.colorbar(pts2, ax=ax2)
+                nb_plot =nb_plot +1    
+        plt.show()          
 
 # #########################################################################
 # #########################################################################
@@ -850,11 +927,11 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
 # #########################################################################
 
 if __name__ == "__main__":
-    from sklearn.datasets import load_iris, load_digits, load_boston
+    from sklearn.datasets import load_iris, load_digits, load_boston, load_diabetes
     import pandas as pd
     import seaborn as sns
     
-    dataset = 1  # if dataset = 1 load IRIS DATASET # if dataset = 2 load Boston house prices dataset
+    dataset = 3 # if dataset = 1 load IRIS DATASET # if dataset = 2 load Boston house prices dataset # if dataset = 3 load DIABETES  dataset
     if dataset == 1: 
         dataset = load_iris()
         dataset_df = pd.DataFrame(dataset.data, columns = dataset.feature_names)
@@ -871,7 +948,7 @@ if __name__ == "__main__":
         dataset_df['species'] = pd.Series(dataset.target).map(dict(zip(range(3),dataset.target_names)))
         sns.pairplot(dataset_df, hue='species')
         plt.show()
-    if dataset == 2: 
+    elif dataset == 2: 
         dataset = load_boston()
         dataset_df = pd.DataFrame(dataset.data, columns = dataset.feature_names)
         dimension_max = dataset.data.shape[1]
@@ -885,6 +962,22 @@ if __name__ == "__main__":
         deformed_probability_mode = False
         dataset_df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
         dataset_df['MEDV'] = pd.Series(dataset.target).map(dict(zip(range(3),dataset.data[:,12])))
+    elif dataset == 3: 
+        dataset = load_diabetes()
+        dataset_df = pd.DataFrame(dataset.data, columns = dataset.feature_names)
+        dimension_max = dataset.data.shape[1]
+        dimension_tot = dataset.data.shape[1]
+        sample_size = dataset.data.shape[0]
+        nb_of_values = 9
+        forward_computation_mode = False
+        work_on_transpose = False
+        supervised_mode = False
+        sampling_mode = 1
+        deformed_probability_mode = False
+        dataset_df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
+#        dataset_df[dataset.target] = pd.Series(dataset.target).map(dict(zip(range(3),dataset.data[:,9])))
+#        sns.pairplot(dataset_df, hue=dataset.target)
+        plt.show()   
          
 
     
@@ -916,7 +1009,7 @@ if __name__ == "__main__":
     print('Time for CPU(seconds) Mutual Information: ', stop - start)
     print(Ninfomut)
     information_topo.mutual_info_simplicial_lanscape(Ninfomut)
-    information_topo = infotopo(dim_to_rank = 2, number_of_max_val = 2)
+    information_topo = infotopo(dim_to_rank = 3, number_of_max_val = 3)
     information_topo.display_higher_lower_mutual_information(Ninfomut, dataset)
 
 
