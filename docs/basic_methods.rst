@@ -38,7 +38,7 @@ visualise the results, and pandas to handle the data.
 
 .. code:: python3
 
-    from sklearn.datasets import load_iris, load_digits
+    from sklearn.datasets import load_iris, load_digits, load_boston, load_diabetes
     import pandas as pd
     import seaborn as sns
     import matplotlib.pyplot as plt
@@ -347,6 +347,41 @@ We begin to see that Homological tools provides a wide generalisation of complex
 The Iris dataset and its associated information landsacpes are in too low dimension to appreciate all the interest of the methods in higher dimensions,
 so lets turn to larger dimensional classical machine learning dataset: Diabetes dataset. This dataset is kindly also furnished by scikitlearn, and we load
  it with the same methods as previously:
+
+.. code:: python3 
+
+    dataset = load_diabetes()
+    dataset_df = pd.DataFrame(dataset.data, columns = dataset.feature_names)
+    dimension_max = dataset.data.shape[1]
+    dimension_tot = dataset.data.shape[1]
+    sample_size = dataset.data.shape[0]
+    nb_of_values = 9
+    forward_computation_mode = False
+    work_on_transpose = False
+    supervised_mode = False
+    sampling_mode = 1
+    deformed_probability_mode = False
+    dataset_df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
+
+ This dataset contains 10 variables-dimensions for a sample size (number of points) of 442 and a target (label) variable which quantifies diabetes 
+ progress. The ten variables are [age, sex, body mass index, average blood pressure, T-Cells, low-density lipoproteins, high-density lipoproteins,
+ thyroid stimulating hormone, lamotrigine, blood sugar level] in this order. As before, we execute:
+
+ .. code:: python3
+
+    Nentropie = information_topo.simplicial_entropies_decomposition(iris.data)
+    information_topo.entropy_simplicial_lanscape(Nentropie)
+
+ and we obtain the following entropy landscape:
+
+ .. image:: images/diabetes_entropy_landscape.png
+
+ which corresponds to the following distributions of joint entropies for each dimensions: 
+
+ .. image:: images/diabetes_entropy_histograms.png
+
+ The number of tuples (a total of :math:`2^10`) to represent becomes to hudge, and enforces to plot only the distribution histograms of k-tuples 
+ value (with a given number of bins = nb_bins_histo) in each dimension. 
 
 
 

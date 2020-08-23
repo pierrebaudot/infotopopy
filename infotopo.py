@@ -544,6 +544,7 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         minima_tot=1000000.00
         ListEntropyordre={}
         undersampling_percent=np.array([])
+        
  
         for i in range(1,self.dimension_max+1):
             ListEntropyordre[i]=[]
@@ -576,9 +577,10 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
                 if ListEntropyordre[a][x] >= ((math.log(self.sample_size)/math.log(2))-delta_entropy_histo):
                     nb_undersampling_point=nb_undersampling_point+1
                     if a ==1:
-                        print(ListEntropyordre[a][x])
-            undersampling_percent = np.hstack((undersampling_percent,100*nb_undersampling_point/self._binomial(self.dimension_max,a)))
-            print('undersampling_percent in dim ',a,' = ', 100*nb_undersampling_point/self._binomial(self.dimension_max,a))
+                        print(ListEntropyordre[a][x])      
+            percent_undersampled =  100*nb_undersampling_point/self._binomial(self.dimension_max,a)              
+            undersampling_percent = np.hstack((undersampling_percent, percent_undersampled))
+            print('undersampling percent in dim ',a,' = ', percent_undersampled )             
             ListEntropyordre[a].append(minima_tot-0.1)
             ListEntropyordre[a].append(maxima_tot+0.1)
             n, bins, patches = plt.hist(ListEntropyordre[a], self.nb_bins_histo, facecolor='g')
@@ -588,14 +590,22 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
                 matrix_distrib_info=n
             else:
                 matrix_distrib_info=np.c_[matrix_distrib_info,n]
-            plt.grid(True)
-    
+            plt.grid(True)   
+        
+        boolean_test = True
+        undersampling_dim = self.dimension_max
+        for xxxx in  range(0,self.dimension_max) :   
+            if undersampling_percent[xxxx] > 5 and boolean_test: 
+                undersampling_dim = xxxx+1
+                boolean_test = False
+        print('the undersampling dimension is ', undersampling_dim)  
+
         num_fig=num_fig+1
         plt.figure(num_fig)
         abssice_degree=np.linspace(1, self.dimension_max, self.dimension_max)
         plt.plot(abssice_degree,undersampling_percent)
-        plt.ylabel('(percent of undersampled points)')
-        plt.title('undersampling bound')
+        plt.ylabel('percent of undersampled points')
+        plt.title(str('Undersampling dimension (p>0.05), ku='+str(undersampling_dim)))
         plt.xlabel('dimension')
         plt.grid(True)
 
@@ -1025,7 +1035,7 @@ if __name__ == "__main__":
     print('Time for CPU(seconds) Mutual Information: ', stop - start)
     print(Ninfomut)
     information_topo.mutual_info_simplicial_lanscape(Ninfomut)
-    information_topo = infotopo(dim_to_rank = 4, number_of_max_val = 2)
+    information_topo = infotopo(dim_to_rank = 6, number_of_max_val = 3)
     dico_max, dico_min = information_topo.display_higher_lower_mutual_information(Ninfomut, dataset)
     print("the first maximum tuples are:", dico_max )
     print("the first minimum tuples are:", dico_min )
