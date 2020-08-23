@@ -621,7 +621,6 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
 #########################################################################
     def mutual_info_simplicial_lanscape(self, Ninfomut) :
         num_fig = 1
-#        plt.figure(num_fig,figsize=(18,10))
         matrix_distrib_infomut=np.array([])
         x_absss = np.array([])
         y_absss = np.array([])
@@ -687,9 +686,10 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
                             plt.subplot(5,5,i)
                 plt.plot(bin_edgesSHUFFLE,hist_sum_SHUFFLE[i])
                 plt.axis([minima_tot, maxima_tot,0,hist_sum_SHUFFLE[i].max()])
+                num_fig=num_fig+1
 #   COMPUTE THE HISTOGRAMS OF THE LIST OF INFOMUT VALUES FOR EACH DEGREE
 #   If shuffle is true it also compute the signifiance test against independence null hypothesis
-        num_fig=num_fig+1
+        
         fig_Histo_infomut = plt.figure(num_fig,figsize=(18,10))
         if self.compute_shuffle == True:
             low_signif_bound={}
@@ -791,34 +791,43 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
             infomut_per_order.append(info_dicoperoder)
         for x,y in Ninfomut.items():
             infomut_per_order[len(x)][x]=Ninfomut[x]
-        print(infomut_per_order)
         num_fig = 1
-        plt.figure(num_fig)
+        plt.figure(num_fig,figsize=(18, 10))
         netring = nx.Graph()
         list_of_node=[]
         list_of_size=[]
         list_of_edge=[]
         list_of_width=[]
         list_of_labels={}
-        for x in range(1,self.dimension_max+1):
+        
+        for x,y in infomut_per_order[1].items():
             tuple_interim=(x)
-            list_of_node.append(x)
+            list_of_node.append(x[0])
             list_of_labels[x]=tuple_interim
             number_node=[x]
             code_var=tuple(number_node)
-            print("infomut_per_order[1][(x,)]",infomut_per_order[1][(x,)])
-            list_of_size.append((infomut_per_order[1][(x,)]**2) *500)
-            netring.add_node(x)
+            list_of_size.append((infomut_per_order[1][x]**2) *500)
+            netring.add_node(x[0])
         tuple_interim=()
         for x,y in infomut_per_order[2].items():
-#            tuple_interim=(workbook_data[Name_worksheet].cell(row = x[0]+1, column = 1).value,workbook_data[Name_worksheet].cell(row = x[1]+1, column = 1).value)
             list_of_edge.append(x)
             var_1=x[0]
             var_2=x[1]
             netring.add_edge(var_1, var_2, weight= (infomut_per_order[2][x]) )
             list_of_width.append((infomut_per_order[2][x]*10))
-        print(list_of_node)
+        plt.subplot(1, 2, 1)    
         nx.draw_circular(netring, with_labels= True, nodelist = list_of_node,edgelist = list_of_edge, width= list_of_width, node_size = list_of_size)
+        adjacency_matrix = np.zeros((len(list_of_node), len(list_of_node)))
+        for x,y in infomut_per_order[2].items():
+            adjacency_matrix[x[0]-1,x[1]-1] = y
+            adjacency_matrix[x[1]-1,x[0]-1] = y
+        for x,y in infomut_per_order[1].items():        
+            adjacency_matrix[x[0]-1,x[0]-1] = infomut_per_order[1][(x[0],)]    
+        plt.subplot(1, 2, 2)       
+        plt.title('Information adjacency matrix (I1 and I2)') 
+        plt.imshow(adjacency_matrix, cmap='hot')
+        cbar = plt.colorbar()
+        cbar.set_label('Information (bits)', rotation=270)
         plt.show()
 
 
@@ -973,6 +982,7 @@ if __name__ == "__main__":
         dataset_df['MEDV'] = pd.Series(dataset.target).map(dict(zip(range(3),dataset.data[:,12])))
     elif dataset == 3: 
         dataset = load_diabetes()
+        print(dataset)
         dataset_df = pd.DataFrame(dataset.data, columns = dataset.feature_names)
         dimension_max = dataset.data.shape[1]
         dimension_tot = dataset.data.shape[1]
@@ -984,15 +994,12 @@ if __name__ == "__main__":
         sampling_mode = 1
         deformed_probability_mode = False
         dataset_df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
-#        dataset_df[dataset.target] = pd.Series(dataset.target).map(dict(zip(range(3),dataset.data[:,9])))
-#        sns.pairplot(dataset_df, hue=dataset.target)
-        plt.show()   
          
 
     
     print("sample_size : ",dataset.data.shape[0])
-    print('number of variables:',dataset.data.shape[1])
-    print('number of tot variables dimensions:', dataset.data.shape[1])
+    print('number of variables or dimension of the analysis:',dataset.data.shape[1])
+    print('number of tot  dimensions:', dataset.data.shape[1])
     print('number of values:', nb_of_values)
     information_topo = infotopo(dimension_max = dimension_max, 
                                 dimension_tot = dimension_tot, 
@@ -1018,7 +1025,7 @@ if __name__ == "__main__":
     print('Time for CPU(seconds) Mutual Information: ', stop - start)
     print(Ninfomut)
     information_topo.mutual_info_simplicial_lanscape(Ninfomut)
-    information_topo = infotopo(dim_to_rank = 3, number_of_max_val = 3)
+    information_topo = infotopo(dim_to_rank = 4, number_of_max_val = 2)
     dico_max, dico_min = information_topo.display_higher_lower_mutual_information(Ninfomut, dataset)
     print("the first maximum tuples are:", dico_max )
     print("the first minimum tuples are:", dico_min )

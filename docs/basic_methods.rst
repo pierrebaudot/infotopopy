@@ -234,6 +234,7 @@ also plots the Entropy landscapes. Entropy landscapes provides a representation 
 of joint (:math:`H_k`) and conditional entropies (noted as the action of Y :math:`Y.H_k`, 
 for :math:`H(X_1,...,X_k|Y)`) that ranks the joint variables as a function of their entropy value 
 and of the rank-dimensions as illustrated in the figure below:
+
 .. image:: images/Principles_TIDA.png
 
 An Entropy of Information Path is a sequence of inclusive tuples of increasing dimensions and follows 
@@ -262,7 +263,7 @@ the "entropy_simplicial_lanscape" command as following:
 
 On the example of Iris dataset, the Entropy Landscape we obtain look like this: 
 
-.. image:: figure_entropy_simplicial_lattice.png
+.. image:: images/figure_entropy_simplicial_lattice.png
 
 In this low dimensional case (dimension_tot = 4), the landscapes are very low informative (poor information 
 structure) and the histrograms have low meaning, since there is only one subset-k-tuple per bin value, and hence only 
@@ -299,15 +300,59 @@ the "entropy_simplicial_lanscape" command as following:
 
 On the example of Iris dataset, the Entropy Landscape we obtain look like this: 
 
-.. image:: iris_info_landscapes.png
+.. image:: images/iris_info_landscapes.png
 
-.. image:: iris_max_I2.png
+To obtain the first m k-tuples with maximum and minimum value in dimension k, and if the dimension is 2,3 or 4 plot the data points in the 
+corresponding k-subspace (the 4th dimension is represented by a color code), we use the "display_higher_lower_mutual_information".
+For exmaple, plotting the 2 first maximum and minimum in dimension (framed in red and blue respectively in the last figure), we use 
+the following command: 
 
-.. image:: iris_min_I2.png
+.. code:: python3 
+
+    information_topo = infotopo(dim_to_rank = 2, number_of_max_val = 2)
+    dico_max, dico_min = information_topo.display_higher_lower_mutual_information(Ninfomut, dataset)    
+
+On the example of Iris dataset, we obtain the two pairs of varaibles (3,4) and (1,3) that are the most statistically dependent ("correlated"): 
+
+.. image:: images/iris_max_I2.png
+
+And we obtain the two pairs of variables (1,2) and (2,3) that are the less statistically dependent ("uncorrelated"):
+
+.. image:: images/iris_min_I2.png
+
+Whenever the dimension to study is more than 4, the function only retreives the dictionaries of the first maximum and minimum tuples (to print).
+
+In biology (e.g "omic"), neuroscience (e.g "neural network") and social science (e.g "social network"), it is common and helpfull to conceive and 
+visualize the one and two dimensional results as (first degree) networks. To visualize the Information Networks, we use the 
+"mutual_info_pairwise_network" as following:
+
+.. code:: python3 
+
+    information_topo.mutual_info_pairwise_network(Ninfomut)
+
+The area of each vertex is a function of the marginals information :math:`H_1=I_1` and the thickness of the edges is a function of the pairwise
+mutual information :math:`H_1=I_1`. On Iris dataset, it gives:  
+
+.. image:: images/iris_info_network.png
+
+:math:`I_k` with :math:`k \geq 3` can be repesented in an analgous way using k-cliques as acheived in `Tapia & al 2018 <https://www.nature.com/articles/s41598-018-31765-z>`_
+(to be done in the package). They shall be represented using k-tensor formalism. In the context of complex networks studies those higher :math:`I_k` with :math:`k \geq 3` 
+correspond to 'multiplex or multilayer networks. <https://oxford.universitypressscholarship.com/view/10.1093/oso/9780198753919.001.0001/oso-9780198753919>`_
+The raw result obtained here is a fully connected network, but one can obtain a sparse matrix and a sparsely connected network by thresholding 
+the :math:`I_k` with a with fixed p-value, using the exact statistical dependence test implemented in the package. 
+in the context of complex networks studies those higher :math:`I_k` with :math:`k \geq 3` correspond to hypergraphs or 'multiplex or multilayer networks. <https://oxford.universitypressscholarship.com/view/10.1093/oso/9780198753919.001.0001/oso-9780198753919>`_
+
+We begin to see that Homological tools provides a wide generalisation of complex networks (a 1-complex, that is a graph) to higher interactions structures.
+
+The Iris dataset and its associated information landsacpes are in too low dimension to appreciate all the interest of the methods in higher dimensions,
+so lets turn to larger dimensional classical machine learning dataset: Diabetes dataset. This dataset is kindly also furnished by scikitlearn, and we load
+ it with the same methods as previously:
+
+
 
 Beware that these tools will not detect whatever possible statistical dependencies (see James and Crutchfield `PDF <https://www.mdpi.com/1099-4300/19/10/531>`_), 
 this is just a simplicial heuristic subsets, computationnally tractable. The complete structure of dependencies are spanned by general information structures and 
-lattice of patition (see section how_infotopo_works)
+lattice of patition (see section how_infotopo_works).
 This concludes our introduction to basic infotopo usage -- hopefully this
 has given you the tools to get started for yourself. Further tutorials,
 covering infotopo parameters and more advanced usage are also available when
