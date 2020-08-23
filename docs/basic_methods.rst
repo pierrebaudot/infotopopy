@@ -7,6 +7,8 @@ Infotopo is a general Machine Learning set of tools gathering Topology
 statistical physics.
 It provides a matheamticaly formalised expression of deep network and learning,
 and propose anuspervised or supervised learning mode (as a special case of the first).
+It allows a simple and autonatic exploration of the data structures, dimension reduction
+and supervised or unsupervised classification.
 
 The raw methods are computationnally consuming due to the intrinsic combinatorial 
 nature of the topological tools, even in the simplest case of a simplicial case 
@@ -282,8 +284,8 @@ Now, let's have a look at the statistical dependencies structures in the dataset
 which principle is depicted in the preceding figure and that basically plots k-dimensional multivariate Mutual Informations (:math:`I_k`) in the same 
 way as Entropy Landscapes. :math:`I_k` are alternated functions of entropies, for example, 
 :math:`I_3=H(X_1)+H(X_2)+H(X_3)-H(X_1,X_2)-H(X1,X_3)-H(X_2,X_3)+H(X_1,X_2,X_3)`. They differ from Total Correlations (:math:`G_k`) which are the 
-Kullback-Leibler Divergence between the full joint-entropy and its marginals , for example, :math:`G_3=H(X_1)+H(X_2)+H(X_3)-H(X_1,X_2,X_3)`. In 
-contrast with :math:`G_k`, :math:`I_k` can be negative for :math:`k \geq 3`, a phenomenon called synergy in the original study of Brenner et al.
+Kullback-Leibler Divergence between the full joint-entropy and its marginals product, for example, :math:`G_3=H(X_1)+H(X_2)+H(X_3)-H(X_1,X_2,X_3)`. 
+In contrast with :math:`G_k`, :math:`I_k` can be negative for :math:`k \geq 3`, a phenomenon called synergy in the original study of Brenner et al.
 Considering the old goal of expressing all of physics in terms of information, following Brillouin, Jaynes, Wheeller (...), for `k \geq 2`, 
 :math:`G_k` corresponds to a Free-Energy functional of a k interacting body system, while the  :math:`I_k` quantifies the contribution of the 
 k-bodies interaction to this total free energy. The :math:`I_1` component is the internal energy. 

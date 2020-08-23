@@ -158,7 +158,7 @@ class infotopo:
                         to the marginals (homological way). The joint probability corresponding to all variable is first estimated and then projected on 
                         lower dimensions using conditional rule. This explore the whole lattice, and imposes dimension_max = dimension_tot   
 
-    nb_bins_histo : (integer) number of values used for entropy and mutual information distribution histograms and lsample_sizeandscapes.          
+    nb_bins_histo : (integer) number of values used for entropy and mutual information distribution histograms and landscapes.          
 
     compute_shuffle : (Boolean)
                         _ compute_shuffle = True : it will compute the statictical test of significance of the dependencies (pethel et hah 2014) 
@@ -168,7 +168,12 @@ class infotopo:
     p_value :       (real in ]0,1[) p value of the test of significance of the dependencies estimated by mutual info 
                     the H0 hypotheis is the mutual Info distribution does not differ from the distribution of MI with shuffled higher order dependencies
     
-    nb_of_shuffle: (integer) number of shuffles computed                              
+    nb_of_shuffle: (integer) number of shuffles computed   
+    
+    dim_to_rank: (integer) chosen dimension k to rank the k-tuples as a function information functions values.        
+
+    number_of_max_val: (integer) number of the first k-tuples with maximum or minimum value to retrieve in a dictionary and to plot the corresponding data 
+    points k-subspace.             
 
     """
     def __init__(self, 
@@ -529,7 +534,7 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
                                    
     def entropy_simplicial_lanscape(self, Nentropie):
         num_fig = 1
-        plt.figure(num_fig)
+        plt.figure(num_fig,figsize=(18,10))
         moyenne={}
         nbpoint={}
         matrix_distrib_info=np.array([])
@@ -551,6 +556,7 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
                 maxima_tot=y
             if y<minima_tot:
                 minima_tot=y
+        delta_entropy_histo = (maxima_tot-minima_tot)/self.nb_bins_histo    
   
         for a in range(1,self.dimension_max+1):
             if self.dimension_max<=9 :
@@ -566,7 +572,8 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
  # compute the Ku undersampling bound
             nb_undersampling_point=0
             for x in range(0,len(ListEntropyordre[a])):
-                if ListEntropyordre[a][x] >= ((math.log(self.sample_size)/math.log(2))-0.00000001):
+ #               if ListEntropyordre[a][x] >= ((math.log(self.sample_size)/math.log(2))-0.00000001):
+                if ListEntropyordre[a][x] >= ((math.log(self.sample_size)/math.log(2))-delta_entropy_histo):
                     nb_undersampling_point=nb_undersampling_point+1
                     if a ==1:
                         print(ListEntropyordre[a][x])
@@ -576,6 +583,7 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
             ListEntropyordre[a].append(maxima_tot+0.1)
             n, bins, patches = plt.hist(ListEntropyordre[a], self.nb_bins_histo, facecolor='g')
             plt.axis([minima_tot, maxima_tot,0,n.max()])
+            plt.title(str('H'+str(a)+' dist'))
             if a==1 :
                 matrix_distrib_info=n
             else:
@@ -588,15 +596,21 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         plt.plot(abssice_degree,undersampling_percent)
         plt.ylabel('(percent of undersampled points)')
         plt.title('undersampling bound')
+        plt.xlabel('dimension')
         plt.grid(True)
 
         num_fig=num_fig+1
-        plt.figure(num_fig)
+        fig_entropylandscape =plt.figure(num_fig,figsize=(18, 10))
         matrix_distrib_info=np.flipud(matrix_distrib_info)
-        plt.matshow(matrix_distrib_info, cmap='jet', aspect='auto', extent=[0,self.dimension_max,minima_tot-0.1,maxima_tot+0.1], norm=LogNorm())
+        plt.matshow(matrix_distrib_info, cmap='jet', aspect='auto', extent=[0,self.dimension_max,minima_tot-0.1,maxima_tot+0.1], norm=LogNorm(), fignum= num_fig)
         plt.axis([0,self.dimension_max,minima_tot,maxima_tot])
-        plt.colorbar()
+        cbar = plt.colorbar()
+        cbar.set_label('# of tuples', rotation=270)
         plt.grid(False)
+        plt.xlabel('dimension')
+        plt.ylabel('Hk value (bits)')
+        plt.title('Hk landscape')
+        fig_entropylandscape.set_size_inches(18, 10)
         plt.show(num_fig)
 
 #########################################################################
@@ -607,7 +621,7 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
 #########################################################################
     def mutual_info_simplicial_lanscape(self, Ninfomut) :
         num_fig = 1
-        plt.figure(num_fig)
+#        plt.figure(num_fig,figsize=(18,10))
         matrix_distrib_infomut=np.array([])
         x_absss = np.array([])
         y_absss = np.array([])
@@ -628,8 +642,7 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
                 maxima_tot=y
             if y<minima_tot:
                 minima_tot=y
-#        Ninfomut.clear()
-#        del(Ninfomut)
+
 # Compute the list of Infomut at each degree for each SHUFFLE and sums the distributions
 # (we sum the districbution because the original n-shuffles vectors would be too big )
         if self.compute_shuffle == True:
@@ -677,7 +690,7 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
 #   COMPUTE THE HISTOGRAMS OF THE LIST OF INFOMUT VALUES FOR EACH DEGREE
 #   If shuffle is true it also compute the signifiance test against independence null hypothesis
         num_fig=num_fig+1
-        fig_Histo_infomut = plt.figure(num_fig)
+        fig_Histo_infomut = plt.figure(num_fig,figsize=(18,10))
         if self.compute_shuffle == True:
             low_signif_bound={}
             high_signif_bound={}
@@ -729,6 +742,7 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
                 print('nb_of_signif_high in dim',a, ' = ',  nb_of_signif_high)
                 plt.plot(bin_edgesSHUFFLE,lign_signif[a]*(1/self.nb_of_shuffle),color="green")
             plt.axis([minima_tot, maxima_tot,0,n.max()])
+            plt.title(str('I'+str(a)+' dist'))
             if a==1 :
                 matrix_distrib_infomut=n
             else:
@@ -738,9 +752,9 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
 #   COMPUTE THE INFOMUT LANDSCAPE FROM THE HISTOGRAMS AS THE MATRIX  matrix_distrib_infomut
 #   If shuffle is true it also plots the signifiance test against independence null hypothesis
         num_fig=num_fig+1
-        fig_infolandscape =plt.figure(num_fig)
+        fig_infolandscape =plt.figure(num_fig,figsize=(18, 10))
         matrix_distrib_infomut=np.flipud(matrix_distrib_infomut)
-        plt.matshow(matrix_distrib_infomut, cmap='jet', aspect='auto', extent=[0,self.dimension_max,minima_tot-0.1,maxima_tot+0.1], norm=LogNorm())
+        plt.matshow(matrix_distrib_infomut, cmap='jet', aspect='auto', extent=[0,self.dimension_max,minima_tot-0.1,maxima_tot+0.1], norm=LogNorm(), fignum= num_fig)
         plt.axis([0,self.dimension_max,minima_tot,maxima_tot])
         if self.compute_shuffle == True:
             abssice=np.linspace(0.5, self.dimension_max-0.5, self.dimension_max)
@@ -751,7 +765,12 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
                 high_ordinate.append(high_signif_bound[a])
             plt.plot(abssice, low_ordinate, marker='o', color='black')
             plt.plot(abssice, high_ordinate, marker='o',color='black')
-        plt.colorbar()
+        plt.title('Ik landscape')
+        plt.xlabel('dimension')
+        plt.ylabel('Ik value (bits)')
+        fig_infolandscape.set_size_inches(18, 10)
+        cbar = plt.colorbar()
+        cbar.set_label('# of tuples', rotation=270)
         plt.grid(False)
         plt.show(num_fig)
      
@@ -821,28 +840,26 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
             if len(x) == self.dim_to_rank :
                 dico_at_order[x]=dico_input[x]
         topitems = heapq.nlargest(self.number_of_max_val, dico_at_order.items(), key=itemgetter(1))      
-        topitemsasdict = dict(topitems)      
-        aaaa=0
-#        fig1, ax1 = plt.subplots(1, self.number_of_max_val, sharex='col', sharey='row')
-#       ax1 = ax1.flatten()
-        fig1 = plt.figure() 
+        topitemsasdict_max = dict(topitems)      
+       
+        # here we plot the number_of_max_val first maxima 
+        fig1 = plt.figure(figsize=(18, 10)) 
         ax1=np.empty((1,self.number_of_max_val))
         nb_plot = 0
+        aaaa=0
 
-        for key in topitemsasdict :
+        for key in topitemsasdict_max :
             aaaa=aaaa+1
-            print(aaaa, "max value in dimension", self.dim_to_rank ," is for the tuple", key,  "   with Fk value  :", topitemsasdict[key])  
+            print(aaaa, "max value in dimension", self.dim_to_rank ," is for the tuple", key,  "   with Fk value  :", topitemsasdict_max[key])  
      
             if self.dim_to_rank == 2:                               
                 ax1 = fig1.add_subplot(1, self.number_of_max_val, nb_plot+1)
                 ax1.scatter(dataset.data[:,key[0]-1], dataset.data[:,key[1]-1],  c= 'red', marker='8')
-                string_title = str(str(aaaa)+"max : F"+str(self.dim_to_rank)+"("+ str(key)+")="+ str(round(topitemsasdict[key],2)))
-                print(string_title)
+                string_title = str(str(aaaa)+"max : F"+str(self.dim_to_rank)+"("+ str(key)+")="+ str(round(topitemsasdict_max[key],2)))
                 ax1.set_title(string_title)
                 ax1.set_xlabel('variable'+str(key[0]))
                 ax1.set_ylabel('variable'+str(key[1]))
-#                ax1.grid(True)
-#               cbar2 = fig2.colorbar(pts2, ax=ax2)
+                ax1.grid(True)
                 nb_plot =nb_plot +1 
             elif self.dim_to_rank == 3:     
                 ax1 = fig1.add_subplot(1, self.number_of_max_val, nb_plot+1, projection='3d')
@@ -850,11 +867,9 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
                 ax1.set_xlabel('variable'+str(key[0]))
                 ax1.set_ylabel('variable'+str(key[1]))
                 ax1.set_zlabel('variable'+str(key[2]))                          
-                string_title = str(str(aaaa)+"max : F"+str(self.dim_to_rank)+"("+ str(key)+")="+ str(round(topitemsasdict[key],2)))
-                print(string_title)
+                string_title = str(str(aaaa)+"max : F"+str(self.dim_to_rank)+"("+ str(key)+")="+ str(round(topitemsasdict_max[key],2)))
                 ax1.set_title(string_title)
                 ax1.grid(True)
-#               cbar2 = fig2.colorbar(pts2, ax=ax2)
                 nb_plot =nb_plot +1 
             elif self.dim_to_rank == 4:     
                 ax1 = fig1.add_subplot(1, self.number_of_max_val, nb_plot+1, projection='3d')                
@@ -863,35 +878,32 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
                 ax1.set_ylabel('variable'+str(key[1]))
                 ax1.set_zlabel('variable'+str(key[2]))     
                 cbar = fig1.colorbar(pts, ax=ax1)                     
-                string_title = str(str(aaaa)+"max : F"+str(self.dim_to_rank)+"("+ str(key)+")="+ str(round(topitemsasdict[key],2)))
-                print(string_title)
+                string_title = str(str(aaaa)+"max : F"+str(self.dim_to_rank)+"("+ str(key)+")="+ str(round(topitemsasdict_max[key],2)))
                 ax1.set_title(string_title)
                 ax1.grid(True)
-#               cbar2 = fig2.colorbar(pts2, ax=ax2)
                 nb_plot =nb_plot +1         
 
         topitems = heapq.nsmallest(self.number_of_max_val, dico_at_order.items(), key=itemgetter(1))
-        topitemsasdict = dict(topitems)    
-#        fig2, ax2 = plt.subplots(1, self.number_of_max_val, sharex='col', sharey='row')
- #       ax2 = ax2.flatten()
-        fig2 = plt.figure()
+        topitemsasdict_min = dict(topitems)    
+
+        # here we plot the number_of_max_val first minima 
+
+        fig2 = plt.figure(figsize=(18, 10))
         ax2=np.empty((1,self.number_of_max_val))
         aaaa=0  
         nb_plot = 0
 
-        for key in topitemsasdict :
+        for key in topitemsasdict_min :
             aaaa=aaaa+1
-            print(aaaa, "min value in dimension", self.dim_to_rank ," is for the tuple", key,  "   with Fk value  :", topitemsasdict[key])    
+            print(aaaa, "min value in dimension", self.dim_to_rank ," is for the tuple", key,  "   with Fk value  :", topitemsasdict_min[key])    
             if self.dim_to_rank == 2:                               
                 ax2 = fig2.add_subplot(1, self.number_of_max_val, nb_plot+1)
                 ax2.scatter(dataset.data[:,key[0]-1], dataset.data[:,key[1]-1],  c= 'red', marker='8')
-                string_title = str(str(aaaa)+"min : F"+str(self.dim_to_rank)+"("+ str(key)+")="+ str(round(topitemsasdict[key],2)))
-                print(string_title)
+                string_title = str(str(aaaa)+"min : F"+str(self.dim_to_rank)+"("+ str(key)+")="+ str(round(topitemsasdict_min[key],2)))
                 ax2.set_title(string_title)
                 ax2.set_xlabel('variable'+str(key[0]))
                 ax2.set_ylabel('variable'+str(key[1]))
                 ax2.grid(True)
-#               cbar2 = fig2.colorbar(pts2, ax=ax2)
                 nb_plot =nb_plot +1 
             elif self.dim_to_rank == 3:     
                 ax2 = fig2.add_subplot(1, self.number_of_max_val, nb_plot+1, projection='3d')
@@ -899,11 +911,9 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
                 ax2.set_xlabel('variable'+str(key[0]))
                 ax2.set_ylabel('variable'+str(key[1]))
                 ax2.set_zlabel('variable'+str(key[2]))                          
-                string_title = str(str(aaaa)+"min : F"+str(self.dim_to_rank)+"("+ str(key)+")="+ str(round(topitemsasdict[key],2)))
-                print(string_title)
+                string_title = str(str(aaaa)+"min : F"+str(self.dim_to_rank)+"("+ str(key)+")="+ str(round(topitemsasdict_min[key],2)))
                 ax2.set_title(string_title)
                 ax2.grid(True)
-#               cbar2 = fig2.colorbar(pts2, ax=ax2)
                 nb_plot =nb_plot +1 
             elif self.dim_to_rank == 4:     
                 ax2 = fig2.add_subplot(1, self.number_of_max_val, nb_plot+1, projection='3d')                
@@ -912,13 +922,12 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
                 ax2.set_ylabel('variable'+str(key[1]))
                 ax2.set_zlabel('variable'+str(key[2]))     
                 cbar = fig2.colorbar(pts, ax=ax2)                     
-                string_title = str(str(aaaa)+"min : F"+str(self.dim_to_rank)+"("+ str(key)+")="+ str(round(topitemsasdict[key],2)))
-                print(string_title)
+                string_title = str(str(aaaa)+"min : F"+str(self.dim_to_rank)+"("+ str(key)+")="+ str(round(topitemsasdict_min[key],2)))
                 ax2.set_title(string_title)
                 ax2.grid(True)
-#               cbar2 = fig2.colorbar(pts2, ax=ax2)
                 nb_plot =nb_plot +1    
-        plt.show()          
+        plt.show()   
+        return (topitemsasdict_max, topitemsasdict_min)       
 
 # #########################################################################
 # #########################################################################
@@ -1010,8 +1019,9 @@ if __name__ == "__main__":
     print(Ninfomut)
     information_topo.mutual_info_simplicial_lanscape(Ninfomut)
     information_topo = infotopo(dim_to_rank = 3, number_of_max_val = 3)
-    information_topo.display_higher_lower_mutual_information(Ninfomut, dataset)
-
+    dico_max, dico_min = information_topo.display_higher_lower_mutual_information(Ninfomut, dataset)
+    print("the first maximum tuples are:", dico_max )
+    print("the first minimum tuples are:", dico_min )
 
     information_topo.mutual_info_pairwise_network(Ninfomut)
 
