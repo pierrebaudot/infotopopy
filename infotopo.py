@@ -158,7 +158,11 @@ class infotopo:
                         to the marginals (homological way). The joint probability corresponding to all variable is first estimated and then projected on 
                         lower dimensions using conditional rule. This explore the whole lattice, and imposes dimension_max = dimension_tot   
 
-    nb_bins_histo : (integer) number of values used for entropy and mutual information distribution histograms and landscapes.          
+    nb_bins_histo : (integer) number of values used for entropy and mutual information distribution histograms and landscapes.      
+
+    self.p_value_undersampling: (real in ]0,1[) value of the probability that a box have a single point (e.g. undersampled minimum atomic probability = 
+    1/number of points) over all boxes at a given dimension. It provides a confidence to estimate the undersampling dimenesion Ku above which 
+    information etimations shall not be considered.    
 
     compute_shuffle : (Boolean)
                         _ compute_shuffle = True : it will compute the statictical test of significance of the dependencies (pethel et hah 2014) 
@@ -187,6 +191,7 @@ class infotopo:
         supervised_mode = False, 
         forward_computation_mode = False,
         nb_bins_histo = 200,
+        self.p_value_undersampling = 0.05,
         compute_shuffle = False,
         p_value = 0.05, 
         nb_of_shuffle = 20,
@@ -203,6 +208,7 @@ class infotopo:
         self.supervised_mode = supervised_mode
         self.forward_computation_mode = forward_computation_mode
         self.nb_bins_histo  = nb_bins_histo 
+        self.self.p_value_undersampling = self.p_value_undersampling
         self.compute_shuffle = compute_shuffle
         self.p_value = p_value
         self.nb_of_shuffle = nb_of_shuffle
@@ -224,11 +230,15 @@ class infotopo:
             if self.dimension_max != self.dimension_tot:
                 raise ValueError("if forward_computation_mode then dimension_max must be equal to dimension_tot")
         if self.nb_bins_histo < 2 :
-            raise ValueError("nb_bins_histo must be greater than 1") 
+            raise ValueError("nb_bins_histo must be greater than 1")
         if self.p_value > 1 :
             raise ValueError("p_value must be in between 0 and 1")  
         if  0 > self.p_value :
             raise ValueError("p_value must be in between 0 and 1")      
+        if self.self.p_value_undersampling > 1 :
+            raise ValueError("self.p_value_undersampling must be in between 0 and 1")  
+        if  0 > self.self.p_value_undersampling :
+            raise ValueError("self.p_value_undersampling must be in between 0 and 1")      
         if not self.compute_shuffle:
             self.nb_of_shuffle = 0
         if self.dim_to_rank >= self.dimension_max :
@@ -595,17 +605,17 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         boolean_test = True
         undersampling_dim = self.dimension_max
         for xxxx in  range(0,self.dimension_max) :   
-            if undersampling_percent[xxxx] > 5 and boolean_test: 
+            if undersampling_percent[xxxx] > (self.self.p_value_undersampling*100) and boolean_test: 
                 undersampling_dim = xxxx+1
                 boolean_test = False
-        print('the undersampling dimension is ', undersampling_dim)  
+        print('the undersampling dimension is ', undersampling_dim, 'with self.p_value_undersampling',self.self.p_value_undersampling)  
 
         num_fig=num_fig+1
         plt.figure(num_fig)
         abssice_degree=np.linspace(1, self.dimension_max, self.dimension_max)
         plt.plot(abssice_degree,undersampling_percent)
         plt.ylabel('percent of undersampled points')
-        plt.title(str('Undersampling dimension (p>0.05), ku='+str(undersampling_dim)))
+        plt.title(str('Undersampling dimension (p>'+str(self.self.p_value_undersampling)+'), ku='+str(undersampling_dim)))
         plt.xlabel('dimension')
         plt.grid(True)
 
@@ -839,6 +849,7 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         cbar = plt.colorbar()
         cbar.set_label('Information (bits)', rotation=270)
         plt.show()
+        return adjacency_matrix
 
 
 
@@ -853,7 +864,7 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
     if the dimension is 2,3 or 4 (when ploting is possible). For 4D plot the 4th dimension is given by the colorscale
     of the points 
     ''' 
-    def display_higher_lower_mutual_information(self, dico_input, dataset): 
+    def display_higher_lower_information(self, dico_input, dataset): 
         dico_at_order = {}
         for x,y in dico_input.items():
             if len(x) == self.dim_to_rank :
@@ -992,7 +1003,6 @@ if __name__ == "__main__":
         dataset_df['MEDV'] = pd.Series(dataset.target).map(dict(zip(range(3),dataset.data[:,12])))
     elif dataset == 3: 
         dataset = load_diabetes()
-        print(dataset)
         dataset_df = pd.DataFrame(dataset.data, columns = dataset.feature_names)
         dimension_max = dataset.data.shape[1]
         dimension_tot = dataset.data.shape[1]
@@ -1025,22 +1035,23 @@ if __name__ == "__main__":
     Nentropie = information_topo.simplicial_entropies_decomposition(dataset.data)
     stop = timeit.default_timer()
     print('Time for CPU(seconds) entropies: ', stop - start)
-    print(Nentropie)
+    if dataset == 1:
+        print(Nentropie)
     information_topo.entropy_simplicial_lanscape(Nentropie)
+    information_topo = infotopo(dim_to_rank = 4, number_of_max_val = 3)
+    dico_max, dico_min = information_topo.display_higher_lower_information(Nentropie, dataset)
 
 # Ninfomut is dictionary (x,y) with x a list of kind (1,2,5) and y a value in bit
     start = timeit.default_timer()   
     Ninfomut = information_topo.simplicial_infomut_decomposition(Nentropie)
     stop = timeit.default_timer()
     print('Time for CPU(seconds) Mutual Information: ', stop - start)
-    print(Ninfomut)
-    information_topo.mutual_info_simplicial_lanscape(Ninfomut)
-    information_topo = infotopo(dim_to_rank = 6, number_of_max_val = 3)
-    dico_max, dico_min = information_topo.display_higher_lower_mutual_information(Ninfomut, dataset)
-    print("the first maximum tuples are:", dico_max )
-    print("the first minimum tuples are:", dico_min )
+    if dataset == 1:
+        print(Ninfomut)
+    information_topo.mutual_info_simplicial_lanscape(Ninfomut)    
+    dico_max, dico_min = information_topo.display_higher_lower_information(Ninfomut, dataset)
 
-    information_topo.mutual_info_pairwise_network(Ninfomut)
+    adjacency_matrix_mut_info = information_topo.mutual_info_pairwise_network(Ninfomut)
 
  #  key for key in Ninfomut if len(key)==2
 

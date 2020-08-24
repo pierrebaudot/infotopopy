@@ -303,14 +303,14 @@ On the example of Iris dataset, the Entropy Landscape we obtain look like this:
 .. image:: images/iris_info_landscapes.png
 
 To obtain the first m k-tuples with maximum and minimum value in dimension k, and if the dimension is 2,3 or 4 plot the data points in the 
-corresponding k-subspace (the 4th dimension is represented by a color code), we use the "display_higher_lower_mutual_information".
+corresponding k-subspace (the 4th dimension is represented by a color code), we use the "display_higher_lower_information".
 For exmaple, plotting the 2 first maximum and minimum in dimension (framed in red and blue respectively in the last figure), we use 
 the following command: 
 
 .. code:: python3 
 
     information_topo = infotopo(dim_to_rank = 2, number_of_max_val = 2)
-    dico_max, dico_min = information_topo.display_higher_lower_mutual_information(Ninfomut, dataset)    
+    dico_max, dico_min = information_topo.display_higher_lower_information(Ninfomut, dataset)    
 
 On the example of Iris dataset, we obtain the two pairs of varaibles (3,4) and (1,3) that are the most statistically dependent ("correlated"): 
 
@@ -328,13 +328,20 @@ visualize the one and two dimensional results as (first degree) networks. To vis
 
 .. code:: python3 
 
-    information_topo.mutual_info_pairwise_network(Ninfomut)
+    adjacency_matrix_mut_info = information_topo.mutual_info_pairwise_network(Ninfomut)
 
 The area of each vertex is a function of the marginals information :math:`H_1=I_1` and the thickness of the edges is a function of the pairwise
 mutual information :math:`H_1=I_1`. On Iris dataset, it gives:  
 
 .. image:: images/iris_info_network.png
 
+The adjacency matrix of information have the marginals informations :math:`H_1=I_1` in its diagonal and is symmetric with respect to the diagonal
+as the result of the commutativity of the join-variables and mutual-variables operation in classical information theory (classical is by opposition 
+with quantum information theory). Compared to usual distance matrix (with given metric) computed in machine learning (for clustering or classifications),
+the  :math:`I_k` are not metric (e.g. non zero diagonal and no triangle inequality), we will introduce to information metric in the next stepps. 
+With such Matrix it is possible to apply some usual computational persistence homology tools like `Mapper scikit-tda <https://github.com/scikit-tda>`_ 
+(created by Singh, Mémoli, and Carlsson) and to build what could be called an "informational Vietoris-Ripps complex". However there is likely a much 
+more fundamental application of persistence theory in the construction of a local probability density estimation (to be done).
 :math:`I_k` with :math:`k \geq 3` can be repesented in an analgous way using k-cliques as acheived in `Tapia & al 2018 <https://www.nature.com/articles/s41598-018-31765-z>`_
 (to be done in the package). They shall be represented using k-tensor formalism. In the context of complex networks studies those higher :math:`I_k` with :math:`k \geq 3` 
 correspond to 'multiplex or multilayer networks. <https://oxford.universitypressscholarship.com/view/10.1093/oso/9780198753919.001.0001/oso-9780198753919>`_
@@ -367,24 +374,83 @@ so lets turn to larger dimensional classical machine learning dataset: Diabetes 
  progress. The ten variables are [age, sex, body mass index, average blood pressure, T-Cells, low-density lipoproteins, high-density lipoproteins,
  thyroid stimulating hormone, lamotrigine, blood sugar level] in this order. As before, we execute:
 
- .. code:: python3
+.. code:: python3
 
     Nentropie = information_topo.simplicial_entropies_decomposition(iris.data)
     information_topo.entropy_simplicial_lanscape(Nentropie)
+    information_topo = infotopo(dim_to_rank = 4, number_of_max_val = 3)
+    dico_max, dico_min = information_topo.display_higher_lower_information(Nentropie, dataset)
 
  and we obtain the following entropy landscape:
 
- .. image:: images/diabetes_entropy_landscape.png
+.. image:: images/diabetes_entropy_landscape.png
 
  which corresponds to the following distributions of joint entropies for each dimensions: 
 
- .. image:: images/diabetes_entropy_histograms.png
+.. image:: images/diabetes_entropy_histograms.png
+
+and the computation of the probability of encountering some undersampled probability density estimation (single point box) as a function of 
+the dimension gives: 
+ .. image:: diabetes_undersampling.png
+ Which imposing an arbitrary confidence of P>0.05 (default value of the "p_value_undersmapling" parametter), gives a undersampling dimension 
+ :math:`k_u=6`, meaning that with such level of confidence one should not interpret the landscapes and information estimations (whatever) 
+ above the 5th dimension. This method is very basic and can (or shall) be improved in several ways, notably a strategy exploring undersampling 
+ for information paths should provide more relevant methods, adapted to data structure (to be done).
 
  The number of tuples (a total of :math:`2^10`) to represent becomes to hudge, and enforces to plot only the distribution histograms of k-tuples 
- value (with a given number of bins = nb_bins_histo) in each dimension. 
+ value (with a given number of bins = nb_bins_histo) in each dimension. We already see that there exist some interesting structures since the
+ distribution  of :math:`H_3,H_4,H_5` display obvious bi-modality: the minimum joint entropy mode of the tuples contains the tuples the 
+ furthest from randomness. The result shows for example that the 3 first minimum 4-entropy (figure below) contains the binary "sex" variable.
+ It points out one of the current possible limitation-bias of the present algorithm: for heterogeneous variable input, the algorithm should 
+ allow different number of values adapted for each variable (binary ternary etc... at the moment their all the same... to be done).
 
+.. image:: images/diabetes_3min_H4.png
 
+ We can now focus on the statistical depencies and :math:`I_k` structures, by running as previously the commands:
 
+.. code:: python3
+    Ninfomut = information_topo.simplicial_infomut_decomposition(Nentropie) 
+    information_topo.mutual_info_simplicial_lanscape(Ninfomut)
+    dico_max, dico_min = information_topo.display_higher_lower_information(Ninfomut, dataset)
+    adjacency_matrix_mut_info =information_topo.mutual_info_pairwise_network(Ninfomut)
+
+and we obtain the following :math:`I_k` landscape:
+
+.. image:: images/diabetes_information_landscape.png
+
+ which corresponds to the following distributions of k-mutual information for each dimensions: 
+
+.. image:: images/diabetes_information_histograms.png
+
+ The structure of dependences appears much richer, notably with important negative values (it was chosen to illustrate this very peculiar phenomena)
+ in dimension 3 and 4 for  some 3-tuples and 1 4-tuples (framed in blue). The data points 4-subspace corresponding to this minimal :math:`I_4` 
+ and the  maximal :math:`I_4` look like this (with different views) : 
+
+.. image:: images/diabetes_information_histograms.png
+
+ The tuple maximal :math:`I_4` (framed in red) only display a weak correlation, as expected from the low :math:`I_4` value. However the tuple with
+  minimal :math:`I_4` (5,6,7,8) displays an impressive correlation structure taking the form of a 3 dimensional hyperplane (sligtly curved indeed). 
+  Looking at projections on 2 dimensional subpaces as shown on the 3 plots on the right we see that the subspace corresponding to the tuples (5,6) 
+  and (7,8) is higly "correlated" while  (6,7) and (5,7) are highly "random". Indeed, both tuples (5,6) and (7,8) obtains the maximum pairwise mutual 
+  information. This phenomena of information negativity is known in neuroscience as synergy since the work of `Brenner et al <https://arxiv.org/abs/physics/9902067>`_.
+  The fact that the 4-tuplet (5,6,7,8) have minimal and not maximal :math:`I_4` provides us important additional information that cannot be deduced 
+  form the pairwise :math:`I_2` (e.g the fact that (5,6) and (7,8) have maximum :math:`I_2`): the fact that the variables 5 and 6 do not untertain 
+  causal relationship but have a common cause (another, possibly joint, variable). The same applies to the variables 7 and 8. This is indeed equivalent 
+  to strong transfer entropy (or conditional mutual information, see `Schreiber <https://arxiv.org/abs/nlin/0001042>`_) but applied here in a general 
+  context without time series structure assumption. Transfer entropy is well known to generalize Granger causality to non-linear cases 
+  (see `Barnet et al. <https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.103.238701>`). The classical example of a common causal variable is 
+  given   by: "as ice cream sales increase, the rate of drowning deaths increases sharply." A section in "how_infotopo_works" is dedicated to a more
+  complete study and explanation of these statistical interactions. The gene expression study of `Tapia et al. <https://www.nature.com/articles/s41598-018-31765-z>`_ 
+  provides further examples of strong positive k-tuplet, e.g of statistical interactions without common cause, or more simply causal chains (e.g 
+  metabolic chains). 
+
+The information networks representation of :math:`I_1` and :math:`I_2` for the diabetes dataset is:  
+
+.. image:: images/diabetes_information_networks.png
+
+We see that the variables 5,6,7,8,9 share strong :math:`I_2`. Together with the :math:`I_4` negativity of :math:`I_4` (5,6,7,8) and  :math:`I_5` (5,6,7,8,5) 
+a possible interaction scheme, among many others could be: 9 cause 7 and 8, and 8 cause 5 and 6.
+ 
 Beware that these tools will not detect whatever possible statistical dependencies (see James and Crutchfield `PDF <https://www.mdpi.com/1099-4300/19/10/531>`_), 
 this is just a simplicial heuristic subsets, computationnally tractable. The complete structure of dependencies are spanned by general information structures and 
 lattice of patition (see section how_infotopo_works).
