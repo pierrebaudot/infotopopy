@@ -351,9 +351,11 @@ in the context of complex networks studies those higher :math:`I_k` with :math:`
 
 We begin to see that Homological tools provides a wide generalisation of complex networks (a 1-complex, that is a graph) to higher interactions structures.
 
+Diabetes data
+-------------
+
 The Iris dataset and its associated information landsacpes are in too low dimension to appreciate all the interest of the methods in higher dimensions,
-so lets turn to larger dimensional classical machine learning dataset: Diabetes dataset. This dataset is kindly also furnished by scikitlearn, and we load
- it with the same methods as previously:
+so lets turn to larger dimensional classical machine learning dataset: Diabetes dataset. This dataset is kindly also furnished by scikitlearn, and we load it with the same methods as previously:
 
 .. code:: python3 
 
@@ -381,32 +383,34 @@ so lets turn to larger dimensional classical machine learning dataset: Diabetes 
     information_topo = infotopo(dim_to_rank = 4, number_of_max_val = 3)
     dico_max, dico_min = information_topo.display_higher_lower_information(Nentropie, dataset)
 
- and we obtain the following entropy landscape:
+and we obtain the following entropy landscape:
 
 .. image:: images/diabetes_entropy_landscape.png
 
- which corresponds to the following distributions of joint entropies for each dimensions: 
+which corresponds to the following distributions of joint entropies for each dimensions: 
 
 .. image:: images/diabetes_entropy_histograms.png
 
 and the computation of the probability of encountering some undersampled probability density estimation (single point box) as a function of 
 the dimension gives: 
- .. image:: diabetes_undersampling.png
- Which imposing an arbitrary confidence of P>0.05 (default value of the "p_value_undersmapling" parametter), gives a undersampling dimension 
- :math:`k_u=6`, meaning that with such level of confidence one should not interpret the landscapes and information estimations (whatever) 
- above the 5th dimension. This method is very basic and can (or shall) be improved in several ways, notably a strategy exploring undersampling 
- for information paths should provide more relevant methods, adapted to data structure (to be done).
 
- The number of tuples (a total of :math:`2^10`) to represent becomes to hudge, and enforces to plot only the distribution histograms of k-tuples 
- value (with a given number of bins = nb_bins_histo) in each dimension. We already see that there exist some interesting structures since the
- distribution  of :math:`H_3,H_4,H_5` display obvious bi-modality: the minimum joint entropy mode of the tuples contains the tuples the 
- furthest from randomness. The result shows for example that the 3 first minimum 4-entropy (figure below) contains the binary "sex" variable.
- It points out one of the current possible limitation-bias of the present algorithm: for heterogeneous variable input, the algorithm should 
- allow different number of values adapted for each variable (binary ternary etc... at the moment their all the same... to be done).
+ .. image:: diabetes_undersampling.png
+
+Which imposing an arbitrary confidence of P>0.05 (default value of the "p_value_undersmapling" parametter), gives a undersampling dimension 
+:math:`k_u=6`, meaning that with such level of confidence one should not interpret the landscapes and information estimations (whatever) 
+above the 5th dimension. This method is very basic and can (or shall) be improved in several ways, notably a strategy exploring undersampling 
+ or information paths should provide more relevant methods, adapted to data structure (to be done).
+
+The number of tuples (a total of :math:`2^10`) to represent becomes to hudge, and enforces to plot only the distribution histograms of k-tuples 
+value (with a given number of bins = nb_bins_histo) in each dimension. We already see that there exist some interesting structures since the
+distribution  of :math:`H_3,H_4,H_5` display obvious bi-modality: the minimum joint entropy mode of the tuples contains the tuples the 
+furthest from randomness. The result shows for example that the 3 first minimum 4-entropy (figure below) contains the binary "sex" variable.
+It points out one of the current possible limitation-bias of the present algorithm: for heterogeneous variable input, the algorithm should 
+allow different number of values adapted for each variable (binary ternary etc... at the moment their all the same... to be done).
 
 .. image:: images/diabetes_3min_H4.png
 
- We can now focus on the statistical depencies and :math:`I_k` structures, by running as previously the commands:
+We can now focus on the statistical depencies and :math:`I_k` structures, by running as previously the commands:
 
 .. code:: python3
     Ninfomut = information_topo.simplicial_infomut_decomposition(Nentropie) 
@@ -422,27 +426,27 @@ and we obtain the following :math:`I_k` landscape:
 
 .. image:: images/diabetes_information_histograms.png
 
- The structure of dependences appears much richer, notably with important negative values (it was chosen to illustrate this very peculiar phenomena)
- in dimension 3 and 4 for  some 3-tuples and 1 4-tuples (framed in blue). The data points 4-subspace corresponding to this minimal :math:`I_4` 
- and the  maximal :math:`I_4` look like this (with different views) : 
+The structure of dependences appears much richer, notably with important negative values (it was chosen to illustrate this very peculiar phenomena)
+in dimension 3 and 4 for  some 3-tuples and 1 4-tuples (framed in blue). The data points 4-subspace corresponding to this minimal :math:`I_4` 
+and the  maximal :math:`I_4` look like this (with different views) : 
 
 .. image:: images/diabetes_information_histograms.png
 
- The tuple maximal :math:`I_4` (framed in red) only display a weak correlation, as expected from the low :math:`I_4` value. However the tuple with
-  minimal :math:`I_4` (5,6,7,8) displays an impressive correlation structure taking the form of a 3 dimensional hyperplane (sligtly curved indeed). 
-  Looking at projections on 2 dimensional subpaces as shown on the 3 plots on the right we see that the subspace corresponding to the tuples (5,6) 
-  and (7,8) is higly "correlated" while  (6,7) and (5,7) are highly "random". Indeed, both tuples (5,6) and (7,8) obtains the maximum pairwise mutual 
-  information. This phenomena of information negativity is known in neuroscience as synergy since the work of `Brenner et al <https://arxiv.org/abs/physics/9902067>`_.
-  The fact that the 4-tuplet (5,6,7,8) have minimal and not maximal :math:`I_4` provides us important additional information that cannot be deduced 
-  form the pairwise :math:`I_2` (e.g the fact that (5,6) and (7,8) have maximum :math:`I_2`): the fact that the variables 5 and 6 do not untertain 
-  causal relationship but have a common cause (another, possibly joint, variable). The same applies to the variables 7 and 8. This is indeed equivalent 
-  to strong transfer entropy (or conditional mutual information, see `Schreiber <https://arxiv.org/abs/nlin/0001042>`_) but applied here in a general 
-  context without time series structure assumption. Transfer entropy is well known to generalize Granger causality to non-linear cases 
-  (see `Barnet et al. <https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.103.238701>`). The classical example of a common causal variable is 
-  given   by: "as ice cream sales increase, the rate of drowning deaths increases sharply." A section in "how_infotopo_works" is dedicated to a more
-  complete study and explanation of these statistical interactions. The gene expression study of `Tapia et al. <https://www.nature.com/articles/s41598-018-31765-z>`_ 
-  provides further examples of strong positive k-tuplet, e.g of statistical interactions without common cause, or more simply causal chains (e.g 
-  metabolic chains). 
+The tuple maximal :math:`I_4` (framed in red) only display a weak correlation, as expected from the low :math:`I_4` value. However the tuple with
+minimal :math:`I_4` (5,6,7,8) displays an impressive correlation structure taking the form of a 3 dimensional hyperplane (sligtly curved indeed). 
+Looking at projections on 2 dimensional subpaces as shown on the 3 plots on the right we see that the subspace corresponding to the tuples (5,6) 
+and (7,8) is higly "correlated" while  (6,7) and (5,7) are highly "random". Indeed, both tuples (5,6) and (7,8) obtains the maximum pairwise mutual 
+information. This phenomena of information negativity is known in neuroscience as synergy since the work of `Brenner et al <https://arxiv.org/abs/physics/9902067>`_.
+The fact that the 4-tuplet (5,6,7,8) have minimal and not maximal :math:`I_4` provides us important additional information that cannot be deduced 
+form the pairwise :math:`I_2` (e.g the fact that (5,6) and (7,8) have maximum :math:`I_2`): the fact that the variables 5 and 6 do not untertain 
+causal relationship but have a common cause (another, possibly joint, variable). The same applies to the variables 7 and 8. This is indeed equivalent 
+to strong transfer entropy (or conditional mutual information, see `Schreiber <https://arxiv.org/abs/nlin/0001042>`_) but applied here in a general 
+context without time series structure assumption. Transfer entropy is well known to generalize Granger causality to non-linear cases 
+(see `Barnet et al. <https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.103.238701>`). The classical example of a common causal variable is 
+given   by: "as ice cream sales increase, the rate of drowning deaths increases sharply." A section in "how_infotopo_works" is dedicated to a more
+complete study and explanation of these statistical interactions. The gene expression study of `Tapia et al. <https://www.nature.com/articles/s41598-018-31765-z>`_ 
+provides further examples of strong positive k-tuplet, e.g of statistical interactions without common cause, or more simply causal chains (e.g 
+metabolic chains). 
 
 The information networks representation of :math:`I_1` and :math:`I_2` for the diabetes dataset is:  
 
