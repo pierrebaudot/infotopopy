@@ -400,7 +400,7 @@ which corresponds to the following distributions of joint entropies for each dim
 and the computation of the probability of encountering some undersampled probability density estimation (single point box) as a function of 
 the dimension gives: 
 
-.. image:: diabetes_undersampling.png
+.. image:: images/diabetes_undersampling.png
 
 Which imposing an arbitrary confidence of P>0.05 (default value of the "p_value_undersmapling" parametter), gives a undersampling dimension 
 :math:`k_u=6`, meaning that with such level of confidence one should not interpret the landscapes and information estimations (whatever) 
@@ -419,6 +419,7 @@ allow different number of values adapted for each variable (binary ternary etc..
 We can now focus on the statistical depencies and :math:`I_k` structures, by running as previously the commands:
 
 .. code:: python3
+
     Ninfomut = information_topo.simplicial_infomut_decomposition(Nentropie) 
     information_topo.mutual_info_simplicial_lanscape(Ninfomut)
     dico_max, dico_min = information_topo.display_higher_lower_information(Ninfomut, dataset)
@@ -448,11 +449,11 @@ form the pairwise :math:`I_2` (e.g the fact that (5,6) and (7,8) have maximum :m
 causal relationship but have a common cause (another, possibly joint, variable). The same applies to the variables 7 and 8. This is indeed equivalent 
 to strong transfer entropy (or conditional mutual information, see `Schreiber <https://arxiv.org/abs/nlin/0001042>`_) but applied here in a general 
 context without time series structure assumption. Transfer entropy is well known to generalize Granger causality to non-linear cases 
-(see `Barnet et al. <https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.103.238701>`). The classical example of a common causal variable is 
-given   by: "as ice cream sales increase, the rate of drowning deaths increases sharply." A section in "how_infotopo_works" is dedicated to a more
-complete study and explanation of these statistical interactions. The gene expression study of `Tapia et al. <https://www.nature.com/articles/s41598-018-31765-z>`_ 
-provides further examples of strong positive k-tuplet, e.g of statistical interactions without common cause, or more simply causal chains (e.g 
-metabolic chains). 
+(see `Barnet et al <https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.103.238701>`_). The classical example of a common causal variable is 
+given   by: "as ice cream sales increase, the rate of drowning deaths increases sharply.": both are correlated but none of each causes the other.
+A section in "how_infotopo_works" is dedicated to a more complete study and explanation of these statistical interactions. The gene expression study 
+of `Tapia et al. <https://www.nature.com/articles/s41598-018-31765-z>`_ provides further examples of strong positive k-tuplet, e.g of statistical 
+interactions without common cause, or more simply causal chains (e.g metabolic chains). 
 
 The information networks representation of :math:`I_1` and :math:`I_2` for the diabetes dataset is:  
 
