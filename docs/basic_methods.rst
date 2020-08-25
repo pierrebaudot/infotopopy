@@ -17,14 +17,20 @@ computational complexity is of the order of :math:`2^n` .
 As a consequence, an important part of the tools and methods are dedicated 
 to overcome this extensive computation. Among the possible strategies and 
 heuristics used or currently developped, are:
+
 _ restrict to simplicial cohomology and combinatorics (done here).
+
 _ possible exploration of only the low dimensional structures (done here).
+
 _ possible exploration of only most or least informative paths (done here).
+
 _ possible restriction 2nd degree-dimension statistical interactions: 
 what is computed here is the equivalent of the Cech complex (with all degree-
 dimension computed), and such restriction is equivalent to computing the Vietoris-Rips 
 complex (in development). 
+
 _ compute on GPU (in development).
+
 As a result, for this 0.1 version of the software, and for computation with 
 commercial average PC, we recommand to analyse up to 20 variables (or dimensions)
 at a time in the raw brut-force approach (see performance section).
@@ -344,7 +350,7 @@ With such Matrix it is possible to apply some usual computational persistence ho
 more fundamental application of persistence theory in the construction of a local probability density estimation (to be done).
 :math:`I_k` with :math:`k \geq 3` can be repesented in an analgous way using k-cliques as acheived in `Tapia & al 2018 <https://www.nature.com/articles/s41598-018-31765-z>`_
 (to be done in the package). They shall be represented using k-tensor formalism. In the context of complex networks studies those higher :math:`I_k` with :math:`k \geq 3` 
-correspond to 'multiplex or multilayer networks. <https://oxford.universitypressscholarship.com/view/10.1093/oso/9780198753919.001.0001/oso-9780198753919>`_
+correspond to `multiplex or multilayer networks <https://oxford.universitypressscholarship.com/view/10.1093/oso/9780198753919.001.0001/oso-9780198753919>`_
 The raw result obtained here is a fully connected network, but one can obtain a sparse matrix and a sparsely connected network by thresholding 
 the :math:`I_k` with a with fixed p-value, using the exact statistical dependence test implemented in the package. 
 in the context of complex networks studies those higher :math:`I_k` with :math:`k \geq 3` correspond to hypergraphs or 'multiplex or multilayer networks. <https://oxford.universitypressscholarship.com/view/10.1093/oso/9780198753919.001.0001/oso-9780198753919>`_
@@ -372,9 +378,9 @@ so lets turn to larger dimensional classical machine learning dataset: Diabetes 
     deformed_probability_mode = False
     dataset_df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
 
- This dataset contains 10 variables-dimensions for a sample size (number of points) of 442 and a target (label) variable which quantifies diabetes 
- progress. The ten variables are [age, sex, body mass index, average blood pressure, T-Cells, low-density lipoproteins, high-density lipoproteins,
- thyroid stimulating hormone, lamotrigine, blood sugar level] in this order. As before, we execute:
+This dataset contains 10 variables-dimensions for a sample size (number of points) of 442 and a target (label) variable which quantifies diabetes 
+progress. The ten variables are [age, sex, body mass index, average blood pressure, T-Cells, low-density lipoproteins, high-density lipoproteins,
+thyroid stimulating hormone, lamotrigine, blood sugar level] in this order. As before, we execute:
 
 .. code:: python3
 
@@ -394,14 +400,14 @@ which corresponds to the following distributions of joint entropies for each dim
 and the computation of the probability of encountering some undersampled probability density estimation (single point box) as a function of 
 the dimension gives: 
 
- .. image:: diabetes_undersampling.png
+.. image:: diabetes_undersampling.png
 
 Which imposing an arbitrary confidence of P>0.05 (default value of the "p_value_undersmapling" parametter), gives a undersampling dimension 
 :math:`k_u=6`, meaning that with such level of confidence one should not interpret the landscapes and information estimations (whatever) 
 above the 5th dimension. This method is very basic and can (or shall) be improved in several ways, notably a strategy exploring undersampling 
- or information paths should provide more relevant methods, adapted to data structure (to be done).
+or information paths should provide more relevant methods, adapted to data structure (to be done).
 
-The number of tuples (a total of :math:`2^10`) to represent becomes to hudge, and enforces to plot only the distribution histograms of k-tuples 
+The number of tuples (a total of :math:`2^{10})`) to represent becomes to hudge, and enforces to plot only the distribution histograms of k-tuples 
 value (with a given number of bins = nb_bins_histo) in each dimension. We already see that there exist some interesting structures since the
 distribution  of :math:`H_3,H_4,H_5` display obvious bi-modality: the minimum joint entropy mode of the tuples contains the tuples the 
 furthest from randomness. The result shows for example that the 3 first minimum 4-entropy (figure below) contains the binary "sex" variable.
@@ -422,7 +428,7 @@ and we obtain the following :math:`I_k` landscape:
 
 .. image:: images/diabetes_information_landscape.png
 
- which corresponds to the following distributions of k-mutual information for each dimensions: 
+which corresponds to the following distributions of k-mutual information for each dimensions: 
 
 .. image:: images/diabetes_information_histograms.png
 
@@ -430,7 +436,7 @@ The structure of dependences appears much richer, notably with important negativ
 in dimension 3 and 4 for  some 3-tuples and 1 4-tuples (framed in blue). The data points 4-subspace corresponding to this minimal :math:`I_4` 
 and the  maximal :math:`I_4` look like this (with different views) : 
 
-.. image:: images/diabetes_information_histograms.png
+.. image:: images/diabetes_min_max_I4.png
 
 The tuple maximal :math:`I_4` (framed in red) only display a weak correlation, as expected from the low :math:`I_4` value. However the tuple with
 minimal :math:`I_4` (5,6,7,8) displays an impressive correlation structure taking the form of a 3 dimensional hyperplane (sligtly curved indeed). 
