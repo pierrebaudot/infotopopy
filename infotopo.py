@@ -191,7 +191,7 @@ class infotopo:
         supervised_mode = False, 
         forward_computation_mode = False,
         nb_bins_histo = 200,
-        self.p_value_undersampling = 0.05,
+        p_value_undersampling = 0.05,
         compute_shuffle = False,
         p_value = 0.05, 
         nb_of_shuffle = 20,
@@ -208,7 +208,7 @@ class infotopo:
         self.supervised_mode = supervised_mode
         self.forward_computation_mode = forward_computation_mode
         self.nb_bins_histo  = nb_bins_histo 
-        self.self.p_value_undersampling = self.p_value_undersampling
+        self.p_value_undersampling = p_value_undersampling
         self.compute_shuffle = compute_shuffle
         self.p_value = p_value
         self.nb_of_shuffle = nb_of_shuffle
@@ -235,9 +235,9 @@ class infotopo:
             raise ValueError("p_value must be in between 0 and 1")  
         if  0 > self.p_value :
             raise ValueError("p_value must be in between 0 and 1")      
-        if self.self.p_value_undersampling > 1 :
+        if self.p_value_undersampling > 1 :
             raise ValueError("self.p_value_undersampling must be in between 0 and 1")  
-        if  0 > self.self.p_value_undersampling :
+        if  0 > self.p_value_undersampling :
             raise ValueError("self.p_value_undersampling must be in between 0 and 1")      
         if not self.compute_shuffle:
             self.nb_of_shuffle = 0
@@ -605,17 +605,17 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         boolean_test = True
         undersampling_dim = self.dimension_max
         for xxxx in  range(0,self.dimension_max) :   
-            if undersampling_percent[xxxx] > (self.self.p_value_undersampling*100) and boolean_test: 
+            if undersampling_percent[xxxx] > (self.p_value_undersampling*100) and boolean_test: 
                 undersampling_dim = xxxx+1
                 boolean_test = False
-        print('the undersampling dimension is ', undersampling_dim, 'with self.p_value_undersampling',self.self.p_value_undersampling)  
+        print('the undersampling dimension is ', undersampling_dim, 'with self.p_value_undersampling',self.p_value_undersampling)  
 
         num_fig=num_fig+1
         plt.figure(num_fig)
         abssice_degree=np.linspace(1, self.dimension_max, self.dimension_max)
         plt.plot(abssice_degree,undersampling_percent)
         plt.ylabel('percent of undersampled points')
-        plt.title(str('Undersampling dimension (p>'+str(self.self.p_value_undersampling)+'), ku='+str(undersampling_dim)))
+        plt.title(str('Undersampling dimension (p>'+str(self.p_value_undersampling)+'), ku='+str(undersampling_dim)))
         plt.xlabel('dimension')
         plt.grid(True)
 
@@ -970,8 +970,8 @@ if __name__ == "__main__":
     import pandas as pd
     import seaborn as sns
     
-    dataset = 3 # if dataset = 1 load IRIS DATASET # if dataset = 2 load Boston house prices dataset # if dataset = 3 load DIABETES  dataset
-    if dataset == 1: 
+    dataset_type = 4 # if dataset = 1 load IRIS DATASET # if dataset = 2 load Boston house prices dataset # if dataset = 3 load DIABETES  dataset
+    if dataset_type == 1: 
         dataset = load_iris()
         dataset_df = pd.DataFrame(dataset.data, columns = dataset.feature_names)
         dimension_max = dataset.data.shape[1]
@@ -987,7 +987,7 @@ if __name__ == "__main__":
         dataset_df['species'] = pd.Series(dataset.target).map(dict(zip(range(3),dataset.target_names)))
         sns.pairplot(dataset_df, hue='species')
         plt.show()
-    elif dataset == 2: 
+    elif dataset_type == 2: 
         dataset = load_boston()
         dataset_df = pd.DataFrame(dataset.data, columns = dataset.feature_names)
         dimension_max = dataset.data.shape[1]
@@ -1001,7 +1001,7 @@ if __name__ == "__main__":
         deformed_probability_mode = False
         dataset_df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
         dataset_df['MEDV'] = pd.Series(dataset.target).map(dict(zip(range(3),dataset.data[:,12])))
-    elif dataset == 3: 
+    elif dataset_type == 3: 
         dataset = load_diabetes()
         dataset_df = pd.DataFrame(dataset.data, columns = dataset.feature_names)
         dimension_max = dataset.data.shape[1]
@@ -1014,6 +1014,33 @@ if __name__ == "__main__":
         sampling_mode = 1
         deformed_probability_mode = False
         dataset_df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
+    elif dataset_type == 4: # This the Borromean case I_1 are 1 bit (max: "random")  I_2 are 0 bit (min: independent) I_3 is -1 bit
+        nb_of_values = 3
+        if nb_of_values == 2:
+            dataset = np.array([[ 0,  0,  1],
+                                [ 0,  1,  0],
+                                [ 1,  0,  0],
+                                [ 1,  1,  1]])
+        elif nb_of_values == 3:
+            dataset = np.array([[ 0,  0,  0],
+                                [ 1,  1,  0],
+                                [ 2,  2,  0],
+                                [ 0,  1,  1],
+                                [ 1,  2,  1],
+                                [ 2,  0,  1],
+                                [ 1,  0,  2],
+                                [ 0,  2,  2],
+                                [ 2,  1,  2]])                        
+        dimension_max = dataset.shape[1]
+        dimension_tot = dataset.shape[1]
+        sample_size = dataset.shape[0]
+        nb_of_values = 2
+        forward_computation_mode = False
+        work_on_transpose = False
+        supervised_mode = False
+        sampling_mode = 1
+        deformed_probability_mode = False
+        
          
 
     
@@ -1035,22 +1062,23 @@ if __name__ == "__main__":
     Nentropie = information_topo.simplicial_entropies_decomposition(dataset.data)
     stop = timeit.default_timer()
     print('Time for CPU(seconds) entropies: ', stop - start)
-    if dataset == 1:
+    if dataset_type == 1:
         print(Nentropie)
     information_topo.entropy_simplicial_lanscape(Nentropie)
-    information_topo = infotopo(dim_to_rank = 4, number_of_max_val = 3)
-    dico_max, dico_min = information_topo.display_higher_lower_information(Nentropie, dataset)
+    information_topo = infotopo(dim_to_rank = 3, number_of_max_val = 1)
+    if dataset_type != 4:
+        dico_max, dico_min = information_topo.display_higher_lower_information(Nentropie, dataset)
 
 # Ninfomut is dictionary (x,y) with x a list of kind (1,2,5) and y a value in bit
     start = timeit.default_timer()   
     Ninfomut = information_topo.simplicial_infomut_decomposition(Nentropie)
     stop = timeit.default_timer()
     print('Time for CPU(seconds) Mutual Information: ', stop - start)
-    if dataset == 1:
+    if dataset_type == 1:
         print(Ninfomut)
-    information_topo.mutual_info_simplicial_lanscape(Ninfomut)    
-    dico_max, dico_min = information_topo.display_higher_lower_information(Ninfomut, dataset)
-
+    information_topo.mutual_info_simplicial_lanscape(Ninfomut)   
+    if dataset_type != 4: 
+        dico_max, dico_min = information_topo.display_higher_lower_information(Ninfomut, dataset)
     adjacency_matrix_mut_info = information_topo.mutual_info_pairwise_network(Ninfomut)
 
  #  key for key in Ninfomut if len(key)==2

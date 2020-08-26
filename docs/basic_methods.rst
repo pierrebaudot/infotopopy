@@ -350,10 +350,9 @@ With such Matrix it is possible to apply some usual computational persistence ho
 more fundamental application of persistence theory in the construction of a local probability density estimation (to be done).
 :math:`I_k` with :math:`k \geq 3` can be repesented in an analgous way using k-cliques as acheived in `Tapia & al 2018 <https://www.nature.com/articles/s41598-018-31765-z>`_
 (to be done in the package). They shall be represented using k-tensor formalism. In the context of complex networks studies those higher :math:`I_k` with :math:`k \geq 3` 
-correspond to `multiplex or multilayer networks <https://oxford.universitypressscholarship.com/view/10.1093/oso/9780198753919.001.0001/oso-9780198753919>`_
+correspond to hypergraphs or `multiplex or multilayer networks <https://oxford.universitypressscholarship.com/view/10.1093/oso/9780198753919.001.0001/oso-9780198753919>`_
 The raw result obtained here is a fully connected network, but one can obtain a sparse matrix and a sparsely connected network by thresholding 
 the :math:`I_k` with a with fixed p-value, using the exact statistical dependence test implemented in the package. 
-in the context of complex networks studies those higher :math:`I_k` with :math:`k \geq 3` correspond to hypergraphs or 'multiplex or multilayer networks. <https://oxford.universitypressscholarship.com/view/10.1093/oso/9780198753919.001.0001/oso-9780198753919>`_
 
 We begin to see that Homological tools provides a wide generalisation of complex networks (a 1-complex, that is a graph) to higher interactions structures.
 
@@ -459,8 +458,9 @@ The information networks representation of :math:`I_1` and :math:`I_2` for the d
 
 .. image:: images/diabetes_information_networks.png
 
-We see that the variables 5,6,7,8,9 share strong :math:`I_2`. Together with the :math:`I_4` negativity of :math:`I_4` (5,6,7,8) and  :math:`I_5` (5,6,7,8,5) 
-a possible interaction scheme, among many others could be: 9 cause 7 and 8, and 8 cause 5 and 6.
+The maxima of :math:`I_2` are for (5,6) then (7,8) then (6,8) and minima of :math:`I_3` are for (5,7,8) then (6,7,8), and this indicate that 5 may 
+cause 7 and 8, and that 6 causes 7 and 8, while 5 and 6 are highly inter-dependent.
+
  
 Beware that these tools will not detect whatever possible statistical dependencies (see James and Crutchfield `PDF <https://www.mdpi.com/1099-4300/19/10/531>`_), 
 this is just a simplicial heuristic subsets, computationnally tractable. The complete structure of dependencies are spanned by general information structures and 
