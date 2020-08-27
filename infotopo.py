@@ -14,6 +14,7 @@ from decimal import Decimal
 import matplotlib.pyplot as plt
 from matplotlib.colors import LogNorm
 import networkx as nx
+from collections import OrderedDict
 import heapq
 from operator import itemgetter
 from mpl_toolkits.mplot3d import Axes3D
@@ -793,6 +794,110 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         cbar.set_label('# of tuples', rotation=270)
         plt.grid(False)
         plt.show(num_fig)
+
+
+#########################################################################
+#########################################################################
+######    CONDITIONAL ENTROPY and MUTUAL INFORMATION    #################
+#########################################################################
+#########################################################################
+    """
+    This function computes all conditional entropy and conditional informations (conditionning by a single variable)
+    They are given by chain rules and correspond to each edges of the lattice. 
+    the output is a list of dictionaries dico_input_CONDtot[i-1] items are of the forms ((5, 7, 9), 0.3528757654347521)  for 
+    the information of 5,7 knowing 9, e.g. I(5,7|9)
+    """
+
+    def conditional_info_simplicial_lanscape(self, dico_input):
+        num_fig = 1 
+        fig_Histo_infomut = plt.figure(num_fig,figsize=(18,10))
+        matrix_distrib_info=np.array([])
+        x_absss = np.array([])
+        y_absss = np.array([]) 
+        # Display every Histo with its own scales:   
+        ListInfomutcond={}
+        maxima_tot=-1000000.00
+        minima_tot=1000000.00
+        dico_input_COND=[]
+        dico_input_CONDtot=[]
+        for i in range(1,self.dimension_max+1):
+            ListInfomutcond[i]=[]
+            dico_input_CONDperORDER=[]
+            dico_input_COND.append(dico_input_CONDperORDER)
+            dicobis={} 
+            dico_input_CONDtot.append(dicobis)
+            for j in range(1,self.dimension_max+1):
+                dico={} 
+                dico_input_COND[i-1].append(dico)
+
+        for i in range(1,self.dimension_max+1):
+            for x,y in dico_input.items():
+                if len(x)>1: 
+                    for b in x:
+                        if (b==i):
+                            xbis= tuple(a for a in x if (a!=i)) 
+                            cond= dico_input[xbis]-y
+                            if cond>maxima_tot:
+                                maxima_tot=cond
+                            if cond<minima_tot:
+                               minima_tot=cond 
+     # for conditioning per degree                       
+                            ListInfomutcond[len(x)-1].append(cond)                  
+     # for conditioning per variable                    
+                            dico_input_COND[len(x)-1][i-1][xbis]=cond
+                            xter = xbis + ((i),)
+                            dico_input_CONDtot[len(x)-1][xter]=cond
+     # The last term in the tuple is the conditionning variable                    
+        for a in range(1,self.dimension_max+1):
+            if self.dimension_max<9 :
+                plt.subplot(3,3,a)
+            else :    
+                if self.dimension_max<=16 :
+                    plt.subplot(4,4,a)
+                else : 
+                    if self.dimension_max<=20 : 
+                        plt.subplot(5,4,a) 
+                    else :
+                        plt.subplot(5,5,a)
+            ListInfomutcond[a].append(minima_tot-0.1)
+            ListInfomutcond[a].append(maxima_tot+0.1)           
+            n, bins, patches = plt.hist(ListInfomutcond[a], self.nb_bins_histo, facecolor='r')
+            plt.title(str('condInfo'+str(a)+' dist'))
+            plt.axis([minima_tot, maxima_tot,0,n.max()])
+            plt.grid(True)
+            if a==1 :
+               matrix_distrib_info=n
+            else: 
+               matrix_distrib_info=np.c_[matrix_distrib_info,n]
+   
+        num_fig=num_fig+1
+        fig_infocondlandscape =plt.figure(num_fig)  
+        matrix_distrib_info=np.flipud(matrix_distrib_info)
+        plt.matshow(matrix_distrib_info, cmap='jet', aspect='auto', extent=[0,self.dimension_max,minima_tot-0.1,maxima_tot+0.1], norm=LogNorm(), fignum= num_fig)
+        plt.axis([0,self.dimension_max,minima_tot,maxima_tot])
+        cbar = plt.colorbar()
+        cbar.set_label('# of tuples', rotation=270)
+        plt.title('condInfo landscape')
+        plt.xlabel('dimension')
+        plt.ylabel('condInfo value (bits)')
+        fig_infocondlandscape.set_size_inches(18, 10)
+        plt.grid(False)     
+
+        plt.show()    
+        return dico_input_CONDtot   
+
+# ##########################################################################################
+# ###############              RANKING and DISPLAY of the             ######################
+# ###############   n first higher and lower conditional information  ######################
+# ##########################################################################################   
+    """
+    This function prints all the conditional information at a given dimension-order (dimension 1 for H(Xi|Xj) dimension 2 for H(Xi,Xk|Xj)...)
+    the dico_input_CONDtot[i-1] items are of the forms ((5, 7, 9), 0.352875765,347521) for the information of 5,7 knowing 9, e.g. I(5,7|9)
+    """
+    def display_higher_lower_cond_information(self, dico_input_CONDtot): 
+        
+        print('The conditional information at dim',(self.dim_to_rank-1))
+        print(OrderedDict(sorted(dico_input_CONDtot[self.dim_to_rank-1].items(), key=lambda t: t[1])))
      
 ###############################################################
 ########          Ring representation               ##########
@@ -957,7 +1062,62 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
                 ax2.grid(True)
                 nb_plot =nb_plot +1    
         plt.show()   
-        return (topitemsasdict_max, topitemsasdict_min)       
+        return (topitemsasdict_max, topitemsasdict_min)    
+
+
+# ############################################################################################
+# ###############              PLOT MEAN INFORMATION RATE               ######################
+# ###############    PLOT MEAN ENTROPY RATE NORMALISED BY BINOMIAL      ######################
+# ############################################################################################   
+    '''      
+    This function plotts at each dimension k the mean information (entropy, Mutual-Information...) rate and the mean information 
+    (entropy, Mutual-Information...) rate normalised by the binomial coeficient C(k,n)
+    '''  
+    def display_mean_information(self, dico_input):
+#########################################################################
+###########                MEAN INFO                          ########### 
+###########  SUM INFO  normalised by Binomial coefficients    ###########
+###########  (MEAN-FIELD APPROXIMATION HOMOGENEOUS SYSTEM)    ########### 
+#########################################################################        
+        info_sum_order={} 
+        for x,y in dico_input.items():
+            info_sum_order[len(x)]=info_sum_order.get(len(x),0)+dico_input[x]
+        num_fig = 1    
+        num_fig = num_fig+1
+        plt.figure(num_fig)
+        maxordonnee = -1000000.00
+        minordonnee = 1000000.00
+        rate = []
+        xxx = []
+        for x,y in info_sum_order.items():
+            rate.append(y/self._binomial(self.dimension_tot,x))            
+            xxx.append(x) 
+        plt.plot(xxx, rate, linestyle='-', marker='o', color='b', linewidth=2)
+        plt.ylabel('(Bits/symbols)')
+        plt.title('Mean info function')
+        plt.grid(True)
+
+#########################################################################
+###########                MEAN INFO  RATE                    ########### 
+###########  SUM INFO  normalised by Binomial coefficients    ###########
+###########  (MEAN-FIELD APPROXIMATION HOMOGENEOUS SYSTEM)    ########### 
+#########################################################################           
+
+        num_fig = num_fig+1
+        plt.figure(num_fig)
+        maxordonnee=-1000000.00
+        minordonnee=1000000.00
+        rate = []
+        xxx = []
+        for x,y in info_sum_order.items():
+            rate.append(y/(self._binomial(self.dimension_tot,x)*x))  
+            xxx.append(x)        
+        plt.plot(xxx, rate, linestyle='-', marker='o', color='b', linewidth=2)
+        plt.ylabel('(Bits/symbols)')
+        plt.title('Mean info function')
+        plt.grid(True)        
+        plt.show()   
+ 
 
 # #########################################################################
 # #########################################################################
@@ -970,8 +1130,8 @@ if __name__ == "__main__":
     import pandas as pd
     import seaborn as sns
     
-    dataset_type = 4 # if dataset = 1 load IRIS DATASET # if dataset = 2 load Boston house prices dataset # if dataset = 3 load DIABETES  dataset
-    if dataset_type == 1: 
+    dataset_type = 3 # if dataset = 1 load IRIS DATASET # if dataset = 2 load Boston house prices dataset # if dataset = 3 load DIABETES  dataset # if dataset = 4 Borromean  dataset
+    if dataset_type == 1: ## IRIS DATASET## 
         dataset = load_iris()
         dataset_df = pd.DataFrame(dataset.data, columns = dataset.feature_names)
         dimension_max = dataset.data.shape[1]
@@ -987,7 +1147,7 @@ if __name__ == "__main__":
         dataset_df['species'] = pd.Series(dataset.target).map(dict(zip(range(3),dataset.target_names)))
         sns.pairplot(dataset_df, hue='species')
         plt.show()
-    elif dataset_type == 2: 
+    elif dataset_type == 2: ## BOSTON DATASET##
         dataset = load_boston()
         dataset_df = pd.DataFrame(dataset.data, columns = dataset.feature_names)
         dimension_max = dataset.data.shape[1]
@@ -1001,7 +1161,7 @@ if __name__ == "__main__":
         deformed_probability_mode = False
         dataset_df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
         dataset_df['MEDV'] = pd.Series(dataset.target).map(dict(zip(range(3),dataset.data[:,12])))
-    elif dataset_type == 3: 
+    elif dataset_type == 3: ## DIABETES DATASET##
         dataset = load_diabetes()
         dataset_df = pd.DataFrame(dataset.data, columns = dataset.feature_names)
         dimension_max = dataset.data.shape[1]
@@ -1028,9 +1188,26 @@ if __name__ == "__main__":
                                 [ 0,  1,  1],
                                 [ 1,  2,  1],
                                 [ 2,  0,  1],
-                                [ 1,  0,  2],
                                 [ 0,  2,  2],
-                                [ 2,  1,  2]])                        
+                                [ 1,  0,  2],
+                                [ 2,  1,  2]])  
+        elif nb_of_values == 4:
+            dataset = np.array([[ 3,  0,  0],
+                                [ 2,  1,  0],
+                                [ 1,  2,  0],
+                                [ 0,  3,  0],
+                                [ 0,  0,  1],
+                                [ 1,  3,  1],
+                                [ 2,  2,  1],
+                                [ 3,  1,  1],
+                                [ 1,  0,  2],
+                                [ 0,  1,  2],
+                                [ 2,  3,  2],
+                                [ 3,  2,  2],
+                                [ 0,  2,  3],
+                                [ 1,  1,  3],
+                                [ 2,  0,  3],
+                                [ 3,  3,  3]])                                              
         dimension_max = dataset.shape[1]
         dimension_tot = dataset.shape[1]
         sample_size = dataset.shape[0]
@@ -1039,10 +1216,7 @@ if __name__ == "__main__":
         work_on_transpose = False
         supervised_mode = False
         sampling_mode = 1
-        deformed_probability_mode = False
-        
-         
-
+        deformed_probability_mode = False            
     
     print("sample_size : ",dataset.data.shape[0])
     print('number of variables or dimension of the analysis:',dataset.data.shape[1])
@@ -1062,10 +1236,10 @@ if __name__ == "__main__":
     Nentropie = information_topo.simplicial_entropies_decomposition(dataset.data)
     stop = timeit.default_timer()
     print('Time for CPU(seconds) entropies: ', stop - start)
-    if dataset_type == 1:
+    if dataset_type == 1 or dataset_type == 4:
         print(Nentropie)
     information_topo.entropy_simplicial_lanscape(Nentropie)
-    information_topo = infotopo(dim_to_rank = 3, number_of_max_val = 1)
+    information_topo = infotopo(dim_to_rank = 2, number_of_max_val = 2)
     if dataset_type != 4:
         dico_max, dico_min = information_topo.display_higher_lower_information(Nentropie, dataset)
 
@@ -1074,12 +1248,15 @@ if __name__ == "__main__":
     Ninfomut = information_topo.simplicial_infomut_decomposition(Nentropie)
     stop = timeit.default_timer()
     print('Time for CPU(seconds) Mutual Information: ', stop - start)
-    if dataset_type == 1:
+    if dataset_type == 1 or dataset_type == 4:
         print(Ninfomut)
     information_topo.mutual_info_simplicial_lanscape(Ninfomut)   
     if dataset_type != 4: 
         dico_max, dico_min = information_topo.display_higher_lower_information(Ninfomut, dataset)
     adjacency_matrix_mut_info = information_topo.mutual_info_pairwise_network(Ninfomut)
+    information_topo.display_mean_information(Ninfomut)
+    NcondInfo = information_topo.conditional_info_simplicial_lanscape(Ninfomut)
+    information_topo.display_higher_lower_cond_information(NcondInfo)
 
  #  key for key in Ninfomut if len(key)==2
 

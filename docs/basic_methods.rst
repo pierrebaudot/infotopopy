@@ -459,7 +459,8 @@ The information networks representation of :math:`I_1` and :math:`I_2` for the d
 .. image:: images/diabetes_information_networks.png
 
 The maxima of :math:`I_2` are for (5,6) then (7,8) then (6,8) and minima of :math:`I_3` are for (5,7,8) then (6,7,8), and this indicate that 5 may 
-cause 7 and 8, and that 6 causes 7 and 8, while 5 and 6 are highly inter-dependent.
+cause 7 and 8, and that 6 causes 7 and 8, while 5 and 6 are highly inter-dependent, among other relation, potentially complex relationships that
+can be infered from the information landscape. 
 
  
 Beware that these tools will not detect whatever possible statistical dependencies (see James and Crutchfield `PDF <https://www.mdpi.com/1099-4300/19/10/531>`_), 
