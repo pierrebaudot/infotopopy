@@ -258,6 +258,7 @@ there are 3 different mode of sampling depending on sampling_mode
 sampling_mode : (integer: 1,2,3) 
                         sampling_mode = 1: normalization taking the max and min of each rows (normaization row by row)
                         sampling_mode = 2: normalization taking the max and min of the whole matrix
+TO BE DONE: use panda dataframe .resample to do it...                        
     """                
 
     def _resample_matrix(self, data_matrix):
@@ -1114,7 +1115,7 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
             xxx.append(x)        
         plt.plot(xxx, rate, linestyle='-', marker='o', color='b', linewidth=2)
         plt.ylabel('(Bits/symbols)')
-        plt.title('Mean info function')
+        plt.title('Mean info rate function')
         plt.grid(True)        
         plt.show()   
  

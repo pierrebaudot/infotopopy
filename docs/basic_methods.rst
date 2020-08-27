@@ -463,6 +463,31 @@ cause 7 and 8, and that 6 causes 7 and 8, while 5 and 6 are highly inter-depende
 can be infered from the information landscape. 
 
  
+
+It is interesting to compute and plot the mean :math:`I_k` paths, which consist in dividing the sum of :math:`I_k` by the binomial coefficient 
+:math:`\binom{n}{k}`, and the Mean :math:`I_k` rate , which consist in dividing the preceeding result by the dimension:
+
+.. math::	
+    \langle I_k \rangle = \frac{\sum_{T\subset [n];card(T)=i}I_k(X_T;P)}{\binom{n}{k}}
+
+ Using the command:   
+
+.. code:: python3
+
+    mean_info, mean_info_rate = information_topo.display_mean_information(Ninfomut)
+
+we obtain the following  mean :math:`I_k` paths and   mean :math:`I_k` rate paths: 
+
+.. image:: images/diabetes_mean_Ik.png
+
+mean :math:`I_k` corresponds to the mean-field approxiamtion in statistical physics, that assumes a homogeneous system with identical particles 
+and identical k-body interactions. We recover a usual free-energy landscape analogous to n-bdy van der Waals model, here with a (little) minima 
+at the critical dimension 3, which shows that the interactions (or statistical dependences) in the data are weak in average (almost the 
+independent case). The same computation and definitions can be acheived for k-entropy, and is let as an exercise. 
+
+The 
+
+ 
 Beware that these tools will not detect whatever possible statistical dependencies (see James and Crutchfield `PDF <https://www.mdpi.com/1099-4300/19/10/531>`_), 
 this is just a simplicial heuristic subsets, computationnally tractable. The complete structure of dependencies are spanned by general information structures and 
 lattice of patition (see section how_infotopo_works).
