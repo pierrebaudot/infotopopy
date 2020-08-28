@@ -437,7 +437,7 @@ The structure of dependences appears much richer, notably with important negativ
 in dimension 3 and 4 for  some 3-tuples and 1 4-tuples (framed in blue). The data points 4-subspace corresponding to this minimal :math:`I_4` 
 and the  maximal :math:`I_4` look like this (with different views) : 
 
-.. image:: images/diabetes_min_max_I4.png
+.. image:: images/diabetes_condinfo_landscape.png
 
 The tuple maximal :math:`I_4` (framed in red) only display a weak correlation, as expected from the low :math:`I_4` value. However the tuple with
 minimal :math:`I_4` (5,6,7,8) displays an impressive correlation structure taking the form of a 3 dimensional hyperplane (sligtly curved indeed). 
@@ -493,15 +493,15 @@ of each edges of the lattice in the landscapes. It is possible to plot them usin
     NcondInfo = information_topo.conditional_info_simplicial_lanscape(Ninfomut)
     information_topo.display_higher_lower_cond_information(NcondInfo)
 
-There are more conditional Informations than :math:`I_k` (:math:`k.\binom{n}{k}`in each k-dimension, and :math:`n2^{n-1}` in total), and we 
-encoded the output as a list for each dimension, "NcondInfo", of dictionaries which items are of the forms ((5, 7, 9), 0.3528757654347521)  for 
+There are more conditional Informations than :math:`I_k` (:math:`k\binom{n}{k}`in each k-dimension, and :math: `n2^{n-1}` in total), and we 
+encoded the output as a list for each dimension, "NcondInfo", of dictionaries which items are of the forms ((5, 7, 9), 0.352)  for 
 the information of 5,7 knowing 9, e.g. I(5,7|9). Indeed, as remarked by `Yeung <http://iest2.ie.cuhk.edu.hk/~whyeung/post/draft2.pdf>`_ generates
 all the other information quantities we saw: considering the conditionning variable as the deterministic unit we obtain mutual informations, and
 considering equivalent variables we obtain conditional entropies and entropies. Both the "Shannonian" and "non-shannonian" inequalities found by
 Yeung translates directly in information landscapes as bounds on the slope paths (or topological cones), unraveling their homological nature 
 (see `PDF <https://www.mdpi.com/1099-4300/21/9/881>`_). For the diabetes dataset, we obtain:
 
-.. image:: images/diabetes_mean_Ik.png
+.. image:: images/diabetes_condinfo_landscape.png
 
 
 So far, we have uncovered how rich and intrinsically complex can be (indeed the partition general case is even much richer) the statistical 
