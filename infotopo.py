@@ -1088,12 +1088,12 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         plt.figure(num_fig)
         maxordonnee = -1000000.00
         minordonnee = 1000000.00
-        rate = []
+        mean = []
         xxx = []
         for x,y in info_sum_order.items():
-            rate.append(y/self._binomial(self.dimension_tot,x))            
+            mean.append(y/self._binomial(self.dimension_tot,x))            
             xxx.append(x) 
-        plt.plot(xxx, rate, linestyle='-', marker='o', color='b', linewidth=2)
+        plt.plot(xxx, mean, linestyle='-', marker='o', color='b', linewidth=2)
         plt.ylabel('(Bits/symbols)')
         plt.title('Mean info function')
         plt.grid(True)
@@ -1118,7 +1118,7 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         plt.title('Mean info rate function')
         plt.grid(True)        
         plt.show()   
- 
+        return (mean, rate)
 
 # #########################################################################
 # #########################################################################
@@ -1255,7 +1255,7 @@ if __name__ == "__main__":
     if dataset_type != 4: 
         dico_max, dico_min = information_topo.display_higher_lower_information(Ninfomut, dataset)
     adjacency_matrix_mut_info = information_topo.mutual_info_pairwise_network(Ninfomut)
-    information_topo.display_mean_information(Ninfomut)
+    mean_info, mean_info_rate  =information_topo.display_mean_information(Ninfomut)
     NcondInfo = information_topo.conditional_info_simplicial_lanscape(Ninfomut)
     information_topo.display_higher_lower_cond_information(NcondInfo)
 

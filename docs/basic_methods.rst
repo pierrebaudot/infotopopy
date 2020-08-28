@@ -346,11 +346,12 @@ as the result of the commutativity of the join-variables and mutual-variables op
 with quantum information theory). Compared to usual distance matrix (with given metric) computed in machine learning (for clustering or classifications),
 the  :math:`I_k` are not metric (e.g. non zero diagonal and no triangle inequality), we will introduce to information metric in the next stepps. 
 With such Matrix it is possible to apply some usual computational persistence homology tools like `Mapper scikit-tda <https://github.com/scikit-tda>`_ 
-(created by Singh, Mémoli, and Carlsson) and to build what could be called an "informational Vietoris-Ripps complex". However there is likely a much 
-more fundamental application of persistence theory in the construction of a local probability density estimation (to be done).
-:math:`I_k` with :math:`k \geq 3` can be repesented in an analgous way using k-cliques as acheived in `Tapia & al 2018 <https://www.nature.com/articles/s41598-018-31765-z>`_
-(to be done in the package). They shall be represented using k-tensor formalism. In the context of complex networks studies those higher :math:`I_k` with :math:`k \geq 3` 
-correspond to hypergraphs or `multiplex or multilayer networks <https://oxford.universitypressscholarship.com/view/10.1093/oso/9780198753919.001.0001/oso-9780198753919>`_
+(created by Singh, Mémoli, and Carlsson) and to build what could be called an "informational Vietoris-Ripps complex". In the context of Morse theory,
+information landscapes consider infomation functions themselfs as height or "Morse" functions. However there is likely a much more fundamental application of 
+persistence theory in the construction of a local probability density estimation (to be done). :math:`I_k` with :math:`k \geq 3` can be repesented in an 
+analgous way using k-cliques as acheived in `Tapia & al 2018 <https://www.nature.com/articles/s41598-018-31765-z>`_ (to be done in the package). They 
+shall be represented using k-tensor formalism. In the context of complex networks studies those higher :math:`I_k` with :math:`k \geq 3` correspond to 
+hypergraphs or `multiplex or multilayer networks <https://oxford.universitypressscholarship.com/view/10.1093/oso/9780198753919.001.0001/oso-9780198753919>`_
 The raw result obtained here is a fully connected network, but one can obtain a sparse matrix and a sparsely connected network by thresholding 
 the :math:`I_k` with a with fixed p-value, using the exact statistical dependence test implemented in the package. 
 
@@ -462,7 +463,6 @@ The maxima of :math:`I_2` are for (5,6) then (7,8) then (6,8) and minima of :mat
 cause 7 and 8, and that 6 causes 7 and 8, while 5 and 6 are highly inter-dependent, among other relation, potentially complex relationships that
 can be infered from the information landscape. 
 
- 
 
 It is interesting to compute and plot the mean :math:`I_k` paths, which consist in dividing the sum of :math:`I_k` by the binomial coefficient 
 :math:`\binom{n}{k}`, and the Mean :math:`I_k` rate , which consist in dividing the preceeding result by the dimension:
@@ -480,13 +480,34 @@ we obtain the following  mean :math:`I_k` paths and   mean :math:`I_k` rate path
 
 .. image:: images/diabetes_mean_Ik.png
 
-mean :math:`I_k` corresponds to the mean-field approxiamtion in statistical physics, that assumes a homogeneous system with identical particles 
+Mean :math:`I_k` corresponds to the mean-field approxiamtion in statistical physics, that assumes a homogeneous system with identical particles 
 and identical k-body interactions. We recover a usual free-energy landscape analogous to n-bdy van der Waals model, here with a (little) minima 
 at the critical dimension 3, which shows that the interactions (or statistical dependences) in the data are weak in average (almost the 
 independent case). The same computation and definitions can be acheived for k-entropy, and is let as an exercise. 
 
-The 
+The visualization of information landscapes as histograms do not permit to visualize and study the conditional entropies and Mutual informations, 
+that can be very interesting as we saw with the (extension) of transfer entropy. They are given by chain rules and correspond to minus the slope 
+of each edges of the lattice in the landscapes. It is possible to plot them using the command: 
 
+.. code:: python3
+    NcondInfo = information_topo.conditional_info_simplicial_lanscape(Ninfomut)
+    information_topo.display_higher_lower_cond_information(NcondInfo)
+
+There are more conditional Informations than :math:`I_k` (:math:`k.\binom{n}{k}`in each k-dimension, and :math:`n2^{n-1}` in total), and we 
+encoded the output as a list for each dimension, "NcondInfo", of dictionaries which items are of the forms ((5, 7, 9), 0.3528757654347521)  for 
+the information of 5,7 knowing 9, e.g. I(5,7|9). Indeed, as remarked by `Yeung <http://iest2.ie.cuhk.edu.hk/~whyeung/post/draft2.pdf>`_ generates
+all the other information quantities we saw: considering the conditionning variable as the deterministic unit we obtain mutual informations, and
+considering equivalent variables we obtain conditional entropies and entropies. Both the "Shannonian" and "non-shannonian" inequalities found by
+Yeung translates directly in information landscapes as bounds on the slope paths (or topological cones), unraveling their homological nature 
+(see `PDF <https://www.mdpi.com/1099-4300/21/9/881>`_). For the diabetes dataset, we obtain:
+
+.. image:: images/diabetes_mean_Ik.png
+
+
+So far, we have uncovered how rich and intrinsically complex can be (indeed the partition general case is even much richer) the statistical 
+structure of a dataset. As far as we explored various dataset, each of them are peculiar, and indeed characterize the dataset (as far as the 
+(joint) probability functions caracterize the data, at least in the binary case, a theorem shows that information functions provides coordinates
+on the probability simplex `PDF <https://www.mdpi.com/1099-4300/21/9/869>`_) 
  
 Beware that these tools will not detect whatever possible statistical dependencies (see James and Crutchfield `PDF <https://www.mdpi.com/1099-4300/19/10/531>`_), 
 this is just a simplicial heuristic subsets, computationnally tractable. The complete structure of dependencies are spanned by general information structures and 
