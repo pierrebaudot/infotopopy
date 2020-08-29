@@ -57,6 +57,9 @@ visualise the results, and pandas to handle the data.
 Iris data
 ---------
 
+Iris dataset
+============
+
 The first example of dataset application we will present is the `iris
 dataset <https://en.wikipedia.org/wiki/Iris_flower_data_set>`__. It is
 a very small dataset composed of 4 Random-Variables or dimensions that 
@@ -184,6 +187,9 @@ way, we will see how to compute and estimate all classical information functions
 multivariate Entropies, Mutual Informations and Conditional Entropies and 
 Mutual Informations. 
 
+Entropy
+=======
+
 To use infotopo we need to first construct a infotopo object from 
 the infotopo package. This makes a lot of same word, information is a 
 functor, a kind of general application or map, that could be either a 
@@ -287,15 +293,37 @@ provide a faithfull estimate, to avoid the sampling problem also called "curse o
 "entropy_simplicial_lanscape" also computes the maximal dimension above which the estimation becomes too inacurate and
 shall not be interpreted. This is explained in more details in the section "curse_of_dimension_and_statistical_dependencies_test". 
 
+Mutual Information
+==================
+
 Now, let's have a look at the statistical dependencies structures in the dataset by computing the Mutual-Information lanscapes 
 which principle is depicted in the preceding figure and that basically plots k-dimensional multivariate Mutual Informations (:math:`I_k`) in the same 
 way as Entropy Landscapes. :math:`I_k` are alternated functions of entropies, for example, 
-:math:`I_3=H(X_1)+H(X_2)+H(X_3)-H(X_1,X_2)-H(X1,X_3)-H(X_2,X_3)+H(X_1,X_2,X_3)`. They differ from Total Correlations (:math:`G_k`) which are the 
-Kullback-Leibler Divergence between the full joint-entropy and its marginals product, for example, :math:`G_3=H(X_1)+H(X_2)+H(X_3)-H(X_1,X_2,X_3)`. 
+:math:`I_3=H(X_1)+H(X_2)+H(X_3)-H(X_1,X_2)-H(X1,X_3)-H(X_2,X_3)+H(X_1,X_2,X_3)`:
+
+.. math::	
+    I_k(X_1,...,X_k;P)=\sum_{i=1}^{k}(-1)^{i-1}\sum_{I\subset [k];card(I)=i}H_i(X_I;P)}
+
+
+They differ from Total Correlations (:math:`G_k`) which are the Kullback-Leibler Divergence between the full joint-entropy and its marginals product, 
+for example, :math:`G_3=H(X_1)+H(X_2)+H(X_3)-H(X_1,X_2,X_3)`:
+
+.. math::
+    G_k= G_k(X_1;...X_k;P)=\sum_{i=1}^k H(X_i) - H(X_1;...X_k)}
+
+
 In contrast with :math:`G_k`, :math:`I_k` can be negative for :math:`k \geq 3`, a phenomenon called synergy in the original study of Brenner et al.
 Considering the old goal of expressing all of physics in terms of information, following Brillouin, Jaynes, Wheeller (...), for `k \geq 2`, 
 :math:`G_k` corresponds to a Free-Energy functional of a k interacting body system, while the  :math:`I_k` quantifies the contribution of the 
-k-bodies interaction to this total free energy. The :math:`I_1` component is the internal energy. 
+k-bodies interaction to this total free energy. The :math:`I_1` component is the internal energy:
+
+.. math::
+    H_k(X_1,..,X_k;P_N)=E(X_1,..,X_k;P_N)-G(X_1,..,X_k;P_N)=E-G
+
+The Free-energy decomposes itself as an alternated sum of :math:`I_k` : 
+
+.. math::
+    G_k =\sum_{i=2}^{k}(-1)^{i}\sum_{I\subset [n];card(I)=i}I_i(X_I;P)    
 
 To plot the Information Landscapes and the distribution of :math:`I_k` values for each dimension-rank k, we use 
 the "entropy_simplicial_lanscape" command as following:   
@@ -327,6 +355,9 @@ And we obtain the two pairs of variables (1,2) and (2,3) that are the less stati
 .. image:: images/iris_min_I2.png
 
 Whenever the dimension to study is more than 4, the function only retreives the dictionaries of the first maximum and minimum tuples (to print).
+
+Information Networks
+====================
 
 In biology (e.g "omic"), neuroscience (e.g "neural network") and social science (e.g "social network"), it is common and helpfull to conceive and 
 visualize the one and two dimensional results as (first degree) networks. To visualize the Information Networks, we use the 
@@ -360,6 +391,9 @@ We begin to see that Homological tools provides a wide generalisation of complex
 Diabetes data
 -------------
 
+Diabetes dataset
+================
+
 The Iris dataset and its associated information landsacpes are in too low dimension to appreciate all the interest of the methods in higher dimensions,
 so lets turn to larger dimensional classical machine learning dataset: Diabetes dataset. This dataset is kindly also furnished by scikitlearn, and we load it with the same methods as previously:
 
@@ -380,7 +414,13 @@ so lets turn to larger dimensional classical machine learning dataset: Diabetes 
 
 This dataset contains 10 variables-dimensions for a sample size (number of points) of 442 and a target (label) variable which quantifies diabetes 
 progress. The ten variables are [age, sex, body mass index, average blood pressure, T-Cells, low-density lipoproteins, high-density lipoproteins,
-thyroid stimulating hormone, lamotrigine, blood sugar level] in this order. As before, we execute:
+thyroid stimulating hormone, lamotrigine, blood sugar level] in this order. 
+
+
+Entropy
+=======
+
+As before, we execute:
 
 .. code:: python3
 
@@ -416,14 +456,46 @@ allow different number of values adapted for each variable (binary ternary etc..
 
 .. image:: images/diabetes_3min_H4.png
 
-We can now focus on the statistical depencies and :math:`I_k` structures, by running as previously the commands:
+
+Total correlation
+=================
+
+We can now focus on the statistical depencies and :math:`G_k` and :math:`I_k` structures, we will first compute the total correlation :math:`G_k` (`Watanabe <http://www.neuralmachines.com/references/correlation.pdf>`_.) 
+, or total free energy, also called Integrated Information (`Tononi and Edelman <http://www.neuralmachines.com/references/correlation.pdf>`_),
+by running as previously the commands:
+
+.. code:: python3
+
+    Ntotal_correlation = information_topo.total_correlation_simplicial_lanscape(Nentropie)
+    dico_max, dico_min = information_topo.display_higher_lower_information(Ntotal_correlation, dataset)
+    
+and we obtain the following :math:`G_k` landscape:
+
+.. image:: images/diabetes_total_correlation_landscape.png
+
+which corresponds to the following distributions of free energy :math:`G_k` for each dimensions: 
+
+.. image:: images/diabetes_total_correlation_histograms.png
+
+The structure of dependences appears much richer, notably the landscape exhibits nice and clearcut bimodal distribution of free energy from
+dimension 3 to dimension 8. The data points 4-subspace corresponding to the two first minima and maxima of :math:`G_4` look like this : 
+
+.. image:: images/diabetes_min_max_G4.png
+
+As expected the two :math:`G_4` minima present the dependent 4-subspace, but the the two :math:`G_4` maxima, for the 4-tuples (5,6,7,8) 
+and (5,6,8,9), present higly dependent very nice statistical dependencies (further detailed in the :math:`I_4` subsection bellow).
+
+
+Mutual Information
+==================
+We can now plot similarly the :math:`I_k` landscape, using the commands:
 
 .. code:: python3
 
     Ninfomut = information_topo.simplicial_infomut_decomposition(Nentropie) 
     information_topo.mutual_info_simplicial_lanscape(Ninfomut)
     dico_max, dico_min = information_topo.display_higher_lower_information(Ninfomut, dataset)
-    adjacency_matrix_mut_info =information_topo.mutual_info_pairwise_network(Ninfomut)
+    adjacency_matrix_mut_info =information_topo.mutual_info_pairwise_network(Ntotal_correlation)
 
 and we obtain the following :math:`I_k` landscape:
 
@@ -433,7 +505,8 @@ which corresponds to the following distributions of k-mutual information for eac
 
 .. image:: images/diabetes_information_histograms.png
 
-The structure of dependences appears much richer, notably with important negative values (it was chosen to illustrate this very peculiar phenomena)
+:math:`I_k` landscape bring new results that could not be infered from total correlations, notably thanks to its possible negativity.
+The :math:`I_k` landscape of diabetes dataset notably displays important negative values (it was chosen to illustrate this very peculiar phenomena)
 in dimension 3 and 4 for  some 3-tuples and 1 4-tuples (framed in blue). The data points 4-subspace corresponding to this minimal :math:`I_4` 
 and the  maximal :math:`I_4` look like this (with different views) : 
 
@@ -455,6 +528,10 @@ A section in "how_infotopo_works" is dedicated to a more complete study and expl
 of `Tapia et al. <https://www.nature.com/articles/s41598-018-31765-z>`_ provides further examples of strong positive k-tuplet, e.g of statistical 
 interactions without common cause, or more simply causal chains (e.g metabolic chains). 
 
+
+Information Networks
+====================
+
 The information networks representation of :math:`I_1` and :math:`I_2` for the diabetes dataset is:  
 
 .. image:: images/diabetes_information_networks.png
@@ -463,6 +540,9 @@ The maxima of :math:`I_2` are for (5,6) then (7,8) then (6,8) and minima of :mat
 cause 7 and 8, and that 6 causes 7 and 8, while 5 and 6 are highly inter-dependent, among other relation, potentially complex relationships that
 can be infered from the information landscape. 
 
+
+Mean Information path
+=====================
 
 It is interesting to compute and plot the mean :math:`I_k` paths, which consist in dividing the sum of :math:`I_k` by the binomial coefficient 
 :math:`\binom{n}{k}`, and the Mean :math:`I_k` rate , which consist in dividing the preceeding result by the dimension:
@@ -486,6 +566,9 @@ and identical k-body interactions. We recover a usual free-energy landscape anal
 at the critical dimension 3, which shows that the interactions (or statistical dependences) in the data are weak in average (almost the 
 independent case). The same computation and definitions can be acheived for k-entropy, and is let as an exercise. 
 
+Conditional (transfer) Informations
+===================================
+
 The visualization of information landscapes as histograms do not permit to visualize and study the conditional entropies and Mutual informations, 
 that can be very interesting as we saw with the (extension) of transfer entropy. They are given by chain rules and correspond to minus the slope 
 of each edges of the lattice in the landscapes. It is possible to plot them using the command: 
@@ -505,16 +588,19 @@ Yeung translates directly in information landscapes as bounds on the slope paths
 
 .. image:: images/diabetes_condinfo_landscape.png
 
+Entropy Vs. Energy
+==================
+
 Following the `original figure <https://en.wikipedia.org/wiki/Gibbs_free_energy>`_ ENTROPY vs. ENERGY vs. VOLUME of Willard Gibbs (1873) James 
-Clerk Maxwell (1874), we can resume part of the preceding results by ploting :math:`H_k` (absyssa) vs. :math:`I_k` (ordinate) using the command:
+Clerk Maxwell (1874), we can resume part of the preceding results by ploting :math:`H_k` (absyssa) vs. :math:`G_k` (ordinate) using the command:
 
 .. code:: python3
 
-    information_topo.display_entropy_energy_landscape(Ninfomut, Nentropie)
+    information_topo.display_entropy_energy_landscape(Ntotal_correlation, Nentropie)
 
-.. image:: images/diabetes_entropy_energy_landscape.png
+.. image:: images/diabetes_entropy_energyGk_landscape.png
 
-It notably shows how two population of data points clusters in dimension 2 and 6. 
+It notably shows how two population of data points clusters from dimension 6 to 8. 
 
 So far, we have uncovered how rich and intrinsically complex can be the statistical structure of a dataset (indeed the partition general case is even much richer).
 As far as we explored various dataset, each of them are peculiar, and indeed characterize the dataset (as far as the (joint) probability functions caracterize 

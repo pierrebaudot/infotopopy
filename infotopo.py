@@ -550,8 +550,6 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         moyenne={}
         nbpoint={}
         matrix_distrib_info=np.array([])
-        x_absss = np.array([])
-        y_absss = np.array([])
         maxima_tot=-1000000.00
         minima_tot=1000000.00
         ListEntropyordre={}
@@ -644,8 +642,6 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
     def mutual_info_simplicial_lanscape(self, Ninfomut) :
         num_fig = 1
         matrix_distrib_infomut=np.array([])
-        x_absss = np.array([])
-        y_absss = np.array([])
 #######################################################
 #   COMPUTE THE LIST OF INFOMUT VALUES FOR EACH DEGREE
 # Display every Histo with its own scales:
@@ -811,8 +807,6 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         num_fig = 1 
         fig_Histo_infomut = plt.figure(num_fig,figsize=(18,10))
         matrix_distrib_info=np.array([])
-        x_absss = np.array([])
-        y_absss = np.array([]) 
         # Display every Histo with its own scales:   
         ListInfomutcond={}
         maxima_tot=-1000000.00
@@ -951,10 +945,78 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         fig_entropy_eneregy.suptitle('Entropy vs. Energy landsacpe', fontsize=16)    
         fig_entropy_eneregy.set_size_inches(18, 10)
         plt.show() 
+
+
+#########################################################################
+#########################################################################
+######    TOTAL CORRELATION - INTEGRATED INFORMATIOn    #################
+######                    FREE ENERGY                   #################
+#########################################################################
+#########################################################################
+    """
+    This function computes all total correlations or integrated information or free energy
+    """       
+
+    def total_correlation_simplicial_lanscape(self, Nentropie):
+        num_fig = 1
+        plt.figure(num_fig,figsize=(18,10))
+        matrix_distrib_info=np.array([])
+        maxima_tot=-1000000.00
+        minima_tot=1000000.00
+        list_tot_correlation={}
+        Ntotal_correlation={}
         
+        for i in range(1,self.dimension_max+1):
+            list_tot_correlation[i]=[]
 
-
-
+        for x,y in Nentropie.items():
+            sum_marginals = 0
+            for var in x:
+                sum_marginals = sum_marginals + Nentropie[(var,)]
+            total_corr =   sum_marginals - y 
+            Ntotal_correlation.update( {x : total_corr} )
+            list_tot_correlation[len(x)].append(total_corr)
+            if total_corr>maxima_tot:
+                maxima_tot=total_corr
+            if total_corr<minima_tot:
+                minima_tot=total_corr  
+  
+        for a in range(1,self.dimension_max+1):
+            if self.dimension_max<=9 :
+                plt.subplot(3,3,a)
+            else :
+                if self.dimension_max<=16 :
+                    plt.subplot(4,4,a)
+                else :
+                    if self.dimension_max<=20 :
+                        plt.subplot(5,4,a)
+                    else :
+                        plt.subplot(5,5,a)          
+            list_tot_correlation[a].append(minima_tot-0.1)
+            list_tot_correlation[a].append(maxima_tot+0.1)
+            n, bins, patches = plt.hist(list_tot_correlation[a], self.nb_bins_histo, facecolor='b')
+            plt.axis([minima_tot, maxima_tot,0,n.max()])
+            plt.title(str('G'+str(a)+' dist'))
+            if a==1 :
+                matrix_distrib_info=n
+            else:
+                matrix_distrib_info=np.c_[matrix_distrib_info,n]
+            plt.grid(True)   
+        
+        num_fig=num_fig+1
+        fig_total_correlation_landscape =plt.figure(num_fig,figsize=(18, 10))
+        matrix_distrib_info=np.flipud(matrix_distrib_info)
+        plt.matshow(matrix_distrib_info, cmap='jet', aspect='auto', extent=[0,self.dimension_max,minima_tot-0.1,maxima_tot+0.1], norm=LogNorm(), fignum= num_fig)
+        plt.axis([0,self.dimension_max,minima_tot,maxima_tot])
+        cbar = plt.colorbar()
+        cbar.set_label('# of tuples', rotation=270)
+        plt.grid(False)
+        plt.xlabel('dimension')
+        plt.ylabel('Gk value (bits)')
+        plt.title('Total correlation Gk landscape')
+        fig_total_correlation_landscape.set_size_inches(18, 10)
+        plt.show(num_fig)
+        return Ntotal_correlation
 
 
 # ##########################################################################################
@@ -1310,11 +1372,13 @@ if __name__ == "__main__":
     if dataset_type == 1 or dataset_type == 4:
         print(Nentropie)
     information_topo.entropy_simplicial_lanscape(Nentropie)
-    information_topo = infotopo(dim_to_rank = 2, number_of_max_val = 2)
+    information_topo = infotopo(dim_to_rank = 4, number_of_max_val = 2)
     if dataset_type != 4:
         dico_max, dico_min = information_topo.display_higher_lower_information(Nentropie, dataset)
 
 # Ninfomut is dictionary (x,y) with x a list of kind (1,2,5) and y a value in bit
+    Ntotal_correlation = information_topo.total_correlation_simplicial_lanscape(Nentropie)
+    dico_max, dico_min = information_topo.display_higher_lower_information(Ntotal_correlation, dataset)
     start = timeit.default_timer()   
     Ninfomut = information_topo.simplicial_infomut_decomposition(Nentropie)
     stop = timeit.default_timer()
@@ -1326,11 +1390,15 @@ if __name__ == "__main__":
         dico_max, dico_min = information_topo.display_higher_lower_information(Ninfomut, dataset)
     adjacency_matrix_mut_info = information_topo.mutual_info_pairwise_network(Ninfomut)
     mean_info, mean_info_rate  =information_topo.display_mean_information(Ninfomut)
+    # CONDITIONAL INFO OR ENTROPY
     NcondInfo = information_topo.conditional_info_simplicial_lanscape(Ninfomut)
     information_topo.display_higher_lower_cond_information(NcondInfo)
+    # ENTROPY vs. ENERGY LANDSCAPE
+    information_topo.display_entropy_energy_landscape(Ntotal_correlation, Nentropie)
     information_topo.display_entropy_energy_landscape(Ninfomut, Nentropie)
+    
 
- #  key for key in Ninfomut if len(key)==2
+
 
         
 
