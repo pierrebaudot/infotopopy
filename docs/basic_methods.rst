@@ -58,7 +58,7 @@ Iris data
 ---------
 
 Iris dataset
-============
+~~~~~~~~~~~~
 
 The first example of dataset application we will present is the `iris
 dataset <https://en.wikipedia.org/wiki/Iris_flower_data_set>`__. It is
@@ -188,7 +188,7 @@ multivariate Entropies, Mutual Informations and Conditional Entropies and
 Mutual Informations. 
 
 Entropy
-=======
+~~~~~~~
 
 To use infotopo we need to first construct a infotopo object from 
 the infotopo package. This makes a lot of same word, information is a 
@@ -294,7 +294,7 @@ provide a faithfull estimate, to avoid the sampling problem also called "curse o
 shall not be interpreted. This is explained in more details in the section "curse_of_dimension_and_statistical_dependencies_test". 
 
 Mutual Information
-==================
+~~~~~~~~~~~~~~~~~~
 
 Now, let's have a look at the statistical dependencies structures in the dataset by computing the Mutual-Information lanscapes 
 which principle is depicted in the preceding figure and that basically plots k-dimensional multivariate Mutual Informations (:math:`I_k`) in the same 
@@ -357,7 +357,7 @@ And we obtain the two pairs of variables (1,2) and (2,3) that are the less stati
 Whenever the dimension to study is more than 4, the function only retreives the dictionaries of the first maximum and minimum tuples (to print).
 
 Information Networks
-====================
+~~~~~~~~~~~~~~~~~~~~
 
 In biology (e.g "omic"), neuroscience (e.g "neural network") and social science (e.g "social network"), it is common and helpfull to conceive and 
 visualize the one and two dimensional results as (first degree) networks. To visualize the Information Networks, we use the 
@@ -392,7 +392,7 @@ Diabetes data
 -------------
 
 Diabetes dataset
-================
+~~~~~~~~~~~~~~~~
 
 The Iris dataset and its associated information landsacpes are in too low dimension to appreciate all the interest of the methods in higher dimensions,
 so lets turn to larger dimensional classical machine learning dataset: Diabetes dataset. This dataset is kindly also furnished by scikitlearn, and we load it with the same methods as previously:
@@ -418,7 +418,7 @@ thyroid stimulating hormone, lamotrigine, blood sugar level] in this order.
 
 
 Entropy
-=======
+~~~~~~~
 
 As before, we execute:
 
@@ -458,7 +458,7 @@ allow different number of values adapted for each variable (binary ternary etc..
 
 
 Total correlation
-=================
+~~~~~~~~~~~~~~~~~
 
 We can now focus on the statistical depencies and :math:`G_k` and :math:`I_k` structures, we will first compute the total correlation :math:`G_k` (`Watanabe <http://www.neuralmachines.com/references/correlation.pdf>`_.) 
 , or total free energy, also called Integrated Information (`Tononi and Edelman <http://www.neuralmachines.com/references/correlation.pdf>`_),
@@ -487,7 +487,7 @@ and (5,6,8,9), present higly dependent very nice statistical dependencies (furth
 
 
 Mutual Information
-==================
+~~~~~~~~~~~~~~~~~~
 We can now plot similarly the :math:`I_k` landscape, using the commands:
 
 .. code:: python3
@@ -530,7 +530,7 @@ interactions without common cause, or more simply causal chains (e.g metabolic c
 
 
 Information Networks
-====================
+~~~~~~~~~~~~~~~~~~~~
 
 The information networks representation of :math:`I_1` and :math:`I_2` for the diabetes dataset is:  
 
@@ -542,7 +542,7 @@ can be infered from the information landscape.
 
 
 Mean Information path
-=====================
+~~~~~~~~~~~~~~~~~~~~~
 
 It is interesting to compute and plot the mean :math:`I_k` paths, which consist in dividing the sum of :math:`I_k` by the binomial coefficient 
 :math:`\binom{n}{k}`, and the Mean :math:`I_k` rate , which consist in dividing the preceeding result by the dimension:
@@ -567,7 +567,7 @@ at the critical dimension 3, which shows that the interactions (or statistical d
 independent case). The same computation and definitions can be acheived for k-entropy, and is let as an exercise. 
 
 Conditional (transfer) Informations
-===================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The visualization of information landscapes as histograms do not permit to visualize and study the conditional entropies and Mutual informations, 
 that can be very interesting as we saw with the (extension) of transfer entropy. They are given by chain rules and correspond to minus the slope 
@@ -589,7 +589,7 @@ Yeung translates directly in information landscapes as bounds on the slope paths
 .. image:: images/diabetes_condinfo_landscape.png
 
 Entropy Vs. Energy
-==================
+~~~~~~~~~~~~~~~~~~
 
 Following the `original figure <https://en.wikipedia.org/wiki/Gibbs_free_energy>`_ ENTROPY vs. ENERGY vs. VOLUME of Willard Gibbs (1873) James 
 Clerk Maxwell (1874), we can resume part of the preceding results by ploting :math:`H_k` (absyssa) vs. :math:`G_k` (ordinate) using the command:
