@@ -437,7 +437,7 @@ The structure of dependences appears much richer, notably with important negativ
 in dimension 3 and 4 for  some 3-tuples and 1 4-tuples (framed in blue). The data points 4-subspace corresponding to this minimal :math:`I_4` 
 and the  maximal :math:`I_4` look like this (with different views) : 
 
-.. image:: images/diabetes_condinfo_landscape.png
+.. image:: images/diabetes_min_max_I4.png
 
 The tuple maximal :math:`I_4` (framed in red) only display a weak correlation, as expected from the low :math:`I_4` value. However the tuple with
 minimal :math:`I_4` (5,6,7,8) displays an impressive correlation structure taking the form of a 3 dimensional hyperplane (sligtly curved indeed). 
