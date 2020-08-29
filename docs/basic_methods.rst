@@ -302,14 +302,14 @@ way as Entropy Landscapes. :math:`I_k` are alternated functions of entropies, fo
 :math:`I_3=H(X_1)+H(X_2)+H(X_3)-H(X_1,X_2)-H(X1,X_3)-H(X_2,X_3)+H(X_1,X_2,X_3)`:
 
 .. math::	
-    I_k(X_1,...,X_k;P)=\sum_{i=1}^{k}(-1)^{i-1}\sum_{I\subset [k];card(I)=i}H_i(X_I;P)}
+    I_k(X_1,...,X_k;P)=\sum_{i=1}^{k}(-1)^{i-1}\sum_{I\subset [k];card(I)=i}H_i(X_I;P)
 
 
 They differ from Total Correlations (:math:`G_k`) which are the Kullback-Leibler Divergence between the full joint-entropy and its marginals product, 
 for example, :math:`G_3=H(X_1)+H(X_2)+H(X_3)-H(X_1,X_2,X_3)`:
 
 .. math::
-    G_k= G_k(X_1;...X_k;P)=\sum_{i=1}^k H(X_i) - H(X_1;...X_k)}
+    G_k= G_k(X_1;...X_k;P)=\sum_{i=1}^k H(X_i) - H(X_1;...X_k)
 
 
 In contrast with :math:`G_k`, :math:`I_k` can be negative for :math:`k \geq 3`, a phenomenon called synergy in the original study of Brenner et al.
