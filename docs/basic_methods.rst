@@ -470,7 +470,8 @@ It is interesting to compute and plot the mean :math:`I_k` paths, which consist 
 .. math::	
     \langle I_k \rangle = \frac{\sum_{T\subset [n];card(T)=i}I_k(X_T;P)}{\binom{n}{k}}
 
- Using the command:   
+
+Using the command:   
 
 .. code:: python3
 
@@ -490,10 +491,11 @@ that can be very interesting as we saw with the (extension) of transfer entropy.
 of each edges of the lattice in the landscapes. It is possible to plot them using the command: 
 
 .. code:: python3
+
     NcondInfo = information_topo.conditional_info_simplicial_lanscape(Ninfomut)
     information_topo.display_higher_lower_cond_information(NcondInfo)
 
-There are more conditional Informations than :math:`I_k` (:math:`k\binom{n}{k}`in each k-dimension, and :math: `n2^{n-1}` in total), and we 
+There are more conditional Informations than :math:`I_k` (:math:`k\binom{n}{k}` in each k-dimension, and :math: `n2^{n-1}` in total), and we 
 encoded the output as a list for each dimension, "NcondInfo", of dictionaries which items are of the forms ((5, 7, 9), 0.352)  for 
 the information of 5,7 knowing 9, e.g. I(5,7|9). Indeed, as remarked by `Yeung <http://iest2.ie.cuhk.edu.hk/~whyeung/post/draft2.pdf>`_ generates
 all the other information quantities we saw: considering the conditionning variable as the deterministic unit we obtain mutual informations, and
@@ -503,11 +505,21 @@ Yeung translates directly in information landscapes as bounds on the slope paths
 
 .. image:: images/diabetes_condinfo_landscape.png
 
+Following the `original figure <https://en.wikipedia.org/wiki/Gibbs_free_energy>`_ ENTROPY vs. ENERGY vs. VOLUME of Willard Gibbs (1873) James 
+Clerk Maxwell (1874), we can resume part of the preceding results by ploting :math:`H_k` (absyssa) vs. :math:`I_k` (ordinate) using the command:
 
-So far, we have uncovered how rich and intrinsically complex can be (indeed the partition general case is even much richer) the statistical 
-structure of a dataset. As far as we explored various dataset, each of them are peculiar, and indeed characterize the dataset (as far as the 
-(joint) probability functions caracterize the data, at least in the binary case, a theorem shows that information functions provides coordinates
-on the probability simplex `PDF <https://www.mdpi.com/1099-4300/21/9/869>`_) 
+.. code:: python3
+
+    information_topo.display_entropy_energy_landscape(Ninfomut, Nentropie)
+
+.. image:: images/diabetes_entropy_energy_landscape.png
+
+It notably shows how two population of data points clusters in dimension 2 and 6. 
+
+So far, we have uncovered how rich and intrinsically complex can be the statistical structure of a dataset (indeed the partition general case is even much richer).
+As far as we explored various dataset, each of them are peculiar, and indeed characterize the dataset (as far as the (joint) probability functions caracterize 
+the data, at least in the binary case, a theorem shows that information functions provides coordinateson the probability simplex 
+`PDF <https://www.mdpi.com/1099-4300/21/9/869>`_) 
  
 Beware that these tools will not detect whatever possible statistical dependencies (see James and Crutchfield `PDF <https://www.mdpi.com/1099-4300/19/10/531>`_), 
 this is just a simplicial heuristic subsets, computationnally tractable. The complete structure of dependencies are spanned by general information structures and 

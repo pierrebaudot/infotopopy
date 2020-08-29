@@ -690,8 +690,6 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
                         hist_sum_SHUFFLE[i] = nSHUFFLE
                     else:
                         hist_sum_SHUFFLE[i] = np.sum([hist_sum_SHUFFLE[i],nSHUFFLE],axis=0)
-                Ninfomut.clear()
-                del(Ninfomut)
                 ListInfomutordreSHUFFLE.clear()
                 del(ListInfomutordreSHUFFLE)
             for i in range(1,self.dimension_max+1):
@@ -886,6 +884,78 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
 
         plt.show()    
         return dico_input_CONDtot   
+
+
+#########################################################################
+#########################################################################
+######      Histogramms ENTROPY & MUTUAL INFORMATION   ##################
+###### computes entropy vs information for each degree ##################
+######       ENTROPY  &  INFOMUT LANDSCAPES         #####################
+######                FIGURE 6                  #########################
+#########################################################################
+#########################################################################
+### ENTROPY VS ENERGY VS VOL  Willard Gibbs' 1873 figures two and three 
+# (above left and middle) used by Scottish physicist James Clerk Maxwell 
+# in 1874 to create a three-dimensional entropy (x), volume (y), energy (z) 
+# thermodynamic surface diagram 
+
+    def display_entropy_energy_landscape(self, Ninfomut, Nentropie):
+  
+        ListInfomutordre={}
+        ListEntropyordre={}
+        maxima_tot=-1000000.00
+        minima_tot=1000000.00
+        for i in range(1,self.dimension_max+1):
+            ListInfomutordre[i]=[]
+            ListEntropyordre[i]=[]
+
+        for x,y in Ninfomut.items():
+            ListInfomutordre[len(x)].append(y)   
+            ListEntropyordre[len(x)].append(Nentropie.get(x))
+            if y>maxima_tot:
+                maxima_tot=y
+            if y<minima_tot:
+                minima_tot=y 
+        for a in range(1,self.dimension_max+1):    
+            ListInfomutordre[a].append(minima_tot-0.1)
+            ListInfomutordre[a].append(maxima_tot+0.1)   
+        num_fig = 1 
+        num_fig = num_fig+1
+        fig_entropy_eneregy =plt.figure(num_fig)  
+
+        maxima_tot_entropy=-1000000.00
+        minima_tot_entropy=1000000.00   
+        for x,y in Nentropie.items():
+            if y>maxima_tot_entropy:
+                maxima_tot_entropy=y
+            if y<minima_tot_entropy:
+                minima_tot_entropy=y     
+        for a in range(1,self.dimension_max+1):
+            if self.dimension_max<=9 :
+                plt.subplot(3,3,a)
+            else :    
+                if self.dimension_max<=16 :
+                    plt.subplot(4,4,a)
+                else : 
+                    if self.dimension_max<=20 : 
+                        plt.subplot(5,4,a) 
+                    else :
+                        plt.subplot(5,5,a)           
+            ListEntropyordre[a].append(minima_tot_entropy-0.1)
+            ListEntropyordre[a].append(maxima_tot_entropy+0.1)     
+            plt.hist2d(ListEntropyordre[a], ListInfomutordre[a], bins=int(self.nb_bins_histo/2), norm=LogNorm())
+            plt.title(str('dim '+str(a)))
+            cbar = plt.colorbar()
+            cbar.ax.set_ylabel('Counts')
+            plt.axis([minima_tot_entropy, maxima_tot_entropy,minima_tot,maxima_tot])
+        fig_entropy_eneregy.suptitle('Entropy vs. Energy landsacpe', fontsize=16)    
+        fig_entropy_eneregy.set_size_inches(18, 10)
+        plt.show() 
+        
+
+
+
+
 
 # ##########################################################################################
 # ###############              RANKING and DISPLAY of the             ######################
@@ -1258,6 +1328,7 @@ if __name__ == "__main__":
     mean_info, mean_info_rate  =information_topo.display_mean_information(Ninfomut)
     NcondInfo = information_topo.conditional_info_simplicial_lanscape(Ninfomut)
     information_topo.display_higher_lower_cond_information(NcondInfo)
+    information_topo.display_entropy_energy_landscape(Ninfomut, Nentropie)
 
  #  key for key in Ninfomut if len(key)==2
 
