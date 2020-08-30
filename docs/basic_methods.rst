@@ -215,12 +215,24 @@ previously to the size of the data input matrix).
                                 forward_computation_mode = forward_computation_mode)
 
 Now we will compute all the simplicial semi-lattice of marginal and joint-entropy, 
-that contains :math:`2_n` elements including the unit 0 reference measure element
+that contains :math:`2^n` elements including the unit 0 reference measure element. 
+The marginal :math:`H_1` entopies are defined as classicaly by `Shannon <https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjtrqOXrsPrAhVCrxoKHcBDBrQQgAMoAHoECBIQAg&url=http%3A%2F%2Fscholar.google.fr%2Fscholar_url%3Furl%3Dhttps%3A%2F%2Fpure.mpg.de%2Frest%2Fitems%2Fitem_2383162_7%2Fcomponent%2Ffile_2456978%2Fcontent%26hl%3Dfr%26sa%3DX%26scisig%3DAAGBfm2dgGR4Ly92eRCfhrM1BgCnbIBvBA%26nossl%3D1%26oi%3Dscholarr&usg=AOvVaw0ha99XPEPwgTiv3oMC7PTE>`_ :
+
+.. math::	
+    H_1=H(X_{j};P)=k\sum_{x \in [N_j] }p(x)\ln p(x) 
+
+and the multivariate joint-entropies :math:`H_k` just generalise the preceding to k variables:
+
+.. math::	
+    H_1=H(X_{j};P)=k\sum_{x \in [N_j] }p(x)\ln p(x)     
+
+https://drive.google.com/file/d/10ZMjN8Q4w6t4osaYODdBg-pF9zlu21R_/view?usp=sharing
 The figure below give the usual Venn diagrams representation of set theoretic unions 
 and the corresponding semi-lattice of joint Random Variables and Joint Entropies, together 
 with its correponding simplicial representation, for 3 (top) and 4 variables-dimension 
-(bottom, the case of the iris dataset with 2 power 4 joint random variables). The edges of
-the lattice are in one to one correspondence with conditional entropies.   
+(bottom, the case of the iris dataset with 2 power 4 joint random variables). This correspondence
+of joint-information with the semi-lattice of union was formalized by `Hu Kuo Ting <https://drive.google.com/file/d/10ZMjN8Q4w6t4osaYODdBg-pF9zlu21R_/view?usp=sharing>`_ . 
+The edges of the lattice are in one to one correspondence with conditional entropies.   
 
 .. image:: images/figure_lattice.png
 
@@ -237,7 +249,6 @@ the joint variables (ex: (1,3,4)) and  with values the joint or marginal entropy
 .. parsed-literal::
 
     {(4,): 2.9528016441309237, (3,): 2.4902608474907497, (2,): 2.5591245822618114, (1,): 2.8298425472847066, (3, 4): 3.983309507504916, (2, 4): 4.798319817958397, (1, 4): 4.83234271597051, (2, 3): 4.437604597473526, (1, 3): 4.2246575340121835, (1, 2): 4.921846615158947, (2, 3, 4): 5.561696151051504, (1, 3, 4): 5.426426190681815, (1, 2, 4): 6.063697650692486, (1, 2, 3): 5.672729631265195, (1, 2, 3, 4): 6.372515544003377}
-
 
 
 Such dictionary is hard to read; to allow a relevant visualization of the
@@ -263,8 +274,7 @@ is represented by a color code in the entropy landscapes. Hence, Entropy Landsca
 (unormalised..but it could be normalised) entropy measure densities histograms (there is interesting further
 theoretical and applied development upon this point, since entropy functions obey axioms of measure: one 
 could legitamely investigate entropies of entropies, a kind of complexity of information landscapes, see
-Hsu et al. Entropy of Entropy: Measurement of Dynamical Complexity for Biological Systems, 
-Entropy 2017, 19(10), 550). 
+`Hsu et al. <https://www.mdpi.com/1099-4300/19/10/550>`_ ). 
 
 To plot the Entropy Landscapes and the distribution of entropy values for each dimension-rank k, we use 
 the "entropy_simplicial_lanscape" command as following:   
@@ -298,20 +308,36 @@ Mutual Information
 
 Now, let's have a look at the statistical dependencies structures in the dataset by computing the Mutual-Information lanscapes 
 which principle is depicted in the preceding figure and that basically plots k-dimensional multivariate Mutual Informations (:math:`I_k`) in the same 
-way as Entropy Landscapes. :math:`I_k` are alternated functions of entropies, for example, 
-:math:`I_3=H(X_1)+H(X_2)+H(X_3)-H(X_1,X_2)-H(X1,X_3)-H(X_2,X_3)+H(X_1,X_2,X_3)`:
+way as Entropy Landscapes. Pairwise Mutual Information :math:`I_2` is defined as usual following `Shannon <https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjtrqOXrsPrAhVCrxoKHcBDBrQQgAMoAHoECBIQAg&url=http%3A%2F%2Fscholar.google.fr%2Fscholar_url%3Furl%3Dhttps%3A%2F%2Fpure.mpg.de%2Frest%2Fitems%2Fitem_2383162_7%2Fcomponent%2Ffile_2456978%2Fcontent%26hl%3Dfr%26sa%3DX%26scisig%3DAAGBfm2dgGR4Ly92eRCfhrM1BgCnbIBvBA%26nossl%3D1%26oi%3Dscholarr&usg=AOvVaw0ha99XPEPwgTiv3oMC7PTE>`_ :
+
+.. math::	
+    I_2=I(X_{1};X_{2};P)=k\sum_{x_1,x_2\in[N_1\times N_2]}^{N_1\times N_2}p(x_1.x_2)\ln \frac{p(x_1)p(x_2)}{p(x_1.x_2)}
+
+They generalize to the multivariate mutual informations, :math:`I_k`, as alternated functions of entropies, following `McGill <https://drive.google.com/file/d/1Cpem9LVFYNScAcihBnqw7IRUjnW-wU04/view?usp=sharing>`_ and `Hu Kuo Ting <https://drive.google.com/file/d/10ZMjN8Q4w6t4osaYODdBg-pF9zlu21R_/view?usp=sharing>`_.
 
 .. math::	
     I_k(X_1,...,X_k;P)=\sum_{i=1}^{k}(-1)^{i-1}\sum_{I\subset [k];card(I)=i}H_i(X_I;P)
 
+For example: 
+.. math::
+    `I_3=H(X_1)+H(X_2)+H(X_3)-H(X_1,X_2)-H(X1,X_3)-H(X_2,X_3)+H(X_1,X_2,X_3)`:    
 
-They differ from Total Correlations (:math:`G_k`) which are the Kullback-Leibler Divergence between the full joint-entropy and its marginals product, 
+`Hu Kuo Ting <https://drive.google.com/file/d/10ZMjN8Q4w6t4osaYODdBg-pF9zlu21R_/view?usp=sharing>`_ showed the correspondence of :math:`I_k` with set intersections
+semi-lattice (of finite measurable functions), and we hence have just like with entropy the following information structure, corresponding to intections on Venn 
+diagrams: 
+
+.. image:: images/informationfunctions.png
+
+The other functions that quantifies multivariate depence are Total Correlations, :math:`G_k` (`Watanabe <http://www.neuralmachines.com/references/correlation.pdf>`_ , see section diabetes data) 
+, or total free energy, or Integrated Information (`Tononi and Edelman <http://www.neuralmachines.com/references/correlation.pdf>`_ ) which are the Kullback-Leibler Divergence between the full joint-entropy and its marginals product, 
 for example, :math:`G_3=H(X_1)+H(X_2)+H(X_3)-H(X_1,X_2,X_3)`:
 
 .. math::
     G_k= G_k(X_1;...X_k;P)=\sum_{i=1}^k H(X_i) - H(X_1;...X_k)
 
-
+Whereas, :math:`G_k` quantifies the total interactions, :math:`I_k` quantify the contribution of the kth interaction. Notably, we have the theorems
+that state that n variables are independent if and only if  :math:`G_n =0`, and n variables are independent if and only if  all the :math:`2^n-n-1` 
+:math:`I_k` functions with :math:`k \geq 2` are null (e.g. :math:`I_k` provides a refined independence measure `PDF <https://www.mdpi.com/1099-4300/21/9/869>`_). 
 In contrast with :math:`G_k`, :math:`I_k` can be negative for :math:`k \geq 3`, a phenomenon called synergy in the original study of Brenner et al.
 Considering the old goal of expressing all of physics in terms of information, following Brillouin, Jaynes, Wheeller (...), for `k \geq 2`, 
 :math:`G_k` corresponds to a Free-Energy functional of a k interacting body system, while the  :math:`I_k` quantifies the contribution of the 
@@ -368,7 +394,7 @@ visualize the one and two dimensional results as (first degree) networks. To vis
     adjacency_matrix_mut_info = information_topo.mutual_info_pairwise_network(Ninfomut)
 
 The area of each vertex is a function of the marginals information :math:`H_1=I_1` and the thickness of the edges is a function of the pairwise
-mutual information :math:`H_1=I_1`. On Iris dataset, it gives:  
+mutual information or total correlation :math:`I_2=G_2`. On Iris dataset, it gives:  
 
 .. image:: images/iris_info_network.png
 
@@ -386,7 +412,7 @@ hypergraphs or `multiplex or multilayer networks <https://oxford.universitypress
 The raw result obtained here is a fully connected network, but one can obtain a sparse matrix and a sparsely connected network by thresholding 
 the :math:`I_k` with a with fixed p-value, using the exact statistical dependence test implemented in the package. 
 
-We begin to see that Homological tools provides a wide generalisation of complex networks (a 1-complex, that is a graph) to higher interactions structures.
+We begin to see that Homology provides a wide generalisation of complex networks (a 1-complex, that is a graph) to higher interactions structures.
 
 Diabetes data
 -------------
@@ -460,8 +486,7 @@ allow different number of values adapted for each variable (binary ternary etc..
 Total correlation
 ~~~~~~~~~~~~~~~~~
 
-We can now focus on the statistical depencies and :math:`G_k` and :math:`I_k` structures, we will first compute the total correlation :math:`G_k` (`Watanabe <http://www.neuralmachines.com/references/correlation.pdf>`_.) 
-, or total free energy, also called Integrated Information (`Tononi and Edelman <http://www.neuralmachines.com/references/correlation.pdf>`_),
+We can now focus on the statistical depencies and :math:`G_k` and :math:`I_k` structures, we will first compute the total correlation :math:`G_k`,
 by running as previously the commands:
 
 .. code:: python3
