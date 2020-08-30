@@ -224,9 +224,8 @@ The marginal :math:`H_1` entopies are defined as classicaly by `Shannon <https:/
 and the multivariate joint-entropies :math:`H_k` just generalise the preceding to k variables:
 
 .. math::	
-    H_1=H(X_{j};P)=k\sum_{x \in [N_j] }p(x)\ln p(x)     
+    H_k= H(X_{1},...,X_{k};P)=  k\sum_{x_1,...,x_k\in [N_1\times...\times N_k]}^{N_1\times...\times N_k}p(x_1.....x_k)\ln p(x_1.....x_k)     
 
-https://drive.google.com/file/d/10ZMjN8Q4w6t4osaYODdBg-pF9zlu21R_/view?usp=sharing
 The figure below give the usual Venn diagrams representation of set theoretic unions 
 and the corresponding semi-lattice of joint Random Variables and Joint Entropies, together 
 with its correponding simplicial representation, for 3 (top) and 4 variables-dimension 
