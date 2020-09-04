@@ -626,15 +626,43 @@ Clerk Maxwell (1874), we can resume part of the preceding results by ploting :ma
 
 It notably shows how two population of data points clusters from dimension 6 to 8. 
 
-So far, we have uncovered how rich and intrinsically complex can be the statistical structure of a dataset (indeed the partition general case is even much richer).
-As far as we explored various dataset, each of them are peculiar, and indeed characterize the dataset (as far as the (joint) probability functions caracterize 
-the data, at least in the binary case, a theorem shows that information functions provides coordinateson the probability simplex 
-`PDF <https://www.mdpi.com/1099-4300/21/9/869>`_) 
+
+Information distance
+~~~~~~~~~~~~~~~~~~~~
+
+Another nice information measure is information distance or metric defined by :math:`V_2(X;Y) =H_2(X,Y)-I_2(X;Y) ` . It is a "real" metric in the sens that 
+it satifies triangle inequalities and symmetry (precisely except identity if null, it is even better than a metric, it is a pseudo-metric). This metric was 
+find by  `Shannon (1953) <https://ieeexplore.ieee.org/abstract/document/1188572>`_,
+and was the subject of further interesting both applied and theoretical studies (`Han 1981 <https://www.researchgate.net/publication/268827547_A_uniqueness_of_Shannon%27s_information_distance_and_related_nonnegativity_problems>`_,  
+`Rajski 1961 <https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwj77P3Cp9DrAhUNExQKHfZSAxUQFjAAegQIBRAB&url=https%3A%2F%2Fcore.ac.uk%2Fdownload%2Fpdf%2F82383189.pdf&usg=AOvVaw2WmOW58ouwhVMBNifqz4ej>`_  
+, `Zurek <https://www.nature.com/articles/341119a0>`_ , `Bennett <https://arxiv.org/abs/1006.3520>`_ and   
+`Kraskov and Grassberger <https://www.researchgate.net/publication/1773919_MIC_Mutual_Information_Based_Hierarchical_Clustering>`_).  It indeed appears as a 
+topological invariant in a precise setting  cohomological setting and generalises to the multivariate case to k information volumes
+:math:`V_k =H_k(X,Y)-I_k(X;Y)`  `PDF <https://www.mdpi.com/1099-4300/21/9/881>`_ .  :math:`V_k` are non-neagtive and symmetric functions. For Machine Learning,
+this shall be understood as an informational version of Jaccard metric or other union minus intersection metrics.
+We can compute their simplicial structure using the commands:
+
+
+.. code:: python3
+    Ninfo_volume = information_topo.information_volume_simplicial_lanscape(Nentropie, Ninfomut)
+    dico_max, dico_min = information_topo.display_higher_lower_information(Ninfo_volume, dataset)
+    adjacency_matrix_info_distance = information_topo.mutual_info_pairwise_network(Ninfo_volume)
+
+On the Diabete dataset, it gives the following :math:`V_k` landscape: 
+
+.. image:: images/diabetes_info_volume_landscape.png
+
+with the following distributions:
+
+.. image:: images/diabetes_info_volume_histograms.png 
+
+We see that the structure is less interesting compared to the one we obtained with :math:`I_k` and :math:`G_k`, but its geometrical status of a 
+(pseudo)-metric leaves it appealing to plot in its network representation.
  
 Beware that these tools will not detect whatever possible statistical dependencies (see James and Crutchfield `PDF <https://www.mdpi.com/1099-4300/19/10/531>`_), 
-this is just a simplicial heuristic subsets, computationnally tractable. The complete structure of dependencies are spanned by general information structures and 
+this is just a simplicial (nice...paths are automorphism) subsets, computationnally tractable. The complete structure of dependencies are spanned by general information structures and 
 lattice of patition (see section how_infotopo_works).
 This concludes our introduction to basic infotopo usage -- hopefully this
 has given you the tools to get started for yourself. Further tutorials,
 covering infotopo parameters and more advanced usage are also available when
-you wish to dive deeper.
+you wish to dive deeper.(X)

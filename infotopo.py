@@ -1018,6 +1018,73 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         plt.show(num_fig)
         return Ntotal_correlation
 
+#########################################################################
+#########################################################################
+######          INFORMATION DISTANCE AND VOLUMES        #################
+#########################################################################
+#########################################################################
+    """
+    This function computes all Information distance V(X,Y)=H(X,Y)-I(X,Y), a 2-volume and its generalization to k-volume: Vk=Hk-Ik for all the simplicial structure.
+    """       
+
+    def information_volume_simplicial_lanscape(self, Nentropie, Ninfomut):
+        num_fig = 1
+        plt.figure(num_fig,figsize=(18,10))
+        matrix_distrib_info=np.array([])
+        maxima_tot=-1000000.00
+        minima_tot=1000000.00
+        list_info_volume={}
+        Ninfo_volume={}
+        
+        for i in range(1,self.dimension_max+1):
+            list_info_volume[i]=[]
+
+        for x,y in Nentropie.items():
+            sum_marginals = 0               
+            info_vol =  y - Ninfomut[x]
+            Ninfo_volume.update( {x : info_vol} )
+            list_info_volume[len(x)].append(info_vol)
+            if info_vol>maxima_tot:
+                maxima_tot=info_vol
+            if info_vol<minima_tot:
+                minima_tot=info_vol  
+  
+        for a in range(1,self.dimension_max+1):
+            if self.dimension_max<=9 :
+                plt.subplot(3,3,a)
+            else :
+                if self.dimension_max<=16 :
+                    plt.subplot(4,4,a)
+                else :
+                    if self.dimension_max<=20 :
+                        plt.subplot(5,4,a)
+                    else :
+                        plt.subplot(5,5,a)          
+            list_info_volume[a].append(minima_tot-0.1)
+            list_info_volume[a].append(maxima_tot+0.1)
+            n, bins, patches = plt.hist(list_info_volume[a], self.nb_bins_histo, facecolor='b')
+            plt.axis([minima_tot, maxima_tot,0,n.max()])
+            plt.title(str('V'+str(a)+' dist'))
+            if a==1 :
+                matrix_distrib_info=n
+            else:
+                matrix_distrib_info=np.c_[matrix_distrib_info,n]
+            plt.grid(True)   
+        
+        num_fig=num_fig+1
+        fig_total_correlation_landscape =plt.figure(num_fig,figsize=(18, 10))
+        matrix_distrib_info=np.flipud(matrix_distrib_info)
+        plt.matshow(matrix_distrib_info, cmap='jet', aspect='auto', extent=[0,self.dimension_max,minima_tot-0.1,maxima_tot+0.1], norm=LogNorm(), fignum= num_fig)
+        plt.axis([0,self.dimension_max,minima_tot,maxima_tot])
+        cbar = plt.colorbar()
+        cbar.set_label('# of tuples', rotation=270)
+        plt.grid(False)
+        plt.xlabel('dimension')
+        plt.ylabel('Vk value (bits)')
+        plt.title('Information distance and Volume Vk landscape')
+        fig_total_correlation_landscape.set_size_inches(18, 10)
+        plt.show(num_fig)
+        return Ninfo_volume
 
 # ##########################################################################################
 # ###############              RANKING and DISPLAY of the             ######################
@@ -1396,6 +1463,10 @@ if __name__ == "__main__":
     # ENTROPY vs. ENERGY LANDSCAPE
     information_topo.display_entropy_energy_landscape(Ntotal_correlation, Nentropie)
     information_topo.display_entropy_energy_landscape(Ninfomut, Nentropie)
+    # Information distance and volume LANDSCAPE
+    Ninfo_volume = information_topo.information_volume_simplicial_lanscape(Nentropie, Ninfomut)
+    dico_max, dico_min = information_topo.display_higher_lower_information(Ninfo_volume, dataset)
+    adjacency_matrix_info_distance = information_topo.mutual_info_pairwise_network(Ninfo_volume)
     
 
 
