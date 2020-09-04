@@ -371,7 +371,7 @@ the following command:
     information_topo = infotopo(dim_to_rank = 2, number_of_max_val = 2)
     dico_max, dico_min = information_topo.display_higher_lower_information(Ninfomut, dataset)    
 
-On the example of Iris dataset, we obtain the two pairs of varaibles (3,4) and (1,3) that are the most statistically dependent ("correlated"): 
+On the example of Iris dataset, we obtain the two pairs of variables (3,4) and (1,3) that are the most statistically dependent ("correlated"): 
 
 .. image:: images/iris_max_I2.png
 
@@ -604,7 +604,8 @@ of each edges of the lattice in the landscapes. It is possible to plot them usin
 
 There are more conditional Informations than :math:`I_k` (:math:`k\binom{n}{k}` in each k-dimension, and :math: `n2^{n-1}` in total), and we 
 encoded the output as a list for each dimension, "NcondInfo", of dictionaries which items are of the forms ((5, 7, 9), 0.352)  for 
-the information of 5,7 knowing 9, e.g. I(5,7|9). Indeed, as remarked by `Yeung <http://iest2.ie.cuhk.edu.hk/~whyeung/post/draft2.pdf>`_ generates
+the information of 5,7 knowing 9, e.g. I(5,7|9). Indeed, as remarked by (`Han (1981) <https://www.researchgate.net/publication/268827547_A_uniqueness_of_Shannon%27s_information_distance_and_related_nonnegativity_problems>`_ 
+`Yeung <http://iest2.ie.cuhk.edu.hk/~whyeung/post/draft2.pdf>`_ generates
 all the other information quantities we saw: considering the conditionning variable as the deterministic unit we obtain mutual informations, and
 considering equivalent variables we obtain conditional entropies and entropies. Both the "Shannonian" and "non-shannonian" inequalities found by
 Yeung translates directly in information landscapes as bounds on the slope paths (or topological cones), unraveling their homological nature 
@@ -630,10 +631,10 @@ It notably shows how two population of data points clusters from dimension 6 to 
 Information distance
 ~~~~~~~~~~~~~~~~~~~~
 
-Another nice information measure is information distance or metric defined by :math:`V_2(X;Y) =H_2(X,Y)-I_2(X;Y) ` . It is a "real" metric in the sens that 
-it satifies triangle inequalities and symmetry (precisely except identity if null, it is even better than a metric, it is a pseudo-metric). This metric was 
+Another nice information measure is information distance or metric defined by :math:`V_2(X;Y) =H_2(X,Y)-I_2(X;Y) ` . It is a "real" (and unique (`Han for unicity proof <https://www.researchgate.net/publication/268827547_A_uniqueness_of_Shannon%27s_information_distance_and_related_nonnegativity_problems>`_
+metric in the sens that it satifies triangle inequalities and symmetry (precisely except identity if null, it is even better than a metric, it is a pseudo-metric). This metric was 
 find by  `Shannon (1953) <https://ieeexplore.ieee.org/abstract/document/1188572>`_,
-and was the subject of further interesting both applied and theoretical studies (`Han 1981 <https://www.researchgate.net/publication/268827547_A_uniqueness_of_Shannon%27s_information_distance_and_related_nonnegativity_problems>`_,  
+and was the subject of further interesting both applied and theoretical studies (`Han 1981 <https://www.researchgate.net/publication/268827547_A_uniqueness_of_Shannon%27s_information_distance_and_related_nonnegativity_problems>`_ ,  
 `Rajski 1961 <https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwj77P3Cp9DrAhUNExQKHfZSAxUQFjAAegQIBRAB&url=https%3A%2F%2Fcore.ac.uk%2Fdownload%2Fpdf%2F82383189.pdf&usg=AOvVaw2WmOW58ouwhVMBNifqz4ej>`_  
 , `Zurek <https://www.nature.com/articles/341119a0>`_ , `Bennett <https://arxiv.org/abs/1006.3520>`_ and   
 `Kraskov and Grassberger <https://www.researchgate.net/publication/1773919_MIC_Mutual_Information_Based_Hierarchical_Clustering>`_).  It indeed appears as a 
