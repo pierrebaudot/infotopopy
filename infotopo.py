@@ -1189,7 +1189,7 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
      
             if self.dim_to_rank == 2:                               
                 ax1 = fig1.add_subplot(1, self.number_of_max_val, nb_plot+1)
-                ax1.scatter(dataset.data[:,key[0]-1], dataset.data[:,key[1]-1],  c= 'red', marker='8')
+                ax1.scatter(dataset[:,key[0]-1], dataset[:,key[1]-1],  c= 'red', marker='8')
                 string_title = str(str(aaaa)+"max : F"+str(self.dim_to_rank)+"("+ str(key)+")="+ str(round(topitemsasdict_max[key],2)))
                 ax1.set_title(string_title)
                 ax1.set_xlabel('variable'+str(key[0]))
@@ -1198,7 +1198,7 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
                 nb_plot =nb_plot +1 
             elif self.dim_to_rank == 3:     
                 ax1 = fig1.add_subplot(1, self.number_of_max_val, nb_plot+1, projection='3d')
-                ax1.scatter(dataset.data[:,key[0]-1], dataset.data[:,key[1]-1], dataset.data[:,key[2]-1],  c= 'red', marker='8')
+                ax1.scatter(dataset[:,key[0]-1], dataset[:,key[1]-1], dataset[:,key[2]-1],  c= 'red', marker='8')
                 ax1.set_xlabel('variable'+str(key[0]))
                 ax1.set_ylabel('variable'+str(key[1]))
                 ax1.set_zlabel('variable'+str(key[2]))                          
@@ -1208,7 +1208,7 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
                 nb_plot =nb_plot +1 
             elif self.dim_to_rank == 4:     
                 ax1 = fig1.add_subplot(1, self.number_of_max_val, nb_plot+1, projection='3d')                
-                pts = ax1.scatter(dataset.data[:,key[0]-1], dataset.data[:,key[1]-1], dataset.data[:,key[2]-1], c=dataset.data[:,key[3]-1], cmap='jet', alpha=1, marker='8')
+                pts = ax1.scatter(dataset[:,key[0]-1], dataset[:,key[1]-1], dataset[:,key[2]-1], c=dataset[:,key[3]-1], cmap='jet', alpha=1, marker='8')
                 ax1.set_xlabel('variable'+str(key[0]))
                 ax1.set_ylabel('variable'+str(key[1]))
                 ax1.set_zlabel('variable'+str(key[2]))     
@@ -1233,7 +1233,7 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
             print(aaaa, "min value in dimension", self.dim_to_rank ," is for the tuple", key,  "   with Fk value  :", topitemsasdict_min[key])    
             if self.dim_to_rank == 2:                               
                 ax2 = fig2.add_subplot(1, self.number_of_max_val, nb_plot+1)
-                ax2.scatter(dataset.data[:,key[0]-1], dataset.data[:,key[1]-1],  c= 'red', marker='8')
+                ax2.scatter(dataset[:,key[0]-1], dataset[:,key[1]-1],  c= 'red', marker='8')
                 string_title = str(str(aaaa)+"min : F"+str(self.dim_to_rank)+"("+ str(key)+")="+ str(round(topitemsasdict_min[key],2)))
                 ax2.set_title(string_title)
                 ax2.set_xlabel('variable'+str(key[0]))
@@ -1242,7 +1242,7 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
                 nb_plot =nb_plot +1 
             elif self.dim_to_rank == 3:     
                 ax2 = fig2.add_subplot(1, self.number_of_max_val, nb_plot+1, projection='3d')
-                ax2.scatter(dataset.data[:,key[0]-1], dataset.data[:,key[1]-1], dataset.data[:,key[2]-1],  c= 'red', marker='8')
+                ax2.scatter(dataset[:,key[0]-1], dataset[:,key[1]-1], dataset[:,key[2]-1],  c= 'red', marker='8')
                 ax2.set_xlabel('variable'+str(key[0]))
                 ax2.set_ylabel('variable'+str(key[1]))
                 ax2.set_zlabel('variable'+str(key[2]))                          
@@ -1252,7 +1252,7 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
                 nb_plot =nb_plot +1 
             elif self.dim_to_rank == 4:     
                 ax2 = fig2.add_subplot(1, self.number_of_max_val, nb_plot+1, projection='3d')                
-                pts = ax2.scatter(dataset.data[:,key[0]-1], dataset.data[:,key[1]-1], dataset.data[:,key[2]-1], c=dataset.data[:,key[3]-1], cmap='jet', alpha=1, marker='8')
+                pts = ax2.scatter(dataset[:,key[0]-1], dataset[:,key[1]-1], dataset[:,key[2]-1], c=dataset[:,key[3]-1], cmap='jet', alpha=1, marker='8')
                 ax2.set_xlabel('variable'+str(key[0]))
                 ax2.set_ylabel('variable'+str(key[1]))
                 ax2.set_zlabel('variable'+str(key[2]))     
@@ -1330,7 +1330,8 @@ if __name__ == "__main__":
     import pandas as pd
     import seaborn as sns
     
-    dataset_type = 3 # if dataset = 1 load IRIS DATASET # if dataset = 2 load Boston house prices dataset # if dataset = 3 load DIABETES  dataset # if dataset = 4 Borromean  dataset
+    dataset_type = 4 # if dataset = 1 load IRIS DATASET # if dataset = 2 load Boston house prices dataset # if dataset = 3 load DIABETES  dataset 
+    ## if dataset = 4 CAUSAL Inference data challenge http://www.causality.inf.ethz.ch/data/LUCAS.html  # if dataset = 5 Borromean  dataset
     if dataset_type == 1: ## IRIS DATASET## 
         dataset = load_iris()
         dataset_df = pd.DataFrame(dataset.data, columns = dataset.feature_names)
@@ -1374,7 +1375,22 @@ if __name__ == "__main__":
         sampling_mode = 1
         deformed_probability_mode = False
         dataset_df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
-    elif dataset_type == 4: # This the Borromean case I_1 are 1 bit (max: "random")  I_2 are 0 bit (min: independent) I_3 is -1 bit
+    elif dataset_type == 4: ## CAUSAL Inference data challenge http://www.causality.inf.ethz.ch/data/LUCAS.html
+        dataset = pd.read_csv(r"/home/pierre/Documents/Data/lucas0_train.csv") 
+        print(dataset.columns)
+        print(dataset.shape)
+        dataset_df = pd.DataFrame(dataset, columns = dataset.columns)
+        dataset = dataset.to_numpy()
+        dimension_max = dataset.shape[1]
+        dimension_tot = dataset.shape[1]
+        sample_size = dataset.shape[0]
+        nb_of_values = 2
+        forward_computation_mode = False
+        work_on_transpose = False
+        supervised_mode = False
+        sampling_mode = 1
+        deformed_probability_mode = False      
+    elif dataset_type == 5: # This the Borromean case I_1 are 1 bit (max: "random")  I_2 are 0 bit (min: independent) I_3 is -1 bit
         nb_of_values = 3
         if nb_of_values == 2:
             dataset = np.array([[ 0,  0,  1],
@@ -1418,9 +1434,9 @@ if __name__ == "__main__":
         sampling_mode = 1
         deformed_probability_mode = False            
     
-    print("sample_size : ",dataset.data.shape[0])
-    print('number of variables or dimension of the analysis:',dataset.data.shape[1])
-    print('number of tot  dimensions:', dataset.data.shape[1])
+    print("sample_size : ",sample_size)
+    print('number of variables or dimension of the analysis:',dimension_max )
+    print('number of tot  dimensions:',  dimension_tot)
     print('number of values:', nb_of_values)
     information_topo = infotopo(dimension_max = dimension_max, 
                                 dimension_tot = dimension_tot, 
@@ -1433,14 +1449,14 @@ if __name__ == "__main__":
                                 forward_computation_mode = forward_computation_mode)
 # Nentropy is dictionary (x,y) with x a list of kind (1,2,5) and y a value in bit    
     start = timeit.default_timer()
-    Nentropie = information_topo.simplicial_entropies_decomposition(dataset.data)
+    Nentropie = information_topo.simplicial_entropies_decomposition(dataset) #dataset.data
     stop = timeit.default_timer()
     print('Time for CPU(seconds) entropies: ', stop - start)
     if dataset_type == 1 or dataset_type == 4:
         print(Nentropie)
     information_topo.entropy_simplicial_lanscape(Nentropie)
-    information_topo = infotopo(dim_to_rank = 4, number_of_max_val = 2)
-    if dataset_type != 4:
+    information_topo = infotopo(dim_to_rank = 3, number_of_max_val = 4)
+    if dataset_type != 5:
         dico_max, dico_min = information_topo.display_higher_lower_information(Nentropie, dataset)
 
 # Ninfomut is dictionary (x,y) with x a list of kind (1,2,5) and y a value in bit
@@ -1450,10 +1466,10 @@ if __name__ == "__main__":
     Ninfomut = information_topo.simplicial_infomut_decomposition(Nentropie)
     stop = timeit.default_timer()
     print('Time for CPU(seconds) Mutual Information: ', stop - start)
-    if dataset_type == 1 or dataset_type == 4:
+    if dataset_type == 1 or dataset_type == 5:
         print(Ninfomut)
     information_topo.mutual_info_simplicial_lanscape(Ninfomut)   
-    if dataset_type != 4: 
+    if dataset_type != 5: 
         dico_max, dico_min = information_topo.display_higher_lower_information(Ninfomut, dataset)
     adjacency_matrix_mut_info = information_topo.mutual_info_pairwise_network(Ninfomut)
     mean_info, mean_info_rate  =information_topo.display_mean_information(Ninfomut)
