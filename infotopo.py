@@ -1319,6 +1319,205 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         plt.show()   
         return (mean, rate)
 
+
+###############################################################  
+###############################################################
+########              INFORMATION PATHS              ##########
+########                 FIGURE 6                    ##########
+###############################################################  
+###############################################################    
+
+    def information_complex( self, Ninfomut):
+        
+        infomut_per_order=[]      
+        Ninfomut_per_order_ordered=[]
+        for x in range(self.dimension_max+1):
+            info_dicoperoder={} 
+            infomut_per_order.append(info_dicoperoder)
+            Ninfomut_per_order_ordered.append(info_dicoperoder)
+        for x,y in Ninfomut.items():
+            infomut_per_order[len(x)][x]=Ninfomut[x]
+        for x in range(self.dimension_max+1):
+            Ninfomut_per_order_ordered[x]=OrderedDict(sorted(infomut_per_order[x].items(), key=lambda t: t[1]))    
+        
+        num_fig = 1
+        plt.figure(num_fig)
+        moyenne={}
+        nbpoint={}
+        matrix_distrib_infomut=np.array([])
+        x_absss = np.array([])
+        y_absss = np.array([]) 
+        maxima_tot=-1000000.00
+        minima_tot=1000000.00   
+        infocond=1000000.00
+        listartbis=[] 
+        infomutmax_path_VAR = [] 
+        infomutmax_path_VALUE = []
+        infomutmin_path_VAR = [] 
+        infomutmin_path_VALUE = []
+        number_of_max_and_min = self.dimension_max #explore the 2 max an min marginals (of degree 1 information) 
+        items = list(Ninfomut_per_order_ordered[1].items())
+        for inforank in range(0,number_of_max_and_min): 
+            infomutmax_path_VAR.append([])
+            infomutmax_path_VALUE.append([])
+            infomutmin_path_VAR.append([])
+            infomutmin_path_VALUE.append([])
+            xstart=items[inforank][0]
+            xstartmin = items[self.dimension_max-inforank-1][0]
+            infomutmax_path_VAR[-1].append(xstart[0])
+            infomutmax_path_VALUE[-1].append(items[inforank][1])
+            infomutmin_path_VAR[-1].append(xstartmin[0])
+            infomutmin_path_VALUE[-1].append(items[self.dimension_max-inforank-1][1])
+            degree=1
+            infocond=1000000.00
+            while infocond >=0 :
+                maxima_tot=-1000000.00
+                minima_tot=1000000.00 
+                degree=degree+1 
+                for i in range(1,self.dimension_max+1) :
+                    if i in infomutmax_path_VAR[-1] :     
+                        del listartbis[:]  
+                    else:    
+                        del listartbis[:]
+                        listartbis=infomutmax_path_VAR[-1][:]
+                        listartbis.append(i)
+                        listartbis.sort() 
+                        tuplestart=tuple(listartbis)
+                        if infomut_per_order[degree][tuplestart]>maxima_tot:
+                            maxima_tot=infomut_per_order[degree][tuplestart]
+                            igood= i
+                infomutmax_path_VAR[-1].append(igood)
+                infomutmax_path_VALUE[-1].append(maxima_tot)
+                infocond= infomutmax_path_VALUE[-1][-2]- infomutmax_path_VALUE[-1][-1]
+            del infomutmax_path_VAR[-1][-1]
+            del infomutmax_path_VALUE[-1][-1]
+            print('The path of maximal mutual-info Nb',inforank+1,' is :')   
+            print(infomutmax_path_VAR[-1])   
+       
+            degree=1
+            infocond=1000000.00
+            while infocond >=0 :
+                maxima_tot=-1000000.00
+                minima_tot=1000000.00 
+                degree=degree+1 
+                for i in range(1,self.dimension_max+1) :
+                    if i in infomutmin_path_VAR[-1] :     
+                        del listartbis[:]  
+                    else:    
+                        del listartbis[:]
+                        listartbis=infomutmin_path_VAR[-1][:]
+                        listartbis.append(i)
+                        listartbis.sort() 
+                        tuplestart=tuple(listartbis)
+                        if infomut_per_order[degree][tuplestart]<minima_tot:
+                            minima_tot=infomut_per_order[degree][tuplestart]
+                            igood= i
+                infomutmin_path_VAR[-1].append(igood)
+                infomutmin_path_VALUE[-1].append(minima_tot)
+                infocond= infomutmin_path_VALUE[-1][-2]- infomutmin_path_VALUE[-1][-1]
+            del infomutmin_path_VAR[-1][-1]
+            del infomutmin_path_VALUE[-1][-1]   
+            print('The path of minimal mutual-info Nb',inforank+1,' is :')   
+            print(infomutmin_path_VAR[-1])    
+
+# COMPUTE THE HISTOGRAMS OF INFORMATION           
+# Display every Histo with its own scales:   
+    
+        ListInfomutordre={}
+        maxima_tot=-1000000.00
+        minima_tot=1000000.00
+        for i in range(1,self.dimension_max+1):
+            ListInfomutordre[i]=[]
+
+        for x,y in Ninfomut.items():
+            ListInfomutordre[len(x)].append(y)
+            moyenne[len(x)]=moyenne.get(len(x),0)+y
+            nbpoint[len(x)]=nbpoint.get(len(x),0)+1
+# Display every Histo with its own scales:     
+            if y>maxima_tot:
+                maxima_tot=y
+            if y<minima_tot:
+                minima_tot=y 
+
+        for a in range(1,self.dimension_max+1):
+            if self.dimension_max<9 :
+                plt.subplot(3,3,a)
+            else :    
+                if self.dimension_max<=16 :
+                    plt.subplot(4,4,a)
+                else : 
+                    if self.dimension_max<=20 : 
+                        plt.subplot(5,4,a) 
+                    else :
+                        plt.subplot(5,5,a)
+            ListInfomutordre[a].append(minima_tot-0.1)
+            ListInfomutordre[a].append(maxima_tot+0.1)           
+            n, bins, patches = plt.hist(ListInfomutordre[a], self.nb_bins_histo, facecolor='r')
+            plt.axis([minima_tot, maxima_tot,0,n.max()])
+            if a==1 :
+                matrix_distrib_infomut=n
+            else: 
+                matrix_distrib_infomut=np.c_[matrix_distrib_infomut,n]
+            plt.grid(True) 
+
+# COMPUTE THE MATRIX OF INFORMATION LANDSACPES   
+   
+        num_fig=num_fig+1
+#   plt.figure(num_fig)  
+        plt.figure(num_fig,figsize=(50, 30))   
+        matrix_distrib_infomut=np.flipud(matrix_distrib_infomut)
+
+# for figure paper with colar scale up to 200000       
+        plt.matshow(matrix_distrib_infomut, cmap='jet', aspect='auto', extent=[0,self.dimension_max,minima_tot-0.1,maxima_tot+0.1], norm=LogNorm(vmin=1, vmax=200000))
+# for autoscaled color scale - general case 
+        plt.axis([0,self.dimension_max,minima_tot,maxima_tot])     
+        plt.colorbar()
+        plt.grid(False)     
+ 
+
+# COMPUTE THE INFORMATION PATHS    
+        x_infomax=[] 
+        x_infomin=[]    
+        maxima_x=-10
+        maxima_tot=-1000000.00
+        minima_tot=1000000.00
+        for inforank in range(0,number_of_max_and_min): 
+            x_infomax.append([])
+            j=-0.5
+            for y in  range(0,len(infomutmax_path_VALUE[inforank])): 
+                j=j+1 
+                x_infomax[-1].append(j) 
+                if j > maxima_x:
+                    maxima_x=j
+                if infomutmax_path_VALUE[inforank][int(j-0.5)]>maxima_tot :
+                    maxima_tot=infomutmax_path_VALUE[inforank][int(j-0.5)]
+                if infomutmax_path_VALUE[inforank][int(j-0.5)]<minima_tot :
+                    minima_tot=infomutmax_path_VALUE[inforank][int(j-0.5)]    
+              
+            x_infomin.append([])
+            j=-0.5
+            for y in  range(0,len(infomutmin_path_VALUE[inforank])): 
+                j=j+1 
+                x_infomin[-1].append(j) 
+                if j > maxima_x:
+                    maxima_x=j
+                if infomutmin_path_VALUE[inforank][int(j-0.5)]>maxima_tot :
+                    maxima_tot=infomutmin_path_VALUE[inforank][int(j-0.5)]
+                if infomutmin_path_VALUE[inforank][int(j-0.5)]<minima_tot :
+                    minima_tot=infomutmin_path_VALUE[inforank][int(j-0.5)]     
+              
+            plt.plot(x_infomax[inforank], infomutmax_path_VALUE[inforank], marker='o', color='red')
+            plt.plot(x_infomin[inforank], infomutmin_path_VALUE[inforank], marker='o',color='blue')
+            plt.axis([0,maxima_x+0.5,minima_tot-0.2,maxima_tot+0.2])
+      
+        display_labelnodes=False
+        if display_labelnodes :    
+            for inforank in range(0,number_of_max_and_min):
+                for label, x,y in zip(infomutmax_path_VAR[inforank], x_infomax[inforank], infomutmax_path_VALUE[inforank]):
+                    plt.annotate(label,xy=(x, y), xytext=(0, 0),textcoords='offset points')
+                for label, x,y in zip(infomutmin_path_VAR[inforank], x_infomin[inforank], infomutmin_path_VALUE[inforank]):
+                    plt.annotate(label,xy=(x, y), xytext=(0, 0),textcoords='offset points')           
+
 # #########################################################################
 # #########################################################################
 # ######          MAIN PROGRAM               ##############################
@@ -1330,7 +1529,7 @@ if __name__ == "__main__":
     import pandas as pd
     import seaborn as sns
     
-    dataset_type = 4 # if dataset = 1 load IRIS DATASET # if dataset = 2 load Boston house prices dataset # if dataset = 3 load DIABETES  dataset 
+    dataset_type = 3 # if dataset = 1 load IRIS DATASET # if dataset = 2 load Boston house prices dataset # if dataset = 3 load DIABETES  dataset 
     ## if dataset = 4 CAUSAL Inference data challenge http://www.causality.inf.ethz.ch/data/LUCAS.html  # if dataset = 5 Borromean  dataset
     if dataset_type == 1: ## IRIS DATASET## 
         dataset = load_iris()
@@ -1348,6 +1547,7 @@ if __name__ == "__main__":
         dataset_df['species'] = pd.Series(dataset.target).map(dict(zip(range(3),dataset.target_names)))
         sns.pairplot(dataset_df, hue='species')
         plt.show()
+        dataset = dataset.data
     elif dataset_type == 2: ## BOSTON DATASET##
         dataset = load_boston()
         dataset_df = pd.DataFrame(dataset.data, columns = dataset.feature_names)
@@ -1362,6 +1562,7 @@ if __name__ == "__main__":
         deformed_probability_mode = False
         dataset_df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
         dataset_df['MEDV'] = pd.Series(dataset.target).map(dict(zip(range(3),dataset.data[:,12])))
+        dataset = dataset.data
     elif dataset_type == 3: ## DIABETES DATASET##
         dataset = load_diabetes()
         dataset_df = pd.DataFrame(dataset.data, columns = dataset.feature_names)
@@ -1375,8 +1576,9 @@ if __name__ == "__main__":
         sampling_mode = 1
         deformed_probability_mode = False
         dataset_df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
+        dataset = dataset.data
     elif dataset_type == 4: ## CAUSAL Inference data challenge http://www.causality.inf.ethz.ch/data/LUCAS.html
-        dataset = pd.read_csv(r"/home/pierre/Documents/Data/lucas0_train.csv") 
+        dataset = pd.read_csv(r"/home/pierre/Documents/Data/lucas0_train.csv")  # csv to download at http://www.causality.inf.ethz.ch/data/LUCAS.html
         print(dataset.columns)
         print(dataset.shape)
         dataset_df = pd.DataFrame(dataset, columns = dataset.columns)
@@ -1483,6 +1685,8 @@ if __name__ == "__main__":
     Ninfo_volume = information_topo.information_volume_simplicial_lanscape(Nentropie, Ninfomut)
     dico_max, dico_min = information_topo.display_higher_lower_information(Ninfo_volume, dataset)
     adjacency_matrix_info_distance = information_topo.mutual_info_pairwise_network(Ninfo_volume)
+    # Information paths
+    information_topo.information_complex(Ninfomut)
     
 
 

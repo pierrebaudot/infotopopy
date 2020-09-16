@@ -539,18 +539,26 @@ and the  maximal :math:`I_4` look like this (with different views) :
 The tuple maximal :math:`I_4` (framed in red) only display a weak correlation, as expected from the low :math:`I_4` value. However the tuple with
 minimal :math:`I_4` (5,6,7,8) displays an impressive correlation structure taking the form of a 3 dimensional hyperplane (sligtly curved indeed). 
 Looking at projections on 2 dimensional subpaces as shown on the 3 plots on the right we see that the subspace corresponding to the tuples (5,6) 
-and (7,8) is higly "correlated" while  (6,7) and (5,7) are highly "random". Indeed, both tuples (5,6) and (7,8) obtains the maximum pairwise mutual 
+and (7,8) is higly "correlated" while  (6,7) and (5,7) are highly "random". Indeed, the tuples (5,6), (7,8) and (6,8) obtain the maximum pairwise mutual 
 information. This phenomena of information negativity is known in neuroscience as synergy since the work of `Brenner et al <https://arxiv.org/abs/physics/9902067>`_.
 The fact that the 4-tuplet (5,6,7,8) have minimal and not maximal :math:`I_4` provides us important additional information that cannot be deduced 
-form the pairwise :math:`I_2` (e.g the fact that (5,6) and (7,8) have maximum :math:`I_2`): the fact that the variables 5 and 6 do not untertain 
-causal relationship but have a common cause (another, possibly joint, variable). The same applies to the variables 7 and 8. This is indeed equivalent 
-to strong transfer entropy (or conditional mutual information, see `Schreiber <https://arxiv.org/abs/nlin/0001042>`_) but applied here in a general 
+form the pairwise :math:`I_2` (e.g the fact that (5,6) and (7,8) have maximum :math:`I_2`): the fact that the pair of variables  (5,6) and (7,8) and (6,8) untertain 
+causal relationship but have a common cause (another, possibly joint, variable). More precisely we can infer the following causal scheme: 
+:math:`5 \rightarrow 6   \leftrightarrow 8  \leftarrow 7`  (with an ambiguity in the causal dierction between 6 and 8 that could be disambiguated by having 
+a look in the higher dimension 5, and an ambiguity in the global flow, all the arrows could be reversed, that could be desambiguated by looking at lower dimensions). 
+This is indeed equivalent to strong transfer entropy (or conditional mutual information, see `Schreiber <https://arxiv.org/abs/nlin/0001042>`_) but applied here in a general 
 context without time series structure assumption. Transfer entropy is well known to generalize Granger causality to non-linear cases 
 (see `Barnet et al <https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.103.238701>`_). The classical example of a common causal variable is 
 given   by: "as ice cream sales increase, the rate of drowning deaths increases sharply.": both are correlated but none of each causes the other.
 A section in "how_infotopo_works" is dedicated to a more complete study and explanation of these statistical interactions. The gene expression study 
 of `Tapia et al. <https://www.nature.com/articles/s41598-018-31765-z>`_ provides further examples of strong positive k-tuplet, e.g of statistical 
 interactions without common cause, or more simply causal chains (e.g metabolic chains). 
+The possiblity to extract causal relation from information structures, :math:`I_k` landscape, is better illustrated by analysing the 
+`LUCAS0 Medical diagnosis dataset <http://www.causality.inf.ethz.ch/data/LUCAS.html>`_ sympathicaly proposed by the
+`Causality Challenge #1: Causation and Prediction <http://www.causality.inf.ethz.ch/challenge.php?page=datasets>`_ . It can be acheived
+by setting the variable dataset_type == 4 in the main of the python script after dowloading the csv at the previous link. 
+In this synthetic training example the 3 variables "smoking", "genetics" and "lung cancer" (1,5,12) are among the minimal :math:`I_3` 
+while they were designed  to exemplify the causal structure math:`1 \rightarrow 12 \leftarrow 5`.  
 
 
 Information Networks
@@ -631,7 +639,7 @@ It notably shows how two population of data points clusters from dimension 6 to 
 Information distance
 ~~~~~~~~~~~~~~~~~~~~
 
-Another nice information measure is information distance or metric defined by :math:`V_2(X;Y) =H_2(X,Y)-I_2(X;Y)` . It is a "real" (and unique (`Han for unicity proof <https://www.researchgate.net/publication/268827547_A_uniqueness_of_Shannon%27s_information_distance_and_related_nonnegativity_problems>`_
+Another nice information measure is information distance or metric defined by :math:`V_2(X;Y) =H_2(X,Y)-I_2(X;Y)` . It is a "real" (and unique see `Han for unicity proof <https://www.researchgate.net/publication/268827547_A_uniqueness_of_Shannon%27s_information_distance_and_related_nonnegativity_problems>`_
 metric in the sens that it satifies triangle inequalities and symmetry (precisely except identity if null, it is even better than a metric, it is a pseudo-metric). This metric was 
 find by  `Shannon (1953) <https://ieeexplore.ieee.org/abstract/document/1188572>`_ ,
 and was the subject of further interesting both applied and theoretical studies (`Han 1981 <https://www.researchgate.net/publication/268827547_A_uniqueness_of_Shannon%27s_information_distance_and_related_nonnegativity_problems>`_ ,  
