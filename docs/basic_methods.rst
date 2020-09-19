@@ -558,7 +558,7 @@ The possiblity to extract causal relation from information structures, :math:`I_
 `Causality Challenge #1: Causation and Prediction <http://www.causality.inf.ethz.ch/challenge.php?page=datasets>`_ . It can be acheived
 by setting the variable dataset_type == 4 in the main of the python script after dowloading the csv at the previous link. 
 In this synthetic training example the 3 variables "smoking", "genetics" and "lung cancer" (1,5,12) are among the minimal :math:`I_3` 
-while they were designed  to exemplify the causal structure math:`1 \rightarrow 12 \leftarrow 5`.  
+while they were designed  to exemplify the causal structure math:`1 \rightarrow 12 \leftarrow 5`. The dataset and causality results are detailed in the next section. 
 
 
 Information Networks
