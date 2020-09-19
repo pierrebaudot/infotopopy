@@ -518,7 +518,7 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
                 probability =self._compute_deformed_probability(data_matrix)
             else:     
                 probability = self._compute_probability(data_matrix)
-            Nentropie = self._compute_entropy(probability)   
+            Nentropie = self._compute_entropy(probability)     
         return Nentropie    
 
    
@@ -533,7 +533,7 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         for x,y in Nentropie_input.items():
             for k in range(1, len(x)+1):
                 for subset in itertools.combinations(x, k):
-                    Ninfomut[x]=Ninfomut.get(x,0)+ ((-1)**(len(subset)+1))*Nentropie_input[subset]
+                    Ninfomut[x]=Ninfomut.get(x,0)+ ((-1)**(len(subset)+1))*Nentropie_input[subset]             
         return (Ninfomut)
 
 #########################################################################
@@ -632,6 +632,7 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         plt.title('Hk landscape')
         fig_entropylandscape.set_size_inches(18, 10)
         plt.show(num_fig)
+
 
 #########################################################################
 #########################################################################
@@ -1169,7 +1170,7 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
     if the dimension is 2,3 or 4 (when ploting is possible). For 4D plot the 4th dimension is given by the colorscale
     of the points 
     ''' 
-    def display_higher_lower_information(self, dico_input, dataset): 
+    def display_higher_lower_information(self, dico_input, dataset):   
         dico_at_order = {}
         for x,y in dico_input.items():
             if len(x) == self.dim_to_rank :
@@ -1261,7 +1262,7 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
                 ax2.set_title(string_title)
                 ax2.grid(True)
                 nb_plot =nb_plot +1    
-        plt.show()   
+        plt.show()  
         return (topitemsasdict_max, topitemsasdict_min)    
 
 
@@ -1340,10 +1341,6 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         for x in range(self.dimension_max+1):
             Ninfomut_per_order_ordered[x]=OrderedDict(sorted(infomut_per_order[x].items(), key=lambda t: t[1]))    
         
-        num_fig = 1
-        plt.figure(num_fig)
-        moyenne={}
-        nbpoint={}
         matrix_distrib_infomut=np.array([])
         x_absss = np.array([])
         y_absss = np.array([]) 
@@ -1363,14 +1360,14 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
             infomutmin_path_VAR.append([])
             infomutmin_path_VALUE.append([])
             xstart=items[inforank][0]
-            xstartmin = items[self.dimension_max-inforank-1][0]
+            xstartmin = items[self.dimension_max - inforank - 1][0]   #items[self.dimension_max-inforank-1][0]
             infomutmax_path_VAR[-1].append(xstart[0])
             infomutmax_path_VALUE[-1].append(items[inforank][1])
             infomutmin_path_VAR[-1].append(xstartmin[0])
-            infomutmin_path_VALUE[-1].append(items[self.dimension_max-inforank-1][1])
+            infomutmin_path_VALUE[-1].append(items[self.dimension_max - inforank- 1][1])
             degree=1
             infocond=1000000.00
-            while infocond >=0 :
+            while infocond >=0 and degree <= self.dimension_max:
                 maxima_tot=-1000000.00
                 minima_tot=1000000.00 
                 degree=degree+1 
@@ -1421,59 +1418,39 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
             print(infomutmin_path_VAR[-1])    
 
 # COMPUTE THE HISTOGRAMS OF INFORMATION           
-# Display every Histo with its own scales:   
-    
+
         ListInfomutordre={}
         maxima_tot=-1000000.00
         minima_tot=1000000.00
         for i in range(1,self.dimension_max+1):
             ListInfomutordre[i]=[]
-
         for x,y in Ninfomut.items():
-            ListInfomutordre[len(x)].append(y)
-            moyenne[len(x)]=moyenne.get(len(x),0)+y
-            nbpoint[len(x)]=nbpoint.get(len(x),0)+1
-# Display every Histo with its own scales:     
+            ListInfomutordre[len(x)].append(y)    
             if y>maxima_tot:
                 maxima_tot=y
             if y<minima_tot:
                 minima_tot=y 
 
         for a in range(1,self.dimension_max+1):
-            if self.dimension_max<9 :
-                plt.subplot(3,3,a)
-            else :    
-                if self.dimension_max<=16 :
-                    plt.subplot(4,4,a)
-                else : 
-                    if self.dimension_max<=20 : 
-                        plt.subplot(5,4,a) 
-                    else :
-                        plt.subplot(5,5,a)
             ListInfomutordre[a].append(minima_tot-0.1)
             ListInfomutordre[a].append(maxima_tot+0.1)           
-            n, bins, patches = plt.hist(ListInfomutordre[a], self.nb_bins_histo, facecolor='r')
-            plt.axis([minima_tot, maxima_tot,0,n.max()])
+            n, bins = np.histogram(ListInfomutordre[a],  bins = self.nb_bins_histo)
             if a==1 :
                 matrix_distrib_infomut=n
             else: 
                 matrix_distrib_infomut=np.c_[matrix_distrib_infomut,n]
-            plt.grid(True) 
-
+    
 # COMPUTE THE MATRIX OF INFORMATION LANDSACPES   
    
-        num_fig=num_fig+1
-#   plt.figure(num_fig)  
-        plt.figure(num_fig,figsize=(50, 30))   
-        matrix_distrib_infomut=np.flipud(matrix_distrib_infomut)
-
-# for figure paper with colar scale up to 200000       
-        plt.matshow(matrix_distrib_infomut, cmap='jet', aspect='auto', extent=[0,self.dimension_max,minima_tot-0.1,maxima_tot+0.1], norm=LogNorm(vmin=1, vmax=200000))
-# for autoscaled color scale - general case 
+        num_fig=1 
+        fig_infopath = plt.figure(num_fig,figsize=(18, 10))  
+        matrix_distrib_infomut=np.flipud(matrix_distrib_infomut) 
+        plt.matshow(matrix_distrib_infomut, cmap='jet', aspect='auto', extent=[0,self.dimension_max,minima_tot-0.1,maxima_tot+0.1], norm=LogNorm(vmin=1, vmax=200000), fignum= num_fig)
         plt.axis([0,self.dimension_max,minima_tot,maxima_tot])     
-        plt.colorbar()
+        cbar = plt.colorbar()
+        cbar.set_label('# of tuples', rotation=270)
         plt.grid(False)     
- 
+
 
 # COMPUTE THE INFORMATION PATHS    
         x_infomax=[] 
@@ -1509,6 +1486,7 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
             plt.plot(x_infomax[inforank], infomutmax_path_VALUE[inforank], marker='o', color='red')
             plt.plot(x_infomin[inforank], infomutmin_path_VALUE[inforank], marker='o',color='blue')
             plt.axis([0,maxima_x+0.5,minima_tot-0.2,maxima_tot+0.2])
+            
       
         display_labelnodes=False
         if display_labelnodes :    
@@ -1516,7 +1494,13 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
                 for label, x,y in zip(infomutmax_path_VAR[inforank], x_infomax[inforank], infomutmax_path_VALUE[inforank]):
                     plt.annotate(label,xy=(x, y), xytext=(0, 0),textcoords='offset points')
                 for label, x,y in zip(infomutmin_path_VAR[inforank], x_infomin[inforank], infomutmin_path_VALUE[inforank]):
-                    plt.annotate(label,xy=(x, y), xytext=(0, 0),textcoords='offset points')           
+                    plt.annotate(label,xy=(x, y), xytext=(0, 0),textcoords='offset points')      
+        plt.title('Ik paths - information - Free Energy complex')
+        plt.xlabel('dimension')
+        plt.ylabel('Ik value (bits)')
+        fig_infopath.set_size_inches(18, 10)
+        plt.grid(False)            
+        plt.show(num_fig)                 
 
 # #########################################################################
 # #########################################################################
@@ -1529,7 +1513,7 @@ if __name__ == "__main__":
     import pandas as pd
     import seaborn as sns
     
-    dataset_type = 3 # if dataset = 1 load IRIS DATASET # if dataset = 2 load Boston house prices dataset # if dataset = 3 load DIABETES  dataset 
+    dataset_type = 4 # if dataset = 1 load IRIS DATASET # if dataset = 2 load Boston house prices dataset # if dataset = 3 load DIABETES  dataset 
     ## if dataset = 4 CAUSAL Inference data challenge http://www.causality.inf.ethz.ch/data/LUCAS.html  # if dataset = 5 Borromean  dataset
     if dataset_type == 1: ## IRIS DATASET## 
         dataset = load_iris()
@@ -1593,7 +1577,7 @@ if __name__ == "__main__":
         sampling_mode = 1
         deformed_probability_mode = False      
     elif dataset_type == 5: # This the Borromean case I_1 are 1 bit (max: "random")  I_2 are 0 bit (min: independent) I_3 is -1 bit
-        nb_of_values = 3
+        nb_of_values = 2
         if nb_of_values == 2:
             dataset = np.array([[ 0,  0,  1],
                                 [ 0,  1,  0],
@@ -1657,7 +1641,16 @@ if __name__ == "__main__":
     if dataset_type == 1 or dataset_type == 4:
         print(Nentropie)
     information_topo.entropy_simplicial_lanscape(Nentropie)
-    information_topo = infotopo(dim_to_rank = 3, number_of_max_val = 4)
+    information_topo = infotopo(dimension_max = dimension_max, 
+                                dimension_tot = dimension_tot, 
+                                sample_size = sample_size, 
+                                work_on_transpose = work_on_transpose,
+                                nb_of_values = nb_of_values, 
+                                sampling_mode = sampling_mode, 
+                                deformed_probability_mode = deformed_probability_mode,
+                                supervised_mode = supervised_mode, 
+                                forward_computation_mode = forward_computation_mode,
+                                dim_to_rank = 3, number_of_max_val = 4)
     if dataset_type != 5:
         dico_max, dico_min = information_topo.display_higher_lower_information(Nentropie, dataset)
 
@@ -1687,6 +1680,7 @@ if __name__ == "__main__":
     adjacency_matrix_info_distance = information_topo.mutual_info_pairwise_network(Ninfo_volume)
     # Information paths
     information_topo.information_complex(Ninfomut)
+
     
 
 
