@@ -56,18 +56,32 @@ Markov random fields are a small, positive, subcase of information structures (s
 
 The models developped here are called the Poincaré-Shannon machine in reverence to `Boltzmann Machine <https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwinjPbMnvjrAhUKzYUKHStSA7gQgAMoAHoECAgQAg&url=http%3A%2F%2Fscholar.google.fr%2Fscholar_url%3Furl%3Dhttps%3A%2F%2Fwww.cs.utoronto.ca%2F~hinton%2Fabsps%2Fcogscibm.pdf%26hl%3Dfr%26sa%3DX%26ei%3Duo5nX8mHM72Ay9YP1OOAiAM%26scisig%3DAAGBfm0MtFqrPZRIBb9G16LNS5kfPdVoFw%26nossl%3D1%26oi%3Dscholarr&usg=AOvVaw29iesHzi-bIRQnf2tYDIH1>`_ , 
 `Helmholtz Machine <https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjZ8J7GoPjrAhWhxYUKHZxbB74QFjABegQIBBAB&url=http%3A%2F%2Fwww.gatsby.ucl.ac.uk%2F~dayan%2Fpapers%2Fhm95.pdf&usg=AOvVaw1wOfAfLAIVYS83_2EO-6Fi>`_
-and the original `Hopfield's network <https://www.pnas.org/content/79/8/2554>`_, since it implements simplicial homology (see `Poincaré’s Analysis Situs <http://analysis-situs.math.cnrs.fr/-Textes-originaux-.html>`_ , that arguably foundate algebraic topology) 
+and the original `Hopfield's network <https://www.pnas.org/content/79/8/2554>`_ , since it implements simplicial homology (see `Poincaré’s Analysis Situs <http://analysis-situs.math.cnrs.fr/-Textes-originaux-.html>`_ , that arguably foundate algebraic topology) 
 and information theory in a single framework (see `Shannon’s theory of communication <https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjtrqOXrsPrAhVCrxoKHcBDBrQQgAMoAHoECBIQAg&url=http%3A%2F%2Fscholar.google.fr%2Fscholar_url%3Furl%3Dhttps%3A%2F%2Fpure.mpg.de%2Frest%2Fitems%2Fitem_2383162_7%2Fcomponent%2Ffile_2456978%2Fcontent%26hl%3Dfr%26sa%3DX%26scisig%3DAAGBfm2dgGR4Ly92eRCfhrM1BgCnbIBvBA%26nossl%3D1%26oi%3Dscholarr&usg=AOvVaw0ha99XPEPwgTiv3oMC7PTE>`_ , 
 that foundate information theory), applied effectively to empirical data.
 
-The Poincaré-Shannon machine are generic feed forward deep networks with algebraic topology imposed layered structure of a chain complex. 
-The neurons are random variables and are whatever measurable functions (linear, non linear), which is a fairly large class of functions (for example, using `Solovay's axiomatic of set theory <https://www.researchgate.net/publication/239065757_A_Model_of_Set_Theory_in_Which_Every_Set_of_Reals_is_Lebesgue_Measurable>`_, all functions 
-are measurable). In the general (and computationally hard) setting of general information strutures that considers the lattice of partitions, the Poincaré-Shannon machine are 
+The Poincaré-Shannon machine are generic feed forward Deep Neural Networks (DNN) model with a layered structure given by a chain complex (of random variables), e.g. imposed by algebraic topology. 
+In the basic simplicial case developped computationnaly here, the rank of the layers of the DNN is the dimension of the faces of the complex, and the highest rank of the layers is the
+dimension of the complex. 
+The neurons are random variables, and are whatever measurable functions (linear, non linear), which is a "fairly" large class of functions (notably, using the  `Solovay's axiomatic of set theory <https://www.researchgate.net/publication/239065757_A_Model_of_Set_Theory_in_Which_Every_Set_of_Reals_is_Lebesgue_Measurable>`_, all functions 
+are measurable). In the general (and computationally hard) setting of general information strutures, that considers the lattice of partitions (cf. section "how infotopo works"), the Poincaré-Shannon machine are 
 Universal Classifiers, in the sens that a partition corresponds exactly to an equivalence class and in theory such a model would span all classifications up to equivalence). 
-This topological structure allows, and in fact implements, that layers are not necessarilly serial but can be parralel (well known architectures in real sensory cortical systems, 
-for example the ventral and dorsal visual streams in human cortex would corresponds to two facets of the human brain complex with two (at least partially disjoint information paths ).  
+This topological structure allows, and de facto implements the fact, that neural layers are not necessarilly serial as in current DNN, but can be parralel. 
+Such  architectures are well known in real sensory cortical systems, for example the ventral and dorsal visual streams in human cortex would corresponds 
+to two facets of the human brain complex with two (at least partially disjoint information paths) and analyze conditionally independent features of the input such as the “where and what” 
+(dorso and ventral, respectively `PDF <https://www.mdpi.com/1099-4300/21/9/881>`_).
 
-Beside this architectural difference with 
+Beside this architectural difference with usual DNN, the second important difference is that the learning rule is a "forward propagation", imposed by the cohomological
+"direction", whereas usual DNN implements a backpropagation learning rule (homological "direction") which implements basically the chain rule of derivation (`Kelley 1960 <https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwiVgubR3PjrAhWGDxQKHU7XAOMQFjABegQIBRAB&url=https%3A%2F%2Fwww.gwern.net%2Fdocs%2Fstatistics%2Fdecision%2F1960-kelley.pdf&usg=AOvVaw3kqby-zRKHaI0gxZPh8Dax>`_ , 
+`Le Cun 1985 <https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjo4POW4PjrAhWrAGMBHbFRBY8QFjAAegQIBBAB&url=http%3A%2F%2Fyann.lecun.com%2Fexdb%2Fpublis%2Fpdf%2Flecun-85.pdf&usg=AOvVaw0IUPPzZ_XUtTjFjzpgm7gG>`_,
+`Dreyfus 1962 <https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjI8JmG3fjrAhXq6eAKHfP6CeoQFjACegQIAxAB&url=https%3A%2F%2Fcore.ac.uk%2Fdownload%2Fpdf%2F82751002.pdf&usg=AOvVaw2uSnnLkJUmd9ofdIxpjN9E>`_, 
+`Rumelhart et al. 1986 <https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjswqz33fjrAhVGKBoKHXrBC9sQFjACegQIAxAB&url=https%3A%2F%2Fwww.iro.umontreal.ca%2F~vincentp%2Fift3395%2Flectures%2Fbackprop_old.pdf&usg=AOvVaw0EfTJmB5LLenmX5JrYjp-O>`_).
+ The information topology take profit of the coboundary nature of :math:`I_k` functions, a (discrete in the present particular case) statistical analog of differential operator. 
+ This means that there is no descent as in the usual DNN implementation, but that computation of those :math:`I_k` and conditional :math:`I_k` implements the descent.
+Notably, the introduction of the multiplicity decomposition of “energy functions” formalizes learning in neural networks in terms of a combinatorial 
+family of analytically independent functions :math:`I_k` (moreover with independent gradients) on the probability simplex (`Han 1975 <https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiG2ODn5fjrAhVDx4UKHfSNATUQgAMoAHoECAgQAg&url=http%3A%2F%2Fscholar.google.fr%2Fscholar_url%3Furl%3Dhttps%3A%2F%2Fwww.sciencedirect.com%2Fscience%2Farticle%2Fpii%2FS0019995875800040%2Fpdf%253Fmd5%253D86adf67be6e855ec022029450d43b0ce%2526pid%253D1-s2.0-S0019995875800040-main.pdf%26hl%3Dfr%26sa%3DX%26ei%3DZdlnX8qEO7OTy9YP9bWDyAc%26scisig%3DAAGBfm0fipxDddOGu6177-TJWIh6DFJuWg%26nossl%3D1%26oi%3Dscholarr&usg=AOvVaw3bBFjSpCiBOnsAeG3lIzOX>`_ 
+`Han 1978 <https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiUwdj75fjrAhUG9IUKHfuqAkAQFjACegQIBxAB&url=https%3A%2F%2Fwww.sciencedirect.com%2Fscience%2Farticle%2Fpii%2FS0019995878902759%2Fpdf%3Fmd5%3D18d2eec90c7b3dd3009f70a8bb39eb80%26pid%3D1-s2.0-S0019995878902759-main.pdf%26_valck%3D1&usg=AOvVaw1HIUfffUm-y61YrosK2XBv>`_ Theorem 4 in `PDF <https://www.mdpi.com/1099-4300/21/9/869>`_): instead of a single energy and 
+associated gradient descent, mutual information provides a multiplicity of gradients.
 
 
 Unsupervised topological learning
