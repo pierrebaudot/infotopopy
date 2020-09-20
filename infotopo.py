@@ -1323,11 +1323,37 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
 
 ###############################################################  
 ###############################################################
-########              INFORMATION PATHS              ##########
-########                 FIGURE 6                    ##########
+########              INFORMATION FIT                ##########
+########                                             ##########
 ###############################################################  
 ###############################################################    
-
+    '''      
+    This function is just a basic wrapper on previous functions to provide a scikit or tensorflow (...) like fit function 
+    ... to help users.
+    '''  
+    def fit( self, dataset):
+        Nentropie = information_topo.simplicial_entropies_decomposition(dataset) 
+        Ninfomut = information_topo.simplicial_infomut_decomposition(Nentropie)
+        return Ninfomut, Nentropie    
+    
+###############################################################  
+###############################################################
+########              INFORMATION PATHS              ##########
+########  INFORMATION COMPLEX - FREE-ENERGY COMPLEX  ##########
+###############################################################  
+###############################################################    
+    '''      
+    This function compute and plotts approximation of the information (free-energy) complex by computing information paths: An information path IPk  of degree k 
+    on Ik landscape is defined as a sequence of elements of the lattice that begins at the least element of the lattice (the identity-constant “0”), 
+    travels along edges from element to element of increasing degree of the lattice and ends at the greatest element of the lattice of degree k. The
+    first derivative of an IPk path is minus the conditional mutual information. The critical dimension of an IP k path is the degree of its first minimum.
+    A positive information path is an information path from 0 to a given I k corresponding to a given k-tuple of variables such that Ik<Ik-1<...<I1 . 
+    We call the interacting components functions Ik , k>1, a free information energy. A maximal positive information path is a positive information path 
+    of maximal length: it ends at minima of the free information energy function. The set of all these paths defines uniquely the minimum free energy complex. 
+    The set of all paths of degree k is intractable computationally (complexity in O(k!)). In order to bypass this issue, the algo computes a fast local
+    algorithm that selects at each element of degree k of an IP path the positive information path with maximal or minimal Ik+1 value or stops whenever Xk.I k+1≤ 0 
+    and ranks those paths by their length.
+    '''  
     def information_complex( self, Ninfomut):
         
         infomut_per_order=[]      
@@ -1514,47 +1540,52 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
 # #######          UNITARY TESTS             ##############################
 # #########################################################################
 # #########################################################################
+'''      
+    This function loads different data set for unitary test or tutorial purpose, either theoretical-synthetic or real dataset from scikit-learn
+    https://scikit-learn.org/stable/datasets/index.html  
+    # if dataset = 1 load IRIS DATASET # if dataset = 2 load Boston house prices dataset # if dataset = 3 load DIABETES  dataset 
+    ## if dataset = 4 CAUSAL Inference data challenge http://www.causality.inf.ethz.ch/data/LUCAS.html  # if dataset = 5 Borromean  dataset
+'''  
 
-
-    def load_data_sets( self, dataset_type):
-        if dataset_type == 1: ## IRIS DATASET## 
-            dataset = load_iris()
-            dataset_df = pd.DataFrame(dataset.data, columns = dataset.feature_names)
-            nb_of_values = 9
-            dataset_df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
-            dataset_df['species'] = pd.Series(dataset.target).map(dict(zip(range(3),dataset.target_names)))
-            sns.pairplot(dataset_df, hue='species')
-            plt.show()
-            dataset = dataset.data
-        elif dataset_type == 2: ## BOSTON DATASET##
-            dataset = load_boston()
-            dataset_df = pd.DataFrame(dataset.data, columns = dataset.feature_names)
-            nb_of_values =9
-            dataset_df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
-            dataset_df['MEDV'] = pd.Series(dataset.target).map(dict(zip(range(3),dataset.data[:,12])))
-            dataset = dataset.data
-        elif dataset_type == 3: ## DIABETES DATASET##
-            dataset = load_diabetes()
-            dataset_df = pd.DataFrame(dataset.data, columns = dataset.feature_names)
-            nb_of_values = 9
-            dataset_df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
-            dataset = dataset.data
-        elif dataset_type == 4: ## CAUSAL Inference data challenge http://www.causality.inf.ethz.ch/data/LUCAS.html
-            dataset = pd.read_csv(r"/home/pierre/Documents/Data/lucas0_train.csv")  # csv to download at http://www.causality.inf.ethz.ch/data/LUCAS.html
-            print(dataset.columns)
-            print(dataset.shape)
-            dataset_df = pd.DataFrame(dataset, columns = dataset.columns)
-            dataset = dataset.to_numpy()
-            nb_of_values = 2
+def load_data_sets( dataset_type):
+    if dataset_type == 1: ## IRIS DATASET## 
+        dataset = load_iris()
+        dataset_df = pd.DataFrame(dataset.data, columns = dataset.feature_names)
+        nb_of_values = 9
+        dataset_df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
+        dataset_df['species'] = pd.Series(dataset.target).map(dict(zip(range(3),dataset.target_names)))
+        sns.pairplot(dataset_df, hue='species')
+        plt.show()
+        dataset = dataset.data
+    elif dataset_type == 2: ## BOSTON DATASET##
+        dataset = load_boston()
+        dataset_df = pd.DataFrame(dataset.data, columns = dataset.feature_names)
+        nb_of_values =9
+        dataset_df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
+        dataset_df['MEDV'] = pd.Series(dataset.target).map(dict(zip(range(3),dataset.data[:,12])))
+        dataset = dataset.data
+    elif dataset_type == 3: ## DIABETES DATASET##
+        dataset = load_diabetes()
+        dataset_df = pd.DataFrame(dataset.data, columns = dataset.feature_names)
+        nb_of_values = 9
+        dataset_df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
+        dataset = dataset.data
+    elif dataset_type == 4: ## CAUSAL Inference data challenge http://www.causality.inf.ethz.ch/data/LUCAS.html
+        dataset = pd.read_csv(r"/home/pierre/Documents/Data/lucas0_train.csv")  # csv to download at http://www.causality.inf.ethz.ch/data/LUCAS.html
+        print(dataset.columns)
+        print(dataset.shape)
+        dataset_df = pd.DataFrame(dataset, columns = dataset.columns)
+        dataset = dataset.to_numpy()
+        nb_of_values = 2
             
-        elif dataset_type == 5: # This the Borromean case I_1 are 1 bit (max: "random")  I_2 are 0 bit (min: independent) I_3 is -1 bit
-            nb_of_values = 2
-            if nb_of_values == 2:
+    elif dataset_type == 5: # This the Borromean case I_1 are 1 bit (max: "random")  I_2 are 0 bit (min: independent) I_3 is -1 bit
+        nb_of_values = 2
+        if nb_of_values == 2:
                 dataset = np.array([[ 0,  0,  1],
                                     [ 0,  1,  0],
                                     [ 1,  0,  0],
                                     [ 1,  1,  1]])
-            elif nb_of_values == 3:
+        elif nb_of_values == 3:
                 dataset = np.array([[ 0,  0,  0],
                                     [ 1,  1,  0],
                                     [ 2,  2,  0],
@@ -1564,7 +1595,7 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
                                     [ 0,  2,  2],
                                     [ 1,  0,  2],
                                     [ 2,  1,  2]])  
-            elif nb_of_values == 4:
+        elif nb_of_values == 4:
                 dataset = np.array([[ 3,  0,  0],
                                     [ 2,  1,  0],
                                     [ 1,  2,  0],
@@ -1580,15 +1611,8 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
                                     [ 0,  2,  3],
                                     [ 1,  1,  3],
                                     [ 2,  0,  3],
-                                    [ 3,  3,  3]])                                              
-            nb_of_values = 2
-                   
-    
-        print("sample_size : ",sample_size)
-        print('number of variables or dimension of the analysis:',dimension_max )
-        print('number of tot  dimensions:',  dimension_tot)
-        print('number of values:', nb_of_values)
-        return dataset, nb_of_values
+                                    [ 3,  3,  3]])                                                                   
+    return dataset, nb_of_values
 
 
 
@@ -1606,7 +1630,7 @@ if __name__ == "__main__":
     
     dataset_type = 4 # if dataset = 1 load IRIS DATASET # if dataset = 2 load Boston house prices dataset # if dataset = 3 load DIABETES  dataset 
     ## if dataset = 4 CAUSAL Inference data challenge http://www.causality.inf.ethz.ch/data/LUCAS.html  # if dataset = 5 Borromean  dataset
-    dataset, nb_of_values = information_topo.load_data_sets( self, dataset_type)
+    dataset, nb_of_values = load_data_sets( dataset_type)
     dimension_max = dataset.shape[1]
     dimension_tot = dataset.shape[1]
     sample_size = dataset.shape[0]
@@ -1616,6 +1640,11 @@ if __name__ == "__main__":
     sampling_mode = 1
     deformed_probability_mode = False     
     
+    print("sample_size : ",sample_size)
+    print('number of variables or dimension of the analysis:',dimension_max )
+    print('number of tot  dimensions:',  dimension_tot)
+    print('number of values:', nb_of_values)
+
     information_topo = infotopo(dimension_max = dimension_max, 
                                 dimension_tot = dimension_tot, 
                                 sample_size = sample_size, 
@@ -1627,10 +1656,10 @@ if __name__ == "__main__":
                                 forward_computation_mode = forward_computation_mode)
 # Nentropy is dictionary (x,y) with x a list of kind (1,2,5) and y a value in bit    
     start = timeit.default_timer()
-    Nentropie = information_topo.simplicial_entropies_decomposition(dataset) #dataset.data
+    Nentropie = information_topo.simplicial_entropies_decomposition(dataset) 
     stop = timeit.default_timer()
     print('Time for CPU(seconds) entropies: ', stop - start)
-    if dataset_type == 1 or dataset_type == 4:
+    if dataset_type == 1 or dataset_type == 5:
         print(Nentropie)
     information_topo.entropy_simplicial_lanscape(Nentropie)
     information_topo = infotopo(dimension_max = dimension_max, 
@@ -1646,7 +1675,7 @@ if __name__ == "__main__":
     if dataset_type != 5:
         dico_max, dico_min = information_topo.display_higher_lower_information(Nentropie, dataset)
 
-# Ninfomut is dictionary (x,y) with x a list of kind (1,2,5) and y a value in bit
+# Ninfomut is a dictionary (x,y) with x a list of kind (1,2,5) and y a value in bit
     Ntotal_correlation = information_topo.total_correlation_simplicial_lanscape(Nentropie)
     dico_max, dico_min = information_topo.display_higher_lower_information(Ntotal_correlation, dataset)
     start = timeit.default_timer()   
@@ -1670,7 +1699,8 @@ if __name__ == "__main__":
     Ninfo_volume = information_topo.information_volume_simplicial_lanscape(Nentropie, Ninfomut)
     dico_max, dico_min = information_topo.display_higher_lower_information(Ninfo_volume, dataset)
     adjacency_matrix_info_distance = information_topo.mutual_info_pairwise_network(Ninfo_volume)
-    # Information paths
+    # Information paths - Information complex
+    Ninfomut, Nentropie =  information_topo.fit(dataset)
     information_topo.information_complex(Ninfomut)
 
     
