@@ -53,8 +53,11 @@ and information theory in a single framework (see `Shannon’s theory of communi
 that foundate information theory), applied effectively to empirical data.
 
 
+Unsupervised topological learning
+---------------------------------
+
 Causality challenge dataset
----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We will illustrate the computation of free energy complex (or :math:`I_k` complex) on the synthetic dataset `LUCAS  (LUng CAncer Simple set) <http://www.causality.inf.ethz.ch/data/LUCAS.html>`_ 
 of the  `causality challenge <http://www.causality.inf.ethz.ch/challenge.php>`_. Before trying the code on your computer, you will have to download the file "lucas0_train.csv" 
@@ -94,10 +97,6 @@ The (buildin) causality chain relations among those varaibles follow this schema
 
 .. image:: images/causality_schema_LUCAS0.png
 
-
-
-Unsupervised topological learning
----------------------------------
 
 Information Complexes
 ~~~~~~~~~~~~~~~~~~~~~
