@@ -12,7 +12,7 @@ In what follows, we will go one stepp further by introducing to simplicial compl
 occasion to study more in depth information paths, the analog of homotopical paths in information theory. We will consider subcomplex of this simplicial structure,
 invocating the fact that any simplicial complex can be realized as a subcomplex of a simplex (`Steenrod 1947 <https://www.jstor.org/stable/1969172>`_ , p.296).
 
-As introduced previously, An information path :math:`IP_k` of degree k on :math:`I_k` landscape is defined as a sequence of elements of
+As introduced previously, an information path :math:`IP_k` of degree k on :math:`I_k` landscape is defined as a sequence of elements of
 the lattice that begins at the least element of the lattice (the identity-constant “0”), travels along edges from element to element of 
 increasing degree of the lattice and ends at the greatest element of the lattice of degree k (a piecewise linear function). The
 first derivative of an :math:`IP_k` path is minus the conditional mutual information. The critical dimension of an :math:`IP_k` path 
@@ -33,17 +33,25 @@ that in information and statitics, 3 and 4 dimensional topology are also very sp
 Poincaré-Shannon Machine
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Learning - Information sensory processing."Understanding is compressing" Chaitin. Efficient coding (Attneave, 1952): the goal of sensory perception is to extract 
-the redundancies and to find the most compressed representation of the environment. Any kind of symmetry and invariance are information redundancies and 
-Gestalt principles of perception can be defined on information theoretic terms.
+Information theory motivated the early stages of Machine Learning and Information sensory processing theories. The principle was self-resumed by Chaitin:
+"Understanding is compressing". Notably,  `Attneave (1952) <https://www.semanticscholar.org/paper/Some-informational-aspects-of-visual-perception.-Attneave/6d0198460198fdb49b89d1646049712b3a0683df>`_ 
+ennouciated the principles of efficient coding (with Barlow) in the following terms: the goal of sensory perception is to extract the redundancies and to find the 
+most compressed representation of the environment. Any kind of symmetry and invariance are information redundancies and Gestalt principles of perception
+can be defined on information theoretic terms. This is basically illustrated by, Attneave's famous cat and the topologically sounding Gestalt principle of
+perceptual binding illustrated bellow:
 
 .. image::  images/figure_Attneave-Gestalt_complete.png
 
-
-Information function as loss function (Boltzmann - Helmoltz machine, maxent Jaynes infomax Linsker nadal parga Sejnowsky ... untill current cross entropy
-and focal loss = deformed probability).  
+Since then Information theory has provided its central functions: the loss functions: Maximum entropy is at the root of Jaynes and may statistical physic inference
+model, maximum mutual information (infomax) was stated and studied  by Linsker, Nadal and Parga, and Bell and Sejnowsky and formalized ICA principles and Hebbian 
+plasticity, generalizing PCA to non-linear cases, Boltzmann Machine minimized the KL-divergence... untill current Deep Convolutional Neural Networks (CNN) that 
+basically minimize cross entropy or "deformed" functions of it like the focal loss (very close indeed to a "deformed probability"!). The principles stayed the same, 
+but Neural network architectures, data availability, computational power and software facilities increased enormously.  
 
 .. image::  images/loss_function.jpg
+
+For instance, Boltzmann Machines are reccurent neural networks of binary random variables with hidden layer, that can be formalized as a Markov random field. 
+Markov random fields are a small, positive, subcase of information structures (see `proposition 7 (Hu) PDF <https://www.mdpi.com/1099-4300/21/9/869>`_). 
 
 
 The models developped here are called the Poincaré-Shannon machine in reverence to `Boltzmann Machine <https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwinjPbMnvjrAhUKzYUKHStSA7gQgAMoAHoECAgQAg&url=http%3A%2F%2Fscholar.google.fr%2Fscholar_url%3Furl%3Dhttps%3A%2F%2Fwww.cs.utoronto.ca%2F~hinton%2Fabsps%2Fcogscibm.pdf%26hl%3Dfr%26sa%3DX%26ei%3Duo5nX8mHM72Ay9YP1OOAiAM%26scisig%3DAAGBfm0MtFqrPZRIBb9G16LNS5kfPdVoFw%26nossl%3D1%26oi%3Dscholarr&usg=AOvVaw29iesHzi-bIRQnf2tYDIH1>`_ , 
@@ -51,6 +59,15 @@ The models developped here are called the Poincaré-Shannon machine in reverence
 and the original `Hopfield's network <https://www.pnas.org/content/79/8/2554>`_, since it implements simplicial homology (see `Poincaré’s Analysis Situs <http://analysis-situs.math.cnrs.fr/-Textes-originaux-.html>`_ , that arguably foundate algebraic topology) 
 and information theory in a single framework (see `Shannon’s theory of communication <https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjtrqOXrsPrAhVCrxoKHcBDBrQQgAMoAHoECBIQAg&url=http%3A%2F%2Fscholar.google.fr%2Fscholar_url%3Furl%3Dhttps%3A%2F%2Fpure.mpg.de%2Frest%2Fitems%2Fitem_2383162_7%2Fcomponent%2Ffile_2456978%2Fcontent%26hl%3Dfr%26sa%3DX%26scisig%3DAAGBfm2dgGR4Ly92eRCfhrM1BgCnbIBvBA%26nossl%3D1%26oi%3Dscholarr&usg=AOvVaw0ha99XPEPwgTiv3oMC7PTE>`_ , 
 that foundate information theory), applied effectively to empirical data.
+
+The Poincaré-Shannon machine are generic feed forward deep networks with algebraic topology imposed layered structure of a chain complex. 
+The neurons are random variables and are whatever measurable functions (linear, non linear), which is a fairly large class of functions (for example, using `Solovay's axiomatic of set theory <https://www.researchgate.net/publication/239065757_A_Model_of_Set_Theory_in_Which_Every_Set_of_Reals_is_Lebesgue_Measurable>`_, all functions 
+are measurable). In the general (and computationally hard) setting of general information strutures that considers the lattice of partitions, the Poincaré-Shannon machine are 
+Universal Classifiers, in the sens that a partition corresponds exactly to an equivalence class and in theory such a model would span all classifications up to equivalence). 
+This topological structure allows, and in fact implements, that layers are not necessarilly serial but can be parralel (well known architectures in real sensory cortical systems, 
+for example the ventral and dorsal visual streams in human cortex would corresponds to two facets of the human brain complex with two (at least partially disjoint information paths ).  
+
+Beside this architectural difference with 
 
 
 Unsupervised topological learning
