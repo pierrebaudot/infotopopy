@@ -610,7 +610,7 @@ of each edges of the lattice in the landscapes. It is possible to plot them usin
     NcondInfo = information_topo.conditional_info_simplicial_lanscape(Ninfomut)
     information_topo.display_higher_lower_cond_information(NcondInfo)
 
-There are more conditional Informations than :math:`I_k` (:math:`k\binom{n}{k}` in each k-dimension, and :math: `n2^{n-1}` in total), and we 
+There are more conditional Informations than :math:`I_k` (:math:`k\binom{n}{k}` in each k-dimension, and :math:`n2^{n-1}` in total), and we 
 encoded the output as a list for each dimension, "NcondInfo", of dictionaries which items are of the forms ((5, 7, 9), 0.352)  for 
 the information of 5,7 knowing 9, e.g. I(5,7|9). Indeed, as remarked by (`Han (1981) <https://www.researchgate.net/publication/268827547_A_uniqueness_of_Shannon%27s_information_distance_and_related_nonnegativity_problems>`_ 
 `Yeung <http://iest2.ie.cuhk.edu.hk/~whyeung/post/draft2.pdf>`_ generates

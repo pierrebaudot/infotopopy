@@ -1611,7 +1611,20 @@ def load_data_sets( dataset_type):
                                     [ 0,  2,  3],
                                     [ 1,  1,  3],
                                     [ 2,  0,  3],
-                                    [ 3,  3,  3]])                                                                   
+                                    [ 3,  3,  3]])    
+    elif dataset_type == 6: ## MNIST DIGIT DATASET
+        dataset = load_digits()
+        print(dataset.DESCR)
+        fig, ax_array = plt.subplots(20, 20)
+        axes = ax_array.flatten()
+        for i, ax in enumerate(axes):
+            ax.imshow(dataset.images[i], cmap='gray_r')
+        plt.setp(axes, xticks=[], yticks=[], frame_on=False)
+        plt.tight_layout(h_pad=0.5, w_pad=0.01)
+#        dataset_df = pd.DataFrame(dataset.data, columns = dataset.feature_names)
+        nb_of_values = 17
+#        dataset_df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
+        dataset = dataset.data                                                                                               
     return dataset, nb_of_values
 
 
@@ -1628,8 +1641,9 @@ if __name__ == "__main__":
     import pandas as pd
     import seaborn as sns
     
-    dataset_type = 4 # if dataset = 1 load IRIS DATASET # if dataset = 2 load Boston house prices dataset # if dataset = 3 load DIABETES  dataset 
+    dataset_type = 6 # if dataset = 1 load IRIS DATASET # if dataset = 2 load Boston house prices dataset # if dataset = 3 load DIABETES  dataset 
     ## if dataset = 4 CAUSAL Inference data challenge http://www.causality.inf.ethz.ch/data/LUCAS.html  # if dataset = 5 Borromean  dataset
+    # if dataset = 6 Digits dataset MNIST
     dataset, nb_of_values = load_data_sets( dataset_type)
     dimension_max = dataset.shape[1]
     dimension_tot = dataset.shape[1]
@@ -1639,6 +1653,9 @@ if __name__ == "__main__":
     supervised_mode = False
     sampling_mode = 1
     deformed_probability_mode = False     
+    if dataset_type == 6:
+        forward_computation_mode = True
+        dimension_max = 5
     
     print("sample_size : ",sample_size)
     print('number of variables or dimension of the analysis:',dimension_max )

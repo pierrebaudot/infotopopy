@@ -22,7 +22,7 @@ A maximal positive information path is a positive information path of maximal le
 of the free energy components quantified by :math:`I_k`. In statistical terms, this minima is equivalent to a conditionnal independence: it means 
 that the conditional mutual information (slope) of the paths goes throug 0.  
 Those maximal paths identifies the maximal faces of the :math:`I_k` complex and charaterize it, because a simplicial complex is uniquely determined 
-by the list of its maximal faces. Hence, the set of all these paths defines uniquely the :math:`I_k` complex (or minimum free energy complex). 
+by the list of its maximal faces (intoduction to `simplicial homology <https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiRyeqK6PrrAhUDyxoKHSBBAcoQFjACegQIBRAB&url=https%3A%2F%2Flink.springer.com%2Farticle%2F10.1007%2Fs00454-017-9865-z%3Fshared-article-renderer&usg=AOvVaw2tpdusnNrLy9q4cqxB240g>`_ ). Hence, the set of all these paths defines uniquely the :math:`I_k` complex (or minimum free energy complex). 
 An example of such a complex of dimension 4, with its information path :math:`IP_k`, is given in this figure: 
 
 .. image:: images/info_complex.png
@@ -63,7 +63,7 @@ that foundate information theory), applied effectively to empirical data.
 The Poincaré-Shannon machine are generic feed forward Deep Neural Networks (DNN) model with a layered structure given by a chain complex (of random variables), e.g. imposed by algebraic topology,
 and whose connections are given by the edges of the embedding lattice. 
 In the basic simplicial case developped computationnaly here, the rank of the layers of the DNN is the dimension of the faces of the complex, and the highest rank of the layers is the
-dimension of the complex. 
+dimension of the complex. As with usual DNN, the dimension of the analized patterns increases with the depth of the layers (see for illustration, `figure 2 Zeiler and Fergus 2013 <https://arxiv.org/abs/1311.2901>`_)
 The neurons are random variables, and are whatever measurable functions (linear, non linear), hence covering a "fairly" large class of functions (notably, using the  `Solovay's axiomatic of set theory <https://www.researchgate.net/publication/239065757_A_Model_of_Set_Theory_in_Which_Every_Set_of_Reals_is_Lebesgue_Measurable>`_, all functions 
 are measurable). In the general (and computationally hard) setting of general information strutures, that considers the lattice of partitions (cf. section "how infotopo works"), the Poincaré-Shannon machine are 
 Universal Classifiers, in the sens that a partition corresponds exactly to an equivalence class and in theory such a model would span all classifications up to equivalence). 
@@ -109,24 +109,15 @@ of infotopo's parameters.
         dataset = pd.read_csv(r"/home/pierre/Documents/Data/lucas0_train.csv")  # csv to download at http://www.causality.inf.ethz.ch/data/LUCAS.html
         dataset_df = pd.DataFrame(dataset, columns = dataset.columns)
         dataset = dataset.to_numpy()
-        dimension_max = dataset.shape[1]
-        dimension_tot = dataset.shape[1]
-        sample_size = dataset.shape[0]
-        nb_of_values = 2
-        forward_computation_mode = False
-        work_on_transpose = False
-        supervised_mode = False
-        sampling_mode = 1
-        deformed_probability_mode = False 
-        information_topo = infotopo(dimension_max = dimension_max, 
-                                dimension_tot = dimension_tot, 
-                                sample_size = sample_size, 
-                                work_on_transpose = work_on_transpose,
-                                nb_of_values = nb_of_values, 
-                                sampling_mode = sampling_mode, 
-                                deformed_probability_mode = deformed_probability_mode,
-                                supervised_mode = supervised_mode, 
-                                forward_computation_mode = forward_computation_mode,
+        information_topo = infotopo(dimension_max = dataset.shape[1], 
+                                dimension_tot = dataset.shape[1], 
+                                sample_size = dataset.shape[0], 
+                                work_on_transpose = False,
+                                nb_of_values = 2, 
+                                sampling_mode = 1, 
+                                deformed_probability_mode = False,
+                                supervised_mode = False, 
+                                forward_computation_mode = False,
                                 dim_to_rank = 3, number_of_max_val = 4)
 
 
@@ -151,7 +142,8 @@ The method "fit" is just a wrapper of the methods "simplicial_entropies_decompos
 the usual methods of scikit-learn, keras, tensorflow (...). The set of all paths of degree-dimension k is intractable computationally (complexity in :math:`\mathcal{O}(k!)` ). 
 In order to bypass this issue, the current method "information_complex" computes a fast local algorithm that selects at each element of degree k of a path, the 
 positive information path with maximal or minimal :math:`I_{k+1}` value (equivalently, extremal conditional mutual informations) or stops whenever  
-:math:`X_k.I_{k+1} \leq 0` and ranks those paths by their length. No doubt that this approximation is rought and shall be improved (to be done). 
+:math:`X_k.I_{k+1} \leq 0` and ranks those paths by their length. The justification of this elementary heuristic is that it should capture the paths with the most interesting 
+tuples, e.g the one highest anf lowest :math:`I_{k}`. No doubt that this approximation is rought and shall be improved in future (to be done). 
 The result on the causality challenge dataset is:
 
 .. image:: images/causality_info_paths.png
@@ -168,6 +160,20 @@ thresholding on conditional mutual information values. The next maximal paths fa
 the rought approximation used by the algorithm. The First two minimal paths [7, 2, 11] and [3, 4, 1] identifies unrelated variables or multiple cause causality scheme.
 
 .. image:: images/causality_info_paths_results.png
+
+
+Partial explorations
+~~~~~~~~~~~~~~~~~~~~
+
+As we have seen, when increasing the dimension of the dataset, the raw computation potentially grows as :math:`\mathcal{O}(2^n)`. In order to master and circumvince this
+problem, a partial exploration of information structures as been written, allowing to explore only all the k first dimensions with :math:`n \geq k`. This is acheived by 
+setting the parametter "dimension_max" to k and "forward_computation_mode" to "True". For example, setting "dimension_max=2" will restrict the computation to the 
+:math:`\binom{n}{2} = n!/2!(n-2)! = n.(n-1)/2`, which is the (symetric) usual complexity  :math:`\mathcal{O}(n^2)` of metric or graph based machine learning algorithm. 
+Setting to 3, will give a complexity in :math:`\mathcal{O}(n^3)` etc...  Of course, we gain what we loose, and the deployement of infotopo on GPU should give a bit more
+of ressources  (currently failed)   
+
+Unsupervised topological learning
+---------------------------------
 
 .. math::	
     H_1=H(X_{j};P)=k\sum_{x \in [N_j] }p(x)\ln p(x) 
