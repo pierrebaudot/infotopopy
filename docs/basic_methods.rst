@@ -648,7 +648,7 @@ and was the subject of further interesting both applied and theoretical studies 
 `Kraskov and Grassberger <https://www.researchgate.net/publication/1773919_MIC_Mutual_Information_Based_Hierarchical_Clustering>`_).  It indeed appears as a 
 topological invariant in a precise setting  cohomological setting and generalises to the multivariate case to k information volumes
 :math:`V_k =H_k(X,Y)-I_k(X;Y)`  `PDF <https://www.mdpi.com/1099-4300/21/9/881>`_ .  :math:`V_k` are non-neagtive and symmetric functions. For Machine Learning,
-this shall be understood as an informational version of Jaccard metric or other union minus intersection metrics.
+this shall be understood as an informational version of Jaccard metric, intersection over union (iou) or other union minus intersection metrics.
 We can compute their simplicial structure using the commands:
 
 .. code:: python3
@@ -669,8 +669,8 @@ We see that the structure is less interesting compared to the one we obtained wi
 (pseudo)-metric leaves it appealing to plot in its network representation.
  
 Beware that these tools will not detect whatever possible statistical dependencies (see James and Crutchfield `PDF <https://www.mdpi.com/1099-4300/19/10/531>`_), 
-this is just a simplicial (nice...paths are automorphism) subsets, computationnally tractable. The complete structure of dependencies are spanned by general information structures and 
-lattice of patition (see section how_infotopo_works).
+this is just a simplicial subset (nice...paths are automorphism) subsets, computationnally tractable. The complete structure of dependencies are spanned by general information structures and 
+lattice of patition (see section how_infotopo_works), which embedds the present simplicial case. 
 This concludes our introduction to basic infotopo usage -- hopefully this
 has given you the tools to get started for yourself. Further tutorials,
 covering infotopo parameters and more advanced usage are also available when

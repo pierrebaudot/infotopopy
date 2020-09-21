@@ -42,7 +42,7 @@ perceptual binding illustrated bellow:
 
 .. image::  images/figure_Attneave-Gestalt_complete.png
 
-Since then Information theory has provided its central functions: the loss functions: Maximum entropy is at the root of Jaynes and may statistical physic inference
+Since then Information theory has provided machine learning's central functions: the loss functions: Maximum entropy is at the root of Jaynes and may statistical physic inference
 model, maximum mutual information (infomax) was stated and studied  by Linsker, Nadal and Parga, and Bell and Sejnowsky and formalized ICA principles and Hebbian 
 plasticity, generalizing PCA to non-linear cases, Boltzmann Machine minimized the KL-divergence... untill current Deep Convolutional Neural Networks (CNN) that 
 basically minimize cross entropy or "deformed" functions of it like the focal loss (very close indeed to a "deformed probability"!). The principles stayed the same, 
@@ -64,13 +64,16 @@ The Poincaré-Shannon machine are generic feed forward Deep Neural Networks (DNN
 and whose connections are given by the edges of the embedding lattice. 
 In the basic simplicial case developped computationnaly here, the rank of the layers of the DNN is the dimension of the faces of the complex, and the highest rank of the layers is the
 dimension of the complex. 
-The neurons are random variables, and are whatever measurable functions (linear, non linear), which is a "fairly" large class of functions (notably, using the  `Solovay's axiomatic of set theory <https://www.researchgate.net/publication/239065757_A_Model_of_Set_Theory_in_Which_Every_Set_of_Reals_is_Lebesgue_Measurable>`_, all functions 
+The neurons are random variables, and are whatever measurable functions (linear, non linear), hence covering a "fairly" large class of functions (notably, using the  `Solovay's axiomatic of set theory <https://www.researchgate.net/publication/239065757_A_Model_of_Set_Theory_in_Which_Every_Set_of_Reals_is_Lebesgue_Measurable>`_, all functions 
 are measurable). In the general (and computationally hard) setting of general information strutures, that considers the lattice of partitions (cf. section "how infotopo works"), the Poincaré-Shannon machine are 
 Universal Classifiers, in the sens that a partition corresponds exactly to an equivalence class and in theory such a model would span all classifications up to equivalence). 
 This topological structure allows, and de facto implements the fact, that neural layers are not necessarilly serial as in current DNN, but can be parralel. 
 Such  architectures are well known in real sensory cortical systems, for example the ventral and dorsal visual streams in human cortex would corresponds 
 to two facets of the human brain complex with two (at least partially disjoint information paths) and analyze conditionally independent features of the input such as the “where and what” 
 (dorso and ventral, respectively `PDF <https://www.mdpi.com/1099-4300/21/9/881>`_).
+Hence one of the interest of such deep model is that its architecture (number of layers, number of neurons at each layer, connectivity) and computation is fully mastered and understood, as far as
+simplicial complexes can be: it can be understood as an algebrization of neural networks (there are other very interesting approachs of such topic (not probabilistic as here), 
+see for example the `neural rings (Curto and Youngs 2013-2020) <https://arxiv.org/pdf/1511.00255.pdf>`_ or `Morisson et al. 2016 <https://arxiv.org/abs/1605.04463>`_ `Morisson and Curto 2018 <https://arxiv.org/pdf/1804.01487.pdf>`_ ).  
 
 Beside this architectural difference with usual DNN, the second important difference is that the learning rule is a "forward propagation", imposed by the cohomological
 "direction", whereas usual DNN implements a backpropagation learning rule (homological "direction") which implements basically the chain rule of derivation (`Kelley 1960 <https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwiVgubR3PjrAhWGDxQKHU7XAOMQFjABegQIBRAB&url=https%3A%2F%2Fwww.gwern.net%2Fdocs%2Fstatistics%2Fdecision%2F1960-kelley.pdf&usg=AOvVaw3kqby-zRKHaI0gxZPh8Dax>`_ , 
