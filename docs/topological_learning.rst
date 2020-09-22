@@ -162,9 +162,75 @@ the rought approximation used by the algorithm. The First two minimal paths [7, 
 .. image:: images/causality_info_paths_results.png
 
 
+Digits Dataset
+~~~~~~~~~~~~~~
+
+In order to illustrate unsupervised and supervised learning methods we will now turn to the classical dataset of Digits NIST, which is a common toy dataset to train and test
+machine learning models. We load it as previously using the symapthic Scikit-learn repository:
+
+.. code:: python3
+
+    dataset = load_digits()
+    print(dataset.DESCR)
+    fig, ax_array = plt.subplots(20, 20)
+    axes = ax_array.flatten()
+    for i, ax in enumerate(axes):
+        ax.imshow(dataset.images[i], cmap='gray_r')
+    plt.setp(axes, xticks=[], yticks=[], frame_on=False)
+    plt.tight_layout(h_pad=0.5, w_pad=0.01)
+    dataset_df = pd.DataFrame(dataset.data, columns = dataset.feature_names)
+    nb_of_values = 17
+    dataset_df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
+    dataset = dataset.data 
+
+It prints the following complete description of the dataset: 
+
+.. parsed-literal::
+
+    Optical recognition of handwritten digits dataset
+    --------------------------------------------------
+
+    **Data Set Characteristics:**
+
+    :Number of Instances: 5620
+    :Number of Attributes: 64
+    :Attribute Information: 8x8 image of integer pixels in the range 0..16.
+    :Missing Attribute Values: None
+    :Creator: E. Alpaydin (alpaydin '@' boun.edu.tr)
+    :Date: July; 1998
+
+    This is a copy of the test set of the UCI ML hand-written digits datasets  https://archive.ics.uci.edu/ml/datasets/Optical+Recognition+of+Handwritten+Digits
+
+    The data set contains images of hand-written digits: 10 classes where each class refers to a digit.
+
+    Preprocessing programs made available by NIST were used to extract normalized bitmaps of handwritten digits from a preprinted form. From a
+    total of 43 people, 30 contributed to the training set and different 13 to the test set. 32x32 bitmaps are divided into nonoverlapping blocks of
+    4x4 and the number of on pixels are counted in each block. This generates an input matrix of 8x8 where each element is an integer in the range
+    0..16. This reduces dimensionality and gives invariance to small distortions.
+
+    For info on NIST preprocessing routines, see M. D. Garris, J. L. Blue, G., T. Candela, D. L. Dimmick, J. Geist, P. J. Grother, S. A. Janet, and C.
+    L. Wilson, NIST Form-Based Handprint Recognition System, NISTIR 5469, 1994.
+
+    .. topic:: References
+
+      - C. Kaynak (1995) Methods of Combining Multiple Classifiers and Their Applications to Handwritten Digit Recognition, MSc Thesis, Institute of
+        Graduate Studies in Science and Engineering, Bogazici University.
+      - E. Alpaydin, C. Kaynak (1998) Cascading Classifiers, Kybernetika.
+      - Ken Tang and Ponnuthurai N. Suganthan and Xi Yao and A. Kai Qin. Linear dimensionalityreduction using relevance weighted LDA. School of
+        Electrical and Electronic Engineering Nanyang Technological University. 2005.
+      - Claudio Gentile. A New Approximate Maximal Margin Classification Algorithm. NIPS. 2000.
+
+And illustrates the dataset with the following sample of digits pictures:
+
+.. image:: images/digits_dataset_sample.png
+
+
+
+
 Partial explorations
 ~~~~~~~~~~~~~~~~~~~~
 
+This methods allows to adapt the computational (time) complexity of the algorithm to a reasonable complexity given your computational ressources and the dimension of the dataset.
 As we have seen, when increasing the dimension of the dataset, the raw computation potentially grows as :math:`\mathcal{O}(2^n)`. In order to master and circumvince this
 problem, a partial exploration of information structures as been written, allowing to explore only all the k first dimensions with :math:`n \geq k`. This is acheived by 
 setting the parametter "dimension_max" to k and "forward_computation_mode" to "True". For example, setting "dimension_max=2" will restrict the computation to the 

@@ -1576,8 +1576,7 @@ def load_data_sets( dataset_type):
         print(dataset.shape)
         dataset_df = pd.DataFrame(dataset, columns = dataset.columns)
         dataset = dataset.to_numpy()
-        nb_of_values = 2
-            
+        nb_of_values = 2           
     elif dataset_type == 5: # This the Borromean case I_1 are 1 bit (max: "random")  I_2 are 0 bit (min: independent) I_3 is -1 bit
         nb_of_values = 2
         if nb_of_values == 2:
@@ -1621,10 +1620,9 @@ def load_data_sets( dataset_type):
             ax.imshow(dataset.images[i], cmap='gray_r')
         plt.setp(axes, xticks=[], yticks=[], frame_on=False)
         plt.tight_layout(h_pad=0.5, w_pad=0.01)
-#        dataset_df = pd.DataFrame(dataset.data, columns = dataset.feature_names)
         nb_of_values = 17
-#        dataset_df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
-        dataset = dataset.data                                                                                               
+        dataset = dataset.data    
+        plt.show()                                                                                           
     return dataset, nb_of_values
 
 
