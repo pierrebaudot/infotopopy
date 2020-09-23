@@ -179,7 +179,6 @@ machine learning models. We load it as previously using the symapthic Scikit-lea
     plt.setp(axes, xticks=[], yticks=[], frame_on=False)
     plt.tight_layout(h_pad=0.5, w_pad=0.01)
     dataset_df = pd.DataFrame(dataset.data, columns = dataset.feature_names)
-    nb_of_values = 17
     dataset_df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
     dataset = dataset.data 
 
@@ -226,17 +225,40 @@ And illustrates the dataset with the following sample of digits pictures:
 
 
 
+Adaptive computational complexity
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Partial explorations
-~~~~~~~~~~~~~~~~~~~~
-
-This methods allows to adapt the computational (time) complexity of the algorithm to a reasonable complexity given your computational ressources and the dimension of the dataset.
+The images of digits dataset are 8*8 pixels, meaning that we have 64 Random Variables or dimensions: this will introduce us to the problemantic of high dimensional space 
+(here not so high) and of computational complexity. In this case the information simplicial structure has :math:`2^{64}` information estimations to compute, which is much 
+too big, and we propose a partial exploration that will stop the computation at a given dimension  "dimension_max".
+This methods of partial exploration allows to adapt the computational (time) complexity of the algorithm to a reasonable complexity given your computational ressources and the dimension of the dataset.
 As we have seen, when increasing the dimension of the dataset, the raw computation potentially grows as :math:`\mathcal{O}(2^n)`. In order to master and circumvince this
 problem, a partial exploration of information structures as been written, allowing to explore only all the k first dimensions with :math:`n \geq k`. This is acheived by 
-setting the parametter "dimension_max" to k and "forward_computation_mode" to "True". For example, setting "dimension_max=2" will restrict the computation to the 
-:math:`\binom{n}{2} = n!/2!(n-2)! = n.(n-1)/2`, which is the (symetric) usual complexity  :math:`\mathcal{O}(n^2)` of metric or graph based machine learning algorithm. 
-Setting to 3, will give a complexity in :math:`\mathcal{O}(n^3)` etc...  Of course, we gain what we loose, and the deployement of infotopo on GPU should give a bit more
-of ressources  (currently failed)   
+setting the parametter "dimension_max" to k and "forward_computation_mode" to "True". For example, setting "dimension_max=2" will restrict the computation to the :math:`\binom{n}{1} = n` and
+the :math:`\binom{n}{2} = n!/(2!(n-2)!) = n.(n-1)/2` estimations of information, which is the (symetric) usual complexity  :math:`\mathcal{O}(n^2)` of metric or graph 
+based machine learning algorithm. 
+Setting to 3, there will be :math:`\binom{n}{1} + \binom{n}{2} + \binom{n}{3}` estimations of information giving a complexity in :math:`\mathcal{O}(n^3)` etc...  Of course, we gain what we loose, and the deployement of infotopo on GPU should give a bit more
+of ressources  (currently failed). 
+In 64 dimensions, choosing an exploration of the 5 first dimensions (64+2016+41664+635376+7624512=8303632 estimations) gives a reasonably long computation of several hours on a personal laptop (has acheived here)    
+To set such exploration, we initialize infotopo using the commands:
+
+.. code:: python3
+
+    information_topo = infotopo(dimension_max = 5, 
+                                dimension_tot = dataset.shape[1], 
+                                sample_size = dataset.shape[0], 
+                                work_on_transpose = False,
+                                nb_of_values = 17, 
+                                sampling_mode = 1, 
+                                deformed_probability_mode = False,
+                                supervised_mode = False, 
+                                forward_computation_mode = True,
+                                dim_to_rank = 3, number_of_max_val = 4)   
+   
+
+For data scientist used to deep learning terminology, this intialization corresponds to building the model, although extremely simple. 
+As you see, the whole structure of the model is fully constrained by the dataset's embedding dimension, the dimension max (computational complexity restriction), and the number of values chosen for the variables (with other purely 
+computational internal parameter).
 
 Unsupervised topological learning
 ---------------------------------
