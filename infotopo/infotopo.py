@@ -7,7 +7,6 @@
 import math
 import numpy as np
 import itertools
-import timeit
 from itertools import combinations, chain
 import logging
 from decimal import Decimal
@@ -116,9 +115,9 @@ def compute_info_path(data_mat, dimension_max, dimension_tot, nbtrials):
 ################             CLASS INFOTOPO                 #######################
 ###################################################################################
 
-class infotopo:
+class Infotopo:
     """
-    infotopo : 
+    Infotopo : 
     computes the simplicial information cohomology of a set of variable, notably the joint and conditional entropies, 
     the mutual and conditional mutual information, total correlations, and information paths within the simplicial set 
 
@@ -631,7 +630,7 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         plt.ylabel('Hk value (bits)')
         plt.title('Hk landscape')
         fig_entropylandscape.set_size_inches(18, 10)
-        plt.show(num_fig)
+        plt.show()
 
 
 #########################################################################
@@ -789,7 +788,7 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         cbar = plt.colorbar()
         cbar.set_label('# of tuples', rotation=270)
         plt.grid(False)
-        plt.show(num_fig)
+        plt.show()
 
 
 #########################################################################
@@ -1016,7 +1015,7 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         plt.ylabel('Gk value (bits)')
         plt.title('Total correlation Gk landscape')
         fig_total_correlation_landscape.set_size_inches(18, 10)
-        plt.show(num_fig)
+        plt.show()
         return Ntotal_correlation
 
 #########################################################################
@@ -1084,7 +1083,7 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         plt.ylabel('Vk value (bits)')
         plt.title('Information distance and Volume Vk landscape')
         fig_total_correlation_landscape.set_size_inches(18, 10)
-        plt.show(num_fig)
+        plt.show()
         return Ninfo_volume
 
 # ##########################################################################################
@@ -1332,8 +1331,8 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
     ... to help users.
     '''  
     def fit( self, dataset):
-        Nentropie = information_topo.simplicial_entropies_decomposition(dataset) 
-        Ninfomut = information_topo.simplicial_infomut_decomposition(Nentropie)
+        Nentropie = self.simplicial_entropies_decomposition(dataset) 
+        Ninfomut = self.simplicial_infomut_decomposition(Nentropie)
         return Ninfomut, Nentropie    
     
 ###############################################################  
@@ -1526,202 +1525,4 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         plt.ylabel('Ik value (bits)')
         fig_infopath.set_size_inches(18, 10)
         plt.grid(False)            
-        plt.show(num_fig)         
-
-
-
-
-
-
-
-# #########################################################################
-# #########################################################################
-# ######       LOAD DATA BASE EXAMPLES       ##############################
-# #######          UNITARY TESTS             ##############################
-# #########################################################################
-# #########################################################################
-'''      
-    This function loads different data set for unitary test or tutorial purpose, either theoretical-synthetic or real dataset from scikit-learn
-    https://scikit-learn.org/stable/datasets/index.html  
-    # if dataset = 1 load IRIS DATASET # if dataset = 2 load Boston house prices dataset # if dataset = 3 load DIABETES  dataset 
-    ## if dataset = 4 CAUSAL Inference data challenge http://www.causality.inf.ethz.ch/data/LUCAS.html  # if dataset = 5 Borromean  dataset
-'''  
-
-def load_data_sets( dataset_type):
-    if dataset_type == 1: ## IRIS DATASET## 
-        dataset = load_iris()
-        dataset_df = pd.DataFrame(dataset.data, columns = dataset.feature_names)
-        nb_of_values = 9
-        dataset_df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
-        dataset_df['species'] = pd.Series(dataset.target).map(dict(zip(range(3),dataset.target_names)))
-        sns.pairplot(dataset_df, hue='species')
-        plt.show()
-        dataset = dataset.data
-    elif dataset_type == 2: ## BOSTON DATASET##
-        dataset = load_boston()
-        dataset_df = pd.DataFrame(dataset.data, columns = dataset.feature_names)
-        nb_of_values =9
-        dataset_df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
-        dataset_df['MEDV'] = pd.Series(dataset.target).map(dict(zip(range(3),dataset.data[:,12])))
-        dataset = dataset.data
-    elif dataset_type == 3: ## DIABETES DATASET##
-        dataset = load_diabetes()
-        dataset_df = pd.DataFrame(dataset.data, columns = dataset.feature_names)
-        nb_of_values = 9
-        dataset_df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
-        dataset = dataset.data
-    elif dataset_type == 4: ## CAUSAL Inference data challenge http://www.causality.inf.ethz.ch/data/LUCAS.html
-        dataset = pd.read_csv(r"/home/pierre/Documents/Data/lucas0_train.csv")  # csv to download at http://www.causality.inf.ethz.ch/data/LUCAS.html
-        print(dataset.columns)
-        print(dataset.shape)
-        dataset_df = pd.DataFrame(dataset, columns = dataset.columns)
-        dataset = dataset.to_numpy()
-        nb_of_values = 2           
-    elif dataset_type == 5: # This the Borromean case I_1 are 1 bit (max: "random")  I_2 are 0 bit (min: independent) I_3 is -1 bit
-        nb_of_values = 2
-        if nb_of_values == 2:
-                dataset = np.array([[ 0,  0,  1],
-                                    [ 0,  1,  0],
-                                    [ 1,  0,  0],
-                                    [ 1,  1,  1]])
-        elif nb_of_values == 3:
-                dataset = np.array([[ 0,  0,  0],
-                                    [ 1,  1,  0],
-                                    [ 2,  2,  0],
-                                    [ 0,  1,  1],
-                                    [ 1,  2,  1],
-                                    [ 2,  0,  1],
-                                    [ 0,  2,  2],
-                                    [ 1,  0,  2],
-                                    [ 2,  1,  2]])  
-        elif nb_of_values == 4:
-                dataset = np.array([[ 3,  0,  0],
-                                    [ 2,  1,  0],
-                                    [ 1,  2,  0],
-                                    [ 0,  3,  0],
-                                    [ 0,  0,  1],
-                                    [ 1,  3,  1],
-                                    [ 2,  2,  1],
-                                    [ 3,  1,  1],
-                                    [ 1,  0,  2],
-                                    [ 0,  1,  2],
-                                    [ 2,  3,  2],
-                                    [ 3,  2,  2],
-                                    [ 0,  2,  3],
-                                    [ 1,  1,  3],
-                                    [ 2,  0,  3],
-                                    [ 3,  3,  3]])    
-    elif dataset_type == 6: ## MNIST DIGIT DATASET
-        dataset = load_digits()
-        print(dataset.DESCR)
-        fig, ax_array = plt.subplots(20, 20)
-        axes = ax_array.flatten()
-        for i, ax in enumerate(axes):
-            ax.imshow(dataset.images[i], cmap='gray_r')
-        plt.setp(axes, xticks=[], yticks=[], frame_on=False)
-        plt.tight_layout(h_pad=0.5, w_pad=0.01)
-        nb_of_values = 17
-        dataset = dataset.data    
-        plt.show()                                                                                           
-    return dataset, nb_of_values
-
-
-
-
-# #########################################################################
-# #########################################################################
-# ######          MAIN PROGRAM               ##############################
-# #########################################################################
-# #########################################################################
-
-if __name__ == "__main__":
-    from sklearn.datasets import load_iris, load_digits, load_boston, load_diabetes
-    import pandas as pd
-    import seaborn as sns
-    
-    dataset_type = 6 # if dataset = 1 load IRIS DATASET # if dataset = 2 load Boston house prices dataset # if dataset = 3 load DIABETES  dataset 
-    ## if dataset = 4 CAUSAL Inference data challenge http://www.causality.inf.ethz.ch/data/LUCAS.html  # if dataset = 5 Borromean  dataset
-    # if dataset = 6 Digits dataset MNIST
-    dataset, nb_of_values = load_data_sets( dataset_type)
-    dimension_max = dataset.shape[1]
-    dimension_tot = dataset.shape[1]
-    sample_size = dataset.shape[0]
-    forward_computation_mode = False
-    work_on_transpose = False
-    supervised_mode = False
-    sampling_mode = 1
-    deformed_probability_mode = False     
-    if dataset_type == 6:
-        forward_computation_mode = True
-        dimension_max = 5
-    
-    print("sample_size : ",sample_size)
-    print('number of variables or dimension of the analysis:',dimension_max )
-    print('number of tot  dimensions:',  dimension_tot)
-    print('number of values:', nb_of_values)
-
-    information_topo = infotopo(dimension_max = dimension_max, 
-                                dimension_tot = dimension_tot, 
-                                sample_size = sample_size, 
-                                work_on_transpose = work_on_transpose,
-                                nb_of_values = nb_of_values, 
-                                sampling_mode = sampling_mode, 
-                                deformed_probability_mode = deformed_probability_mode,
-                                supervised_mode = supervised_mode, 
-                                forward_computation_mode = forward_computation_mode)
-# Nentropy is dictionary (x,y) with x a list of kind (1,2,5) and y a value in bit    
-    start = timeit.default_timer()
-    Nentropie = information_topo.simplicial_entropies_decomposition(dataset) 
-    stop = timeit.default_timer()
-    print('Time for CPU(seconds) entropies: ', stop - start)
-    if dataset_type == 1 or dataset_type == 5:
-        print(Nentropie)
-    information_topo.entropy_simplicial_lanscape(Nentropie)
-    information_topo = infotopo(dimension_max = dimension_max, 
-                                dimension_tot = dimension_tot, 
-                                sample_size = sample_size, 
-                                work_on_transpose = work_on_transpose,
-                                nb_of_values = nb_of_values, 
-                                sampling_mode = sampling_mode, 
-                                deformed_probability_mode = deformed_probability_mode,
-                                supervised_mode = supervised_mode, 
-                                forward_computation_mode = forward_computation_mode,
-                                dim_to_rank = 3, number_of_max_val = 4)
-    if dataset_type != 5:
-        dico_max, dico_min = information_topo.display_higher_lower_information(Nentropie, dataset)
-
-# Ninfomut is a dictionary (x,y) with x a list of kind (1,2,5) and y a value in bit
-    Ntotal_correlation = information_topo.total_correlation_simplicial_lanscape(Nentropie)
-    dico_max, dico_min = information_topo.display_higher_lower_information(Ntotal_correlation, dataset)
-    start = timeit.default_timer()   
-    Ninfomut = information_topo.simplicial_infomut_decomposition(Nentropie)
-    stop = timeit.default_timer()
-    print('Time for CPU(seconds) Mutual Information: ', stop - start)
-    if dataset_type == 1 or dataset_type == 5:
-        print(Ninfomut)
-    information_topo.mutual_info_simplicial_lanscape(Ninfomut)   
-    if dataset_type != 5: 
-        dico_max, dico_min = information_topo.display_higher_lower_information(Ninfomut, dataset)
-    adjacency_matrix_mut_info = information_topo.mutual_info_pairwise_network(Ninfomut)
-    mean_info, mean_info_rate  =information_topo.display_mean_information(Ninfomut)
-    # CONDITIONAL INFO OR ENTROPY
-    NcondInfo = information_topo.conditional_info_simplicial_lanscape(Ninfomut)
-    information_topo.display_higher_lower_cond_information(NcondInfo)
-    # ENTROPY vs. ENERGY LANDSCAPE
-    information_topo.display_entropy_energy_landscape(Ntotal_correlation, Nentropie)
-    information_topo.display_entropy_energy_landscape(Ninfomut, Nentropie)
-    # Information distance and volume LANDSCAPE
-    Ninfo_volume = information_topo.information_volume_simplicial_lanscape(Nentropie, Ninfomut)
-    dico_max, dico_min = information_topo.display_higher_lower_information(Ninfo_volume, dataset)
-    adjacency_matrix_info_distance = information_topo.mutual_info_pairwise_network(Ninfo_volume)
-    # Information paths - Information complex
-    Ninfomut, Nentropie =  information_topo.fit(dataset)
-    information_topo.information_complex(Ninfomut)
-
-    
-
-
-
-        
-
-
+        plt.show()         

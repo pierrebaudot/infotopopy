@@ -1,23 +1,46 @@
 #!/usr/bin/env python
 # coding: utf-8
-
-
+import os
 import setuptools
 
-with open("README.md", "r") as fh:
-    long_description = fh.read()
+__version__ = "0.1.0"
+NAME = 'Infotopo'
+AUTHOR = "Pierre Baudot"
+MAINTAINER = "Pierre Baudot"
+EMAIL = 'pierre.baudot@gmail.com'
+KEYWORDS = "topological entropy supervised learning"
+DESCRIPTION = ("InfoTopo: Topological Information Data Analysis. Deep "
+               "statistical unsupervised and supervised learning.")
+URL = 'https://github.com/pierrebaudot/infotopopy'
+DOWNLOAD_URL = ("https://github.com/pierrebaudot/infotopopy/archive/v" +
+                __version__ + ".tar.gz")
+# Data path :
+PACKAGE_DATA = {}
+
+def read(fname):
+    """Read README and LICENSE."""
+    return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setuptools.setup(
-    name="infotopo", # Replace with your own username
-    version="0.1",
-    license='BSD 3-Clause "New" or "Revised" License',
-    author="Pierre Baudot",   
-    author_email="pierre.baudot@gmail.com",
-    description="InfoTopo: Topological Information Data Analysis. Deep statistical unsupervised and supervised learning.",
-    long_description=long_description,
-    long_description_content_type="text/markdown",
-    url="https://github.com/pierrebaudot/infotopopy/archive/0.1.tar.gz",
+    name=NAME,
+    version=__version__,
+    author=AUTHOR,
+    maintainer=MAINTAINER,
+    author_email=EMAIL,
+    url=URL,
+    download_url=DOWNLOAD_URL,
     packages=setuptools.find_packages(),
+    package_dir={'infotopo': 'infotopo'},
+    package_data=PACKAGE_DATA,
+    include_package_data=True,
+    license=read('LICENSE.md'),
+    description=DESCRIPTION,
+    long_description=read('README.md'),
+    platforms='any',
+    setup_requires=['numpy'],
+    install_requires=[
+        "numpy", "networkx", "matplotlib"
+    ],
     classifiers=[
         "Programming Language :: Python :: 3",
         "Operating System :: OS Independent",
