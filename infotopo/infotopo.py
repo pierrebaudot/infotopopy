@@ -1,9 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-
-# list of dependencies
-#import
+"""Main class Infotopo."""
 import math
 import numpy as np
 import itertools
@@ -20,102 +15,8 @@ from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
 
 
-###################################################################################
-################             COMPUTE INFOPATH               #######################
-###################################################################################
 
-def compute_info_path(data_mat, dimension_max, dimension_tot, nbtrials):
-    Nentropie={}
-    logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
-    logger = logging.getLogger("compute info_path")
-    print("Percent of tuples processed : 0")
-    # Compute all pairs of entropy and mutual informations
-    dimension_max_temp = dimension_max + 0
-    dimension_max = 2
-    allsubsets = lambda n: list(chain(*[combinations(range(1,n), ni) for ni in range(dimension_max+1)]))
-    list_tuples=allsubsets(dimension_tot+1)
-    del list_tuples[0]
-    if dimension_max != dimension_tot :
-         tot_numb=0
-         for  xxx in range(1,dimension_max+1):
-                tot_numb=tot_numb + self._binomial(dimension_tot,xxx)
-    counter=0
-    for tuple_var in list_tuples:
-        counter=counter+1
-        if dimension_max == dimension_tot:
-             if counter % int(pow(2, dimension_max) / 100) == 0:
-                 logger.info("PROGRESS: at percent #%i"  % (100*counter/pow(2,dimension_max)))
-        else:
-             if counter % int(tot_numb / 100) == 0:
-                 logger.info("PROGRESS: at percent #%i"  % (100*counter/tot_numb))
-        for x in range(0,len(tuple_var)):
-           if x==0:
-               matrix_temp=np.reshape(data_mat[:,tuple_var[x]-1],(data_mat[:,tuple_var[x]-1].shape[0],1))
-           else:
-               matrix_temp=np.concatenate((matrix_temp,np.reshape(data_mat[:,tuple_var[x]-1],(data_mat[:,tuple_var[x]-1].shape[0],1))),axis=1)
-        probability = self._compute_probability(matrix_temp)
-        for x,y in probability.items():
-                Nentropie[tuple_var]=Nentropie.get(tuple_var,0) + self._information(probability[x])
-    Ninfomut={}
-    for x,y in Nentropie.items():
-        for k in range(1, len(x)+1):
-            for subset in itertools.combinations(x, k):
-                Ninfomut[x]=Ninfomut.get(x,0)+ ((-1)**(len(subset)+1))*Nentropie[subset]
-
-     # find the pair of maximum information
-    max_info_temp = 0
-    for x,y in Ninfomut.items():
-        if len(x) == 2 :
-            if y > max_info_temp:
-                max_info_temp = y
-                tuple_maxinfo = x
-    print("The pair with Maximum mutual info is :", tuple_maxinfo," with info: ", max_info_temp)
-
-    # Compute all k-uplets of maximum information
-    max_info_next = 0
-    current_dim = 2
-    while  max_info_temp >   max_info_next :
-        max_info_temp = max_info_next
-        print("DImension of the analysis ", current_dim+1)
-        for xxx in range(1,dimension_tot+1):
-            if xxx not in tuple_maxinfo:
-                tuple_maxinfo=tuple_maxinfo + (xxx,)
-                print("tupple in computation ", tuple_maxinfo)
-                for k in range(1, len(tuple_maxinfo)+1):
-                    print("Number of variable added ", k)
-                    for subset in itertools.combinations(tuple_maxinfo, k):
-                        print("subset ", subset)
-                        if subset not in Nentropie:
-                            print("subset not in Nentropie ", subset)
-                            for x in range(0,len(subset)):
-                                if x==0:
-                                    matrix_temp=np.reshape(data_mat[:,subset[x]-1],(data_mat[:,subset[x]-1].shape[0],1))
-                                else:
-                                    matrix_temp=np.concatenate((matrix_temp,np.reshape(data_mat[:,subset[x]-1],(data_mat[:,subset[x]-1].shape[0],1))),axis=1)
-                            probability = self._compute_probability(matrix_temp)
-                            for x,y in probability.items():
-                                Nentropie[subset]=Nentropie.get(subset,0) + self._information(probability[x])
-                        Ninfomut[tuple_maxinfo]=Ninfomut.get(tuple_maxinfo,0)+ ((-1)**(len(subset)+1))*Nentropie[subset]
-                        print(" Ninfomut of ",tuple_maxinfo," is ", Ninfomut[tuple_maxinfo])
-        max_info_next =-100000
-        for a,b in Ninfomut.items():
-            if len(a) == current_dim :
-                if b > max_info_next:
-                    max_info_next = b
-                    tuple_maxinfo = a
-        print("The ", current_dim,"-tuple with Maximum mutual info is :", tuple_maxinfo," with info: ",max_info_next)
-        current_dim = current_dim + 1
-
-    return  Nentropie, Ninfomut
-
-
-
-
-###################################################################################
-################             CLASS INFOTOPO                 #######################
-###################################################################################
-
-class Infotopo:
+class Infotopo(object):
     """Compute the simplicial information cohomology of a set of variable.
 
     This class can be used to compute the simplicial information cohomology of
@@ -170,7 +71,7 @@ class Infotopo:
               first low dimensions-rank of the lattice, up to dimension_max
               (in dimension_tot)
             * False : it will compute joint entropies on whole  simplicial
-              lattice from high dimension to the marginals (homological way). 
+              lattice from high dimension to the marginals (homological way).
               The joint probability corresponding to all variable is first
               estimated and then projected on lower dimensions using
               conditional rule. This explore the whole lattice, and imposes
@@ -214,6 +115,7 @@ class Infotopo:
                  p_value_undersampling=0.05, compute_shuffle=False,
                  p_value=0.05, nb_of_shuffle=20, dim_to_rank=2,
                  number_of_max_val=2):
+        """Init."""
         self.dimension_max = dimension_max
         self.dimension_tot = dimension_tot
         self.sample_size = sample_size
@@ -223,7 +125,7 @@ class Infotopo:
         self.deformed_probability_mode = deformed_probability_mode
         self.supervised_mode = supervised_mode
         self.forward_computation_mode = forward_computation_mode
-        self.nb_bins_histo  = nb_bins_histo
+        self.nb_bins_histo = nb_bins_histo
         self.p_value_undersampling = p_value_undersampling
         self.compute_shuffle = compute_shuffle
         self.p_value = p_value
@@ -232,82 +134,91 @@ class Infotopo:
         self.number_of_max_val = number_of_max_val
 
     def _validate_parameters(self):
-        if self.dimension_max < 2 :
+        """Check input parameters."""
+        if self.dimension_max < 2:
             raise ValueError("dimension_max must be greater than 1")
-        if self.dimension_tot < 2 :
+        if self.dimension_tot < 2:
             raise ValueError("dimension_tot must be greater than 1")
-        if self.sample_size < 2 :
+        if self.sample_size < 2:
             raise ValueError("sample_size must be greater than 1")
-        if self.nb_of_values < 2 :
+        if self.nb_of_values < 2:
             raise ValueError("nb_of_values must be greater than 1")
-        if self.dimension_max > self.dimension_tot :
-            raise ValueError("dimension_tot must be greater or equal than dimension_max")
-        if not self.forward_computation_mode :
+        if self.dimension_max > self.dimension_tot:
+            raise ValueError("dimension_tot must be greater or equal than "
+                             "dimension_max")
+        if not self.forward_computation_mode:
             if self.dimension_max != self.dimension_tot:
-                raise ValueError("if forward_computation_mode then dimension_max must be equal to dimension_tot")
-        if self.nb_bins_histo < 2 :
+                raise ValueError("if forward_computation_mode then dimension_"
+                                 "max must be equal to dimension_tot")
+        if self.nb_bins_histo < 2:
             raise ValueError("nb_bins_histo must be greater than 1")
-        if self.p_value > 1 :
+        if self.p_value > 1:
             raise ValueError("p_value must be in between 0 and 1")
-        if  0 > self.p_value :
+        if 0 > self.p_value:
             raise ValueError("p_value must be in between 0 and 1")
-        if self.p_value_undersampling > 1 :
-            raise ValueError("self.p_value_undersampling must be in between 0 and 1")
-        if  0 > self.p_value_undersampling :
-            raise ValueError("self.p_value_undersampling must be in between 0 and 1")
+        if self.p_value_undersampling > 1:
+            raise ValueError("self.p_value_undersampling must be in between "
+                             "0 and 1")
+        if 0 > self.p_value_undersampling:
+            raise ValueError("self.p_value_undersampling must be in between "
+                             "0 and 1")
         if not self.compute_shuffle:
             self.nb_of_shuffle = 0
-        if self.dim_to_rank >= self.dimension_max :
+        if self.dim_to_rank >= self.dimension_max:
             raise ValueError("dim_to_rank must be smaller than dimension_max")
 
-
-
-################################################################
-#########                 resample                    ##########
-#########               DATA MATRIX                   ##########
-################################################################
-    """
-Resample the imput data to nb_of_values for each variables-dimension
-nb_of_values is also called the size of the alphabet of the random variable or support
-there are 3 different mode of sampling depending on sampling_mode
-sampling_mode : (integer: 1,2,3)
-                        sampling_mode = 1: normalization taking the max and min of each rows (normaization row by row)
-                        sampling_mode = 2: normalization taking the max and min of the whole matrix
-TO BE DONE: use panda dataframe .resample to do it...
-    """
+    # -------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
+    #                           RESAMPLE DATA MATRIX
+    # -------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
 
     def _resample_matrix(self, data_matrix):
+        """Resample input data to nb_of_values for each variables-dimension.
+
+        sampling_mode : int | None
+            Define the sampling mode. Use either :
+
+                * 1 : normalization taking the max and min of each columns
+                  (normalization row by columns)
+                * 2 : normalization taking the max and min of the whole matrix
+                * 3 : TO BE DEFINED <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+        TO BE DONE: use panda dataframe .resample to do it...
+        """
         if self.work_on_transpose:
             data_matrix = data_matrix.transpose()
-    # find the Min and the Max of the matrix:
+        # find the Min and the Max of the matrix:
         if self.sampling_mode == 1:
             min_matrix = np.min(data_matrix, axis=0)
             max_matrix = np.max(data_matrix, axis=0)
         elif self.sampling_mode == 2:
             min_matrix = np.min(data_matrix)
             max_matrix = np.max(data_matrix)
-    #create the amplitude matrix
+        # create the amplitude matrix
         ampl_matrix = max_matrix - min_matrix
-    #WE RESCALE THE MATRICE AND SAMPLE IT into  nb_of_values #
+        # WE RESCALE THE MATRICE AND SAMPLE IT into  nb_of_values
         data_matrix = np.ceil(((data_matrix-min_matrix)*(self.nb_of_values-1))/(ampl_matrix)).astype(int)
         return data_matrix
 
-
-################################################################
-#########                 compute                     ##########
-#########         probability distributions           ##########
-################################################################
-    """
-compute the joint probability distribution of all variables
-To avoid to have to explore all  possible  probability (sparse data)
-we encode probability as dictionanry, each existing probability has a key
-
-TO DO: import the new simpler function that compute probability and compare
-    """
+    # -------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
+    #                   COMPUTE PROBABILITY DISTRIBUTIONS
+    # -------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
 
     def _compute_probability(self, data_matrix):
-        probability={}
-        # in case the data_matrix has a single variable-dimension reshape the vector to matrix
+        """Compute the joint probability distribution of all variables.
+
+        To avoid to have to explore all  possible  probability (sparse data)
+        we encode probability as dictionanry, each existing probability has a
+        key
+
+        TO DO: import the new simpler function that compute probability and
+        compare
+        """
+        probability = {}
+        # in case the data_matrix has a single variable-dimension reshape the
+        # vector to matrix
         if len(data_matrix.shape)==1 :
             data_matrix=np.reshape(data_matrix,(data_matrix.shape[0],1))
         for row in range(data_matrix.shape[0]):
@@ -322,26 +233,34 @@ TO DO: import the new simpler function that compute probability and compare
                probability[i]=j/float(Nbtot)
         return probability
 
-###########################################################################################################################
-#########          COMPUTE DEFORMED PROBABILITY            ##########
-####          AT ALL ORDERS On SET OF SUBSETS           #########
-############################################################
-    """
-    compute the "escort distribution" also called the "deformed probabilities".
-    p(n,k)= p(k)^n/ (sum(i)p(i)^n   , where n is the sample size.
-    [1] Umarov, S., Tsallis C. and Steinberg S., On a q-Central Limit Theorem Consistent with Nonextensive Statistical Mechanics, Milan j. math. 76 (2008), 307–328
-    [2] Bercher,  Escort entropies and divergences and related canonical distribution. Physics Letters A Volume 375, Issue 33, 1 August 2011, Pages 2969-2973
-    [3] A. Chhabra, R. V. Jensen, Direct determination of the f(α) singularity spectrum.  Phys. Rev. Lett. 62 (1989) 1327.
-    [4] C. Beck, F. Schloegl, Thermodynamics of Chaotic Systems, Cambridge University Press, 1993.
-    [5] Zhang, Z., Generalized Mutual Information.  July 11, 2019
-TO DO: import the new simpler function that compute probability and compare and use optimal power computation:
-https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-an-integer-based-power-function-powint-int
-    """
-
+    # -------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
+    #       COMPUTE DEFORMED PROBABILITY AT ALL ORDERS On SET OF SUBSETS
+    # -------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
 
     def _compute_deformed_probability(self, data_matrix):
+        """Compute the "escort distribution" ("deformed probabilities").
+
+        deformed_probability_mode : bool | False
+            Mode for the deformed probabilities. Choose either :
+
+                * True : it will compute the "escort distribution" also called
+                  the "deformed probabilities". p(n,k)= p(k)^n/ (sum(i)p(i)^n,
+                  where n is the sample size. :cite:`umarov2008q,
+                  bercher2011escort` :cite:`chhabra1989direct,
+                  beck1995thermodynamics`
+                * False : it will compute the classical probability, e.g. the
+                  ratio of empirical frequencies over total number of
+                  observation :cite:`kolomogoroff2013grundbegriffe`
+        TO DO: import the new simpler function that compute probability and
+        compare and use optimal power computation:
+        https://stackoverflow.com/questions/101439/the-most-efficient-way-to-
+        implement-an-integer-based-power-function-powint-int
+        """
         probability={}
-        # in case the data_matrix has a single variable-dimension reshape the vector to matrix
+        # in case the data_matrix has a single variable-dimension reshape the
+        # vector to matrix
         if len(data_matrix.shape)==1 :
             data_matrix=np.reshape(data_matrix,(data_matrix.shape[0],1))
         sample_size_data= data_matrix.shape[0]
@@ -366,58 +285,51 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         print("sum_prob",sum_prob)
         return probability
 
-# ###############################################################
-# ########          SOME FUNCTIONS USEFULLS            ##########
-# ###          AT ALL ORDERS On SET OF SUBSETS          #########
-# ###############################################################
-
-    # Entropy Fonction
+    # -------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
+    #         SOME FUNCTIONS USEFULLS AT ALL ORDERS On SET OF SUBSETS
+    # -------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
     def _information(self, x):
-        return -x*math.log(x)/math.log(2)
+        """Entropy Fonction."""
+        return -x * math.log(x) / math.log(2)
 
-    # Fonction factorielle
     def _factorial(self, x):
+        """Fonction factorielle."""
         if x < 2:
             return 1
         else:
-            return x * self._factorial(x-1)
-
-    # Fonction coeficient binomial (nombre de combinaison de k elements dans [1,..,n])
+            return x * self._factorial(x - 1)
 
     def _binomial(self, n,k):
-        return self._factorial(n)/(self._factorial(k)*self._factorial(n-k))
+        """Fonction coeficient binomial.
 
+        Nombre de combinaison de k elements dans [1,..,n]
+        """
+        return self._factorial(n) / (self._factorial(k)*self._factorial(n-k))
 
-#############################################################################
-# Fonction _decode(x,n,k,combinat)
-#--> renvoie la combinatoire combinat de k variables dans n codée par x
-# dans combinat
-#les combinaisons de k élements dans [1,..,n] sont en bijection avec
-# les entiers x de [0,...,n!/(k!(n-k)!)-1]
-# attention numerotation part de 0
-#############################################################################
-
-    def _decode(self, x,n,k,combinat):
-        if x<0 or n<=0 or k<=0:
+    def _decode(self, x, n, k, combinat):
+        """Combinatoire (combinat) de k variables dans n codée par x dans
+        combinatoire. Les combinaisons de k élements dans [1,..,n] sont en
+        bijection avec les entiers x de [0,...,n!/(k!(n-k)!)-1]. Attention
+        numerotation part de 0.
+        """
+        if x < 0 or n <= 0 or k <= 0:
             return
-        b= self._binomial(n-1,k-1)
-        if x<b:
-            self._decode(x,n-1,k-1,combinat)
+        b = self._binomial(n - 1, k - 1)
+        if x < b:
+            self._decode(x, n - 1, k - 1, combinat)
             combinat.append(n)
         else:
-            self._decode(x-b,n-1,k,combinat)
-
-#############################################################################
-# Fonction _decode_all(x,n,k,combinat)
-#--> renvoie la combinatoire (combinat) et l'ordre k associé au code x
-# x varie de 0 à (2^n)-1, les n premiers x code pour 1 parmis n
-# les suivants codent pour 2 parmis n
-# etc... jusquà x=(2^n)-1 qui code pour n parmis n
-#les combinaisons de k élements dans [1,..,n] sont en bijection avec
-# les entiers x de [0,...,n!/(k!(n-k)!)-1]
-#############################################################################
+            self._decode(x - b, n - 1, k, combinat)
 
     def _decode_all(self, x, n, order, combinat):
+        """Combinatoire (combinat) et l'ordre k associé au code x x varie de 0
+        à (2^n)-1, les n premiers x code pour 1 parmis n les suivants codent
+        pour 2 parmis n etc... jusquà x=(2^n)-1 qui code pour n parmis n les
+        combinaisons de k élements dans [1,..,n] sont en bijection avec les
+        entiers x de [0,...,n!/(k!(n-k)!)-1].
+        """
         sumtot=n
         order=1
         Code_order=x
@@ -429,11 +341,14 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         self._decode(Code_order,n,k,combinat)
 
 
-# ##################################################################################
-# ###############    COMPUTE ENTROPY                         #######################
-# ##################################################################################
+    # -------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
+    #                             ENTROPY METHODS
+    # -------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
 
     def _compute_entropy(self, probability):
+        """Compute entropy."""
         ntuple=[]
         ntuple1_input=[]
         Nentropie={}
@@ -475,13 +390,8 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         return (Nentropie)
 
 
-###################################################################################
-################  COMPUTE FORWARD-CO PROBABILITY AND ENTROPIES  ###################
-###################################################################################
-
-
-
     def _compute_forward_entropies(self, data_matrix):
+        """Compute forward-co probability and entropies."""
         Nentropie={}
         logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
         logger = logging.getLogger("compute Proba-Entropy")
@@ -521,8 +431,6 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         return  Nentropie
 
 
-
-
     def simplicial_entropies_decomposition(self, data_matrix) :
         self._validate_parameters()
         data_matrix = self._resample_matrix(data_matrix)
@@ -537,11 +445,12 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         return Nentropie
 
 
-
-##############################################################################
-## Function binomial_subgroups COMBINAT Gives all binomial k subgroup of a group
-##############################################################################
-
+    # -------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
+    # FUNCTION BINOMIAL_SUBGROUPS COMBINAT GIVES ALL BINOMIAL K SUBGROUP OF A
+    #                                 GROUP
+    # -------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
 
     def simplicial_infomut_decomposition(self, Nentropie_input):
         Ninfomut={}
@@ -550,6 +459,14 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
                 for subset in itertools.combinations(x, k):
                     Ninfomut[x]=Ninfomut.get(x,0)+ ((-1)**(len(subset)+1))*Nentropie_input[subset]
         return (Ninfomut)
+
+    # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    #                                PLOT (to cut)
+    # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 #########################################################################
 #########################################################################
@@ -1542,3 +1459,92 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         fig_infopath.set_size_inches(18, 10)
         plt.grid(False)
         plt.show()
+
+
+###################################################################################
+################             COMPUTE INFOPATH               #######################
+###################################################################################
+
+def compute_info_path(data_mat, dimension_max, dimension_tot, nbtrials):
+    Nentropie={}
+    logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
+    logger = logging.getLogger("compute info_path")
+    print("Percent of tuples processed : 0")
+    # Compute all pairs of entropy and mutual informations
+    dimension_max_temp = dimension_max + 0
+    dimension_max = 2
+    allsubsets = lambda n: list(chain(*[combinations(range(1,n), ni) for ni in range(dimension_max+1)]))
+    list_tuples=allsubsets(dimension_tot+1)
+    del list_tuples[0]
+    if dimension_max != dimension_tot :
+         tot_numb=0
+         for  xxx in range(1,dimension_max+1):
+                tot_numb=tot_numb + self._binomial(dimension_tot,xxx)
+    counter=0
+    for tuple_var in list_tuples:
+        counter=counter+1
+        if dimension_max == dimension_tot:
+             if counter % int(pow(2, dimension_max) / 100) == 0:
+                 logger.info("PROGRESS: at percent #%i"  % (100*counter/pow(2,dimension_max)))
+        else:
+             if counter % int(tot_numb / 100) == 0:
+                 logger.info("PROGRESS: at percent #%i"  % (100*counter/tot_numb))
+        for x in range(0,len(tuple_var)):
+           if x==0:
+               matrix_temp=np.reshape(data_mat[:,tuple_var[x]-1],(data_mat[:,tuple_var[x]-1].shape[0],1))
+           else:
+               matrix_temp=np.concatenate((matrix_temp,np.reshape(data_mat[:,tuple_var[x]-1],(data_mat[:,tuple_var[x]-1].shape[0],1))),axis=1)
+        probability = self._compute_probability(matrix_temp)
+        for x,y in probability.items():
+                Nentropie[tuple_var]=Nentropie.get(tuple_var,0) + self._information(probability[x])
+    Ninfomut={}
+    for x,y in Nentropie.items():
+        for k in range(1, len(x)+1):
+            for subset in itertools.combinations(x, k):
+                Ninfomut[x]=Ninfomut.get(x,0)+ ((-1)**(len(subset)+1))*Nentropie[subset]
+
+     # find the pair of maximum information
+    max_info_temp = 0
+    for x,y in Ninfomut.items():
+        if len(x) == 2 :
+            if y > max_info_temp:
+                max_info_temp = y
+                tuple_maxinfo = x
+    print("The pair with Maximum mutual info is :", tuple_maxinfo," with info: ", max_info_temp)
+
+    # Compute all k-uplets of maximum information
+    max_info_next = 0
+    current_dim = 2
+    while  max_info_temp >   max_info_next :
+        max_info_temp = max_info_next
+        print("DImension of the analysis ", current_dim+1)
+        for xxx in range(1,dimension_tot+1):
+            if xxx not in tuple_maxinfo:
+                tuple_maxinfo=tuple_maxinfo + (xxx,)
+                print("tupple in computation ", tuple_maxinfo)
+                for k in range(1, len(tuple_maxinfo)+1):
+                    print("Number of variable added ", k)
+                    for subset in itertools.combinations(tuple_maxinfo, k):
+                        print("subset ", subset)
+                        if subset not in Nentropie:
+                            print("subset not in Nentropie ", subset)
+                            for x in range(0,len(subset)):
+                                if x==0:
+                                    matrix_temp=np.reshape(data_mat[:,subset[x]-1],(data_mat[:,subset[x]-1].shape[0],1))
+                                else:
+                                    matrix_temp=np.concatenate((matrix_temp,np.reshape(data_mat[:,subset[x]-1],(data_mat[:,subset[x]-1].shape[0],1))),axis=1)
+                            probability = self._compute_probability(matrix_temp)
+                            for x,y in probability.items():
+                                Nentropie[subset]=Nentropie.get(subset,0) + self._information(probability[x])
+                        Ninfomut[tuple_maxinfo]=Ninfomut.get(tuple_maxinfo,0)+ ((-1)**(len(subset)+1))*Nentropie[subset]
+                        print(" Ninfomut of ",tuple_maxinfo," is ", Ninfomut[tuple_maxinfo])
+        max_info_next =-100000
+        for a,b in Ninfomut.items():
+            if len(a) == current_dim :
+                if b > max_info_next:
+                    max_info_next = b
+                    tuple_maxinfo = a
+        print("The ", current_dim,"-tuple with Maximum mutual info is :", tuple_maxinfo," with info: ",max_info_next)
+        current_dim = current_dim + 1
+
+    return  Nentropie, Ninfomut
