@@ -1,18 +1,17 @@
+"""Load dataset and examples.
 
-# #########################################################################
-# #########################################################################
-# ######       LOAD DATA BASE EXAMPLES       ##############################
-# #######          UNITARY TESTS             ##############################
-# #########################################################################
-# #########################################################################
-'''      
-    This function loads different data set for unitary test or tutorial purpose, either theoretical-synthetic or real dataset from scikit-learn
-    https://scikit-learn.org/stable/datasets/index.html  
-    # if dataset = 1 load IRIS DATASET # if dataset = 2 load Boston house prices dataset # if dataset = 3 load DIABETES  dataset 
-    ## if dataset = 4 CAUSAL Inference data challenge http://www.causality.inf.ethz.ch/data/LUCAS.html  # if dataset = 5 Borromean  dataset
-'''  
+This function loads different data set for unitary test or tutorial purpose,
+either theoretical-synthetic or real dataset from scikit-learn
+https://scikit-learn.org/stable/datasets/index.html  
+    * dataset = 1 load IRIS DATASET
+    * dataset = 2 load Boston house prices
+    * dataset = 3 load DIABETES  dataset
+    * dataset = 4 CAUSAL Inference data challenge
+      http://www.causality.inf.ethz.ch/data/LUCAS.html
+    * dataset = 5 Borromean
+    * dataset = 6 MNIST DIGIT DATASET
+"""
 import matplotlib.pyplot as plt
-
 
 
 
