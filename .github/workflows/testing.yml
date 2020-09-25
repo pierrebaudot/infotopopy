@@ -26,12 +26,13 @@ jobs:
         pip install -e .
 
     - name: Build Sphinx Doc
-        run: |
-          make html
+      run: |
+        cd docs
+        make html
 
     - name: Deploy Github Pages
-            uses: JamesIves/github-pages-deploy-action@3.5.9
-            with:
-              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              BRANCH: gh-pages
-              FOLDER: docs/build/html/
+      uses: JamesIves/github-pages-deploy-action@3.5.9
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: docs/build/html/
