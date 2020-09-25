@@ -1,3 +1,5 @@
+# https://blog.flozz.fr/2020/09/21/deployer-automatiquement-sur-github-pages-avec-github-actions/
+
 name: "Build and deploy Github pages"
 on:
   push:
@@ -29,7 +31,7 @@ jobs:
       run: |
         cd docs
         make html
-        touch docs/build/html/.nojekyll
+        touch build/html/.nojekyll
 
     - name: Deploy Github Pages
       uses: JamesIves/github-pages-deploy-action@3.5.9
