@@ -1,0 +1,6 @@
+infotopo.io.load\_data\_sets
+============================
+
+.. currentmodule:: infotopo.io
+
+.. autofunction:: load_data_sets

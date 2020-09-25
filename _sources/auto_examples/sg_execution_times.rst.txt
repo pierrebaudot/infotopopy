@@ -1,0 +1,11 @@
+
+:orphan:
+
+.. _sphx_glr_auto_examples_sg_execution_times:
+
+Computation times
+=================
+**00:15.786** total execution time for **auto_examples** files:
+
+- **00:10.000**: :ref:`sphx_glr_auto_examples_plot_test.py` (``plot_test.py``)
+- **00:05.786**: :ref:`sphx_glr_auto_examples_plot_iris.py` (``plot_iris.py``)

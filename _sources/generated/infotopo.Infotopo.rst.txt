@@ -1,0 +1,36 @@
+infotopo.Infotopo
+=================
+
+.. currentmodule:: infotopo
+
+.. autoclass:: Infotopo
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Infotopo.__init__
+      ~Infotopo.conditional_info_simplicial_lanscape
+      ~Infotopo.display_entropy_energy_landscape
+      ~Infotopo.display_higher_lower_cond_information
+      ~Infotopo.display_higher_lower_information
+      ~Infotopo.display_mean_information
+      ~Infotopo.entropy_simplicial_lanscape
+      ~Infotopo.fit
+      ~Infotopo.information_complex
+      ~Infotopo.information_volume_simplicial_lanscape
+      ~Infotopo.mutual_info_pairwise_network
+      ~Infotopo.mutual_info_simplicial_lanscape
+      ~Infotopo.simplicial_entropies_decomposition
+      ~Infotopo.simplicial_infomut_decomposition
+      ~Infotopo.total_correlation_simplicial_lanscape
+   
+   
+
+   
+   
+   

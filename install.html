@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Installation &#8212; infotopo 0.1.0 documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/gallery.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="How to Use InfoTopo" href="tutorial.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          infotopo</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.1.0</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="method.html">Method</a></li>
+                <li><a href="tutorial.html">Tutorial</a></li>
+                <li><a href="#">Install</a></li>
+                <li><a href="api.html">API</a></li>
+                <li><a href="auto_examples/index.html">Examples</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">User Guide / Tutorial:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="method.html">Topological Learning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="method.html#topological-learning-principles">Topological Learning principles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="method.html#information-complexes">Information Complexes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="method.html#poincare-shannon-machine">Poincaré-Shannon Machine</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="method.html#unsupervised-topological-learning">Unsupervised topological learning</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="method.html#causality-challenge-dataset">Causality challenge dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="method.html#id2">Information Complexes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="method.html#digits-dataset">Digits Dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="method.html#adaptive-computational-complexity">Adaptive computational complexity</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="method.html#id3">Unsupervised topological learning</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">How to Use InfoTopo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#iris-data">Iris data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorial.html#iris-dataset">Iris dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial.html#entropy">Entropy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial.html#mutual-information">Mutual Information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial.html#information-networks">Information Networks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#diabetes-data">Diabetes data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorial.html#diabetes-dataset">Diabetes dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial.html#id4">Entropy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial.html#total-correlation">Total correlation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial.html#id5">Mutual Information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial.html#id6">Information Networks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial.html#mean-information-path">Mean Information path</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial.html#conditional-transfer-informations">Conditional (transfer) Informations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial.html#entropy-vs-energy">Entropy Vs. Energy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial.html#information-distance">Information distance</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#standard-installation">Standard installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-the-most-up-to-date-version">Install the most up-to-date version</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="_sources/install.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <div class="section" id="installation">
+<span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<p>Infotopo relies on two packages :</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.numpy.org/">NumPy</a></p></li>
+<li><p><a class="reference external" href="https://networkx.github.io/documentation/stable/auto_examples/index.html">Networkx</a></p></li>
+</ul>
+<p>Then if you want to be able to run the examples you’ll need to have :</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://matplotlib.org/">Matplotlib</a></p></li>
+<li><p><a class="reference external" href="https://seaborn.pydata.org/">Seaborn</a></p></li>
+<li><p><a class="reference external" href="https://pandas.pydata.org/">Pandas</a></p></li>
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/">Scikit learn</a></p></li>
+</ul>
+</div>
+<div class="section" id="standard-installation">
+<h2>Standard installation<a class="headerlink" href="#standard-installation" title="Permalink to this headline">¶</a></h2>
+<p>Infotopo can be installed using pip. In a terminal, run the following command :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install infotopo
+</pre></div>
+</div>
+<p>And if you want want to update to the latest version :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install -U infotopo
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-the-most-up-to-date-version">
+<h2>Install the most up-to-date version<a class="headerlink" href="#install-the-most-up-to-date-version" title="Permalink to this headline">¶</a></h2>
+<p>The latest version is hosted on <a class="reference external" href="https://github.com/pierrebaudot/infotopopy">github</a>.
+This is always going to be the most up-to-date version, with the latest features and fixes.
+If you want to install this version, open a terminal and run the following commands :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/pierrebaudot/infotopopy.git
+<span class="nb">cd</span> infotopo/
+python setup.py develop
+</pre></div>
+</div>
+<p>Finally, if you want to update your version you can use :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git pull
+</pre></div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+    <hr>
+    <footer>
+        <br>
+        <div class="container">
+            <ul class="list-inline">
+                <li style="font-weight:bold"><a href="genindex.html">Index</a></li>
+                <li>·</li>
+                <li style="font-weight:bold"><a href="https://github.com/pierrebaudot/infotopopy">Github</a></li>
+                <li>·</li>
+                <li style="font-weight:bold"><a href="references.html">References</a></li>
+            </ul>
+         </div>
+        <!-- <br> -->
+        <p>&copy; Copyright 2020, Pierre Baudot.</p>
+    </footer>
+
+  </body>
+</html>
