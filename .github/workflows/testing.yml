@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: "Build and deploy Github pages"
 on:
   push:
     branches:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.6, 3.7, 3.8]
+        python-version: 3.6
 
     steps:
     - uses: actions/checkout@v2
@@ -21,14 +21,17 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -U pandas matplotlib seaborn sklearn 
+        pip install -U pandas matplotlib seaborn sklearn
+        pip install -U sphinx==2.2.0 sphinx-gallery==0.4.0 sphinx_bootstrap_theme numpydoc sphinxcontrib-bibtex;
         pip install -e .
 
-    - name: Build and Deploy
-      uses: JacksonMaxfield/github-pages-deploy-action-python@master
-      env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BASE_BRANCH: master
-        BRANCH: gh-pages
-        FOLDER: docs/build/html
-        BUILD_SCRIPT: make html && touch docs/build/html/.nojekyll
+    - name: "Build Sphinx Doc"
+        run: |
+          make html
+
+    - name: "Deploy Github Pages"
+            uses: JamesIves/github-pages-deploy-action@3.5.9
+            with:
+              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              BRANCH: gh-pages
+              FOLDER: docs/build/html/
