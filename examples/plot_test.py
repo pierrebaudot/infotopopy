@@ -1,3 +1,9 @@
+"""
+This is my first example
+========================
+
+Description of the example.
+"""
 import pandas as pd
 import seaborn as sns
 

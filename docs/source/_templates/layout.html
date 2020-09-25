@@ -1,0 +1,19 @@
+{% extends '!layout.html' %}
+
+{% block footer %}
+    <hr>
+    <footer>
+        <br>
+        <div class="container">
+            <ul class="list-inline">
+                <li style="font-weight:bold"><a href="{{ pathto('genindex.html', 1) }}">Index</a></li>
+                <li>·</li>
+                <li style="font-weight:bold"><a href="https://github.com/pierrebaudot/infotopopy">Github</a></li>
+                <li>·</li>
+                <li style="font-weight:bold"><a href="{{pathto('references.html', 1) }}">References</a></li>
+            </ul>
+         </div>
+        <!-- <br> -->
+        <p>&copy; Copyright {{ copyright }}.</p>
+    </footer>
+{% endblock %}
