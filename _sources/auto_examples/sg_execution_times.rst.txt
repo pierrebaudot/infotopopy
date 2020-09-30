@@ -5,7 +5,7 @@
 
 Computation times
 =================
-**00:17.162** total execution time for **auto_examples** files:
+**00:19.677** total execution time for **auto_examples** files:
 
-- **00:10.805**: :ref:`sphx_glr_auto_examples_plot_test.py` (``plot_test.py``)
-- **00:06.357**: :ref:`sphx_glr_auto_examples_plot_iris.py` (``plot_iris.py``)
+- **00:12.399**: :ref:`sphx_glr_auto_examples_plot_test.py` (``plot_test.py``)
+- **00:07.278**: :ref:`sphx_glr_auto_examples_plot_iris.py` (``plot_iris.py``)
