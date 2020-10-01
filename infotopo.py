@@ -1639,7 +1639,7 @@ if __name__ == "__main__":
     import pandas as pd
     import seaborn as sns
     
-    dataset_type = 6 # if dataset = 1 load IRIS DATASET # if dataset = 2 load Boston house prices dataset # if dataset = 3 load DIABETES  dataset 
+    dataset_type = 2 # if dataset = 1 load IRIS DATASET # if dataset = 2 load Boston house prices dataset # if dataset = 3 load DIABETES  dataset 
     ## if dataset = 4 CAUSAL Inference data challenge http://www.causality.inf.ethz.ch/data/LUCAS.html  # if dataset = 5 Borromean  dataset
     # if dataset = 6 Digits dataset MNIST
     dataset, nb_of_values = load_data_sets( dataset_type)

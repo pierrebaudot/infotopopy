@@ -154,7 +154,7 @@ and it prints the following paths:
 
     The path of maximal mutual-info Nb 1  is : [5, 12, 11, 9, 8, 6, 2, 1, 10, 4], The path of minimal mutual-info Nb 1  is : [7, 2, 11], The path of maximal mutual-info Nb 2  is :[2, 12, 11, 9, 3, 6, 10, 5], The path of minimal mutual-info Nb 2  is : [3, 4, 1], The path of maximal mutual-info Nb 3  is : [1, 2, 12, 11, 9, 3, 6, 10, 5], The path of minimal mutual-info Nb 3  is : [10, 4, 7], The path of maximal mutual-info Nb 4  is : [9, 11, 12, 1, 2, 3, 6, 10, 5], The path of minimal mutual-info Nb 4  is : [4, 3, 1], The path of maximal mutual-info Nb 5  is :[8, 9, 11, 12, 5, 6, 2, 1, 10, 4], The path of minimal mutual-info Nb 5  is : [6, 1, 12] etc..
 
-The first maximal path [5, 12, 11, 9, 8, 6, 2, 1, 10, 4]  as length 10 and the first 5 variables corresponds to the longest causal chain of the data as illustrated bellow. 
+The first maximal path [5, 12, 11, 9, 8, 6, 2, 1, 10, 4]  as length 10 and the first 5 variables corresponds to one of the longest causal chain of the data as illustrated bellow. 
 The fact that the resulting path is so long is likely due to the generating algorithm used for Lucas, and the last [6,2,1,10,4] errors could be removed by statistical test 
 thresholding on conditional mutual information values. The next maximal paths fail to identify the other long causal chain of the data, probably as a consequence of
 the rought approximation used by the algorithm. The First two minimal paths [7, 2, 11] and [3, 4, 1] identifies unrelated variables or multiple cause causality scheme.
@@ -260,9 +260,48 @@ For data scientist used to deep learning terminology, this intialization corresp
 As you see, the whole structure of the model is fully constrained by the dataset's embedding dimension, the dimension max (computational complexity restriction), and the number of values chosen for the variables (with other purely 
 computational internal parameter).
 
-Unsupervised topological learning
+Natural image statistics
+------------------------
+
+We now apply the model to digits dataset in a first unsupervised case that considers the pixels as variables-dimension up the fifth dimension.
+It means that we will consider all statistical dependencies, or statistically dependent patterns composed of up to 5 pixels in the digits datset.
+In computational vision and neursocience, such a task pertains to the domain of natural image statistics studies 
+(see notably chap. 1.4 of the book "natural image statistics", `Hyvärinen et al 2009 <https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjQxtKdpJTsAhUS4OAKHVEHD1oQgAMoAHoECBMQAg&url=http%3A%2F%2Fscholar.google.fr%2Fscholar_url%3Furl%3Dhttps%3A%2F%2Fwww.academia.edu%2Fdownload%2F640016%2Fgt1uh8u6fhk4474.pdf%26hl%3Dfr%26sa%3DX%26ei%3DukJ2X9avNJOdmwH7hLb4Cg%26scisig%3DAAGBfm30s5iDfC0ttHl3G9rMmdSnQx-TAA%26nossl%3D1%26oi%3Dscholarr&usg=AOvVaw2ePjSwQea67qYJwT9aeOd8>`_ ).
+Of course, the example will present here only a very small subset of natural image statistics corresponding to human hand written digits, but the principle
+of the study stays the same for other kind of images. We fit the model and disply the informations landscape by running the following code:  
+
+.. code:: python3
+
+    Ninfomut, Nentropie =  information_topo.fit(dataset)
+    Ntotal_correlation = information_topo.total_correlation_simplicial_lanscape(Nentropie)
+    dico_max, dico_min = information_topo.display_higher_lower_information(Ntotal_correlation, dataset)
+    information_topo.mutual_info_simplicial_lanscape(Ninfomut)
+    dico_max, dico_min = information_topo.display_higher_lower_information(Ninfomut, dataset)
+
+The free energy or total correlation  :math:`G_k` landscape, and its 4 maxima triplets data subspace we obtain are the following:
+
+.. image:: images/partial_digits_Gk_landscape.png
+
+.. image:: images/partial_digits_Gk_distributions.png
+
+.. image:: images/partial_digits_Gk_4max.png
+
+The mutual information :math:`I_k` landscape, and its 4 maxima triplets data subspace we obtain are the following:
+
+.. image:: images/partial_digits_Ik_landscape.png
+
+.. image:: images/partial_digits_Ik_ditrib.png
+
+.. image:: images/partial_digits_Ik_4max.png
+
+Both landscapes shows the presence of important higher order statitical patterns, with clear and complex multimodal distributions. 
+For those who where not convinced yet that higher orders statictics matters, it now shall be the case: they are
+indeed the support of our (higher level) every day world's perception and object recognition.
+:math:`I_k` landscape notably shows that most k-uplets of pixels are k-independent (e.g. :math:`I_k=0`). The computation of information 
+distances and volume, joint entropies, conditional informations (...) are left as an exercise, but all of them present some meaningfull 
+distributions. 
+
+
+
+Supervised topological learning
 ---------------------------------
-
-.. math::	
-    H_1=H(X_{j};P)=k\sum_{x \in [N_j] }p(x)\ln p(x) 
-
