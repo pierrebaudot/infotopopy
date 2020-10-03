@@ -261,14 +261,14 @@ As you see, the whole structure of the model is fully constrained by the dataset
 computational internal parameter).
 
 Natural image statistics
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 We now apply the model to digits dataset in a first unsupervised case that considers the pixels as variables-dimension up the fifth dimension.
 It means that we will consider all statistical dependencies, or statistically dependent patterns composed of up to 5 pixels in the digits datset.
 In computational vision and neursocience, such a task pertains to the domain of natural image statistics studies 
 (see notably chap. 1.4 of the book "natural image statistics", `Hyvärinen et al 2009 <https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjQxtKdpJTsAhUS4OAKHVEHD1oQgAMoAHoECBMQAg&url=http%3A%2F%2Fscholar.google.fr%2Fscholar_url%3Furl%3Dhttps%3A%2F%2Fwww.academia.edu%2Fdownload%2F640016%2Fgt1uh8u6fhk4474.pdf%26hl%3Dfr%26sa%3DX%26ei%3DukJ2X9avNJOdmwH7hLb4Cg%26scisig%3DAAGBfm30s5iDfC0ttHl3G9rMmdSnQx-TAA%26nossl%3D1%26oi%3Dscholarr&usg=AOvVaw2ePjSwQea67qYJwT9aeOd8>`_ ).
 Of course, the example will present here only a very small subset of natural image statistics corresponding to human hand written digits, but the principle
-of the study stays the same for other kind of images. We fit the model and disply the informations landscape by running the following code:  
+of the study stays the same for other kind of images. We fit the model and display the informations landscape by running the following code:  
 
 .. code:: python3
 
@@ -286,6 +286,7 @@ The free energy or total correlation  :math:`G_k` landscape, and its 4 maxima tr
 
 .. image:: images/partial_digits_Gk_4max.png
 
+
 The mutual information :math:`I_k` landscape, and its 4 maxima triplets data subspace we obtain are the following:
 
 .. image:: images/partial_digits_Ik_landscape.png
@@ -299,7 +300,39 @@ For those who where not convinced yet that higher orders statictics matters, it 
 indeed the support of our (higher level) every day world's perception and object recognition.
 :math:`I_k` landscape notably shows that most k-uplets of pixels are k-independent (e.g. :math:`I_k=0`). The computation of information 
 distances and volume, joint entropies, conditional informations (...) are left as an exercise, but all of them present some meaningfull 
-distributions. 
+distributions-spectra.   
+
+Convolutional methods
+~~~~~~~~~~~~~~~~~~~~~
+
+The preceding computation of statistical structures in images has the default of not being translation invariant, made obvious here by the centering 
+preprocessing of the digits in the images. Such a potential problem is easily overcome by using basic convolutional patches instead of the direcy
+images, just as Convolutional layer of Neural Network do. Note that implementing an information network corresponding to current Convolutional Network
+would require an iterative process of pooling the maximal information modules and of landscape info paths computation (to be done both theoretically 
+and in practice). However, such a method appears more for the moment as a computational trick to reduce computation rather than a firmly theoretically established method.
+To extract convolutional patchs of the images we use the function "convolutional_patchs". The function extracts images patchs of m*m pixels 
+(with :math:`m = \lfloor \sqrt{dimension_max} \rfloor` ) by sliding on the images. As the function change the matrix of data input and its shape,
+the function reset automatically dimension_tot=dimansion_max to :math:`(\lfloor \sqrt{dimension_max} \rfloor)^2` and the sample_size to 
+:math:`sample_size.(n-(m-1))^2` (where image are n*n pixels and patchs are m*m pixels, and there are :math:`(n-(m-1))^2` convolutional patchs in a single image).
+In the example below we set dimansion_max to 16 and hence patchs of 4*4 pixels in sample_size=100 digits images, and we obtain 2500 points-patchs in 16 dimensions.
+
+.. code:: python3
+    information_topo = infotopo(dimension_max = 16, 
+                                dimension_tot = 16, 
+                                sample_size = 100, 
+                                work_on_transpose = False,
+                                nb_of_values = 17, 
+                                sampling_mode = 1, 
+                                deformed_probability_mode = False,
+                                supervised_mode = False, 
+                                forward_computation_mode = False)
+    dataset = information_topo.convolutional_patchs(dataset)  
+    Ninfomut, Nentropie =  information_topo.fit(dataset)
+    Ntotal_correlation = information_topo.total_correlation_simplicial_lanscape(Nentropie)
+    dico_max, dico_min = information_topo.display_higher_lower_information(Ntotal_correlation, dataset)
+    information_topo.mutual_info_simplicial_lanscape(Ninfomut)
+    dico_max, dico_min = information_topo.display_higher_lower_information(Ninfomut, dataset)                          
+
 
 
 

@@ -13,7 +13,7 @@ InfoTopo: Topological Information Data Analysis. Deep statistical unsupervised a
 InfoTopo is a Machine Learning method based on Information Cohomology, a cohomology of statistical systems [0,1,8,9]. 
 It allows to estimate higher order statistical structures, dependences and (refined) independences or generalised (possibly non-linear) correlations and to uncover their structure as simplicial complex.
 It provides estimations of the basic information functions, entropy, joint and condtional, multivariate Mutual-Informations (MI) and conditional MI, Total Correlations...
-
+The package was written to be fully compliant with  `scikit learn  <https://scikit-learn.org/stable/>`_ tools, objects and nomenclature. 
 InfoTopo is at the cross-road of Topological Data Analysis, Deep Neural Network learning, statistical physics and complex systems:
 
  1. With respect to Topological Data Analysis (TDA), it provides intrinsically probabilistic methods that does not assume metric (Random Variable's alphabets are not necessarilly ordinal) [2,3,6]. It also provide a quantification of higher order statistical interactions that cannot be detected by pairwise relations or methods based on Vietoris-Rips complexes.
@@ -88,3 +88,14 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+
+Contributors
+============
+
+* `Pierre Baudot <https://sites.google.com/view/pierrebaudot/menu?authuser=0>`_. (methods, theory, package and doc)
+* `Daniel Bennequin <https://webusers.imj-prg.fr/~daniel.bennequin/>`_ `wikipedia <https://en.wikipedia.org/wiki/Daniel_Bennequin>`_  (methods and theory)
+* Mathieu Bernardi (convolutional patchs and GPU deployement - Machine Learning internship)
+* `Etienne Combrisson <https://www.researchgate.net/profile/Etienne_Combrisson>`_ (application to CNS MRI, package and organization, documentation...)
+* `Jean-Marc Goaillard <https://unis-neuro.com/26-membre-goaillard-jean-marc.html>`_  (genetic expression data application)
+* `Monica Tapia <https://unis-neuro.com/86-membre-tapia-pacheco-m%C3%B3nica.html>`_  (genetic expression data application)

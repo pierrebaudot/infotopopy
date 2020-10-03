@@ -229,7 +229,7 @@ class infotopo:
             raise ValueError("dimension_tot must be greater or equal than dimension_max") 
         if not self.forward_computation_mode :  
             if self.dimension_max != self.dimension_tot:
-                raise ValueError("if forward_computation_mode then dimension_max must be equal to dimension_tot")
+                raise ValueError("if forward_computation_mode False then dimension_max must be equal to dimension_tot")
         if self.nb_bins_histo < 2 :
             raise ValueError("nb_bins_histo must be greater than 1")
         if self.p_value > 1 :
@@ -276,6 +276,34 @@ TO BE DONE: use panda dataframe .resample to do it...
     #WE RESCALE THE MATRICE AND SAMPLE IT into  nb_of_values #
         data_matrix = np.ceil(((data_matrix-min_matrix)*(self.nb_of_values-1))/(ampl_matrix)).astype(int)
         return data_matrix
+
+
+################################################################
+#########     Convolutional patches of Images         ##########
+#########               DATA MATRIX                   ##########
+################################################################
+    """
+This procedure extract overlapping-convolutional patches of size square_root(dimension_max)*square_root(dimension_max) from the images.
+For example if dimension_max=16 , then the procedure will extract all "sliding" 4*4 pixels patchs of the image                          
+    """     
+
+    def convolutional_patchs(self, data_matrix):
+
+        data_matrix_new = []
+        sub_matrix = []
+        patch_x = int(np.sqrt(self.dimension_max))
+        patch_y = int(np.sqrt(self.dimension_max))  
+        self.dimension_max = (int(np.sqrt(self.dimension_max)))*(int(np.sqrt(self.dimension_max))) 
+        self.dimension_tot = self.dimension_max 
+        width = data_matrix.shape[1]
+        height = data_matrix.shape[0]
+        for yyyy in range(0, height - (patch_y-1)):
+            for xxxx in range(0, width - (patch_x-1)):
+                sub_matrix.append([data_matrix[yyyy: yyyy + patch_y, xxxx: xxxx + patch_x] ])       
+        data_matrix_new = np.array(sub_matrix)
+        data_matrix_new = np.reshape(data_matrix_new, ((height - (patch_y - 1))*(width - (patch_x - 1)), self.dimension_max))    
+        self.sample_size = data_matrix_new.shape[0]
+        return data_matrix_new
 
 
 ################################################################
@@ -422,7 +450,7 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         ntuple=[]
         ntuple1_input=[]
         Nentropie={}
-        self._decode(0,self.dimension_tot,self.dimension_max,ntuple1_input)
+        self._decode(0, self.dimension_tot, self.dimension_max, ntuple1_input)
         logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
         logger = logging.getLogger("compute Proba-Entropy")
         print("Percent of tuples processed : 0")
@@ -1639,7 +1667,7 @@ if __name__ == "__main__":
     import pandas as pd
     import seaborn as sns
     
-    dataset_type = 2 # if dataset = 1 load IRIS DATASET # if dataset = 2 load Boston house prices dataset # if dataset = 3 load DIABETES  dataset 
+    dataset_type = 6 # if dataset = 1 load IRIS DATASET # if dataset = 2 load Boston house prices dataset # if dataset = 3 load DIABETES  dataset 
     ## if dataset = 4 CAUSAL Inference data challenge http://www.causality.inf.ethz.ch/data/LUCAS.html  # if dataset = 5 Borromean  dataset
     # if dataset = 6 Digits dataset MNIST
     dataset, nb_of_values = load_data_sets( dataset_type)
@@ -1650,10 +1678,17 @@ if __name__ == "__main__":
     work_on_transpose = False
     supervised_mode = False
     sampling_mode = 1
-    deformed_probability_mode = False     
+    deformed_probability_mode = False    
+    convol_patch = False 
     if dataset_type == 6:
-        forward_computation_mode = True
-        dimension_max = 5
+        convol_patch = True
+        if convol_patch:
+            forward_computation_mode = False
+            dimension_max = 16
+            sample_size = 100
+        else: 
+            forward_computation_mode = True
+            dimension_max = 5
     
     print("sample_size : ",sample_size)
     print('number of variables or dimension of the analysis:',dimension_max )
@@ -1671,6 +1706,8 @@ if __name__ == "__main__":
                                 forward_computation_mode = forward_computation_mode)
 # Nentropy is dictionary (x,y) with x a list of kind (1,2,5) and y a value in bit    
     start = timeit.default_timer()
+    if convol_patch:
+        dataset = information_topo.convolutional_patchs(dataset) 
     Nentropie = information_topo.simplicial_entropies_decomposition(dataset) 
     stop = timeit.default_timer()
     print('Time for CPU(seconds) entropies: ', stop - start)
@@ -1717,6 +1754,8 @@ if __name__ == "__main__":
     # Information paths - Information complex
     Ninfomut, Nentropie =  information_topo.fit(dataset)
     information_topo.information_complex(Ninfomut)
+
+    
 
     
 
