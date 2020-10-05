@@ -19,6 +19,7 @@ import heapq
 from operator import itemgetter
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
+import copy 
 
 
 ###################################################################################
@@ -1360,8 +1361,8 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
     ... to help users.
     '''  
     def fit( self, dataset):
-        Nentropie = information_topo.simplicial_entropies_decomposition(dataset) 
-        Ninfomut = information_topo.simplicial_infomut_decomposition(Nentropie)
+        Nentropie = self.simplicial_entropies_decomposition(dataset) 
+        Ninfomut = self.simplicial_infomut_decomposition(Nentropie)
         return Ninfomut, Nentropie    
     
 ###############################################################  
@@ -1556,10 +1557,240 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         plt.grid(False)            
         plt.show(num_fig)         
 
+###############################################################  
+###############################################################
+########              INFORMATION PATHS              ##########
+########  INFORMATION COMPLEX - FREE-ENERGY COMPLEX  ##########
+###############################################################  
+###############################################################    
+    '''      
+    This function compute and plotts the "true information (free-energy) complex by computing information paths: An information path IPk  of degree k 
+    on Ik landscape is defined as a sequence of elements of the lattice that begins at the least element of the lattice (the identity-constant “0”), 
+    travels along edges from element to element of increasing degree of the lattice and ends at the greatest element of the lattice of degree k. The
+    first derivative of an IPk path is minus the conditional mutual information. The critical dimension of an IP k path is the degree of its first minimum.
+    A positive information path is an information path from 0 to a given I k corresponding to a given k-tuple of variables such that Ik<Ik-1<...<I1 . 
+    We call the interacting components functions Ik , k>1, a free information energy. A maximal positive information path is a positive information path 
+    of maximal length: it ends at minima of the free information energy function. The set of all these paths defines uniquely the minimum free energy complex. 
+    The set of all paths of degree k is intractable computationally (complexity in O(k!)). In order to bypass this issue, the algo computes a fast local
+    algorithm that selects at each element of degree k of an IP path the positive information path with maximal or minimal Ik+1 value or stops whenever Xk.I k+1≤ 0 
+    and ranks those paths by their length.
+    '''  
+    def information_complex( self, Ninfomut):
+        
+        infomut_per_order=[]      
+        Ninfomut_per_order_ordered=[]
+        for x in range(self.dimension_max+1):
+            info_dicoperoder={} 
+            infomut_per_order.append(info_dicoperoder)
+            Ninfomut_per_order_ordered.append(info_dicoperoder)
+        for x,y in Ninfomut.items():
+            infomut_per_order[len(x)][x]=Ninfomut[x]
+        for x in range(self.dimension_max+1):
+            Ninfomut_per_order_ordered[x]=OrderedDict(sorted(infomut_per_order[x].items(), key=lambda t: t[1]))    
+        
+        matrix_distrib_infomut=np.array([])
+        x_absss = np.array([])
+        y_absss = np.array([]) 
+        maxima_tot=-1000000.00
+        minima_tot=1000000.00   
+        infocond=1000000.00
+        listartbis=[] 
+        infomutmax_path_VAR = [] 
+        infomutmax_path_VALUE = []
+        infomutmin_path_VAR = [] 
+        infomutmin_path_VALUE = []
+        number_of_max_and_min = self.dimension_max #explore the 2 max an min marginals (of degree 1 information) 
+        items = list(Ninfomut_per_order_ordered[1].items())
+        for inforank in range(0,number_of_max_and_min): 
+            infomutmax_path_VAR.append([])
+            infomutmax_path_VALUE.append([])
+            infomutmin_path_VAR.append([])
+            infomutmin_path_VALUE.append([])
+            xstart=items[inforank][0]
+            xstartmin = items[self.dimension_max - inforank - 1][0]   #items[self.dimension_max-inforank-1][0]
+            infomutmax_path_VAR[-1].append(xstart[0])
+            infomutmax_path_VALUE[-1].append(items[inforank][1])
+            infomutmin_path_VAR[-1].append(xstartmin[0])
+            infomutmin_path_VALUE[-1].append(items[self.dimension_max - inforank- 1][1])
+            degree=1
+            infocond=1000000.00
+            while infocond >=0 and degree <= self.dimension_max:
+                maxima_tot=-1000000.00
+                minima_tot=1000000.00 
+                degree=degree+1 
+                for i in range(1,self.dimension_max+1) :
+                    if i in infomutmax_path_VAR[-1] :     
+                        del listartbis[:]  
+                    else:    
+                        del listartbis[:]
+                        listartbis=infomutmax_path_VAR[-1][:]
+                        listartbis.append(i)
+                        listartbis.sort() 
+                        tuplestart=tuple(listartbis)
+                        if infomut_per_order[degree][tuplestart]>maxima_tot:
+                            maxima_tot=infomut_per_order[degree][tuplestart]
+                            igood= i
+                infomutmax_path_VAR[-1].append(igood)
+                infomutmax_path_VALUE[-1].append(maxima_tot)
+                infocond= infomutmax_path_VALUE[-1][-2]- infomutmax_path_VALUE[-1][-1]
+            del infomutmax_path_VAR[-1][-1]
+            del infomutmax_path_VALUE[-1][-1]
+            print('The path of maximal mutual-info Nb',inforank+1,' is :')   
+            print(infomutmax_path_VAR[-1])   
+       
+            degree=1
+            infocond=1000000.00
+            while infocond >=0 :
+                maxima_tot=-1000000.00
+                minima_tot=1000000.00 
+                degree=degree+1 
+                for i in range(1,self.dimension_max+1) :
+                    if i in infomutmin_path_VAR[-1] :     
+                        del listartbis[:]  
+                    else:    
+                        del listartbis[:]
+                        listartbis=infomutmin_path_VAR[-1][:]
+                        listartbis.append(i)
+                        listartbis.sort() 
+                        tuplestart=tuple(listartbis)
+                        if infomut_per_order[degree][tuplestart]<minima_tot:
+                            minima_tot=infomut_per_order[degree][tuplestart]
+                            igood= i
+                infomutmin_path_VAR[-1].append(igood)
+                infomutmin_path_VALUE[-1].append(minima_tot)
+                infocond= infomutmin_path_VALUE[-1][-2]- infomutmin_path_VALUE[-1][-1]
+            del infomutmin_path_VAR[-1][-1]
+            del infomutmin_path_VALUE[-1][-1]   
+            print('The path of minimal mutual-info Nb',inforank+1,' is :')   
+            print(infomutmin_path_VAR[-1])    
+
+# COMPUTE THE HISTOGRAMS OF INFORMATION           
+
+        ListInfomutordre={}
+        maxima_tot=-1000000.00
+        minima_tot=1000000.00
+        for i in range(1,self.dimension_max+1):
+            ListInfomutordre[i]=[]
+        for x,y in Ninfomut.items():
+            ListInfomutordre[len(x)].append(y)    
+            if y>maxima_tot:
+                maxima_tot=y
+            if y<minima_tot:
+                minima_tot=y 
+
+        for a in range(1,self.dimension_max+1):
+            ListInfomutordre[a].append(minima_tot-0.1)
+            ListInfomutordre[a].append(maxima_tot+0.1)           
+            n, bins = np.histogram(ListInfomutordre[a],  bins = self.nb_bins_histo)
+            if a==1 :
+                matrix_distrib_infomut=n
+            else: 
+                matrix_distrib_infomut=np.c_[matrix_distrib_infomut,n]
+    
+# COMPUTE THE MATRIX OF INFORMATION LANDSACPES   
+   
+        num_fig=1 
+        fig_infopath = plt.figure(num_fig,figsize=(18, 10))  
+        matrix_distrib_infomut=np.flipud(matrix_distrib_infomut) 
+        plt.matshow(matrix_distrib_infomut, cmap='jet', aspect='auto', extent=[0,self.dimension_max,minima_tot-0.1,maxima_tot+0.1], norm=LogNorm(vmin=1, vmax=200000), fignum= num_fig)
+        plt.axis([0,self.dimension_max,minima_tot,maxima_tot])     
+        cbar = plt.colorbar()
+        cbar.set_label('# of tuples', rotation=270)
+        plt.grid(False)     
 
 
+# COMPUTE THE INFORMATION PATHS    
+        x_infomax=[] 
+        x_infomin=[]    
+        maxima_x=-10
+        maxima_tot=-1000000.00
+        minima_tot=1000000.00
+        for inforank in range(0,number_of_max_and_min): 
+            x_infomax.append([])
+            j=-0.5
+            for y in  range(0,len(infomutmax_path_VALUE[inforank])): 
+                j=j+1 
+                x_infomax[-1].append(j) 
+                if j > maxima_x:
+                    maxima_x=j
+                if infomutmax_path_VALUE[inforank][int(j-0.5)]>maxima_tot :
+                    maxima_tot=infomutmax_path_VALUE[inforank][int(j-0.5)]
+                if infomutmax_path_VALUE[inforank][int(j-0.5)]<minima_tot :
+                    minima_tot=infomutmax_path_VALUE[inforank][int(j-0.5)]    
+              
+            x_infomin.append([])
+            j=-0.5
+            for y in  range(0,len(infomutmin_path_VALUE[inforank])): 
+                j=j+1 
+                x_infomin[-1].append(j) 
+                if j > maxima_x:
+                    maxima_x=j
+                if infomutmin_path_VALUE[inforank][int(j-0.5)]>maxima_tot :
+                    maxima_tot=infomutmin_path_VALUE[inforank][int(j-0.5)]
+                if infomutmin_path_VALUE[inforank][int(j-0.5)]<minima_tot :
+                    minima_tot=infomutmin_path_VALUE[inforank][int(j-0.5)]     
+              
+            plt.plot(x_infomax[inforank], infomutmax_path_VALUE[inforank], marker='o', color='red')
+            plt.plot(x_infomin[inforank], infomutmin_path_VALUE[inforank], marker='o',color='blue')
+            plt.axis([0,maxima_x+0.5,minima_tot-0.2,maxima_tot+0.2])
+            
+      
+        display_labelnodes=False
+        if display_labelnodes :    
+            for inforank in range(0,number_of_max_and_min):
+                for label, x,y in zip(infomutmax_path_VAR[inforank], x_infomax[inforank], infomutmax_path_VALUE[inforank]):
+                    plt.annotate(label,xy=(x, y), xytext=(0, 0),textcoords='offset points')
+                for label, x,y in zip(infomutmin_path_VAR[inforank], x_infomin[inforank], infomutmin_path_VALUE[inforank]):
+                    plt.annotate(label,xy=(x, y), xytext=(0, 0),textcoords='offset points')      
+        plt.title('Ik paths - information - Free Energy complex')
+        plt.xlabel('dimension')
+        plt.ylabel('Ik value (bits)')
+        fig_infopath.set_size_inches(18, 10)
+        plt.grid(False)            
+        plt.show(num_fig)         
 
+    def information_paths( self, Ninfomut):
+        # construct a vector of marginal variable   
+        variable_vector =np.arange(self.dimension_tot)+1
+        # construct the set of all paths with n=dimension_tot variables...  For examples if  dimension_tot= 4  then list_paths has 24 elements (the permutations of [1..4]):
+        # [(1, 2, 3, 4), (1, 2, 4, 3), (1, 3, 2, 4), (1, 3, 4, 2), (1, 4, 2, 3), (1, 4, 3, 2), (2, 1, 3, 4), (2, 1, 4, 3), (2, 3, 1, 4), (2, 3, 4, 1), (2, 4, 1, 3), (2, 4, 3, 1), (3,1, 2, 4), (3, 1, 4, 2), (3, 2, 1, 4), (3, 2, 4, 1), (3, 4, 1, 2), (3, 4, 2, 1), (4, 1, 2, 3), (4, 1, 3, 2), (4, 2, 1, 3), (4, 2, 3, 1), (4, 3, 1, 2), (4, 3, 2, 1)]    
+        list_paths = list(itertools.permutations(variable_vector,self.dimension_tot))
+        list_maximal_chain = []
+        for path in list_paths :
+            list_elements=[]
+            # explore a path from the first element by adding elements in the order of the path
+            for elements in path :
+                list_elements.append(elements)
+                if len(list_elements) == 1:
+                    infomut_element_old = Ninfomut[tuple(sorted(list_elements))]
+                infomut_element_new= Ninfomut[tuple(sorted(list_elements))]
+                # stops the exploration if mutual information increases and save the path if not already saved
+                if ((infomut_element_new > infomut_element_old) and (len(list_elements) >1)) or (len(list_elements) == self.dimension_tot) :
+                    if (len(list_elements) < self.dimension_tot):
+                        maximal_chain = list_elements[:-1] 
+                    else: 
+                        maximal_chain = list_elements    
+                    maximal_chain = sorted(maximal_chain) 
+                    if maximal_chain not in list_maximal_chain:
+                        list_maximal_chain.append(maximal_chain)
+                    break
+                else :
+                    infomut_element_old = infomut_element_new   
+        # there are still some spurious inclusions to remove    (some chains are included into other)        
+        final_list_maximal_chain = copy.deepcopy(list_maximal_chain) 
+        for maximal_chains in list_maximal_chain : 
+            for maximal_chains_test in list_maximal_chain :
+                maximal_set_test = set(maximal_chains_test)
+                maximal_set = set(maximal_chains)
+                if maximal_chains != maximal_chains_test  :      
+                    if maximal_set_test.issubset(maximal_set): 
+                        if maximal_chains_test in final_list_maximal_chain:
+                            final_list_maximal_chain.remove(maximal_chains_test)
+                    if maximal_set.issubset(maximal_set_test): 
+                        if maximal_chains in final_list_maximal_chain:
+                            final_list_maximal_chain.remove(maximal_chains)     
 
+        return  final_list_maximal_chain            
 
 
 # #########################################################################
@@ -1667,10 +1898,13 @@ if __name__ == "__main__":
     import pandas as pd
     import seaborn as sns
     
-    dataset_type = 6 # if dataset = 1 load IRIS DATASET # if dataset = 2 load Boston house prices dataset # if dataset = 3 load DIABETES  dataset 
+    dataset_type = 3 # if dataset = 1 load IRIS DATASET # if dataset = 2 load Boston house prices dataset # if dataset = 3 load DIABETES  dataset 
     ## if dataset = 4 CAUSAL Inference data challenge http://www.causality.inf.ethz.ch/data/LUCAS.html  # if dataset = 5 Borromean  dataset
     # if dataset = 6 Digits dataset MNIST
     dataset, nb_of_values = load_data_sets( dataset_type)
+    compute_info_paths = True
+    if compute_info_paths and dataset_type == 4 : 
+        dataset = dataset[:,[0,1,2,3,4,5,6,7,8,9]]
     dimension_max = dataset.shape[1]
     dimension_tot = dataset.shape[1]
     sample_size = dataset.shape[0]
@@ -1706,6 +1940,8 @@ if __name__ == "__main__":
                                 forward_computation_mode = forward_computation_mode)
 # Nentropy is dictionary (x,y) with x a list of kind (1,2,5) and y a value in bit    
     start = timeit.default_timer()
+    
+ 
     if convol_patch:
         dataset = information_topo.convolutional_patchs(dataset) 
     Nentropie = information_topo.simplicial_entropies_decomposition(dataset) 
@@ -1754,6 +1990,11 @@ if __name__ == "__main__":
     # Information paths - Information complex
     Ninfomut, Nentropie =  information_topo.fit(dataset)
     information_topo.information_complex(Ninfomut)
+    if compute_info_paths: 
+        N_info_paths = information_topo.information_paths(Ninfomut)
+        print("N_info_paths")
+        print(N_info_paths)
+
 
     
 
