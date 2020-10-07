@@ -33,7 +33,7 @@ setuptools.setup(
     package_dir={'infotopo': 'infotopo'},
     package_data=PACKAGE_DATA,
     include_package_data=True,
-    license=read('LICENSE.md'),
+    license='BSD 3-Clause "New" or "Revised" License',
     description=DESCRIPTION,
     long_description=read('README.md'),
     platforms='any',
