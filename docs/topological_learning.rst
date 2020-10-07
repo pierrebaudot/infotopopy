@@ -282,6 +282,8 @@ of the study stays the same for other kind of images. We fit the model and displ
     information_topo.mutual_info_simplicial_lanscape(Ninfomut)
     dico_max, dico_min = information_topo.display_higher_lower_information(Ninfomut, dataset)
 
+The output of fit gives the model of the data, it concentrates the computationaly hard tasks, and just as it is usually acheived with Neural Network training,
+for large dimensional problems, it is recommended to save the model (Nentropy,Ninfomut) in a file (using for example pickle, a saving procedure in hdf5 will be written, to be done).
 The free energy or total correlation  :math:`G_k` landscape, and its 4 maxima triplets data subspace we obtain are the following:
 
 .. image:: images/partial_digits_Gk_landscape.png

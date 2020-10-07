@@ -1763,20 +1763,22 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
                 list_elements.append(elements)
                 if len(list_elements) == 1:
                     infomut_element_old = Ninfomut[tuple(sorted(list_elements))]
-                infomut_element_new= Ninfomut[tuple(sorted(list_elements))]
+                infomut_element_new= Ninfomut[tuple(sorted(list_elements))]                
                 # stops the exploration if mutual information increases and save the path if not already saved
-                if ((infomut_element_new > infomut_element_old) and (len(list_elements) >1)) or (len(list_elements) == self.dimension_tot) :
+                if ((infomut_element_new > infomut_element_old) and (len(list_elements) >1)) or (len(list_elements) == self.dimension_tot) :             
                     if (len(list_elements) < self.dimension_tot):
                         maximal_chain = list_elements[:-1] 
                     else: 
-                        maximal_chain = list_elements    
+                        maximal_chain = list_elements
                     maximal_chain = sorted(maximal_chain) 
                     if maximal_chain not in list_maximal_chain:
-                        list_maximal_chain.append(maximal_chain)
+                        list_maximal_chain.append(maximal_chain)                        
+                    list_maximal_chain.append(maximal_chain)
                     break
                 else :
                     infomut_element_old = infomut_element_new   
-        # there are still some spurious inclusions to remove    (some chains are included into other)        
+        # there are still some spurious inclusions to remove    (some chains are included into other)  
+        print(list_maximal_chain)      
         final_list_maximal_chain = copy.deepcopy(list_maximal_chain) 
         for maximal_chains in list_maximal_chain : 
             for maximal_chains_test in list_maximal_chain :
@@ -1898,7 +1900,7 @@ if __name__ == "__main__":
     import pandas as pd
     import seaborn as sns
     
-    dataset_type = 3 # if dataset = 1 load IRIS DATASET # if dataset = 2 load Boston house prices dataset # if dataset = 3 load DIABETES  dataset 
+    dataset_type = 3# if dataset = 1 load IRIS DATASET # if dataset = 2 load Boston house prices dataset # if dataset = 3 load DIABETES  dataset 
     ## if dataset = 4 CAUSAL Inference data challenge http://www.causality.inf.ethz.ch/data/LUCAS.html  # if dataset = 5 Borromean  dataset
     # if dataset = 6 Digits dataset MNIST
     dataset, nb_of_values = load_data_sets( dataset_type)
