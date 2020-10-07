@@ -163,8 +163,16 @@ the rought approximation used by the algorithm. The First two minimal paths [7, 
 
 Beware, that the computational heuristic provided does not give a chain complex in the algebraic topology sens, but just a partial approximate 
 view: notably due to the heuristic some chains identified by the algorithm may included in other (and hence may bot be maximal faces).
-The "good" algorithm, is easy to write: 1. compute all the strictly :math:`I_{k}` decreasing chains 2. rank them by length 3. start from the shortests: if it is included in the longest then remove if not 
-then if  its included in the second longest then removen and so on. However, it can only be runned on very low dimensional spaces (done but currently removed from the package). 
+The excat computation of the information is acheived by running this code:
+
+
+.. code:: python3
+
+    N_info_paths = information_topo.information_paths(Ninfomut)
+
+Its output are the maximal faces of the complex. However, at least with the current code and a basic computer, it is hopeless to run it for problems
+with dimension above 10. 
+
 
 Digits Dataset
 ~~~~~~~~~~~~~~
