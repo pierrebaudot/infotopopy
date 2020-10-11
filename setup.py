@@ -9,14 +9,14 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="infotopo", # Replace with your own username
-    version="0.2.9",
+    version="0.2.10",
     license='BSD 3-Clause "New" or "Revised" License',
     author="Pierre Baudot",   
     author_email="pierre.baudot@gmail.com",
     description="InfoTopo: Topological Information Data Analysis. Deep statistical unsupervised and supervised learning.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/pierrebaudot/infotopopy/archive/0.2.9.tar.gz",
+    url="https://github.com/pierrebaudot/infotopopy/archive/0.2.10.tar.gz",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
