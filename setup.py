@@ -3,7 +3,7 @@
 import os
 import setuptools
 
-__version__ = "0.2.4"
+__version__ = "0.2.5"
 NAME = 'Infotopo'
 AUTHOR = "Pierre Baudot"
 MAINTAINER = "Pierre Baudot"
@@ -12,7 +12,7 @@ KEYWORDS = "topological entropy supervised learning"
 DESCRIPTION = ("InfoTopo: Topological Information Data Analysis. Deep "
                "statistical unsupervised and supervised learning.")
 URL = 'https://github.com/pierrebaudot/infotopopy'
-DOWNLOAD_URL = ("https://github.com/pierrebaudot/infotopopy/archive/v" +
+DOWNLOAD_URL = ("https://github.com/pierrebaudot/infotopopy/archive/" +
                 __version__ + ".tar.gz")
 # Data path :
 PACKAGE_DATA = {}
