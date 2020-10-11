@@ -29,7 +29,7 @@ what is computed here is the equivalent of the Cech complex (with all degree-
 dimension computed), and such restriction is equivalent to computing the Vietoris-Rips 
 complex (in development). 
 
-_ compute on GPU (in development).
+_ compute on GPU and Tensorflow version (in development).
 
 As a result, for this 0.1 version of the software, and for computation with 
 commercial average PC, we recommand to analyse up to 20 variables (or dimensions)

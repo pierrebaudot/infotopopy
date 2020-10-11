@@ -1,1 +1,1 @@
-from .infotopo import infotopo
+from infotopo import infotopo

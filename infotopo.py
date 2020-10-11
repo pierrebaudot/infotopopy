@@ -1547,9 +1547,9 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         if display_labelnodes :    
             for inforank in range(0,number_of_max_and_min):
                 for label, x,y in zip(infomutmax_path_VAR[inforank], x_infomax[inforank], infomutmax_path_VALUE[inforank]):
-                    plt.annotate(label,xy=(x, y), xytext=(0, 0),textcoords='offset points')
+                    plt.annotate(label,xy=(x, y), xytext=(0, 0), textcoords='offset points')
                 for label, x,y in zip(infomutmin_path_VAR[inforank], x_infomin[inforank], infomutmin_path_VALUE[inforank]):
-                    plt.annotate(label,xy=(x, y), xytext=(0, 0),textcoords='offset points')      
+                    plt.annotate(label,xy=(x, y), xytext=(0, 0), textcoords='offset points')      
         plt.title('Ik paths - information - Free Energy complex')
         plt.xlabel('dimension')
         plt.ylabel('Ik value (bits)')
@@ -1564,14 +1564,14 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
 ###############################################################  
 ###############################################################    
     '''      
-    This function compute and plotts the "true information (free-energy) complex by computing information paths: An information path IPk  of degree k 
+    This function compute and plotts an heuristic approximation  of the information (free-energy) complex by computing information paths: An information path IPk  of degree k 
     on Ik landscape is defined as a sequence of elements of the lattice that begins at the least element of the lattice (the identity-constant “0”), 
     travels along edges from element to element of increasing degree of the lattice and ends at the greatest element of the lattice of degree k. The
     first derivative of an IPk path is minus the conditional mutual information. The critical dimension of an IP k path is the degree of its first minimum.
     A positive information path is an information path from 0 to a given I k corresponding to a given k-tuple of variables such that Ik<Ik-1<...<I1 . 
     We call the interacting components functions Ik , k>1, a free information energy. A maximal positive information path is a positive information path 
     of maximal length: it ends at minima of the free information energy function. The set of all these paths defines uniquely the minimum free energy complex. 
-    The set of all paths of degree k is intractable computationally (complexity in O(k!)). In order to bypass this issue, the algo computes a fast local
+    The set of all paths of degree k is intractable computationally (complexity in O(k!)). In order to bypass this issue (heuristic approximation), the algo computes a fast local
     algorithm that selects at each element of degree k of an IP path the positive information path with maximal or minimal Ik+1 value or stops whenever Xk.I k+1≤ 0 
     and ranks those paths by their length.
     '''  
@@ -1747,7 +1747,25 @@ https://stackoverflow.com/questions/101439/the-most-efficient-way-to-implement-a
         plt.ylabel('Ik value (bits)')
         fig_infopath.set_size_inches(18, 10)
         plt.grid(False)            
-        plt.show(num_fig)         
+        plt.show(num_fig)     
+
+###############################################################  
+###############################################################
+########              INFORMATION PATHS              ##########
+########  INFORMATION COMPLEX - FREE-ENERGY COMPLEX  ##########
+###############################################################  
+###############################################################    
+    '''      
+    This function compute and plotts the "true information (free-energy) complex by computing information paths: An information path IPk  of degree k 
+    on Ik landscape is defined as a sequence of elements of the lattice that begins at the least element of the lattice (the identity-constant “0”), 
+    travels along edges from element to element of increasing degree of the lattice and ends at the greatest element of the lattice of degree k. The
+    first derivative of an IPk path is minus the conditional mutual information. The critical dimension of an IP k path is the degree of its first minimum.
+    A positive information path is an information path from 0 to a given I k corresponding to a given k-tuple of variables such that Ik<Ik-1<...<I1 . 
+    We call the interacting components functions Ik , k>1, a free information energy. A maximal positive information path is a positive information path 
+    of maximal length: it ends at minima of the free information energy function. The set of all these paths defines uniquely the minimum free energy complex. 
+    The set of all paths of degree k is intractable computationally (complexity in O(k!)). 
+    '''          
+
 
     def information_paths( self, Ninfomut):
         # construct a vector of marginal variable   
