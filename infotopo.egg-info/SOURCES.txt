@@ -4,4 +4,5 @@ setup.py
 infotopo.egg-info/PKG-INFO
 infotopo.egg-info/SOURCES.txt
 infotopo.egg-info/dependency_links.txt
+infotopo.egg-info/requires.txt
 infotopo.egg-info/top_level.txt

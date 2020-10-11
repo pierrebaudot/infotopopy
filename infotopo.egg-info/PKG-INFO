@@ -1,11 +1,13 @@
-Metadata-Version: 2.1
+Metadata-Version: 1.2
 Name: infotopo
-Version: 0.1
+Version: 0.2.7
 Summary: InfoTopo: Topological Information Data Analysis. Deep statistical unsupervised and supervised learning.
-Home-page: https://github.com/pierrebaudot/infotopopy/archive/0.1.tar.gz
+Home-page: https://github.com/pierrebaudot/infotopopy
 Author: Pierre Baudot
 Author-email: pierre.baudot@gmail.com
+Maintainer: Pierre Baudot
 License: BSD 3-Clause "New" or "Revised" License
+Download-URL: https://github.com/pierrebaudot/infotopopy/archive/0.2.7.tar.gz
 Description: **INFOTOPO**
         
         
@@ -63,8 +65,7 @@ Description: **INFOTOPO**
         
         
         
-Platform: UNKNOWN
+Platform: any
 Classifier: Programming Language :: Python :: 3
 Classifier: Operating System :: OS Independent
 Requires-Python: >=3.6
-Description-Content-Type: text/markdown
