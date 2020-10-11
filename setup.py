@@ -3,8 +3,8 @@
 import os
 import setuptools
 
-__version__ = "0.2.6"
-NAME = 'Infotopo'
+__version__ = "0.2.7"
+NAME = 'infotopo'
 AUTHOR = "Pierre Baudot"
 MAINTAINER = "Pierre Baudot"
 EMAIL = 'pierre.baudot@gmail.com'
