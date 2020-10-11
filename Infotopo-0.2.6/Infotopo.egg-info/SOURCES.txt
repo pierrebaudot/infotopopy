@@ -1,0 +1,8 @@
+README.md
+setup.cfg
+setup.py
+Infotopo.egg-info/PKG-INFO
+Infotopo.egg-info/SOURCES.txt
+Infotopo.egg-info/dependency_links.txt
+Infotopo.egg-info/requires.txt
+Infotopo.egg-info/top_level.txt
