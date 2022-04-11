@@ -6,30 +6,29 @@ Infotopo is a general Machine Learning set of tools gathering Topology
 (information quantifies statistical structures generically) and 
 statistical physics.
 It provides a matheamticaly formalised expression of deep network and learning,
-and propose anuspervised or supervised learning mode (as a special case of the first).
-It allows a simple and autonatic exploration of the data structures, dimension reduction
+and propose an unsupervised or supervised learning mode (as a special case of the first).
+It allows a simple and automatic exploration of the data structures, dimensionality reduction
 and supervised or unsupervised classification.
 
-The raw methods are computationnally consuming due to the intrinsic combinatorial 
-nature of the topological tools, even in the simplest case of a simplicial case 
+The raw methods are computationally intensive due to the intrinsic combinatorial 
+nature of the topological tools, even in the simplest case  
 (the general case is based on the much broader partition combinatorics) the 
 computational complexity is of the order of :math:`2^n` .
-As a consequence, an important part of the tools and methods are dedicated 
-to overcome this extensive computation. Among the possible strategies and 
-heuristics used or currently developped, are:
+As a consequence, an important part of the proposed toolkit is optimization. 
+Among the possible strategies and heuristics used or currently developped, are:
 
 _ restrict to simplicial cohomology and combinatorics (done here).
 
-_ possible exploration of only the low dimensional structures (done here).
+_ exploration of only the low dimensional structures (done here).
 
-_ possible exploration of only most or least informative paths (done here).
+_ exploration of only most or least informative paths (done here).
 
-_ possible restriction 2nd degree-dimension statistical interactions: 
+_ restriction to a 2nd degree-dimension statistical interactions: 
 what is computed here is the equivalent of the Cech complex (with all degree-
 dimension computed), and such restriction is equivalent to computing the Vietoris-Rips 
 complex (in development). 
 
-_ compute on GPU and Tensorflow version (in development).
+_ computation on GPU with help of Tensorflow (in development).
 
 As a result, for this 0.1 version of the software, and for computation with 
 commercial average PC, we recommand to analyse up to 20 variables (or dimensions)
@@ -37,10 +36,9 @@ at a time in the raw brut-force approach (see performance section).
 
 
 
-We now present some basic example of use, inspiring our presentation from 
-the remarkable presentation of `UMAP by McInnes. <https://umap-learn.readthedocs.io/en/latest/>`_
-We first import some few tools: some of the datasets available in sklearn, seaborn to
-visualise the results, and pandas to handle the data.
+We now present some basic example of use. 
+This section is inspired by the remarkable documentation of `UMAP by McInnes. <https://umap-learn.readthedocs.io/en/latest/>`_
+We first import some few libraries: some of the datasets from sklearn, pandas to handle the data, and seaborn for visualization. 
 
 .. code:: python3
 
@@ -70,7 +68,7 @@ and sample_size = 150 (we consider all the points), and as the dimension
 of the data set is small we will make the complete analysis of the 
 simplicial structure of dependencies by setting the maximum dimension 
 of analysis to dimension_max = dimension_tot. We also set the other 
-parameters of infotopo to approriate, as further explained.   
+parameters of infotopo to approriate values. They are explained further.   
 We can load the iris dataset from sklearn.
 
 .. code:: python3
@@ -133,8 +131,8 @@ We can load the iris dataset from sklearn.
     The famous Iris database, first used by Sir R.A Fisher
     
     This is perhaps the best known database to be found in the
-    pattern recognition literature.  Fisher's paper is a classic in the field and
-    is referenced frequently to this day.  (See Duda & Hart, for example.)  The
+    pattern recognition literature. Fisher's paper is a classic in the field and
+    is referenced frequently to this day. (See Duda & Hart, for example.)  The
     data set contains 3 classes of 50 instances each, where each class refers to a
     type of iris plant.  One class is linearly separable from the other 2; the
     latter are NOT linearly separable from each other.
@@ -157,9 +155,9 @@ We can load the iris dataset from sklearn.
        - Many, many more ...
     
 
-As visualizing data in 4 dimensions or more is hard or not possible, we can first 
+Visualizing data in 4 dimensions or more is hard or not possible. We can first 
 plot all the pairwise scatterplot matrix to present the pairwise correlations and 
-dependencies between the variables, using Seaborn and pandas dataframe.
+dependencies between the variables, using Seaborn.
 
 .. code:: python3
 
